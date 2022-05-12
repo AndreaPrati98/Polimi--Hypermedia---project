@@ -6,8 +6,8 @@ app.use(express.json())
 
 // const database = new Sequelize("postgres://postgres:postgres@localhost:5432/hyp")
 // Production
-const pg = require( 'pg' )
-pg.defaults.ssl = true
+const pgVar = require( 'pg' )
+pgVar.defaults.ssl = true
 const database = new Sequelize(process.env.DATABASE_URL, {
     ssl: true,
     dialectOptions: { ssl: { require: true, rejectUnauthorized: false } }, 
