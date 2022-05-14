@@ -18,7 +18,7 @@
         <li
           v-for="(navItem, navItemIndex) of headerList"
           :key="`navItem${navItemIndex}`"
-          class="nav-item"
+          class="d-flex justify-content-center btn btn-outline-secondary mx-1 py-1"
         >
           <nuxt-link :to="navItem.path" class="nav-link">
             {{ navItem.name }}
@@ -28,16 +28,6 @@
     </div>
   </nav>
 </template>
-
-<style scoped>
-.header {
-  background: orange;
-}
-.logo {
-  color: white;
-  font-size: 32px;
-}
-</style>
 
 <script>
 export default {
@@ -50,12 +40,20 @@ export default {
           path: '/',
         },
         {
-          name: 'List',
-          path: '/list',
+          name: 'Town',
+          path: '/',
         },
         {
-          name: 'About',
-          path: '/about',
+          name: 'Things To Do',
+          path: '/',
+        },
+        {
+          name: 'Services',
+          path: '/',
+        },
+        {
+          name: 'Contact Us',
+          path: '/',  
         },
       ],
     }
