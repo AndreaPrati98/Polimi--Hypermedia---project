@@ -14,7 +14,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarToggler">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ciao">
         <li
           v-for="(navItem, navItemIndex) of headerList"
           :key="`navItem${navItemIndex}`"
@@ -60,3 +60,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+  .ciao {
+    color: aquamarine !important;
+  }
+</style>
