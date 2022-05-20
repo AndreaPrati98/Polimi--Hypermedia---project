@@ -4,15 +4,26 @@ const { Sequelize, DataTypes } = require("sequelize")
 const initialize = require('./initialize').default
 app.use(express.json())
 
-const database = new Sequelize("postgres://postgres:postgres@localhost:5432/hyp")
+let database;
 
-// Production
-// const pgVar = require( 'pg' )
-// pgVar.defaults.ssl = true
-// const database = new Sequelize(process.env.DATABASE_URL, {
-//     ssl: true,
-//     dialectOptions: { ssl: { require: true, rejectUnauthorized: false } }, 
-//     })
+/*
+    we use this if-else control so that we know if we are in 
+    the production env or not. 
+    Otherwise we would had to comment adn uncomment things every time
+*/
+if(process.env.NODE_ENV !== "production"){
+    database = new Sequelize("postgres://postgres:postgres@localhost:5432/hyp");
+    console.log("DEVELOPMENT ENVIRONMENT");
+} else {
+    // Production
+    const pgVar = require( 'pg' )
+    pgVar.defaults.ssl = true
+    database = new Sequelize(process.env.DATABASE_URL, {
+        ssl: true,
+        dialectOptions: { ssl: { require: true, rejectUnauthorized: false } }, 
+        })
+    console.log("PRODUCTION ENVIRONMENT"); 
+}
 
 
 // Function that will initialize the connection to the database
