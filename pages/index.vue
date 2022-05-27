@@ -1,9 +1,9 @@
 <template>
-  <carosello/>
+    <the-header/>
 </template>
 
 <script>
-import Carosello from "~/components/Carosello.vue"
+import TheHeader from "../components/TheHeader.vue";
 export default {
     name: "IndexPage",
     async asyncData({ $axios }) {
@@ -17,6 +17,6 @@ export default {
             image,
         };
     },
-    components: { Carosello }
+    components: { TheHeader }
 }
 </script>
