@@ -1,9 +1,9 @@
 <template>
-    <the-header/>
+    <big-img/>
 </template>
 
 <script>
-import TheHeader from "../components/TheHeader.vue";
+import BigImg from "../components/big-img.vue";
 export default {
     name: "IndexPage",
     async asyncData({ $axios }) {
@@ -17,6 +17,6 @@ export default {
             image,
         };
     },
-    components: { TheHeader }
+    components: {BigImg }
 }
 </script>

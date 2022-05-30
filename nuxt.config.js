@@ -30,7 +30,6 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    // '~/assets/style/customBootstrap.css',
     '~/assets/style/myStyle.css',
   ],
 
