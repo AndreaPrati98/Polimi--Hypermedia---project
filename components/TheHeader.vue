@@ -17,8 +17,8 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div id="navbarSupportedContent" class="collapse navbar-collapse">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <div id="navbarSupportedContent" class=" justify-content-end collapse navbar-collapse">
+        <ul class="navbar-nav  mb-2 mb-lg-0 ">
           <li
           v-for="(navItem, navItemIndex) of headerList"
           :key="`navItem${navItemIndex}`"
@@ -51,7 +51,7 @@ export default {
         },
         {
           name: 'Things To Do',
-          path: '/',
+          path: '/pointOfInterest',
         },
         {
           name: 'Services',
