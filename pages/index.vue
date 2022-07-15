@@ -1,9 +1,9 @@
 <template>
-    <big-img-vue/> 
+    <home-body/>
 </template>
 
 <script>
-import BigImgVue from '~/components/BigImg.vue'
+import HomeBody from '~/components/HomeBody.vue';
 
 export default {
     name: "IndexPage",
@@ -18,6 +18,6 @@ export default {
     //         image,
     //     };
     // },
-    components: { BigImgVue }
+    components: { HomeBody }
 }
 </script>
