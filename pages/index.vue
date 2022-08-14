@@ -1,10 +1,10 @@
 <template>
-    <home-body/>
+    <p>
+        Ciao
+    </p>
 </template>
 
 <script>
-import HomeBody from '~/components/HomeBody.vue';
-
 export default {
     name: "IndexPage",
     // async asyncData({ $axios }) {
@@ -18,6 +18,5 @@ export default {
     //         image,
     //     };
     // },
-    components: { HomeBody }
 }
 </script>

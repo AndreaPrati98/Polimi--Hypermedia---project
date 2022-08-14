@@ -1,36 +1,20 @@
 <template>
-  <nav
-    class="navbar navbar-expand-md navbar-dark bg-dark justify-content-center"
-  >
-    <div class="container-fluid">
-      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-      
-      <nuxt-link class="navbar-brand" to="/">Navbar</nuxt-link>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div id="navbarSupportedContent" class=" justify-content-end collapse navbar-collapse">
-        <ul class="navbar-nav  mb-2 mb-lg-0 ">
-          <li
-          v-for="(navItem, navItemIndex) of headerList"
-          :key="`navItem${navItemIndex}`"
-          class="nav-item"
-          >  
-            <nuxt-link :to="navItem.path" class="nav-link">
-              {{ navItem.name }}
-            </nuxt-link>
-          </li>
-        </ul>
-        
-      </div>
+  <nav>
+    <div class="logo">
+      Festival d'Avignon
+    </div>
+    <div>
+      <ul class="nav-landmark-container">
+        <li
+        v-for="(navItem, navItemIndex) of headerList"
+        :key="`navItem${navItemIndex}`"
+        class="nav-landmark"
+        >  
+          <nuxt-link :to="navItem.path" class="nuxt-link">
+            {{ navItem.name }}
+          </nuxt-link>
+        </li>
+      </ul>
     </div>
   </nav>
 </template>
@@ -51,7 +35,7 @@ export default {
         },
         {
           name: 'Things To Do',
-          path: '/pointOfInterest',
+          path: '/',
         },
         {
           name: 'Services',
@@ -66,3 +50,37 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+  .div {
+    height: 40px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    position: fixed; 
+    width: 100%;
+    font-size: 22px;
+    z-index: 10;
+    background-color: var(--palette-red);
+  }
+
+  nav div {
+    display: flex;
+    margin: 0 10px;
+  }
+
+  nav li {
+    display: inline-block;
+    text-decoration: underline;
+    margin: 0 10px;
+  }
+
+
+  .nuxt-link{
+    color: var(--text-color);
+  }
+
+
+
+</style>
