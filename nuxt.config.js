@@ -9,7 +9,7 @@ export default {
     }
   ],
   head: {
-    title: 'Emerald city',
+    title: "Festival d'Avignon",
     htmlAttrs: {
       lang: 'en',
     },
@@ -30,7 +30,9 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/style/myStyle.css',
+    '~/assets/style/resetStyle.css',
+    '~/assets/style/styleVariable.css',
+    '~/assets/style/globalStyle.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
