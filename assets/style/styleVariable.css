@@ -1,0 +1,13 @@
+/* This css file will be used to store the variables */
+
+:root {
+    /* palette */
+    --palette-red: #e30a11;
+    --palette-green: #f1faee;
+    --palette-light-cyan: #a8dadc;
+    --palette-soft-blue: #457b9d;
+    --palette-blue: #1d3557;
+
+    --text-color: seashell;
+
+}
