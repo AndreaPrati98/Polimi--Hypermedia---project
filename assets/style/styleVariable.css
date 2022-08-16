@@ -3,11 +3,14 @@
 :root {
     /* palette */
     --palette-red: #e30a11;
+    --palette-red-dark: #a51116;
     --palette-green: #f1faee;
     --palette-light-cyan: #a8dadc;
     --palette-soft-blue: #457b9d;
     --palette-blue: #1d3557;
 
-    --text-color: seashell;
+    --text-color-dark: black;
+    --text-color-light: seashell;
+
 
 }

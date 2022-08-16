@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
 * {
     color: var(--text-color);
+    box-sizing: border-box; /* more intuitive way of setting sizes */
+}
+
+html {
+    font-family: 'Roboto', sans-serif; 
 }
