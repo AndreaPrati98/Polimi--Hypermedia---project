@@ -110,8 +110,12 @@ export default {
 
         font-size: 1rem;
         font-weight: 400;
+        padding: 0.8rem .5rem;
 
         transition: color .5s ease-in;
+    }
+    .nav-link:hover{
+        color: var(--palette-red-dark);
     }
 
     .fest-logo {
@@ -145,20 +149,17 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin: .8rem 0 ;
     }
 
 
     .nav-item {
         margin-left: 2rem;
         list-style: none;
-        
+
     }
 
 
-    .nav-link:hover{
-        color: var(--palette-red-dark);
-        border: 1px solid var(--text-color-dark);
-    }
 
     .nav-logo {
         font-size: 2.1rem;
@@ -169,7 +170,7 @@ export default {
     /* Responsiveness */
 
     @media only screen and (max-width: 768px) {
-        
+
         /* hides our nav-menu by setting position: fixed; left: -100%; */
         .nav-menu {
             position: fixed;
@@ -183,6 +184,7 @@ export default {
             transition: 0.3s;
             box-shadow:
                 0 10px 27px rgba(0, 0, 0, 0.05);
+            margin: .8rem 0 ;
         }
 
         /* .nav-menu.active which sets left: 0; on the nav-menu */
