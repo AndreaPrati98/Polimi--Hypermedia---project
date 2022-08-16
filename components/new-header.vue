@@ -1,21 +1,27 @@
 <template>
-  <header>
-        <div class="logoImg">
-            Festival d'Avignon
-        </div>
-        <div class="menuItems">
-            <ul>
+  <header class="header">
+        <nav class="navbar">
+            <div>
+                <a class="fest-logo" href="#">Festival d'Avignon</a>
+            </div>
+            <ul class="nav-menu">
                 <li
                 v-for="(navItem, navItemIndex) of headerList"
                 :key="`navItem${navItemIndex}`"
-                class="nav-landmark"
+                class="nav-item"
                 >  
-                <nuxt-link :to="navItem.path" class="nuxt-link">
+                <nuxt-link :to="navItem.path" class="nav-link">
                     {{ navItem.name }}
                 </nuxt-link>
                 </li>
             </ul>
-        </div>
+            <div class="hamburger">
+                <span class="bar"/>
+                <span class="bar"/>
+                <span class="bar"/>
+            </div>
+        </nav>
+        
     </header>
 </template>
 
@@ -48,39 +54,168 @@ export default {
         ],
         }
     },
-}
+    mounted() {
+        
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+
+            // const navMenu = this.$refs[".nav-menu"];
+
+            hamburger.addEventListener("click", mobileMenu);
+
+            function mobileMenu() {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            }
+
+            // the function mobileMenu() also adds an active class on our hamburger 
+            // and our nav-menu which makes our mobile menu open. we can use 
+            // the active class on the hamburger to create that X animation when we click on the hamburger
+
+            const navLink = document.querySelectorAll(".nav-link");
+
+            navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+            function closeMenu() {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }
+        },
+        
+    }
 </script>
 
-<style scoped>
-        header {
-        height: 40px;
-        /* border-bottom: 1px solid seashell; */
-        display: flex;
-        align-content: center;
-        justify-content: space-between;
-        position: fixed; 
+<style scoped>t
+
+
+    header.header {
         width: 100%;
+    }
+
+    .navbar {
+        /* position: relative; */
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 1rem;
+
+        border-bottom: 1px solid red;
+    }
+
+    .nav-link {
+        --text-color-nav: var(--text-color-dark);
+        color: var(--text-color-dark);
+        text-decoration: none;
+
+        font-size: 1rem;
+        font-weight: 400;
+
+        transition: color .5s ease-in;
+    }
+
+    .fest-logo {
         font-size: 1.2rem;
-        z-index: 10;
-        background-color: var(--palette-red);
+        font-weight: 600;
+        --text-color-nav: var(--text-color-dark);
+        color: var(--text-color-nav);
         
+    }
+
+    /* hamburger */
+
+    /* for the hamburger */
+    .hamburger {
+        display: none;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: var(--text-color-dark);
+    }
+
+    /* for inner elements */
+
+    .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .nav-item {
+        margin-left: 2rem;
+        list-style: none;
+        
+    }
+
+
+    .nav-link:hover{
+        color: var(--palette-red-dark);
+        border: 1px solid var(--text-color-dark);
+    }
+
+    .nav-logo {
+        font-size: 2.1rem;
+        font-weight: 500;
+        color: var(--palette-blue);
+    }
+
+    /* Responsiveness */
+
+    @media only screen and (max-width: 768px) {
+        
+        /* hides our nav-menu by setting position: fixed; left: -100%; */
+        .nav-menu {
+            position: fixed;
+            left: -100%;
+            top: 5rem;
+            flex-direction: column;
+            background-color: #fff;
+            width: 100%;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow:
+                0 10px 27px rgba(0, 0, 0, 0.05);
         }
 
-    header div {
-        display: flex;
-        align-items: center;
-        margin: 0 10px;
-    }
+        /* .nav-menu.active which sets left: 0; on the nav-menu */
+        .nav-menu.active {
+            left: 0;
+            padding: 0;
+            margin: 0;
+        }
 
-    header li {
-        display: inline-block;
-        margin: 0 10px;
-    }
+        .nav-item {
+            margin: 1.5rem 0;
+        }
 
-    header ul {
-        margin: 0;
-    }
-    .nuxt-link{
-        color: var(--text-color);
+        /* set our hamburger to display: block; so it's visible now. */
+        .hamburger {
+            display: block;
+            cursor: pointer;
+        }
+
+        /* Animation for the X */
+
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+
     }
 </style>
