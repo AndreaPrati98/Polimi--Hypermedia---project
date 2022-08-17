@@ -10,9 +10,11 @@
                     History
                 </h2>
             </div>
-            <p class="paragraph">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem obcaecati in facere dolores. Culpa, illo. Natus debitis optio et voluptatum delectus magni quos nam perspiciatis dolores at, dolorum tempore aut!
-            </p>
+            <div class="div-paragraph">
+                <p class="paragraph">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem obcaecati in facere dolores. Culpa, illo. Natus debitis optio et voluptatum delectus magni quos nam perspiciatis dolores at, dolorum tempore aut!
+                </p>
+            </div>
         </div>
     </div>
   </section>
@@ -27,10 +29,11 @@ export default {
 <style scoped>
 
     .section {
-        border: 1px solid red;
+        /* border: 1px solid red; */
         width: 35%;
         height: 40vh;
         margin: 30px 0;
+        overflow: hidden;
     }
 
     .div-container {
@@ -38,14 +41,33 @@ export default {
         height: 100%;  
     }
 
+    .div-container:hover .img {
+        opacity: 0.6;
+    }
+
+    .div-container:hover .text-container {
+        bottom: 100%;
+    }
+
+    
+
     .img {
-        border: 2px solid red;
-        height: 80%;   
+        /* border: 2px solid red; */
+        height: 100%;   
+        background-image: url("../assets/imgs/history_1920.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        transition: opacity .5s ease-in;
     }
 
     .text-container {
-        border: 2px solid purple;
+        /* border: 2px solid purple; */
         height: 100%;
+        position: relative;
+        backdrop-filter: blur(100px);
+        bottom: 20%;
+        transition: bottom 1s ease-out;
     }
 
     .title {
@@ -58,7 +80,17 @@ export default {
     }
 
     .paragraph {
-        
+        width: 65ch;
+        text-align: center;
+    }
+
+    .div-paragraph {
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: scroll;
+
     }
 
 
