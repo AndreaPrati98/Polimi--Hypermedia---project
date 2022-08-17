@@ -2,15 +2,25 @@
     <section class="section">
         <div class="div-container">
             <div class="buttons-container">
-                <button class="button" onclick="console.log('Button clicked')">Date and tickets</button>
-                <button class="button" onclick="console.log('Button clicked')">Location</button>
-                <button class="button" onclick="console.log('Button clicked')">Accessibility</button>
+                <!-- <button class="button" onclick="console.log('Button clicked')">Date and tickets</button> -->
+                <!-- <button class="button" onclick="console.log('Button clicked')">Location</button> -->
+                <!-- <button class="button" onclick="console.log('Button clicked')">Accessibility</button> -->
+                <button 
+                v-for="(info, infoIndex) of informations"
+                :key="`information${infoIndex}`"
+                @click="visibleText = info.content"
+                class="button"
+                onclick="console.log('Hey there')"
+                >
+                {{info.buttonTxt}}
+                </button>
             </div>
             <div class="info-container">
                 <p class="text-container">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur natus reprehenderit 
+                    <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur natus reprehenderit 
                     odit praesentium, voluptas veritatis ullam quam voluptates corporis laboriosam 
-                    nostrum tenetur et aliquid quia qui! Nesciunt autem adipisci quis?
+                    nostrum tenetur et aliquid quia qui! Nesciunt autem adipisci quis? -->
+                    {{visibleText}}
                 </p>
                 <nuxt-link to="/" class="more-info">
                     More Info
@@ -24,6 +34,28 @@
 
 export default {
     name: "info-component",
+    data() {
+        return {
+            informations: [
+                {
+                    buttonId: 1,
+                    buttonTxt: "Date and Tickets",
+                    content: "This is content from botton 1",
+                },
+                {
+                    buttonId: 2,
+                    buttonTxt: 'Location',
+                    content: 'This is content from botton 2',
+                },
+                {
+                    buttonId: 3,
+                    buttonTxt: "Accessibility",
+                    content: "This is content from botton 3",
+                },
+            ],
+            visibleText: "Click on a button on the left side",
+        }
+    }
 }
 </script>
 
