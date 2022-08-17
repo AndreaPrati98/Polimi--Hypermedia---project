@@ -2,7 +2,7 @@
   <header class="header">
         <nav class="navbar">
             <div>
-                <a class="fest-logo" href="#">Festival d'Avignon</a>
+                <a class="nav-logo" href="#">Festival d'Avignon</a>
             </div>
             <ul class="nav-menu">
                 <li
@@ -118,17 +118,9 @@ export default {
         color: var(--palette-red-dark);
     }
 
-    .fest-logo {
-        font-size: 1.2rem;
-        font-weight: 600;
-        --text-color-nav: var(--text-color-dark);
-        color: var(--text-color-nav);
-        
-    }
 
     /* hamburger */
 
-    /* for the hamburger */
     .hamburger {
         display: none;
     }
@@ -162,9 +154,11 @@ export default {
 
 
     .nav-logo {
-        font-size: 2.1rem;
-        font-weight: 500;
-        color: var(--palette-blue);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        --text-color-nav: var(--text-color-dark);
+        color: var(--text-color-nav);
     }
 
     /* Responsiveness */
