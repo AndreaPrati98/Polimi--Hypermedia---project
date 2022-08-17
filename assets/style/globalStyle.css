@@ -3,6 +3,7 @@
 * {
     color: var(--text-color);
     box-sizing: border-box; /* more intuitive way of setting sizes */
+    margin: 0;
 }
 
 html {
