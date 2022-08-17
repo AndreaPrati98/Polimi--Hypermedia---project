@@ -2,7 +2,9 @@
   <header class="header">
         <nav class="navbar">
             <div>
-                <a class="nav-logo" href="#">Festival d'Avignon</a>
+                <nuxt-link to="/" class="nav-logo" >
+                    Festival d'Avignon
+                </nuxt-link>
             </div>
             <ul class="nav-menu">
                 <li
