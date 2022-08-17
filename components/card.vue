@@ -65,7 +65,8 @@ export default {
         /* border: 2px solid purple; */
         height: 100%;
         position: relative;
-        backdrop-filter: blur(100px);
+        /* backdrop-filter: blur(100px); */
+        background-color: #c7c7c7;
         bottom: 20%;
         transition: bottom 1s ease-out;
     }
