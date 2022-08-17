@@ -36,15 +36,15 @@ export default {
             path: '/',
             },
             {
-            name: 'Town',
+            name: 'Festival',
+            path: '/festival-intro',
+            },
+            {
+            name: 'Events',
             path: '/',
             },
             {
-            name: 'Things To Do',
-            path: '/',
-            },
-            {
-            name: 'Services',
+            name: 'Places',
             path: '/',
             },
             {
@@ -86,14 +86,11 @@ export default {
 </script>
 
 <style scoped>t
-
-
     header.header {
         width: 100%;
     }
 
     .navbar {
-        /* position: relative; */
         width: 100%;
         display: flex;
         justify-content: space-between;
