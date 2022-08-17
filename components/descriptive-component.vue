@@ -33,14 +33,16 @@ export default {
         position: relative;
         top: 35px;
         right: 100px;
-        border: 1px solid red;
+        border: 3px solid var(--palette-green-dark);
         padding: 6px 20px;
+        background-color: var(--palette-green);
     }
 
     .overview-paragraph {
         max-width: 65ch;
         padding: 30px;
-        border: 1px solid blue;
+        border: 2px solid #474747;
+        
     }
 
 </style>
