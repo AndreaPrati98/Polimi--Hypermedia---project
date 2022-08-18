@@ -7,6 +7,7 @@
       <InfoComponent class="info-component"/>
     </div>
     <Map class="map"/>
+    <Footer class="footer"/>
   </div>
 </template>
 
@@ -16,9 +17,10 @@ import DescriptiveComponent from '~/components/Descriptive-component';
 import Card from '~/components/card.vue';
 import InfoComponent from '~/components/info-component.vue';
 import Map from '~/components/map.vue';
+import Footer from '../components/footer.vue';
 
 export default {
-  components: { TitleOverlayImage, DescriptiveComponent, Card, InfoComponent, Map },
+  components: { TitleOverlayImage, DescriptiveComponent, Card, InfoComponent, Map, Footer },
     name: "festival-intro",
 }
 </script>
@@ -34,4 +36,7 @@ export default {
     width: 100%;
   }
 
+  .footer {
+    width: 100%;
+  }
 </style>
