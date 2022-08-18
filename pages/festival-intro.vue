@@ -6,6 +6,7 @@
       <Card class="card"/>
       <InfoComponent class="info-component"/>
     </div>
+    <Map class="map"/>
   </div>
 </template>
 
@@ -14,9 +15,10 @@ import TitleOverlayImage from '~/components/title-overlay-image';
 import DescriptiveComponent from '~/components/Descriptive-component';
 import Card from '~/components/card.vue';
 import InfoComponent from '~/components/info-component.vue';
+import Map from '~/components/map.vue';
 
 export default {
-  components: { TitleOverlayImage, DescriptiveComponent, Card, InfoComponent },
+  components: { TitleOverlayImage, DescriptiveComponent, Card, InfoComponent, Map },
     name: "festival-intro",
 }
 </script>
@@ -26,6 +28,10 @@ export default {
   .double-section{
     display: flex;
     justify-content: space-around;
+  }
+
+  .map {
+    width: 100%;
   }
 
 </style>
