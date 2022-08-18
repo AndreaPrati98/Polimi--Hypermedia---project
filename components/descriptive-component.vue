@@ -26,7 +26,7 @@ export default {
         align-items: center;
         
         margin-top: 20px;
-        border: 1px solid red;
+        
     }
     
     .overview-title {

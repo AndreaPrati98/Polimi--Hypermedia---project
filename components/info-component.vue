@@ -60,7 +60,6 @@ export default {
 
 <style scoped>
     .section {
-        border: 1px solid red;
         width: 35%;
         height: 40vh;
         margin: 30px 0;
