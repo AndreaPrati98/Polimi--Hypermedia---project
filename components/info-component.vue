@@ -20,7 +20,7 @@
                     {{visibleText}}
                 </p>
                 <div class="info-button-wrapper">
-                    <nuxt-link to="/" class="more-info">
+                    <nuxt-link to="/festival-practical-info" class="more-info">
                         More Info
                     </nuxt-link>
                 </div>
