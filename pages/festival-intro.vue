@@ -7,7 +7,6 @@
       <InfoComponent class="info-component"/>
     </div>
     <Map class="map"/>
-    <Footer class="footer"/>
   </div>
 </template>
 
@@ -33,10 +32,6 @@ export default {
   }
 
   .map {
-    width: 100%;
-  }
-
-  .footer {
     width: 100%;
   }
 </style>
