@@ -17,14 +17,13 @@
             </div>
             <div class="info-container">
                 <p class="text-container">
-                    <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur natus reprehenderit 
-                    odit praesentium, voluptas veritatis ullam quam voluptates corporis laboriosam 
-                    nostrum tenetur et aliquid quia qui! Nesciunt autem adipisci quis? -->
                     {{visibleText}}
                 </p>
-                <nuxt-link to="/" class="more-info">
-                    More Info
-                </nuxt-link>
+                <div class="info-button-wrapper">
+                    <nuxt-link to="/" class="more-info">
+                        More Info
+                    </nuxt-link>
+                </div>
             </div>
         </div>
     </section>
@@ -40,7 +39,7 @@ export default {
                 {
                     buttonId: 1,
                     buttonTxt: "Date and Tickets",
-                    content: "This is content from botton 1",
+                    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda cum quibusdam cumque, ipsam, officia quia dolorem voluptates labore repellat beatae, laudantium culpa molestias quisquam. Optio sunt sint cupiditate mollitia amet ullam, nemo, maiores in itaque incidunt perspiciatis unde, velit repudiandae consequatur omnis nihil delectus hic iure quas. Facere velit, magni rem reiciendis eius ad dolorum beatae repellendus id tenetur vero porro! Fugit, ratione? Vitae saepe sed quaerat, excepturi consequatur maiores? Deleniti dolorem, earum odit, consequatur cum, officia necessitatibus provident nobis distinctio dolore quibusdam soluta quo obcaecati nihil? Doloremque dolor accusamus iusto neque atque quos, soluta facilis. Nulla nisi reprehenderit nostrum atque. Ullam, odio. Doloremque dolorum quas eius ut laudantium accusamus explicabo sapiente quaerat amet suscipit obcaecati ullam, vel dolor ab illo sit? Voluptas accusantium ab vero quod suscipit, magni, esse unde natus eum, corporis beatae a. Ipsa aspernatur in eos, voluptates doloribus laboriosam sit expedita quo nulla sequi porro cum? Assumenda, modi consequatur impedit amet pariatur asperiores ullam voluptatum illum nulla animi est commodi libero fugiat veritatis unde maiores a sunt tempore architecto, dolorum reprehenderit. Accusamus libero similique velit eius corrupti deleniti ratione distinctio nostrum possimus perferendis? Ipsa placeat asperiores debitis consequatur illum nihil cum dolorum ullam deleniti, odio aperiam?",
                 },
                 {
                     buttonId: 2,
@@ -75,9 +74,15 @@ export default {
 
     .button {
         margin: 1rem;
-        background-color: white;
+        background-color: #ffffff;
         border: none;
+        
     }
+
+    .button:active {
+        background-color: #f4f4f4;
+    }
+
     .buttons-container {
         background-color: #c7c7c7;
         display: flex;
@@ -87,9 +92,22 @@ export default {
 
     .info-container {
         background-color: #eeeeee;
+        overflow-y: scroll;
+    }
+
+    .info-button-wrapper {
+        display: flex;
+        justify-content: center;
     }
 
     .more-info {
-        margin: 0 auto;
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+
+    .text-container {
+        width: max(100%, 10ch);
+        padding: 5%;
+        
     }
 </style>
