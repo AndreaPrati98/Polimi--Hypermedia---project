@@ -82,6 +82,12 @@ async function runMainApi() {
         return res.json(result)
     })
 
+    app.get('/event-info/:id', async (req, res) => {
+        const id = +req.params.id
+        const result = await models.Event.findOne({ where: { id } })
+        return res.json(result)
+    })
+
     app.get('/cats/:id', async (req, res) => {
         const id = +req.params.id
         const result = await models.Cat.findOne({ where: { id } })
