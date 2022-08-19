@@ -8,6 +8,7 @@ export default async (models) => {
             date: "date bla bla",
             time: "time bla bla",
             details: "details bla bla",
+            
         },
         {
             title: "questo",
@@ -16,6 +17,7 @@ export default async (models) => {
             date: "envento",
             time: "che ho messo",
             details: "nel database",
+            
         },
     ]
 
@@ -63,4 +65,24 @@ export default async (models) => {
     await models.Artist.bulkCreate(artistList)
     await models.Place.bulkCreate(placesList)
     await models.Type_of_art.bulkCreate(typeOfArtList)
+
+    // Here I set the foreign key for event
+
+    console.log("\n\n")
+    const allPlaces = await models.Place.findAll()
+    
+    console.log("\n\n")
+    const allEvents = await models.Event.findAll()
+  
+    console.log("\n\n")
+    allEvents[0].set({
+        placeId: allPlaces[1].id
+    })
+    allEvents[0].save()
+
+    allEvents[1].placeId = allPlaces[0].id
+    allEvents[1].save()
+    
+
+    console.log("\n")
 }

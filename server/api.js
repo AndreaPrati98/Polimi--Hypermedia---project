@@ -59,13 +59,15 @@ async function initializeDatabaseConnection() {
         address: DataTypes.STRING,
     }, {timestamps: false})
 
+    Place.hasMany(Event)
+    Event.belongsTo(Place)
 
     await database.sync({ force: true })
     return {
         Event,
         Artist,
         Place,
-        Type_of_art
+        Type_of_art,
     }
 }
 
@@ -102,9 +104,18 @@ async function runMainApi() {
     const models = await initializeDatabaseConnection()
     await initialize(models)
 
+    /** 
+     *  this api is used to retrieve information about the page  
+     */
     app.get('/page-info/:topic', (req, res) => {
         const { topic } = req.params
         const result = pageContentObject[topic]
+        return res.json(result)
+    })
+
+    app.get('/event-info/:id', async (req, res) => {
+        const id = +req.params.id
+        const result = await models.Event.findOne({ where: { id }, include: { models: Place } })
         return res.json(result)
     })
 
