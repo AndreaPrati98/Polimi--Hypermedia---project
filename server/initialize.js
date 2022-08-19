@@ -27,7 +27,40 @@ export default async (models) => {
             description: "She is amazing",
         }
     ]
+
+    const typeOfArtList = [
+        {
+            name: "music",
+            description: "Let the music take you away."
+        },
+        {
+            name: "theatre",
+            description: "Get the best involvement in us.",
+        },
+        {
+            name: "dance",
+            description: "Dance till the stars come down from the rafters.",
+        }
+    ]
+
+    const placesList = [
+        {
+            name: "Opéra Grand Avignon",
+            img: "https://lh5.googleusercontent.com/p/AF1QipN_SwYCX8gFQQM0Z7uM2wZFMmp7eALV-gdsAY83=w408-h304-k-no",
+            caption: "The Opéra d'Avignon is an opera house located in Avignon, France that has been in operation for almost two centuries.",
+            description: "The initial opera house was constructed in 1824–1825, and opened with its inaugural performance on 30 October 1825. The original opera house was destroyed in a fire on 26 January 1846.",
+            address: "Pl. de l'Horloge, 84000 Avignon, Francia",
+        },
+        {
+            name: "The Palace Theatre",
+            img: "https://lh5.googleusercontent.com/p/AF1QipNDRr2bNcudAesBHp09U6bhZBVMkEm1Ep431poW=w408-h725-k-no",
+            caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, distinctio.",
+            description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste optio delectus ducimus atque maiores sunt mollitia aspernatur laborum eveniet? Nostrum?",
+        }
+    ]
+
     await models.Event.bulkCreate(eventList)
     await models.Artist.bulkCreate(artistList)
-    
+    await models.Place.bulkCreate(placesList)
+    await models.Type_of_art.bulkCreate(typeOfArtList)
 }

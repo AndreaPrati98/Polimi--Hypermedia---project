@@ -25,7 +25,6 @@ export default {
 </script>
 
 <style scoped>
-
   .double-section{
     display: flex;
     justify-content: space-around;
