@@ -3,7 +3,6 @@
     <div class="div-container">
         <!--div class="picture" style="'background-image: '+ $imageName"-->
           <img :src="require(`../assets/imgs/artists/${imageName}`)">
-        </div>
 
         <div class="text-container">
             <div class="name">
@@ -34,70 +33,53 @@ export default {
 
 <style scoped>
 
-    .artist-card {
-        /* border: 1px solid red; */
-        width: 20%;
+    .artist-icon {
         height: 40vh;
-        margin: 20px 0;
         overflow: hidden;
     }
 
     .div-container {
+        position: relative;
         /* useful to use the % also with the children */
         height: 100%;  
     }
 
     .div-container:hover .img {
-        opacity: 0.6;
-    }
-
-    .div-container:hover .text-container {
-        bottom: 100%;
+        background-color: #457b9d;
+;
+        opacity: 0.3;
     }
 
     
 
-    .picture {
+    .img {
         /* border: 2px solid red; */
+        opacity: 1;
+        width: 100%;
         height: 100%;   
-        background-image: url("../assets/imgs/history_1920.jpg");
-        background-repeat: no-repeat;
+        transition: 0.5s ease;
+        backface-visibility: hidden;
+        /*background-repeat: no-repeat;
         background-size: cover;
-        background-position: bottom;
-        transition: opacity .5s ease-in;
+        background-position: bottom;*/
     }
 
     .text-container {
         /* border: 2px solid purple; */
         height: 100%;
-        position: relative;
+        position: center;
         /* backdrop-filter: blur(100px); */
-        background-color: #c7c7c7;
-        bottom: 20%;
-        transition: bottom 1s ease-out;
+        /*background-color: #c7c7c7;*/
+        transition: bottom ease-in 0.5s;
     }
 
-    .title {
+    .name {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 20%;
+        /*height: 50%;*/
         font-size: 1.7rem;
         
-    }
-
-    .paragraph {
-        width: 65ch;
-        text-align: center;
-    }
-
-    .div-paragraph {
-        height: 80%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: scroll;
-
     }
 
 
