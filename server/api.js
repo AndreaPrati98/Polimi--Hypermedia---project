@@ -115,7 +115,7 @@ async function runMainApi() {
 
     app.get('/event-info/:id', async (req, res) => {
         const id = +req.params.id
-        const result = await models.Event.findOne({ where: { id }, include: { models: Place } })
+        const result = await models.Event.findOne({ where: { id }, include: { model: models.Place } })
         return res.json(result)
     })
 
