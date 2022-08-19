@@ -29,15 +29,17 @@ if(process.env.NODE_ENV !== "production"){
 // Function that will initialize the connection to the database
 async function initializeDatabaseConnection() {
     await database.authenticate()
-    const Cat = database.define("cat", {
-        name: DataTypes.STRING,
+    const Event = database.define("event", {
+        title: DataTypes.STRING,
         description: DataTypes.STRING,
-        breed: DataTypes.STRING,
         img: DataTypes.STRING,
+        date: DataTypes.STRING,
+        time: DataTypes.STRING,
+        details: DataTypes.STRING,
     })
     await database.sync({ force: true })
     return {
-        Cat
+        Event
     }
 }
 
@@ -50,6 +52,16 @@ const pageContentObject = {
         image: "https://fs.i3lab.group/hypermedia/images/index.jpeg",
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
         Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros.`
+    },
+    festival: {
+        title: "title bla bla",
+        description: "description bla bla",
+        img: "url_img bla bla",
+        date: "date bla bla",
+        ticket: "ticket bla bla",
+        price: 20,
+        location: "location bla bla",
+        history: "history bla bla",
     },
     about: {
         title: "About",

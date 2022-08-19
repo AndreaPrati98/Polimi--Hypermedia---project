@@ -1,37 +1,22 @@
 
-
 export default async (models) => {
-    const catList = [
+    const eventList = [
         {
-            name: "Cat 1",
-            breed: "Siberian",
-            description: "Details about cat 1",
-            img: "https://fs.i3lab.group/hypermedia/cats/siberian.jpg",
+            title: "title bla bla",
+            description: "description bla bla",
+            img: "url_img bla bla",
+            date: "date bla bla",
+            time: "time bla bla",
+            details: "details bla bla",
         },
         {
-            name: "Cat 2",
-            breed: "Birman",
-            description: "Details about cat 2",
-            img: "https://fs.i3lab.group/hypermedia/cats/birman.jpg",
-        },
-        {
-            name: "Cat 3",
-            breed: "Bombay",
-            description: "Details about cat 3",
-            img: "https://fs.i3lab.group/hypermedia/cats/bombay.jpg",
-        },
-        {
-            name: "Cat 4",
-            breed: "Calico",
-            description: "Details about cat 4",
-            img: "https://fs.i3lab.group/hypermedia/cats/calico.jpg",
-        },
-        {
-            name: "Cat 5",
-            breed: "Maine Coon",
-            description: "Details about cat 5",
-            img: "https://fs.i3lab.group/hypermedia/cats/maine-coon.jpg",
+            title: "questo",
+            description: "è il",
+            img: "secondo",
+            date: "envento",
+            time: "che ho messo",
+            details: "nel database",
         },
     ]
-    await models.Cat.bulkCreate(catList)
+    await models.Event.bulkCreate(eventList)
 }
