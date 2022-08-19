@@ -18,5 +18,16 @@ export default async (models) => {
             details: "nel database",
         },
     ]
+
+    const artistList = [
+        {
+            name: "Maria",
+            img: "img bla bla",
+            date_of_birth: "27/06/96",
+            description: "She is amazing",
+        }
+    ]
     await models.Event.bulkCreate(eventList)
+    await models.Artist.bulkCreate(artistList)
+    
 }

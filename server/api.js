@@ -36,10 +36,36 @@ async function initializeDatabaseConnection() {
         date: DataTypes.STRING,
         time: DataTypes.STRING,
         details: DataTypes.STRING,
-    })
+    }, {timestamps: false})
+
+    const Artist = database.define("artist", {
+        name: DataTypes.STRING,
+        img: DataTypes.STRING,
+        date_of_birth: DataTypes.STRING,
+        description: DataTypes.STRING,
+        /* we should insert also the 'type of art' but we will use a foreign key for that */
+    }, {timestamps: false})
+
+    const Type_of_art = database.define("type_of_art", {
+        name: DataTypes.STRING,
+        description: DataTypes.STRING,
+    }, {timestamps: false})
+
+    const Place = database.define("place", {
+        name: DataTypes.STRING,
+        img: DataTypes.STRING,
+        caption:  DataTypes.STRING,
+        description:  DataTypes.STRING,
+        address: DataTypes.STRING,
+    }, {timestamps: false})
+
+
     await database.sync({ force: true })
     return {
-        Event
+        Event,
+        Artist,
+        Place,
+        Type_of_art
     }
 }
 
