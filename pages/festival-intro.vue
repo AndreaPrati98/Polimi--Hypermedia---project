@@ -7,6 +7,7 @@
       <InfoComponent class="info-component"/>
     </div>
     <Map class="map"/>
+    <ButtonStd :btnDst="'/festival-intro'"/>
   </div>
 </template>
 
@@ -17,9 +18,10 @@ import Card from '~/components/card.vue';
 import InfoComponent from '~/components/info-component.vue';
 import Map from '~/components/map.vue';
 import Footer from '../components/footer.vue';
+import ButtonStd from '../components/utilities-components/button-std.vue';
 
 export default {
-  components: { TitleOverlayImage, DescriptiveComponent, Card, InfoComponent, Map, Footer },
+  components: { TitleOverlayImage, DescriptiveComponent, Card, InfoComponent, Map, Footer, ButtonStd },
     name: "festival-intro",
 }
 </script>
