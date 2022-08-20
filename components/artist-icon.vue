@@ -34,6 +34,7 @@ export default {
         display: flex;
         height: 40vh;
         width: 100%;
+        position: relative;
     }
 
     .div-container {
@@ -52,8 +53,8 @@ export default {
     }
     .img {
         opacity: 1;
-        width: inherit;
-        height: 100%;   
+        width: 100%;
+        height: auto;   
     }
    
     .text-container {

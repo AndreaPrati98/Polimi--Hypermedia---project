@@ -62,12 +62,11 @@ export default {
   
 }
 .artist-column {
-  width: 33.3%;
   display: flex;
   flex-direction: column;
+  width: 33%;
 
 }
-
 
 .title {
   height: 25vh;
