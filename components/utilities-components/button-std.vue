@@ -51,10 +51,16 @@ export default {
         color: var(--text-color);
         padding: 14px 30px;
         background-color: var(--btn-bkgd-color);
-        transition: box-shadow .3s ease-out .1s;
+        transition: box-shadow .3s ease-out,
+                    opacity .5s ease;
     }
 
     .btn:hover {
         box-shadow: 4px 4px 2px #454545;
+    }
+
+    .btn:active {
+        box-shadow: 2px 2px 10px #454545;
+        opacity: .6;
     }
 </style>
