@@ -1,16 +1,16 @@
 <template>
-  <section class="artist-icon">
+  <div class="artist-icon">
     <div class="div-container">
-        <!--div class="picture" style="'background-image: '+ $imageName"-->
-          <img :src="require(`../assets/imgs/artists/${imageName}`)">
-
+        <div class="image-container">
+            <img :src="require(`../assets/imgs/artists/${imageName}`)">
+        </div>
         <div class="text-container">
-            <div class="name">
+            <div class="text">
                 <h2>{{ artistName }}</h2>
             </div>
         </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -27,59 +27,62 @@ export default {
         }
     }
 }
-
-
 </script>
 
 <style scoped>
-
     .artist-icon {
+        display: flex;
         height: 40vh;
-        overflow: hidden;
+        width: 100%;
     }
 
     .div-container {
-        position: relative;
-        /* useful to use the % also with the children */
-        height: 100%;  
-    }
-
-    .div-container:hover .img {
-        background-color: #457b9d;
-;
-        opacity: 0.3;
-    }
-
-    
-
-    .img {
-        /* border: 2px solid red; */
-        opacity: 1;
-        width: 100%;
-        height: 100%;   
-        transition: 0.5s ease;
-        backface-visibility: hidden;
-        /*background-repeat: no-repeat;
-        background-size: cover;
-        background-position: bottom;*/
-    }
-
-    .text-container {
-        /* border: 2px solid purple; */
         height: 100%;
-        position: center;
-        /* backdrop-filter: blur(100px); */
-        /*background-color: #c7c7c7;*/
-        transition: bottom ease-in 0.5s;
+        width: 100%;
+        display: flex;
+        overflow: visible;  
+        text-align: center;
+        position: relative;
+    }
+    .image-container {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+    .img {
+        opacity: 1;
+        width: inherit;
+        height: 100%;   
+    }
+   
+    .text-container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        align-items: center;
+        display: none;
+    }
+    .div-container:hover {
+        filter:grayscale(80%) saturate(0);
+        opacity: 0.6;
     }
 
-    .name {
+
+    .div-container:hover .text-container {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        /*height: 50%;*/
+
+    }
+
+    .div-container:hover .text {
+        display: flex;
         font-size: 1.7rem;
-        
+        margin-left: 30%;
+        color: white;
+    }
+
+    .text {
+        display: none;
     }
 
 
