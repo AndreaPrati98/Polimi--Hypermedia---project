@@ -50,10 +50,6 @@ export default {
             path: '/',
             },
             {
-            name: 'Artists',
-            path: '/artists',    
-            },
-            {
             name: 'Contact Us',
             path: '/',
             },
@@ -151,6 +147,7 @@ export default {
     .nav-item {
         margin-left: 2rem;
         list-style: none;
+
     }
 
 
