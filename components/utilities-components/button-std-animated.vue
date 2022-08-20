@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: "ButtonStd",
+    name: "ButtonStdAnimated",
     props: {
         btnText: {
             type: String,
