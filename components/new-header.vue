@@ -46,6 +46,10 @@ export default {
             path: '/',
             },
             {
+            name: 'Artists',
+            path: '/artists',
+            },
+            {
             name: 'Places',
             path: '/',
             },
