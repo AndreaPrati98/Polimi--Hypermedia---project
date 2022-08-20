@@ -65,6 +65,12 @@ async function initializeDatabaseConnection() {
     Event.belongsToMany(Artist, { through: "EventArtist", timestamps: false })
     Artist.belongsToMany(Event, { through: "EventArtist", timestamps: false })
 
+    Type_of_art.hasMany(Event)
+    Event.belongsTo(Type_of_art)
+
+    Type_of_art.hasMany(Artist)
+    Artist.belongsTo(Type_of_art)
+
     await database.sync({ force: true })
     return {
         Event,
