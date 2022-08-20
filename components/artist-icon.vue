@@ -63,26 +63,27 @@ export default {
         align-items: center;
         display: none;
     }
+
+
     .div-container:hover {
         filter:grayscale(80%) saturate(0);
         opacity: 0.6;
     }
 
-
     .div-container:hover .text-container {
         display: flex;
-
     }
 
     .div-container:hover .text {
         display: flex;
-        font-size: 1.7rem;
-        margin-left: 30%;
-        color: white;
     }
 
     .text {
         display: none;
+        font-size: 1.7rem;
+        margin-left: 30%;
+        color: white;
+        opacity: 1;
     }
 
 
