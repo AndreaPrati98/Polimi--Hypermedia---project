@@ -62,6 +62,9 @@ async function initializeDatabaseConnection() {
     Place.hasMany(Event)
     Event.belongsTo(Place)
 
+    Event.belongsToMany(Artist, { through: "EventArtist", timestamps: false })
+    Artist.belongsToMany(Event, { through: "EventArtist", timestamps: false })
+
     await database.sync({ force: true })
     return {
         Event,
