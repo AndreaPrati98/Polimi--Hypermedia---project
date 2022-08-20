@@ -7,7 +7,6 @@
       <InfoComponent class="info-component"/>
     </div>
     <Map class="map"/>
-    
   </div>
 </template>
 
@@ -18,6 +17,7 @@ import Card from '~/components/card.vue';
 import InfoComponent from '~/components/info-component.vue';
 import Map from '~/components/map.vue';
 import Footer from '../components/footer.vue';
+import ButtonStd from '~/components/utilities-components/button-std.vue';
 
 export default {
   components: { TitleOverlayImage, DescriptiveComponent, Card, InfoComponent, Map, Footer, ButtonStd },

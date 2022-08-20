@@ -12,7 +12,6 @@ export default {
     props: {
         btnText: {
             type: String,
-            required: true,
             default: "Click me",
         },
         btnTextColor: {
