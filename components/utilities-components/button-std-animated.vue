@@ -1,3 +1,5 @@
+<!-- This component works only if the background-color of his parents is not set -->
+
 <template>
     <nuxt-link :to="btnDst" class="collision" :style="cssProps" >
         {{btnText}}
