@@ -42,7 +42,6 @@ export default {
 
 <style scoped>
     
-
     .collision {
         text-decoration: none;
         color: var(--local-text, var(--text-color-light));
@@ -73,7 +72,7 @@ export default {
 
     .collision::before {
         transform: translate(-50%, -50%);
-       left: -20px;
+        left: -20px;
     }
 
     .collision::after {
@@ -91,35 +90,35 @@ export default {
     }
 
     @keyframes move-left {
-    0% {
-        left: -20px;
-    }
-    50% {
-        left: 50%;
-        width: 20px;
-        height: 20px;
-    }
-    100% {
-        left: 50%;
-        height: 400px;
-        width: 400px;
-    }
+        0% {
+            left: -20px;
+        }
+        50% {
+            left: 50%;
+            width: 20px;
+            height: 20px;
+        }
+        100% {
+            left: 50%;
+            height: 400px;
+            width: 400px;
+        }
     }
 
     @keyframes move-right {
-    0% {
-        right: -20px;
-    }
-    50% {
-        right: 50%;
-        width: 20px;
-        height: 20px;
-    }
-    100% {
-        right: 50%;
-        height: 400px;
-        width: 400px;
-    }
+        0% {
+            right: -20px;
+        }
+        50% {
+            right: 50%;
+            width: 20px;
+            height: 20px;
+        }
+        100% {
+            right: 50%;
+            height: 400px;
+            width: 400px;
+        }
     }
 
 </style>
