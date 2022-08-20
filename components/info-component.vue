@@ -20,9 +20,7 @@
                     {{visibleText}}
                 </p>
                 <div class="info-button-wrapper">
-                    <nuxt-link to="/festival-practical-info" class="more-info">
-                        More Info
-                    </nuxt-link>
+                    <ButtonStd :btnDst="'/festival-practical-info'" :btnText="'More Info'" />
                 </div>
             </div>
         </div>
@@ -30,6 +28,7 @@
 </template>
 
 <script>
+import ButtonStd from './utilities-components/button-std.vue';
 
 export default {
     name: "info-component",
@@ -43,8 +42,8 @@ export default {
                 },
                 {
                     buttonId: 2,
-                    buttonTxt: 'Location',
-                    content: 'This is content from botton 2',
+                    buttonTxt: "Location",
+                    content: "This is content from botton 2",
                 },
                 {
                     buttonId: 3,
@@ -53,8 +52,9 @@ export default {
                 },
             ],
             visibleText: "Click on a button on the left side",
-        }
-    }
+        };
+    },
+    components: { ButtonStd }
 }
 </script>
 
@@ -92,12 +92,14 @@ export default {
     .info-container {
         background-color: #eeeeee;
         overflow-y: scroll;
+        
     }
 
     .info-button-wrapper {
         display: flex;
         justify-content: center;
-    }
+        padding: 20px 0;
+    } 
 
     .more-info {
         padding-top: 5px;
