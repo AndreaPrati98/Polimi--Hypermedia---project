@@ -13,7 +13,8 @@
             <div class="imgs">
                 <card-hover-b-w 
                     :descTxt="this.resultObj.tickets.description"
-                    :btnTxt="'Tickets'"
+                    :btnTxt="this.resultObj.tickets.buttonTxt"
+                    :btnDst="this.resultObj.tickets.buttonDst"
                     :imgUrl="this.resultObj.tickets.imgUrl"/>
                 
                 <card-hover-b-w 
@@ -45,7 +46,7 @@
             date section
         </section>
 
-        <section id="Location">
+        <section id="location">
             location section
         </section>
 
@@ -67,7 +68,7 @@ export default {
             tickets: {
                 description: "Go to tickets",
                 buttonTxt: "Tickets",
-                buttonDst: "#date",
+                buttonDst: "#ticket",
                 imgUrl: "https://cdn.pixabay.com/photo/2017/11/24/10/43/ticket-2974645_1280.jpg",
             },
             date: {
@@ -113,6 +114,7 @@ export default {
 
     .section div {
         border: 1px solid red;
+        
     }
 
     .section {
