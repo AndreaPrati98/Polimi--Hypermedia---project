@@ -40,18 +40,16 @@ export default {
   grid-auto-flow: column;
 }
 
+/* Intention is to fill up the remainder of the bottom of the window with the title box when you 
+ * first open a full-size window */
 .title-box{
   display: flex;
   height: 25vh;
-  background-color: red;
-  color: white;  
-  align-items: center;
+  background-color: red;    /* Color of title box  */
+  color: white;             /* Color of text */
+  align-items: center;        /* Vertical centering of text*/
+  justify-content: center;    /* Horizontal centering of text */
 }
-.h2 {
-
-}
-
-
 
 .dance {
   order: 1;
