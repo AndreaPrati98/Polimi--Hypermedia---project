@@ -5,14 +5,13 @@
                 <h2>{{this.titleTxt}}</h2>
                 <!-- <p>Piccola descrizione</p> -->
                 <p>{{this.descTxt}}</p>
-                <button-std class="btn" :btnDst="'/festival-practical-info'" :btnText="this.btnTxt"/>
+                <button-std class="btn" :btnDst="this.btnDst" :btnText="this.btnTxt"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import { concat } from 'methods';
 import buttonStd from '../utilities-components/button-std.vue'
 export default {
     name: "card-hover-b-w",
@@ -30,6 +29,7 @@ export default {
         btnDst: {
             type: String,
             required: true,
+            default: "/",
         },
         imgUrl: {
             type: String,
