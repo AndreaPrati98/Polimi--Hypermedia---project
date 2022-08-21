@@ -19,6 +19,7 @@ export default {
         btnDst: {
             type: String,
             required: true,
+            default: "/",
         },
         btnTxtColor: {
             type: String,
