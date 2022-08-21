@@ -44,6 +44,7 @@ export default {
 
 <style scoped>
     .btn {
+        display: inline-block;
         font-size: var(--font-size);
         text-decoration: none;
         text-transform: uppercase;
