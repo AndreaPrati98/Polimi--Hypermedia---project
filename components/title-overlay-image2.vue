@@ -9,9 +9,9 @@
             </h4>
         </div>
         <div class="imgs">
-            <div class="img1">
-                Img1
-            </div>
+            <card-hover-b-w 
+                :descTxt="'Go to ticket section'"
+                :btnTxt="'Tickets'"/>
             
             <div class="img2">
                 Img2
@@ -30,7 +30,9 @@
 </template>
 
 <script>
+import cardHoverBW from './img-component/card-hover-b-w.vue'
 export default {
+  components: { cardHoverBW },
     name: "festival-practical-info",
 }
 </script>
