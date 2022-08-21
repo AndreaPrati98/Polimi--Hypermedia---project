@@ -1,84 +1,66 @@
 <template>
   <section>
-    <title-overlay-image class="title-overlay-image-props" title="This Year's Artists" description="Check this out!"/>
+    <title-overlay-image class="title-overlay-image-props" title="This Year's Artists" description="Check this out!" image="palais-des-papes-g04269230e_1920.jpg"/>
     <div class="flex-container">
-      <div class="dance artist-column">
-        <div class="title-box">
-          <div class="title">
-            <h2>Dance</h2> 
-          </div>
+        <div class="title-box dance">
+          <h1>Dance</h1>
         </div>
-        <div class ="artists">
-          <artist-icon artistName="Dancer 1" imageName="dance2.jpg"/>
-          <artist-icon artistName="Dancer 2" imageName="dance1.png"/>
+        <div class="title-box music">
+          <h1>Music</h1>
         </div>
-      </div>
-      <div class="music artist-column">
-        <div class="title-box">
-          <div class="title">
-            <h2>Music</h2> 
-          </div>
+        <div class="title-box theater">
+          <h1>Theater</h1>
         </div>
-        <div class="artists">
-          <artist-icon artistName="Musician 1" imageName="music1.jpg"/>
-          <artist-icon artistName="Musician 2" imageName="music2.jpg"/>
-          <artist-icon artistName="Musician 3" imageName="music3.jpg"/>
-          <artist-icon artistName="Musician 4" imageName="music4.jpg"/>
-          <artist-icon artistName="Musician 5" imageName="music5.jpg"/>
-        </div>
-      </div>
-      
-      <div class="theater artist-column">
-        <div class="title-box">
-          <div class="title">
-            <h2>Theater</h2> 
-          </div>
-        </div>
-        <div class="artists">
-          <artist-icon artistName="Actor 1" imageName="theater1.jpg"/>
-          <artist-icon artistName="Actor 2" imageName="theater2.jpg"/>
-        </div>
-      </div>
+        <!-- TODO: loop through all artists -->
+        <!--artist-icon class = "dance" artistName="Dancer 1" imageName="dance2.jpg"/>
+        <artist-icon class = "music" artistName="Musician 1" imageName="music1.jpg"/-->
+  
     </div>
     <footer />
   </section>
 </template>
 
 <script>
-import TitleOverlayImage from '~/components/title-overlay-image-props';
+import TitleOverlayImage from '~/components/title-overlay-image.vue';
 import Footer from '~/components/footer.vue';
 import ArtistIcon from '~/components/artist-icon.vue';
 export default {
     name: "artists",
-    components: {TitleOverlayImage, ArtistIcon, Footer, TitleOverlayImage}
+    components: {TitleOverlayImage, ArtistIcon, Footer}
 
 }
 </script>
 
 <style>
+
 .flex-container {
-  display: flex;
-  flex-direction: row;
-  
-}
-.artist-column {
-  display: flex;
+  display: grid;
   flex-direction: column;
-  width: 33%;
-
+  grid-template-columns: auto auto auto;
+  grid-auto-flow: column;
 }
 
-.title {
+.title-box{
+  display: flex;
   height: 25vh;
   background-color: red;
   color: white;  
-  position: relative;
-  text-align: center;
+  align-items: center;
+}
+.h2 {
 
 }
 
-.artists {
-  overflow: visible;
+
+
+.dance {
+  order: 1;
+}
+.music {
+  order: 2;
+}
+.theater {
+  order: 3;
 }
 
 

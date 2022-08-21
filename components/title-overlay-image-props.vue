@@ -2,8 +2,9 @@
   <section class="section">
         <!-- here we set up the image with the Title -->
         <!-- <img src="../assets/imgs/palais-des-papes-g48e250825_640.jpg" alt="Palace of the Popes" class="img"> -->
+
         <div class="img">
-            
+            <img :src="require(`../assets/imgs/${image}`)">
         </div>
         <div class="title-div">
             <h1>{{ title }}</h1>
@@ -16,7 +17,8 @@
 export default {
     props: {
         title: String,
-        description: String
+        description: String,
+        image: String
     }
 
 }
@@ -30,8 +32,7 @@ export default {
         height: 70vh;
     }
 
-    .img {
-        background-image: url("../assets/imgs/palais-des-papes-g04269230e_1920.jpg");
+    .image {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
