@@ -1,5 +1,5 @@
 <template>
-    <div class="img">
+    <div class="img" :style="cssProps">
         <div class="txt-wrapper">
             <div class="txt">
                 <h2>{{this.titleTxt}}</h2>
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { concat } from 'methods';
 import buttonStd from '../utilities-components/button-std.vue'
 export default {
     name: "card-hover-b-w",
@@ -19,11 +20,9 @@ export default {
     props: {
         titleTxt: {
             type: String,
-            required: true,
         },
         descTxt: {
             type: String,
-            required: true,
         },
         btnTxt: {
             type: String,
@@ -31,6 +30,22 @@ export default {
         btnDst: {
             type: String,
             required: true,
+        },
+        imgUrl: {
+            type: String,
+            required: true,
+            default: "https://cdn.pixabay.com/photo/2017/11/14/13/06/kitty-2948404_1280.jpg",
+        }
+    },
+    computed: {
+        cssProps() {
+            // I have to compute the url like this because the url() css function
+            // doesn't accept "var()" as variable
+            let url = ""
+            url = url.concat("url(", this.imgUrl,")")
+            return {
+                '--img-url': url,
+            }
         }
     }
 }
@@ -43,7 +58,7 @@ export default {
         background-position: center;
         background-repeat: no-repeat;
         
-        background-image: url(../../assets/imgs/tickets.jpg);
+        background-image: var(--img-url);
         background-size: cover;
         
     }
