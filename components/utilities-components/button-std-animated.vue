@@ -35,7 +35,7 @@ export default {
     },
     computed: {
         cssProps() {
-            console.log("Computed cssProps(), the btnBkgdColor value is ", this.btnBkgdHoverColor);
+            
             return{
                 '--local-bkgd': this.btnBkgdColor,
                 '--local-hover-bkgd': this.btnBkgdHoverColor,
