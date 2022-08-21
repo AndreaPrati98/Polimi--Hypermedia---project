@@ -2,7 +2,7 @@
 
 <template>
     <nuxt-link :to="btnDst" class="collision" :style="cssProps" >
-        {{btnText}}
+        <span class="span">{{btnText}}</span>
     </nuxt-link>
 </template>
 
@@ -43,6 +43,11 @@ export default {
 
 <style scoped>
     
+    .span {
+        position: relative;
+        z-index: 20;
+    }
+
     .collision {
         text-decoration: none;
         color: var(--local-text, var(--text-color-light));
@@ -56,7 +61,7 @@ export default {
         line-height: 70px;
         text-align: center;
         position: relative;
-        /* background-color: var(--btn-background-color); */
+        
     }
 
     .collision::before,
@@ -68,7 +73,7 @@ export default {
         background-color: var(--local-bkgd, var(--btn-background-hover-color));
         top: 50%;
         border-radius: 50%;
-        z-index: -1;
+        z-index: 10;
     }
 
     .collision::before {
