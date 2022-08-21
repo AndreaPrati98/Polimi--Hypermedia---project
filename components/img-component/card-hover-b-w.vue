@@ -2,10 +2,10 @@
     <div class="img">
         <div class="txt-wrapper">
             <div class="txt">
-                <h2>Titolo</h2>
+                <h2>{{this.titleTxt}}</h2>
                 <!-- <p>Piccola descrizione</p> -->
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste minima quo consequuntur nulla laborum inventore? Quam deleniti esse ducimus eveniet!</p>
-                <button-std class="btn" :btnDst="'/festival-practical-info'"/>
+                <p>{{this.descTxt}}</p>
+                <button-std class="btn" :btnDst="'/festival-practical-info'" :btnText="this.btnTxt"/>
             </div>
         </div>
     </div>
@@ -14,8 +14,25 @@
 <script>
 import buttonStd from '../utilities-components/button-std.vue'
 export default {
-  components: { buttonStd },
     name: "card-hover-b-w",
+    components: { buttonStd },
+    props: {
+        titleTxt: {
+            type: String,
+            required: true,
+        },
+        descTxt: {
+            type: String,
+            required: true,
+        },
+        btnTxt: {
+            type: String,
+        },
+        btnDst: {
+            type: String,
+            required: true,
+        }
+    }
 }
 </script>
 
@@ -60,9 +77,14 @@ export default {
 
         padding: 10px;
         border: 1.5px solid black;
-        
+        border-radius: 10px;
+    
         /* backdrop-filter: opacity(1); */
         background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .txt p {
+        margin-bottom: 7px;
     }
 
 </style>

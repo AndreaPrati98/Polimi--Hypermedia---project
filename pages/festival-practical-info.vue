@@ -4,11 +4,18 @@
         <div class="inner-container">
             <span class="separator"></span>
             <div class="card-container">
-                <CardHoverBW class="cardHoverBW"/>
+                <CardHoverBW class="cardHoverBW"
+                    :titleTxt="'Questa è la storia'"
+                    :descTxt="'di come la mia vita sia cambiata, capovolta, sottosopra sia finita'"
+                    :btnTxt="'Cliccami'"/>
             </div> 
             <span class="separator"></span>
             <div class="btn-container">
-                <button-std-animated :btnDst="'/festival-practical-info'" :btnBkgdColor="'yellow'" :btnTextColor="'red'" :btnBkgdHoverColor="'green'"/>
+                <button-std-animated 
+                    :btnDst="'/festival-practical-info'" 
+                    :btnBkgdColor="'yellow'" 
+                    :btnTextColor="'red'" 
+                    :btnBkgdHoverColor="'green'"/>
             </div>
         </div>
     </div>
