@@ -18,6 +18,10 @@ export default {
             type: String,
             default: "var(--text-color-light)",
         },
+        btnBkgdColor: {
+            type: String,
+            default: "var(--btn-background-color)",
+        },
         btnBkgdHoverColor: {
             type: String,
             default: "var(--btn-background-hover-color)",
@@ -33,7 +37,8 @@ export default {
         cssProps() {
             console.log("Computed cssProps(), the btnBkgdColor value is ", this.btnBkgdHoverColor);
             return{
-                '--local-bkgd': this.btnBkgdHoverColor,
+                '--local-bkgd': this.btnBkgdColor,
+                '--local-hover-bkgd': this.btnBkgdHoverColor,
                 '--local-text': this.btnTextColor,
             }
         }
@@ -61,7 +66,7 @@ export default {
         line-height: 70px;
         text-align: center;
         position: relative;
-        
+        background-color: var(--local-bkgd);
     }
 
     .collision::before,
@@ -70,7 +75,7 @@ export default {
         content: '';
         width: 20px;
         height: 20px;
-        background-color: var(--local-bkgd, var(--btn-background-hover-color));
+        background-color: var(--local-hover-bkgd, var(--btn-background-hover-color));
         top: 50%;
         border-radius: 50%;
         z-index: 10;
