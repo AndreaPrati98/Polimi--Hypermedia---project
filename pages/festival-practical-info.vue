@@ -4,16 +4,10 @@
         <div class="inner-container">
             <span class="separator"></span>
             <div class="card-container">
-                <CardAdditionalContent/>
+                <CardSimpleHover/>
             </div> 
             <span class="separator"></span>
-            <div class="btn-container">
-                <button-std-animated 
-                    :btnDst="'/festival-practical-info'" 
-                    :btnBkgdColor="'yellow'" 
-                    :btnTextColor="'red'" 
-                    :btnBkgdHoverColor="'green'"/>
-            </div>
+            
         </div>
     </div>
 </template>
@@ -22,10 +16,11 @@
 import ButtonStdAnimated from '~/components/utilities-components/button-std-animated.vue';
 import TitleOverlayImage2 from "../components/title-overlay-image2.vue";
 import CardAdditionalContent from '~/components/img-component/card-additional-content.vue';
+import CardSimpleHover from '~/components/img-component/card-simple-hover.vue';
 
 export default {
     name: "festival-practical-info",
-    components: { TitleOverlayImage2, ButtonStdAnimated, CardAdditionalContent }
+    components: { TitleOverlayImage2, ButtonStdAnimated, CardSimpleHover }
 }
 </script>
 
