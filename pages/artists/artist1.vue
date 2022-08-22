@@ -1,17 +1,10 @@
 <template>
   <section>
     <div>
-        <div class="bar">
-            <h1>Name of Artist</h1>
-            <div>
-                <ul>
-                    <li>Jazz musician</li>
-                    <li>Active since 2014</li>
-                    <li>Seattle, WA</li>
-                </ul>
-            </div>
+        <bio-header artistName="Test Hi" />
+        <div class="left-slot">
+
         </div>
-        <div class="left-slot"></div>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum augue in lectus maximus volutpat. Ut ac libero pulvinar, dignissim ex in, placerat nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; </p>
         <div class="picure1">
             <img class="picture left" src="~/assets/imgs/artists/samples/sydney.jpg"/>
@@ -22,10 +15,6 @@
         </div>
         <p> Praesent ipsum diam, scelerisque eu maximus vel, semper vitae urna. Nam egestas ac justo nec condimentum. Praesent egestas at mauris at pharetra. Nulla id risus nec tortor facilisis faucibus. Duis feugiat viverra mauris, eget blandit libero.</p>
     </div>
-    
-    
-   
-
     <hr/>
     <div class="where">
         <h3>Events including this artist:</h3>
@@ -53,9 +42,10 @@
 import Footer from '~/components/footer.vue';
 import CardAdditionalContent from '~/components/img-component/card-additional-content.vue';
 import Default from '~/layouts/default.vue';
+import BioHeader from '~/components/artist-bio-header.vue';
 export default {
     name: "artists",
-    components: {Footer, Default, CardAdditionalContent}
+    components: {Footer, Default, BioHeader, CardAdditionalContent}
 
 }
 </script>
@@ -90,6 +80,8 @@ ul {
     width: 100%;
     padding-left: 10%;
     font-family: 'Poppins';
+
+    list-style-type:circle;
 }
 
 p {
