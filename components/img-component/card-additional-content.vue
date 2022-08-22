@@ -2,10 +2,14 @@
     <div class="container">
         <div class="card">
             <img src="https://picsum.photos/id/404/367/267"/>
-            <h3>Lorem ipsum</h3>
+            <h3>{{ title }}</h3>
             <div class="focus-content">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/> <a href="#">Link to source</a>
+                    {{ content }}
+                    <button-std 
+                        :btnTextSize="'12px'"
+                        :btnText="btnTxt"
+                        :btnDst="btnDst"/>
                 </p>
             </div>
         </div>
@@ -13,58 +17,74 @@
 </template>
 
 <script>
+import buttonStd from '../utilities-components/button-std.vue'
 export default {
+  components: { buttonStd },
     name: "card-additional-content",
+    props: {
+        title: {
+            type: String,
+        },
+        content: {
+            type: String,
+        },
+        btnTxt: {
+            type: String,
+        },
+        btnDst: {
+            type: String,
+        }
+    }
 }
 </script>
 
 <style scoped>
 
     .card {
-  width: 300px;
-  height: 280px;
-  padding: 0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-  border-radius: 8px;
-  box-sizing: border-box;
-  overflow: hidden;
-}
+    width: 300px;
+    height: 280px;
+    padding: 0;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+    }
 
-.card * {
-  transition: 0.3s ease all;
-}
+    .card * {
+    transition: 0.3s ease all;
+    }
 
-.card img {
-  margin: 0;
-  width: 300px;
-  height: 224px;
-  object-fit: cover;
-  display: block;
-}
+    .card img {
+    margin: 0;
+    width: 300px;
+    height: 224px;
+    object-fit: cover;
+    display: block;
+    }
 
-.card h3 {
-  margin: 0;
-  padding: 12px 12px 48px;
-  line-height: 32px;
-  font-weight: 500;
-  font-size: 20px;
-}
+    .card h3 {
+    margin: 0;
+    padding: 12px 12px 48px;
+    line-height: 32px;
+    font-weight: 500;
+    font-size: 20px;
+    }
 
-.card .focus-content {
-  display: block;
-  padding: 8px 12px;
-}
+    .card .focus-content {
+    display: block;
+    padding: 8px 12px;
+    }
 
-.card p {
-  margin: 0;
-  line-height: 1.5;
-}
+    .card p {
+    margin: 0;
+    line-height: 1.5;
+    }
 
-.card:hover img, .card:focus-within img {
-  margin-top: -80px;
-}
+    .card:hover img, .card:focus-within img {
+    margin-top: -80px;
+    }
 
-.card:hover h3, .card:focus-within h3 {
-  padding: 8px 12px 0;
-}
+    .card:hover h3, .card:focus-within h3 {
+    padding: 8px 12px 0;
+    }
 </style>
