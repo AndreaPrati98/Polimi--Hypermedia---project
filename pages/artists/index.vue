@@ -12,8 +12,8 @@
           <h1>Theater</h1>
         </div>
         <!-- TODO: loop through all artists -->
-        <!--artist-icon class = "dance" artistName="Dancer 1" imageName="dance2.jpg"/>
-        <artist-icon class = "music" artistName="Musician 1" imageName="music1.jpg"/-->
+        <artist-icon class = "dance" artistName="Dancer 1" imageName="dance2.jpg"/>
+        <!--artist-icon class = "music" artistName="Musician 1" imageName="music1.jpg"/-->
   
     </div>
     <footer />
@@ -36,8 +36,9 @@ export default {
 .flex-container {
   display: grid;
   flex-direction: column;
-  grid-template-columns: auto auto auto;
-  grid-auto-flow: column;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /*grid-auto-flow: column;*/
+  justify-content: space-between;
 }
 
 /* Intention is to fill up the remainder of the bottom of the window with the title box when you 
@@ -53,12 +54,17 @@ export default {
 
 .dance {
   order: 1;
+  flex-direction: column;
 }
 .music {
   order: 2;
+  flex-direction: column;
+
 }
 .theater {
   order: 3;
+  flex-direction: column;
+
 }
 
 
