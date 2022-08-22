@@ -154,7 +154,10 @@ export default {
 
     }
 
-
+    .header{
+        font-family: 'Open Sans';
+        font-weight: 400;
+    }
 
     .nav-logo {
         text-decoration: none;

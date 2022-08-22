@@ -2,6 +2,7 @@
   <div class="artist-icon">
     <div class="div-container">
         <div class="image-container">
+            <div class="grey-box"></div>
             <img :src="require(`../assets/imgs/artists/${imageName}`)">
         </div>
         <div class="text-container">
@@ -31,10 +32,8 @@ export default {
 
 <style scoped>
     .artist-icon {
-        display: flex;
         height: 40vh;
         width: 100%;
-        position: relative;
     }
 
     .div-container {
@@ -51,6 +50,13 @@ export default {
         width: 100%;
         position: absolute;
     }
+
+    .grey-box {
+        background-color: black;
+        filter: grayscale(50%);
+        opacity: 0.4;
+        display: flex;
+    }
     .img {
         opacity: 1;
         width: 100%;
@@ -66,9 +72,8 @@ export default {
     }
 
 
-    .div-container:hover {
-        filter:grayscale(80%) saturate(0);
-        opacity: 0.6;
+    .grey-box:hover {
+        display: flex;
     }
 
     .div-container:hover .text-container {

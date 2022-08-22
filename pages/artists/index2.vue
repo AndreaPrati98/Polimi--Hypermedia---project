@@ -139,11 +139,20 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  
+}
+
+h2 {
+  font-family: 'Poppins';
+  font-weight: 200;
+  font-size: 2.5em;
 }
 
 /* Name of the artist */
 .name {
   font-size: xx-large;
+  font-family: 'Oswald';
+  font-weight: 700;
   color: white;
   display: none;
   
@@ -155,6 +164,11 @@ export default {
   top:20%;
   left: 20%;
   right: 20%;
+}
+
+.title-overlay-image-props {
+  font-family: 'Open Sans';
+  font-weight: 400;
 }
 
 </style>
