@@ -7,7 +7,17 @@
         <div class="content">
             <div class="indices-container">
                 <ul>
-                    <li>
+                    <li v-for="(info, infoIndex) of btnInfos"
+                        :key="`information${infoIndex}`"
+                        class="button"
+                        >
+
+                        <button @click="visibleText = info.content">
+                            {{info.buttonTxt}}
+                        </button>
+
+                    </li>
+                    <!-- <li>
                         <button-std 
                             :btnDst="'#'" 
                             :btnText="'Date'"/>
@@ -26,12 +36,12 @@
                         <button-std
                             :btnDst="'#'"
                             :btnText="'Accessibility'"/>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <span class="separator"></span>
             <div class="text-content">
-                
+                {{ visibleText }}
             </div>
         </div>
     </section>
@@ -44,21 +54,26 @@ export default {
     name: "info-component",
     data() {
         return {
-            informations: [
+            btnInfos: [
                 {
                     buttonId: 1,
-                    buttonTxt: "Date and Tickets",
+                    buttonTxt: "Date",
                     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda cum quibusdam cumque, ipsam, officia quia dolorem voluptates labore repellat beatae, laudantium culpa molestias quisquam. Optio sunt sint cupiditate mollitia amet ullam, nemo, maiores in itaque incidunt perspiciatis unde, velit repudiandae consequatur omnis nihil delectus hic iure quas. Facere velit, magni rem reiciendis eius ad dolorum beatae repellendus id tenetur vero porro! Fugit, ratione? Vitae saepe sed quaerat, excepturi consequatur maiores? Deleniti dolorem, earum odit, consequatur cum, officia necessitatibus provident nobis distinctio dolore quibusdam soluta quo obcaecati nihil? Doloremque dolor accusamus iusto neque atque quos, soluta facilis. Nulla nisi reprehenderit nostrum atque. Ullam, odio. Doloremque dolorum quas eius ut laudantium accusamus explicabo sapiente quaerat amet suscipit obcaecati ullam, vel dolor ab illo sit? Voluptas accusantium ab vero quod suscipit, magni, esse unde natus eum, corporis beatae a. Ipsa aspernatur in eos, voluptates doloribus laboriosam sit expedita quo nulla sequi porro cum? Assumenda, modi consequatur impedit amet pariatur asperiores ullam voluptatum illum nulla animi est commodi libero fugiat veritatis unde maiores a sunt tempore architecto, dolorum reprehenderit. Accusamus libero similique velit eius corrupti deleniti ratione distinctio nostrum possimus perferendis? Ipsa placeat asperiores debitis consequatur illum nihil cum dolorum ullam deleniti, odio aperiam?",
                 },
                 {
                     buttonId: 2,
-                    buttonTxt: "Location",
+                    buttonTxt: "Tickets",
                     content: "This is content from botton 2",
                 },
                 {
                     buttonId: 3,
-                    buttonTxt: "Accessibility",
+                    buttonTxt: "Location",
                     content: "This is content from botton 3",
+                },
+                {
+                    buttonId: 4,
+                    buttonTxt: "Accessibility",
+                    content: "This is content from botton 4",
                 },
             ],
             visibleText: "Click on a button on the left side",
@@ -94,7 +109,7 @@ export default {
         /* flex-wrap: wrap; */
         
         /* to make the overflow: scroll work it's necessary to set justify-content: start*/
-        justify-content: start;
+        justify-content: flex-start;
         overflow: scroll;
 
         padding: 0;

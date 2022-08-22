@@ -22,6 +22,7 @@ import ButtonStd from '~/components/utilities-components/button-std.vue';
 export default {
   components: { TitleOverlayImage, DescriptiveComponent, Card, InfoComponent, Map, Footer, ButtonStd },
     name: "festival-intro",
+  
 }
 </script>
 
@@ -29,6 +30,7 @@ export default {
   .double-section{
     display: flex;
     justify-content: space-around;
+    align-items: center;
   }
 
   .map {
