@@ -46,6 +46,10 @@ export default {
             path: '/',
             },
             {
+            name: 'Artists',
+            path: '/artists',
+            },
+            {
             name: 'Places',
             path: '/',
             },
@@ -150,7 +154,10 @@ export default {
 
     }
 
-
+    .header{
+        font-family: 'Open Sans';
+        font-weight: 400;
+    }
 
     .nav-logo {
         text-decoration: none;
