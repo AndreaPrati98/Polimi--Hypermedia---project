@@ -6,72 +6,30 @@
         <div class="item title-box">
           <h2>Dance</h2>
         </div>
-        <div class="item icon dance">
-          <div class="image-placeholder">
-            <a href="http://localhost:3000/artists/artist1">
-              <img class ="image" src="~/assets/imgs/artists/dance1.png"/>
-            </a>
-            <div class="name-box">
-              <h1 class = "name">SHORT NAME</h1>
-            </div>
-          </div>
-        </div>
-        <div class="item icon dance">
-          <div class="image-placeholder">
-            <img class ="image" src="~/assets/imgs/artists/dance2.jpg"/>
-            <div class="name-box">
-              <h1 class = "name">NAME OF ARTIST WHAT IF IT IS SUPER LONG</h1>
-            </div>
-          </div>
-          <div class="shade-placeholder"></div>
-        </div>
+        <artist-icon artistName="Test1" imageName='dance1.png'/>
+        <artist-icon artistName="Test2" imageName='dance2.jpg'/>
+
       </div>
       <div class="column music">
         <div class="item title-box">
           <h2>Music</h2>
         </div>
-        <div class="item icon music">
-          <div class="image-placeholder">
-            <img class ="image" src="~/assets/imgs/artists/music1.jpg"/>
-            <div class="name-box">
-              <h1 class = "name">NAME OF ARTIST WHAT IF IT IS SUPER LONG wowwwwwww</h1>
-            </div>
+        <artist-icon artistName="Test3" imageName='music1.jpg'/>
+        <artist-icon artistName="Test4" imageName='music2.jpg'/>
+        <artist-icon artistName="More Music 1" imageName='music3.jpg'/>
+        <artist-icon artistName="More Music 2" imageName='music4.jpg'/>
+        <artist-icon artistName="More Music 3" imageName='music5.jpg'/>
 
-          </div>
-          <div class="shade-placeholder"></div>
-        </div>
-        <div class="item icon music">
-          <div class="image-placeholder">
-            <img class ="image" src="~/assets/imgs/artists/music2.jpg"/>
-            <div class="name-box">
-              <h1 class = "name">REGULAR NAME OK</h1>
-            </div>
-          </div>
-          <div class="shade-placeholder"></div>
-        </div>
+
       </div>
       <div class="column theater">
         <div class="item title-box">
           <h2>Theater</h2>
         </div>
-        <div class="item icon theater">
-          <div class="image-placeholder">
-            <img class ="image" src="~/assets/imgs/artists/theater1.jpg"/>
-            <div class="name-box">
-              <h1 class = "name">DESTINY MORA</h1>
-            </div>
-          </div>
-          <div class="shade-placeholder"></div>
-        </div>
-        <div class="item icon theater">
-          <div class="image-placeholder">
-            <img class ="image" src="~/assets/imgs/artists/theater2.jpg"/>
-            <div class="name-box">
-              <h1 class = "name">ANDREA PRATI</h1>
-            </div>
-          </div>
-          <div class="shade-placeholder"></div>
-        </div>
+        
+        <artist-icon artistName="Test5" imageName='theater1.jpg'/>
+        <artist-icon artistName="Test6" imageName='theater2.jpg'/>
+
       </div>
     </div>
     <footer />
@@ -81,9 +39,10 @@
 <script>
 import TitleOverlayImage from '~/components/title-overlay-image.vue';
 import Footer from '~/components/footer.vue';
+import ArtistIcon from '~/components/artist-icon.vue';
 export default {
     name: "artists",
-    components: {TitleOverlayImage, Footer}
+    components: {TitleOverlayImage, ArtistIcon, Footer}
 
 }
 </script>
