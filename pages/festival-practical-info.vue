@@ -4,10 +4,7 @@
         <div class="inner-container">
             <span class="separator"></span>
             <div class="card-container">
-                <CardHoverBW class="cardHoverBW"
-                    :titleTxt="'Questa è la storia'"
-                    :descTxt="'di come la mia vita sia cambiata, capovolta, sottosopra sia finita'"
-                    :btnTxt="'Cliccami'"/>
+                <CardAdditionalContent/>
             </div> 
             <span class="separator"></span>
             <div class="btn-container">
@@ -24,10 +21,11 @@
 <script>
 import ButtonStdAnimated from '~/components/utilities-components/button-std-animated.vue';
 import TitleOverlayImage2 from "../components/title-overlay-image2.vue";
-import CardHoverBW from "../components/img-component/card-hover-b-w.vue";
+import CardAdditionalContent from '~/components/img-component/card-additional-content.vue';
+
 export default {
     name: "festival-practical-info",
-    components: { TitleOverlayImage2, ButtonStdAnimated, CardHoverBW }
+    components: { TitleOverlayImage2, ButtonStdAnimated, CardAdditionalContent }
 }
 </script>
 
