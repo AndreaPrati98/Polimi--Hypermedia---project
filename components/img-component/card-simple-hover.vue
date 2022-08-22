@@ -66,17 +66,20 @@ h2 {
   font-weight: 700;
   color: white;
   display: none;
+  
 }
 /* Container that holds the name of the artist (directly overlaid over the image of the artist)*/
 .name-box {
+  display: flex;
   position: absolute;
+  top:0;
+  left:0;
   height: 100%;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
 
-  
-  left: 0; 
-  right: 0;
-  margin-left: auto; 
-  margin-right: auto; 
+
   /* width: 100px; */
 }
 </style>

@@ -6,19 +6,19 @@
         <div class="item title-box">
           <h2>Dance</h2>
         </div>
-        <artist-icon artistName="Test1" imageName='dance1.png'/>
-        <artist-icon artistName="Test2" imageName='dance2.jpg'/>
+        <card-hover icon artistName="Test1" imageName='dance1.png'/>
+        <card-hover artistName="Test2" imageName='dance2.jpg'/>
 
       </div>
       <div class="column music">
         <div class="item title-box">
           <h2>Music</h2>
         </div>
-        <artist-icon artistName="Test3" imageName='music1.jpg'/>
-        <artist-icon artistName="Test4" imageName='music2.jpg'/>
-        <artist-icon artistName="More Music 1" imageName='music3.jpg'/>
-        <artist-icon artistName="More Music 2" imageName='music4.jpg'/>
-        <artist-icon artistName="More Music 3" imageName='music5.jpg'/>
+        <card-hover artistName="Test3" imageName='music1.jpg'/>
+        <card-hover artistName="Test4" imageName='music2.jpg'/>
+        <card-hover artistName="More Music 1" imageName='music3.jpg'/>
+        <card-hover artistName="More Music 2" imageName='music4.jpg'/>
+        <card-hover artistName="More Music 3" imageName='music5.jpg'/>
 
 
       </div>
@@ -27,8 +27,8 @@
           <h2>Theater</h2>
         </div>
         
-        <artist-icon artistName="Test5" imageName='theater1.jpg'/>
-        <artist-icon artistName="Test6" imageName='theater2.jpg'/>
+        <card-hover artistName="Test5" imageName='theater1.jpg'/>
+        <card-hover artistName="Test6" imageName='theater2.jpg'/>
 
       </div>
     </div>
@@ -39,10 +39,10 @@
 <script>
 import TitleOverlayImage from '~/components/title-overlay-image.vue';
 import Footer from '~/components/footer.vue';
-import ArtistIcon from '~/components/artist-icon.vue';
+import CardHover from '~/components/img-component/card-simple-hover.vue';
 export default {
     name: "artists",
-    components: {TitleOverlayImage, ArtistIcon, Footer}
+    components: {TitleOverlayImage, CardHover, Footer}
 
 }
 </script>
