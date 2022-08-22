@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="card">
-            <img src="https://picsum.photos/id/404/367/267"/>
+            <img :src="imgUrl"/>
             <h3>{{ title }}</h3>
             <div class="focus-content">
                 <p>
@@ -27,6 +27,11 @@ export default {
         },
         content: {
             type: String,
+        },
+        imgUrl: {
+            type: String,
+            default: 'https://cdn.pixabay.com/photo/2017/11/09/21/41/cat-2934720_1280.jpg', 
+            required: true,
         },
         btnTxt: {
             type: String,
