@@ -8,11 +8,7 @@
 }
 
 html {
-    font-family: 'Roboto', sans-serif; 
     scroll-behavior: smooth;
-    font-family: 'Open Sans', sans-serif; /* 400 800 */
-    font-family: 'Oswald', sans-serif; /* 300, 400, 700 */
-    font-family: 'Poppins', sans-serif; /* 100 200, 400, 500, 700 */
-    font-family: 'Tiro Devanagari Hindi', serif; /* 400 */
+    font-family: 'Open Sans', 'Oswald', 'Poppins', 'Tiro Devanagari Hindi', sans-serif; /* 400 800 */
 
 }
