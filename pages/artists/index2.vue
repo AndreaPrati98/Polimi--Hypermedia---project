@@ -8,7 +8,7 @@
         </div>
         <div class="item icon dance">
           <div class="image-placeholder">
-            <a href="http://localhost:3000/festival-intro">
+            <a href="http://localhost:3000/artists/artist1">
               <img class ="image" src="~/assets/imgs/artists/dance1.png"/>
             </a>
             <div class="name-box">
