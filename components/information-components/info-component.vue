@@ -1,34 +1,44 @@
 <template>
     <section class="section">
-        <div class="div-container">
-            <div class="buttons-container">
-                <!-- <button class="button" onclick="console.log('Button clicked')">Date and tickets</button> -->
-                <!-- <button class="button" onclick="console.log('Button clicked')">Location</button> -->
-                <!-- <button class="button" onclick="console.log('Button clicked')">Accessibility</button> -->
-                <button 
-                v-for="(info, infoIndex) of informations"
-                :key="`information${infoIndex}`"
-                @click="visibleText = info.content"
-                class="button"
-                onclick="console.log('Hey there')"
-                >
-                {{info.buttonTxt}}
-                </button>
+        <div class="title">
+            <h1>Title</h1>
+        </div>
+        <span class="separator"></span>
+        <div class="content">
+            <div class="indices-container">
+                <ul>
+                    <li>
+                        <button-std 
+                            :btnDst="'#'" 
+                            :btnText="'Date'"/>
+                    </li>
+                    <li>
+                        <button-std 
+                            :btnDst="'#'"
+                            :btnText="'Tickets'"/>
+                    </li>
+                    <li>
+                        <button-std
+                            :btnDst="'#'"
+                            :btnText="'Location'"/>
+                    </li>
+                    <li>
+                        <button-std
+                            :btnDst="'#'"
+                            :btnText="'Accessibility'"/>
+                    </li>
+                </ul>
             </div>
-            <div class="info-container">
-                <p class="text-container">
-                    {{visibleText}}
-                </p>
-                <div class="info-button-wrapper">
-                    <ButtonStd :btnDst="'/festival-practical-info'" :btnText="'More Info'" />
-                </div>
+            <span class="separator"></span>
+            <div class="text-content">
+                
             </div>
         </div>
     </section>
 </template>
 
 <script>
-import ButtonStd from './utilities-components/button-std.vue';
+import ButtonStd from '../utilities-components/button-std.vue';
 
 export default {
     name: "info-component",
@@ -61,54 +71,52 @@ export default {
 <style scoped>
     .section {
         width: 35%;
-        height: 40vh;
+        height: 100%;
         margin: 30px 0;
     }
 
-    .div-container {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        height: 100%;
+    .title h1 {
+        margin: 0;
+    }
+    .separator {
+        border-top: 1px solid #333;
+        width: 100%;
+        height: 5px;
+        display: block;   
     }
 
-    .button {
-        margin: 1rem;
-        background-color: #ffffff;
-        border: none;
+    .content {
+        width: 100%;
+    }
+    .content ul {
         
-    }
-
-    .button:active {
-        background-color: #f4f4f4;
-    }
-
-    .buttons-container {
-        background-color: #c7c7c7;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .info-container {
-        background-color: #eeeeee;
-        overflow-y: scroll;
+        /* flex-wrap: wrap; */
         
+        /* to make the overflow: scroll work it's necessary to set justify-content: start*/
+        justify-content: start;
+        overflow: scroll;
+
+        padding: 0;
+        width: 100%;
+    }
+    .content li{
+        margin: 5px 5px;
+        display: inline-block;
+        font-weight: bold;
     }
 
-    .info-button-wrapper {
-        display: flex;
-        justify-content: center;
-        padding: 20px 0;
-    } 
-
-    .more-info {
-        padding-top: 5px;
-        padding-bottom: 10px;
+    .content a {
+        text-decoration: none;
     }
 
-    .text-container {
-        width: max(100%, 10ch);
-        padding: 5%;
-        
+    .indices-container {
+        width: 100%;
     }
+
+    .text-content {
+        border: 1px solid black;
+        height: 300px;
+    }
+
 </style>
