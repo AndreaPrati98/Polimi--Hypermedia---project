@@ -1,7 +1,10 @@
 <template>
-    <nuxt-link :to="btnDst" class="btn" :style="cssProps">
+    <nuxt-link v-if="isNuxtLink" :to="btnDst" class="btn" :style="cssProps">
         {{btnText}}
     </nuxt-link>
+    <a v-else :href="'//' + btnDst" target="_blank" class="btn" :style="cssProps">
+        {{btnText}}
+    </a>
 </template>
 
 <script>
@@ -28,7 +31,12 @@ export default {
         btnBkgdColor: {
             type: String,
             default: 'var(--btn-background-color)',
-        }
+        },
+        isNuxtLink: {
+            type: Boolean,
+            default: true,
+        },
+
 
     },
     computed: {
