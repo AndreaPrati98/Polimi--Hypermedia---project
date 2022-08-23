@@ -1,7 +1,8 @@
 <template>
   <a href="http://localhost:3000/artists/artist1">
     <div class="image-placeholder">
-        <img class ="image" :src="require(`~/assets/imgs/artists/${imageName}`)"/>
+        <!--img class ="image" :src="require(`~/assets/imgs/artists/${imageName}`)"/-->
+        <img class ="image" :src="`${imageName}`"/>
       <div class="name-box">
         <h1 class="name">{{ artistName}}</h1>
       </div>

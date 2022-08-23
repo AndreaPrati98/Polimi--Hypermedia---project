@@ -159,6 +159,23 @@ async function runMainApi() {
         return res.json(filtered)
     })
 
+    // HTTP GET api that returns all the cats in our fake database
+    app.get("/artists", async (req, res) => {
+        const result = await models.Artist.findAll()
+        const filtered = []
+        for (const element of result) {
+            filtered.push({
+                id: element.id,
+                name: element.name,
+                img: element.img,
+                date_of_birth: element.date_of_birth,
+                description: element.description,
+            })
+        }
+        return res.json(filtered)
+    })
+
+
     // HTTP POST apio that will push (and therefore create) a new element in 
     // our fake database 
     app.post("/cats", (req, res) => {
