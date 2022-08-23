@@ -1,9 +1,12 @@
 <!-- This component works only if the background-color of his parents is not set -->
 
 <template>
-    <nuxt-link :to="btnDst" class="collision" :style="cssProps" >
+    <nuxt-link v-if="isNuxtLink" :to="btnDst" class="collision" :style="cssProps" >
         <span class="span">{{btnText}}</span>
     </nuxt-link>
+    <a v-else :href="'//' + btnDst" target="_blank" class="collision" :style="cssProps"> 
+        <span class="span">{{btnText}}</span>
+    </a>
 </template>
 
 <script>
@@ -29,7 +32,11 @@ export default {
         btnDst: {
             type: String,
             required: true,
-        }
+        },
+        isNuxtLink: {
+            type: Boolean,
+            default: true,
+        },
 
         
     },
