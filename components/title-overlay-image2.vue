@@ -37,22 +37,6 @@
     
             </div>
         </section>
-
-        <section id="ticket">
-            Ticket section
-        </section>
-
-        <section id="date">
-            date section
-        </section>
-
-        <section id="location">
-            location section
-        </section>
-
-        <section id="accessibility">
-            accessibility section
-        </section>
     </section>
 </template>
 
@@ -60,8 +44,18 @@
 import cardHoverBW from './img-component/card-hover-b-w.vue'
 import CardHoverBW from './img-component/card-hover-b-w.vue';
 export default {
-    name: "festival-practical-info",
+    name: "title-overlay-2",
     components: { cardHoverBW, CardHoverBW },
+    props: {
+        title: {
+            type: String,
+            required: true,
+        },
+        subtitle: {
+            type: String,
+            required: true,
+        }
+    },
     data() {
         // here we will use axios to retrieve content from the db
         var pageTxtList = {
@@ -112,15 +106,11 @@ export default {
 
 <style scoped>
 
-    .section div {
-        border: 1px solid red;
-        
-    }
-
     .section {
         display: grid;
         grid-template-columns: 2fr 5fr;
-        height: 70vh;
+        height: 100%;
+        border: 1px solid red;
     }
 
     .imgs {
@@ -135,28 +125,6 @@ export default {
         transition: filter .2s linear .3s,
                     opacity .3s linear;    
         
-    }
-
-    
-
-    .img1 {
-        background-image: url(../assets/imgs/data.png);
-        background-size: contain;
-    }
-
-    .img2 {
-        background-image: url(../assets/imgs/location.png);
-        background-size: contain;
-    }
-
-    .img3 {
-        background-image: url(../assets/imgs/tickets.jpg);
-        background-size: cover;
-    }
-
-    .img4 {
-        background-image: url(../assets/imgs/accessibility.png);
-        background-size: cover;
     }
 
     .info {
