@@ -1,7 +1,7 @@
 <template>
     <section class="section">
         <div class="title">
-            <h1>Title</h1>
+            <h1>{{ title }}</h1>
         </div>
         <span class="separator"></span>
         <div class="content">
@@ -40,6 +40,12 @@ import ButtonStd from '../utilities-components/button-std.vue';
 
 export default {
     name: "info-component",
+    props: {
+        title: {
+            type: String,
+            required: true,
+        }
+    },
     data() {
         return {
             btnInfos: [
