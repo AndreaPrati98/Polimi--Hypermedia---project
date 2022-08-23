@@ -4,13 +4,13 @@
             <img :src="imgUrl"/>
             <h3>{{ title }}</h3>
             <div class="focus-content">
-                <p>
-                    {{ content }}
-                    <button-std 
+                <p>{{ content }}</p>
+                <button-std
                         :btnTextSize="'12px'"
                         :btnText="btnTxt"
                         :btnDst="btnDst"/>
-                </p>
+                
+                
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@ export default {
 
     .card {
     width: 300px;
-    height: 280px;
+    height: 330px;
     padding: 0;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
     border-radius: 8px;
@@ -83,6 +83,8 @@ export default {
     .card p {
     margin: 0;
     line-height: 1.5;
+    padding: 8px 12px;
+
     }
 
     .card:hover img, .card:focus-within img {
@@ -91,5 +93,9 @@ export default {
 
     .card:hover h3, .card:focus-within h3 {
     padding: 8px 12px 0;
+    }
+
+    .button-std{
+        margin-top: 20px;
     }
 </style>
