@@ -61,12 +61,16 @@ export default {
         font-weight: bold;
         display: block;
         height: 70px;
-        width: 200px;
+        width: 100%;
         overflow: hidden;
         line-height: 70px;
         text-align: center;
         position: relative;
         background-color: var(--local-bkgd);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .collision::before,
