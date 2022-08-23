@@ -24,7 +24,10 @@
                 </div>
                 <span class="separator"></span>
                 <div class="text-button-container">
-                    <button-std-animated :btnText="'Buy tickets'" :btnDst="'#'" class="ticket-button"/>
+                    <button-std-animated class="ticket-button"
+                        :btnText="'Buy tickets'" 
+                        :btnDst="'google.com'" 
+                        :isNuxtLink="false" />
                 </div>
             </div>
         </div>
@@ -108,10 +111,6 @@ export default {
         margin: 5px 5px;
         display: inline-block;
         font-weight: bold;
-    }
-
-    .content a {
-        text-decoration: none;
     }
 
     .indices-container {
