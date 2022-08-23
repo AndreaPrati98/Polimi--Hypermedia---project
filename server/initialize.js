@@ -114,7 +114,8 @@ export default async (models) => {
             date_of_birth: "27/06/96",
             description: "she is amazing",
             
-        },{
+        },
+        {
             name: "Maria5",
             img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
             date_of_birth: "27/06/96",
@@ -128,7 +129,8 @@ export default async (models) => {
             date_of_birth: "27/06/96",
             description: "active since 1965",
             
-        },{
+        },
+        {
             name: "Maria7",
             img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
             date_of_birth: "27/06/96",
@@ -142,7 +144,8 @@ export default async (models) => {
             date_of_birth: "27/06/96",
             description: "academy awards",
             
-        },{
+        },
+        {
             name: "Maria9",
             img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
             date_of_birth: "27/06/96",
@@ -156,7 +159,8 @@ export default async (models) => {
             date_of_birth: "27/06/96",
             description: "academy awards",
             
-        },{
+        },
+        {
             name: "Maria11",
             img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
             date_of_birth: "27/06/96",
@@ -262,6 +266,9 @@ export default async (models) => {
     console.log("\n\n")
     const allEvents = await models.Event.findAll()
 
+    console.log("\n\n")
+    const allArtists = await models.Artist.findAll()
+
  
     for (let index = 0; index < allEvents.length; index++) {
         // Returns a random integer from 0 to 9: Math.floor(Math.random() * 10);
@@ -272,6 +279,24 @@ export default async (models) => {
     }
     
 
+    const allIndicies = new Set();
+    for(let val = 1; val <= allArtists.length; val++) {
+        allIndicies.add(val)
+    }
+    
+    const artistsToIncl = new Set();
 
+    for(let i = 0; i < allEvents.length; i++) {
+        // How many artists are performing in this i-th event:
+        let randomNum = Math.floor(Math.random() * allArtists.length);
+        for(let j = 0; j < randomNum; j++) {
+            // Add the randomly-generated index to the set
+            artistsToIncl.add(Math.floor(Math.random() * allArtists.length))
+        }
 
+        artistsToIncl.forEach((value) => {
+            allIndicies.delete(value);
+            models.EventArtist.create({eventId: allEvents[i].id, artistId: allArtists[value].id})
+        })
+    }
 }

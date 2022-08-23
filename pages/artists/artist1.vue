@@ -20,7 +20,6 @@
     <transitional-link-cards linkText="Events including this artist" />
 
 
-    <footer />
   </section>
 </template>
 

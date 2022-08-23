@@ -59,9 +59,12 @@ async function initializeDatabaseConnection() {
         address: DataTypes.STRING,
     }, {timestamps: false})
 
+
     Place.hasMany(Event)
     Event.belongsTo(Place)
 
+    const EventArtist = database.define("EventArtist", {},{timestamps:false})
+    
     Event.belongsToMany(Artist, { through: "EventArtist", timestamps: false })
     Artist.belongsToMany(Event, { through: "EventArtist", timestamps: false })
 
@@ -77,6 +80,7 @@ async function initializeDatabaseConnection() {
         Artist,
         Place,
         Type_of_art,
+        EventArtist,
     }
 }
 
