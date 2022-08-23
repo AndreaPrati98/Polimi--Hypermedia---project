@@ -9,45 +9,30 @@
                 <ul>
                     <li v-for="(info, infoIndex) of btnInfos"
                         :key="`information${infoIndex}`"
-                        class="button"
                         >
-
-                        <button @click="visibleText = info.content">
+                        <button @click="visibleText = info" class="button">
                             {{info.buttonTxt}}
                         </button>
-
                     </li>
-                    <!-- <li>
-                        <button-std 
-                            :btnDst="'#'" 
-                            :btnText="'Date'"/>
-                    </li>
-                    <li>
-                        <button-std 
-                            :btnDst="'#'"
-                            :btnText="'Tickets'"/>
-                    </li>
-                    <li>
-                        <button-std
-                            :btnDst="'#'"
-                            :btnText="'Location'"/>
-                    </li>
-                    <li>
-                        <button-std
-                            :btnDst="'#'"
-                            :btnText="'Accessibility'"/>
-                    </li> -->
                 </ul>
             </div>
             <span class="separator"></span>
-            <div class="text-content">
-                {{ visibleText }}
+            <div class="inner-container">
+                <div class="text-container">
+                    <h1>{{ visibleText.buttonTxt }}</h1>
+                    <p>{{ visibleText.content }}</p>
+                </div>
+                <span class="separator"></span>
+                <div class="text-button-container">
+                    <button-std-animated :btnText="'Buy tickets'" :btnDst="'#'" class="ticket-button"/>
+                </div>
             </div>
         </div>
     </section>
 </template>
 
 <script>
+import ButtonStdAnimated from '../utilities-components/button-std-animated.vue';
 import ButtonStd from '../utilities-components/button-std.vue';
 
 export default {
@@ -75,11 +60,15 @@ export default {
                     buttonTxt: "Accessibility",
                     content: "This is content from botton 4",
                 },
+
             ],
-            visibleText: "Click on a button on the left side",
-        };
+            visibleText: {
+                buttonTxt: "Click on the upper buttons",
+                content: "",
+            },
+        }
     },
-    components: { ButtonStd }
+    components: { ButtonStd, ButtonStdAnimated },
 }
 </script>
 
@@ -129,9 +118,60 @@ export default {
         width: 100%;
     }
 
-    .text-content {
+    .inner-container {
         border: 1px solid black;
         height: 300px;
+        overflow: scroll;
+    }
+    .inner-container .separator {
+        margin: 0 auto;
+        border-top: 1px solid red;
+        width: 40%;
+    }
+
+    .text-button-container {
+        display: flex;
+        justify-content: center;
+
+        padding-bottom: 10px;
+    }
+
+    /* Button style */
+
+    .button {
+        display: inline-block;
+        font-family: 'Poppins', sans-serif;
+        font-size: 11px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--text-color-light);
+        padding: 11px 25px;
+        background-color: var(--palette-red);
+        transition: box-shadow .3s ease-out,
+                    opacity .5s ease;
+
+        border-radius: 5px;
+    }
+    
+    .text-container {
+        display: flex;
+        flex-flow: column;
+
+        padding: 6px 20px;
+    }
+
+    .button:hover {
+        box-shadow: 4px 4px 2px #454545;
+    }
+
+    .button:active {
+        box-shadow: 2px 2px 10px #454545;
+        opacity: .6;
+    }
+
+    .ticket-button {
+        width: 150px;
+        font-size: 13px;
     }
 
 </style>
