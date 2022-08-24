@@ -1,65 +1,79 @@
 <template>
   <section>
     <title-overlay-image class="title-overlay-image-props" title="This Year's Artists" description="Check this out!" image="palais-des-papes-g04269230e_1920.jpg"/>
-    <div class="flex-container">
-        <div class="title-box dance">
-          <h1>Dance</h1>
+    <div class="row">
+      <div class="column dance">
+        <div class="item title-box">
+          <h2>Dance</h2>
         </div>
-        <div class="title-box music">
-          <h1>Music</h1>
+      </div>
+      <div class="column music">
+        <div class="item title-box">
+          <h2>Music</h2>
         </div>
-        <div class="title-box theater">
-          <h1>Theater</h1>
+        <card-hover v-for="(artist, artistIndex) of artistList"
+        :key="`artist-index=${artistIndex}`"
+        :artistName="artist.name"
+        :imageName="artist.img"
+        :artistId="artist.id"
+        />
+      </div>
+      <div class="column theater">
+        <div class="item title-box">
+          <h2>Theater</h2>
         </div>
-        <!-- TODO: loop through all artists -->
-        <!--artist-icon class = "dance" artistName="Dancer 1" imageName="dance2.jpg"/>
-        <artist-icon class = "music" artistName="Musician 1" imageName="music1.jpg"/-->
-  
+      </div>
     </div>
-    <footer />
   </section>
 </template>
 
 <script>
 import TitleOverlayImage from '~/components/title-overlay-image.vue';
-import Footer from '~/components/footer.vue';
-import ArtistIcon from '~/components/artist-icon.vue';
+import CardHover from '~/components/img-component/card-simple-hover.vue';
 export default {
     name: "artists",
-    components: {TitleOverlayImage, ArtistIcon, Footer}
-
+    components: {TitleOverlayImage, CardHover},
+    async asyncData({ $axios }) {
+         const { data } = await $axios.get("/api/artists");
+         return {
+           artistList: data,
+         }
+     },
 }
 </script>
 
 <style>
 
-.flex-container {
-  display: grid;
-  flex-direction: column;
-  grid-template-columns: auto auto auto;
-  grid-auto-flow: column;
-}
-
-/* Intention is to fill up the remainder of the bottom of the window with the title box when you 
- * first open a full-size window */
-.title-box{
+/* Set up the grid structure to list all the artists */
+.row {
   display: flex;
-  height: 25vh;
-  background-color: red;    /* Color of title box  */
-  color: white;             /* Color of text */
-  align-items: center;        /* Vertical centering of text*/
-  justify-content: center;    /* Horizontal centering of text */
+  flex-wrap: wrap;
 }
 
-.dance {
-  order: 1;
-}
-.music {
-  order: 2;
-}
-.theater {
-  order: 3;
+.column {
+  flex: 33%;
+  justify-content: space-around; 
 }
 
+.column .item{
+  width: 100%;
+}
+
+/* Title of the column */
+.title-box {
+  background-color: red;
+  color: white;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+h2 {
+  font-family: 'Poppins';
+  font-weight: 200;
+  font-size: 2.5em;
+}
 
 </style>

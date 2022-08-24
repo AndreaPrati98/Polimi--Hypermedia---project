@@ -59,9 +59,12 @@ async function initializeDatabaseConnection() {
         address: DataTypes.STRING,
     }, {timestamps: false})
 
+
     Place.hasMany(Event)
     Event.belongsTo(Place)
 
+    const EventArtist = database.define("EventArtist", {},{timestamps:false})
+    
     Event.belongsToMany(Artist, { through: "EventArtist", timestamps: false })
     Artist.belongsToMany(Event, { through: "EventArtist", timestamps: false })
 
@@ -77,6 +80,7 @@ async function initializeDatabaseConnection() {
         Artist,
         Place,
         Type_of_art,
+        EventArtist,
     }
 }
 
@@ -154,6 +158,31 @@ async function runMainApi() {
         }
         return res.json(filtered)
     })
+
+    // HTTP GET api that returns all the artists
+    app.get("/artists", async (req, res) => {
+        const result = await models.Artist.findAll()
+        const filtered = []
+        for (const element of result) {
+            filtered.push({
+                id: element.id,
+                name: element.name,
+                img: element.img,
+                date_of_birth: element.date_of_birth,
+                description: element.description
+            })
+        }
+        return res.json(filtered)
+    })
+
+    app.get("/artists/:id", async (req, res) => {
+        const id = +req.params.id
+        console.log("API ID: ")
+        console.log(id)
+        const result = await models.Artist.findOne({ where: { id } })//, include: [{model: models.EventArtist}] })
+        return res.json(result)
+    })
+
 
     // HTTP POST apio that will push (and therefore create) a new element in 
     // our fake database 

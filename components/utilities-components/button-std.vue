@@ -37,7 +37,6 @@ export default {
             default: true,
         },
 
-
     },
     computed: {
         cssProps() {

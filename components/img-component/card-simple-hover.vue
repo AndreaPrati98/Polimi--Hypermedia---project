@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="icon">
     <div class="image-placeholder">
       <a href="http://localhost:3000/artists/artist1">
@@ -9,11 +10,50 @@
       </div>
     </div>
   </div>
+=======
+  <!--a href="http://localhost:3000/artists/artist1"-->
+  <nuxt-link :to="`/artists/${artistId}`">
+    <div class="image-placeholder">
+        <!--img class ="image" :src="require(`~/assets/imgs/artists/${imageName}`)"/-->
+        <img class ="image" :src="`${imageName}`"/>
+      <div class="name-box">
+        <h1 class="name">{{ artistName}}</h1>
+        <p>ID: {{artistId}}</p>
+      </div>
+    </div>
+  </nuxt-link>
+>>>>>>> dev-d-2
 </template>
 
 <script>
 export default {
   name: "card-simple-hover",
+<<<<<<< HEAD
+=======
+  props: {
+    artistName: {
+            type: String,
+            required: true,
+    },
+    imageName: {
+      type: String,
+      required: true,
+    },
+    artistId: {
+      type: Number,
+      required: true,
+    }
+  },
+
+  methods: {
+    goToDetails() {
+      this.$router.push(`/artists/${this.artistId}`)
+    },
+  },
+
+
+
+>>>>>>> dev-d-2
 };
 </script>
 
@@ -58,6 +98,7 @@ h2 {
   font-weight: 700;
   color: white;
   display: none;
+<<<<<<< HEAD
 }
 /* Container that holds the name of the artist (directly overlaid over the image of the artist)*/
 .name-box {
@@ -69,6 +110,22 @@ h2 {
   right: 0;
   margin-left: auto; 
   margin-right: auto; 
+=======
+  
+}
+/* Container that holds the name of the artist (directly overlaid over the image of the artist)*/
+.name-box {
+  display: flex;
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+
+
+>>>>>>> dev-d-2
   /* width: 100px; */
 }
 </style>
