@@ -43,7 +43,7 @@ export default {
             },
             {
             name: 'Events',
-            path: '/',
+            path: '/events',
             },
             {
             name: 'Artists',
