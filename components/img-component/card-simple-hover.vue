@@ -6,6 +6,7 @@
         <img class ="image" :src="`${imageName}`"/>
       <div class="name-box">
         <h1 class="name">{{ artistName}}</h1>
+        <p>ID: {{artistId}}</p>
       </div>
     </div>
   </nuxt-link>
@@ -31,7 +32,7 @@ export default {
 
   methods: {
     goToDetails() {
-      this.$router.push(`/artists/${this.id}`)
+      this.$router.push(`/artists/${this.artistId}`)
     },
   },
 

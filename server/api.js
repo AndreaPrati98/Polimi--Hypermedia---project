@@ -176,7 +176,9 @@ async function runMainApi() {
     })
 
     app.get("/artists/:id", async (req, res) => {
-        let id = +req.params.id
+        const id = +req.params.id
+        console.log("API ID: ")
+        console.log(id)
         const result = await models.Artist.findOne({ where: { id } })//, include: [{model: models.EventArtist}] })
         return res.json(result)
     })
