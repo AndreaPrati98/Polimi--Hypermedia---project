@@ -7,7 +7,7 @@
 export default {
     name: 'ArtistPage',
     async asyncData({ route, $axios }) {
-        const { id }  = +route.params.id
+        const { id }  = route.params
         console.log("DYN PAGE ID: ")
         console.log(id)
         const { data } = await $axios.get('/api/artists/' + id)
@@ -16,7 +16,7 @@ export default {
             name: data.name,
             img: data.img,
             date_of_birth: data.date_of_birth,
-            description: data.description,
+            description: data.description
         }
     },
 }
