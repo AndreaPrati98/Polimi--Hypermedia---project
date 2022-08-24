@@ -1,5 +1,6 @@
 <template>
-  <a href="http://localhost:3000/artists/artist1">
+  <!--a href="http://localhost:3000/artists/artist1"-->
+  <nuxt-link :to="`/artists/${id}`">
     <div class="image-placeholder">
         <!--img class ="image" :src="require(`~/assets/imgs/artists/${imageName}`)"/-->
         <img class ="image" :src="`${imageName}`"/>
@@ -7,22 +8,35 @@
         <h1 class="name">{{ artistName}}</h1>
       </div>
     </div>
-  </a>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
   name: "card-simple-hover",
   props: {
-     artistName: {
+    artistName: {
             type: String,
             required: true,
-        },
-        imageName: {
-            type: String,
-            required: true,
-        }
-  }
+    },
+    imageName: {
+      type: String,
+      required: true,
+    },
+    id: {
+      type: Number,
+      required: true,
+    }
+  },
+
+  methods: {
+    goToDetails() {
+      this.$router.push(`/artists/${this.id}`)
+    },
+  },
+
+
+
 };
 </script>
 

@@ -159,7 +159,7 @@ async function runMainApi() {
         return res.json(filtered)
     })
 
-    // HTTP GET api that returns all the cats in our fake database
+    // HTTP GET api that returns all the artists
     app.get("/artists", async (req, res) => {
         const result = await models.Artist.findAll()
         const filtered = []
@@ -173,6 +173,13 @@ async function runMainApi() {
             })
         }
         return res.json(filtered)
+    })
+
+    app.get("/artists/:id", async (req, res) => {
+        const id = +req.params.id
+        const result = await models.Artist.findOne({ where: { id }})//, include: [{model: models.EventArtist}] })
+        console.log("Here we are");
+        return res.json(result)
     })
 
 

@@ -18,16 +18,8 @@
         :key="`artist-index=${artistIndex}`"
         :artistName="artist.name"
         :imageName="artist.img"
+        :id="artist.id"
         />
-
-
-        
-        <!--card-hover artistName="Test3" imageName='music1.jpg'/>
-        <card-hover artistName="Test4" imageName='music2.jpg'/>
-        <card-hover artistName="More Music 1" imageName='music3.jpg'/>
-        <card-hover artistName="More Music 2" imageName='music4.jpg'/>
-        <card-hover artistName="More Music 3" imageName='music5.jpg'/-->
-
 
       </div>
       <div class="column theater">
