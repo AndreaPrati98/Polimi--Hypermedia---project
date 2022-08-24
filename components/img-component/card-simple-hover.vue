@@ -1,16 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <div class="icon">
-    <div class="image-placeholder">
-      <a href="http://localhost:3000/artists/artist1">
-        <img class="image" src="~/assets/imgs/artists/dance1.png" />
-      </a>
-      <div class="name-box">
-        <h1 class="name">Maria</h1>
-      </div>
-    </div>
-  </div>
-=======
   <!--a href="http://localhost:3000/artists/artist1"-->
   <nuxt-link :to="`/artists/${artistId}`">
     <div class="image-placeholder">
@@ -22,14 +10,11 @@
       </div>
     </div>
   </nuxt-link>
->>>>>>> dev-d-2
 </template>
 
 <script>
 export default {
   name: "card-simple-hover",
-<<<<<<< HEAD
-=======
   props: {
     artistName: {
             type: String,
@@ -51,9 +36,6 @@ export default {
     },
   },
 
-
-
->>>>>>> dev-d-2
 };
 </script>
 
@@ -98,19 +80,6 @@ h2 {
   font-weight: 700;
   color: white;
   display: none;
-<<<<<<< HEAD
-}
-/* Container that holds the name of the artist (directly overlaid over the image of the artist)*/
-.name-box {
-  position: absolute;
-  height: 100%;
-
-  
-  left: 0; 
-  right: 0;
-  margin-left: auto; 
-  margin-right: auto; 
-=======
   
 }
 /* Container that holds the name of the artist (directly overlaid over the image of the artist)*/
@@ -124,8 +93,6 @@ h2 {
   align-content: center;
   justify-content: center;
 
-
->>>>>>> dev-d-2
   /* width: 100px; */
 }
 </style>

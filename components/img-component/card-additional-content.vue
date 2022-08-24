@@ -4,23 +4,13 @@
             <img :src="imgUrl"/>
             <h3>{{ title }}</h3>
             <div class="focus-content">
-<<<<<<< HEAD
-                <p>
-                    {{ content }}
-                    <button-std 
-                        :btnTextSize="'12px'"
-                        :btnText="btnTxt"
-                        :btnDst="btnDst"/>
-                </p>
-=======
-                <p>{{ content }}</p>
-                <button-std
-                        :btnTextSize="'12px'"
-                        :btnText="btnTxt"
-                        :btnDst="btnDst"/>
+            <p>{{ content }}</p>
+            <button-std
+                    :btnTextSize="'12px'"
+                    :btnText="btnTxt"
+                    :btnDst="btnDst"/>
                 
                 
->>>>>>> dev-d-2
             </div>
         </div>
     </div>
@@ -57,11 +47,8 @@ export default {
 
     .card {
     width: 300px;
-<<<<<<< HEAD
-    height: 280px;
-=======
+    /* height: 280px; */
     height: 330px;
->>>>>>> dev-d-2
     padding: 0;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
     border-radius: 8px;
@@ -97,11 +84,9 @@ export default {
     .card p {
     margin: 0;
     line-height: 1.5;
-<<<<<<< HEAD
-=======
+
     padding: 8px 12px;
 
->>>>>>> dev-d-2
     }
 
     .card:hover img, .card:focus-within img {
@@ -111,11 +96,8 @@ export default {
     .card:hover h3, .card:focus-within h3 {
     padding: 8px 12px 0;
     }
-<<<<<<< HEAD
-=======
-
     .button-std{
         margin-top: 20px;
     }
->>>>>>> dev-d-2
+
 </style>
