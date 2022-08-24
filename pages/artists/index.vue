@@ -6,9 +6,6 @@
         <div class="item title-box">
           <h2>Dance</h2>
         </div>
-        <!--card-hover icon artistName="Test1" imageName='dance1.png'/>
-        <card-hover artistName="Test2" imageName='dance2.jpg'/-->
-
       </div>
       <div class="column music">
         <div class="item title-box">
@@ -18,18 +15,13 @@
         :key="`artist-index=${artistIndex}`"
         :artistName="artist.name"
         :imageName="artist.img"
-        :id="artist.id"
+        :artistId="artist.id"
         />
-
       </div>
       <div class="column theater">
         <div class="item title-box">
           <h2>Theater</h2>
         </div>
-        
-        <!--card-hover artistName="Test5" imageName='theater1.jpg'/>
-        <card-hover artistName="Test6" imageName='theater2.jpg'/-->
-
       </div>
     </div>
   </section>
@@ -41,18 +33,12 @@ import CardHover from '~/components/img-component/card-simple-hover.vue';
 export default {
     name: "artists",
     components: {TitleOverlayImage, CardHover},
-
-
     async asyncData({ $axios }) {
          const { data } = await $axios.get("/api/artists");
          return {
            artistList: data,
          }
      },
-
-
-
-
 }
 </script>
 

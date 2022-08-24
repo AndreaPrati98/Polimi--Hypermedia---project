@@ -1,6 +1,6 @@
 <template>
   <!--a href="http://localhost:3000/artists/artist1"-->
-  <nuxt-link :to="`/artists/${id}`">
+  <nuxt-link :to="`/artists/${artistId}`">
     <div class="image-placeholder">
         <!--img class ="image" :src="require(`~/assets/imgs/artists/${imageName}`)"/-->
         <img class ="image" :src="`${imageName}`"/>
@@ -23,7 +23,7 @@ export default {
       type: String,
       required: true,
     },
-    id: {
+    artistId: {
       type: Number,
       required: true,
     }

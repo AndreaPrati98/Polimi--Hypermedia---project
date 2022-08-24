@@ -169,16 +169,15 @@ async function runMainApi() {
                 name: element.name,
                 img: element.img,
                 date_of_birth: element.date_of_birth,
-                description: element.description,
+                description: element.description
             })
         }
         return res.json(filtered)
     })
 
     app.get("/artists/:id", async (req, res) => {
-        const id = +req.params.id
-        const result = await models.Artist.findOne({ where: { id }})//, include: [{model: models.EventArtist}] })
-        console.log("Here we are");
+        let id = +req.params.id
+        const result = await models.Artist.findOne({ where: { id } })//, include: [{model: models.EventArtist}] })
         return res.json(result)
     })
 

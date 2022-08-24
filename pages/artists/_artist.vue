@@ -1,18 +1,20 @@
 <template>
   <div>
     <h1>Artist: {{ artistName }}</h1>
-    <NuxtLink to="/artists">Back to All Artists</NuxtLink>
   </div>
 </template>
 <script>
 export default {
     name: 'ArtistPage',
     async asyncData({ route, $axios }) {
-        const { id } = route.params
+        const  id  = +route.params.id
         const { data } = await $axios.get('/api/artists/' + id)
         return {
-            name: data.name
-
+            id: data.id,
+            name: data.name,
+            img: data.img,
+            date_of_birth: data.date_of_birth,
+            description: data.description,
         }
     },
 }
