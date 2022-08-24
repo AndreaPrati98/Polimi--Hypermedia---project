@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 /* Set up the grid structure to list all the artists */
 .row {
@@ -51,7 +51,7 @@ export default {
 }
 
 .column {
-  flex: 33%;
+  /* flex: 33%; */
   justify-content: space-around; 
 }
 
