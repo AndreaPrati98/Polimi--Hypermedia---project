@@ -1,11 +1,10 @@
 <template>
     <section class="section">
         <title-overlay-image class="header"/>
-        <div class="overview-map-container">
+        <div class="overview-img-container">
             <DescriptiveComponent class="overview-comp"/>
-            <div class="map-comp">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4646.175289173596!2d4.812885751804693!3d43.94526359355342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b5ed5580c79235%3A0x292de02a07a25caa!2zVGjDqcOidHJlIExlcyBFdG9pbGVz!5e0!3m2!1sit!2sit!4v1661348281479!5m2!1sit!2sit" 
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="img-comp">
+                <img src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_1280.jpg" alt="funny cat" class="image">
             </div>
             <!-- <div class="overview-info-container"> -->
             <div class="art-container">
@@ -14,12 +13,13 @@
             
             <descriptive-component class="place-comp"/>
             <!-- </div> -->
-            
         </div>
+
+    <span class="separator"></span>
 
     <!-- here the group links -->
         <div class="all-events">
-
+            
         </div>
         <div class="all-events by-type">
 
@@ -40,11 +40,12 @@ export default {
 
 <style scoped>
 
-    .overview-map-container {
-        padding: 0 20px;
+    /* here the layout settings */
+    .overview-img-container {
+        padding: 0 3%;
         display: grid;
         grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-        grid-template-areas:    'ev ev map'
+        grid-template-areas:    'ev ev img'
                                 'art art art'
                                 'place place place';
     }
@@ -53,8 +54,8 @@ export default {
         grid-area: ev;
     }
 
-    .map-comp{
-        grid-area: map;
+    .img-comp{
+        grid-area: img;
     }
 
     .place-comp {
@@ -67,8 +68,27 @@ export default {
         justify-content: center;
     }
 
-   @media screen {
-    
-   } 
+    /* here the single style settings */
+
+    .separator {
+        border-top: 1px solid red;
+        margin: 0 auto;
+        width: 70%;
+        height: 1px;
+        display: block;
+    }
+
+    .info-comp {
+        width: 100%;
+    }
+
+    .img-comp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .image {
+        width: 100%;
+    }
 
 </style>
