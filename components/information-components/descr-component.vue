@@ -12,7 +12,7 @@
 
 <script>
 export default {
-
+    name: 'descr-component',
 }
 </script>
 
