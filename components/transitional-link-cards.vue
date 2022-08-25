@@ -4,7 +4,7 @@
         <div class="scroll-window">
             <div class="events">
 
-                <card-additional-content v-for="(event, eventIndex) of events"
+                <card-additional-content class="event" v-for="(event, eventIndex) of events"
                 :key="`event-index=${eventIndex}`"
                 :title="event.title"
                 :content="event.date"
