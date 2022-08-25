@@ -1,7 +1,7 @@
 <template>
   <section>
     <div>
-        <bio-header :name="placeName" />
+        <bio-header :title="placeName" />
         <div class="left-slot">
 
         </div>
@@ -29,7 +29,7 @@ import Default from '~/layouts/default.vue';
 import BioHeader from '~/components/artist-bio-header.vue';
 import TransitionalLinkCards from '~/components/transitional-link-cards.vue';
 export default {
-    name: "ArtistPage",
+    name: "PlacePage",
     components: {Default, BioHeader, CardAdditionalContent, TransitionalLinkCards},
 
     async asyncData({ route, $axios }) {

@@ -1,7 +1,7 @@
 <template>
   <section>
     <div>
-        <bio-header :artistName="name" />
+        <bio-header :title="name" />
         <div class="left-slot">
 
         </div>
