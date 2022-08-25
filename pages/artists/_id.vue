@@ -17,7 +17,7 @@
     </div>
     <hr/>
 
-    <transitional-link-cards linkText="Events including this artist" />
+    <transitional-link-cards linkText="Events including this artist" :events="events"/>
 
 
   </section>
@@ -34,15 +34,15 @@ export default {
 
     async asyncData({ route, $axios }) {
         const { id }  = route.params
-        console.log("DYN PAGE ID: ")
-        console.log(id)
         const { data } = await $axios.get('/api/artists/' + id)
         return {
-            id: data.id,
-            name: data.name,
-            img: data.img,
-            date_of_birth: data.date_of_birth,
-            description: data.description
+            id: data[0].id,
+            name: data[0].name,
+            img: data[0].img,
+            date_of_birth: data[0].date_of_birth,
+            description: data[0].description,
+            events: data[0].events
+
         }
     },
 

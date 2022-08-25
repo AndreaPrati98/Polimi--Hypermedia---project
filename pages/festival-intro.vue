@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TitleOverlayImage2 class="header"/>
+    <TitleOverlayImage2 class="header" title="Festival" subtitle="this is the subtitle"/>
     <DescriptiveComponent class="descriptive-component"/>
     <div class="double-section">
       <Card class="card"/>
