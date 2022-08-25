@@ -22,14 +22,20 @@
       <SimpleBox class="box"/>
       <SimpleBox class="box"/>
       <SimpleBox class="box"/>
-      
+
       <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-      
       <SimpleBox class="box"/>
       <SimpleBox class="box"/>
 
+      <SimpleBox class="box"/>
+
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+    
     </div>
         
       
@@ -40,9 +46,10 @@
 import TitleOverlayImage from '~/components/title-overlay-image.vue';
 import CardHover from '~/components/img-component/card-simple-hover.vue';
 import SimpleBox from '~/components/test-components/simple-box.vue';
+
 export default {
     name: "artists",
-    components: { TitleOverlayImage, CardHover, SimpleBox },
+    components: { TitleOverlayImage, CardHover, SimpleBox},
     async asyncData({ $axios }) {
          const { data } = await $axios.get("/api/artists");
          return {
@@ -82,14 +89,10 @@ export default {
   .card-container {
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    grid-template-areas:  'A A B'
-                          'C D E'
-                          'F G G';
+
     justify-items: center;
 
-    grid-auto-columns: auto;
-    grid-auto-rows: auto;
-    
+    grid-auto-flow: dense;
   }
 
   .box {
@@ -97,30 +100,14 @@ export default {
     height: 300px;
   }
 
-  .box:nth-child(1) {
-    grid-area: A;
-  }
-  .box:nth-child(2) {
-    grid-area: B;
-  }
-  .box:nth-child(3) {
-    grid-area: C;
+  .box:nth-child(4n + 1) {
+    border: 2px solid blue;
+    grid-column: span 2;
   }
 
-  .box:nth-child(4) {
-    grid-area: D;
-  }
-
-  .box:nth-child(5) {
-    grid-area: E;
-  }
-
-  .box:nth-child(6) {
-    grid-area: F;
-  }
-
-  .box:nth-child(7) {
-    grid-area: G;
+  .box:nth-child(4n + 4) {
+    border: 2px solid green;
+    grid-column: span 2;
   }
 
 </style>
