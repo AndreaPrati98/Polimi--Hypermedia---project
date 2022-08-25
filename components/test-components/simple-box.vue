@@ -18,7 +18,7 @@ export default {
         justify-content: center;
         align-items: center;
 
-        border: 2px solid red;
+        border: 1px solid red;
         
     }
 </style>
