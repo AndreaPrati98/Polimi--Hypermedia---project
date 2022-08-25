@@ -1,6 +1,6 @@
 <template>
     <div class="bar">
-        <h1>{{ artistName }}</h1>
+        <h1>{{ name }}</h1>
         <div>
             <!-- TODO: can we pass json-style list that will be printed here in bullets? -->
             <ul>
@@ -16,7 +16,7 @@
 export default {
     name: "artist-header",
     props: {
-        artistName: {
+        name: {
             type: String,
             required: true,
         }

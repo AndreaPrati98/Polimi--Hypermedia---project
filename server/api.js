@@ -176,11 +176,37 @@ async function runMainApi() {
         return res.json(filtered)
     })
 
+    // HTTP GET api that returns the info for the requested artist (where artistId == :id) along 
+    // with the events in which that artist performs in
     app.get("/artists/:id", async (req, res) => {
         const id = +req.params.id
         const result = await models.Artist.findAll({where: {id}, include: [ {model: models.Event}]})
         return res.json(result)
     })
+
+
+    // HTTP GET api that returns all the places
+    app.get("/places", async (req, res) => {
+        const result = await models.Event.findAll()
+        const filtered = []
+        for (const element of result) {
+            filtered.push({
+                name: element.name,
+                img: element.img,
+                caption: element.caption,
+                description: element.description,
+                address: element.address,
+            })
+        }
+        return res.json(filtered)
+    })
+    
+        app.get("/places/:id", async (req, res) => {
+            const id = +req.params.id
+            const result = await models.Place.findAll({where: {id}, include: [ {model: models.Event}]})
+            return res.json(result)
+        })
+    
 
 
     // HTTP POST apio that will push (and therefore create) a new element in 

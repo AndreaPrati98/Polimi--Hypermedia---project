@@ -27,7 +27,7 @@
   </section>
 </template>
 
-<script>
+<script scoped>
 import TitleOverlayImage from '~/components/title-overlay-image.vue';
 import CardHover from '~/components/img-component/card-simple-hover.vue';
 export default {
