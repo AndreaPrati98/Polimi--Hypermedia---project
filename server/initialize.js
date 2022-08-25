@@ -269,12 +269,20 @@ export default async (models) => {
     console.log("\n\n")
     const allArtists = await models.Artist.findAll()
 
+    console.log("\n\n")
+    const allTypeOfArts = await models.Type_of_art.findAll()
+
+
  
     for (let index = 0; index < allEvents.length; index++) {
         // Returns a random integer from 0 to 9: Math.floor(Math.random() * 10);
         let randomPlaceIndex = Math.floor(Math.random() * allPlaces.length)
         allEvents[index].set({placeId: allPlaces[randomPlaceIndex].id})
         allEvents[index].save()
+
+        allEvents[index].set({typeOfArtId: allTypeOfArts[index % 3].id})
+        allEvents[index].save()
+
         // do we need to also set the key in the places table defining all the events that are hosted in a place- NO
     }
     
