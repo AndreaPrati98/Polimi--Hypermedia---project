@@ -110,7 +110,8 @@ export default {
         display: grid;
         grid-template-columns: 2fr 5fr;
         height: 100%;
-        border: 1px solid red;
+        
+        box-shadow: 0px 5px 10px grey;
     }
 
     .imgs {

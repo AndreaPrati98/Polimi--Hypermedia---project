@@ -70,7 +70,7 @@ export default {
         
         height: 100%;
 
-        border: 2px solid green;
+        /* border: 2px solid green; */
         
         transition: backdrop-filter .3s ease-in .2s,
                     background-color .3s ease-out,

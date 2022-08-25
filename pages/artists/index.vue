@@ -1,38 +1,55 @@
 <template>
   <section>
     <title-overlay-image class="title-overlay-image-props" title="This Year's Artists" description="Check this out!" image="palais-des-papes-g04269230e_1920.jpg"/>
-    <div class="row">
-      <div class="column dance">
-        <div class="item title-box">
-          <h2>Dance</h2>
-        </div>
-      </div>
-      <div class="column music">
-        <div class="item title-box">
-          <h2>Music</h2>
-        </div>
-        <card-hover v-for="(artist, artistIndex) of artistList"
-        :key="`artist-index=${artistIndex}`"
-        :artistName="artist.name"
-        :imageName="artist.img"
-        :artistId="artist.id"
-        />
-      </div>
-      <div class="column theater">
-        <div class="item title-box">
-          <h2>Theater</h2>
-        </div>
+    
+    <div class="description-container">
+      <div class="description">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Temporibus qui deleniti vero dignissimos consequatur earum officiis ut aut aspernatur omnis 
+          illum quaerat assumenda odit, laborum dicta iure ea saepe. Vel.
+        </p>  
       </div>
     </div>
+    
+    <div class="card-container">
+      <!-- <card-hover v-for="(artist, artistIndex) of artistList"
+      :key="`artist-index=${artistIndex}`"
+      :artistName="artist.name"
+      :imageName="artist.img"
+      :artistId="artist.id"
+      /> -->
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+
+      <SimpleBox class="box"/>
+
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+      <SimpleBox class="box"/>
+    
+    </div>
+        
+      
   </section>
 </template>
 
 <script scoped>
 import TitleOverlayImage from '~/components/title-overlay-image.vue';
 import CardHover from '~/components/img-component/card-simple-hover.vue';
+import SimpleBox from '~/components/test-components/simple-box.vue';
+
 export default {
     name: "artists",
-    components: {TitleOverlayImage, CardHover},
+    components: { TitleOverlayImage, CardHover, SimpleBox},
     async asyncData({ $axios }) {
          const { data } = await $axios.get("/api/artists");
          return {
@@ -44,36 +61,53 @@ export default {
 
 <style scoped>
 
-/* Set up the grid structure to list all the artists */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
+  .description-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.column {
-  /* flex: 33%; */
-  justify-content: space-around; 
-}
+    /* width: 100%; */  
+    background-color: var(--palette-red);
+  }
 
-.column .item{
-  width: 100%;
-}
+  .description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-/* Title of the column */
-.title-box {
-  background-color: red;
-  color: white;
-  height: 30vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
+    height: 70%;
+    width: 90%;
+    
+    border: 2px solid var(--text-color-light);
+    color: var(--text-color-light);
 
-h2 {
-  font-family: 'Poppins';
-  font-weight: 200;
-  font-size: 2.5em;
-}
+    margin: 2% 0;
+    padding: 8px 10px;
+    font-size: 30px;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+
+    justify-items: center;
+
+    grid-auto-flow: dense;
+  }
+
+  .box {
+    width: 100%;
+    height: 300px;
+  }
+
+  .box:nth-child(4n + 1) {
+    border: 2px solid blue;
+    grid-column: span 2;
+  }
+
+  .box:nth-child(4n + 4) {
+    border: 2px solid green;
+    grid-column: span 2;
+  }
 
 </style>

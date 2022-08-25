@@ -31,6 +31,7 @@ export default {
   },
 
   methods: {
+    // I guess this is not useful
     goToDetails() {
       this.$router.push(`/artists/${this.artistId}`)
     },
