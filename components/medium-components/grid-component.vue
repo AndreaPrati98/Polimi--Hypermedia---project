@@ -1,15 +1,11 @@
 <template>
     <section class="card-container">
-        <div class="box" v-for="(event, eventIndex) of eventList"
-            :key="`event-index=${eventIndex}`">
+        <div class="box" v-for="(data, objIndex) of objList"
+            :key="`data-index=${objIndex}`">
             
             <simple-box 
-                :artistName="event.name" 
-                :artistId="event.id" />
-            <!-- <card-simple-hover 
-                :artistName="event.name" 
-                :artistId="event.id" 
-                :imageName="event.img"/> -->
+                :artistName="data.name" 
+                :artistId="data.id" />
         
         </div>
     </section>
@@ -22,7 +18,7 @@ export default {
   components: { cardSimpleHover, SimpleBox },
     name: 'grid-component',
     props: {
-        eventList: {
+        objList: {
             type: Array,
             required: true,
         }
@@ -37,9 +33,6 @@ export default {
         display: grid;
         grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 
-        
-        
-
         grid-auto-flow: dense;
     }
 
@@ -47,6 +40,9 @@ export default {
         width: 100%;
         height: 300px;
         
+        display: flex;
+        justify-content: center;
+        align-content: center;
     }
 
     .box:nth-child(4n + 1) {

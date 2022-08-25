@@ -1,30 +1,6 @@
 <template>
   <section>
-    <title-overlay-image class="title-overlay-image-props" title="This Year's Artists" description="Check this out!" image="palais-des-papes-g04269230e_1920.jpg"/>
-    
-    <DescrComponent />
-    
-    <div class="card-container">
-      <!-- <card-hover v-for="(artist, artistIndex) of artistList"
-      :key="`artist-index=${artistIndex}`"
-      :artistName="artist.name"
-      :imageName="artist.img"
-      :artistId="artist.id"
-      /> -->
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-
-      <SimpleBox class="box"/>
-
-          
-    </div>
-        
-      
+    <GroupIntroComponent :objList="objList"/>
   </section>
 </template>
 
@@ -33,14 +9,15 @@ import TitleOverlayImage from '~/components/title-overlay-image.vue';
 import CardHover from '~/components/img-component/card-simple-hover.vue';
 import SimpleBox from '~/components/test-components/simple-box.vue';
 import DescrComponent from '~/components/information-components/descr-component.vue';
+import GroupIntroComponent from '~/components/big-components/group-intro-component.vue';
 
 export default {
     name: "artists",
-    components: { TitleOverlayImage, CardHover, SimpleBox, DescrComponent },
+    components: { TitleOverlayImage, CardHover, SimpleBox, DescrComponent, GroupIntroComponent },
     async asyncData({ $axios }) {
          const { data } = await $axios.get("/api/artists");
          return {
-           artistList: data,
+           objList: data,
          }
      },
 }

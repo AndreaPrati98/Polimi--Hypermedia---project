@@ -163,6 +163,11 @@ async function runMainApi() {
         const result =  await models.Event.findAll()
         return res.json(result)
     })
+    
+    app.get("/places", async (req, res) => {
+        const result =  await models.Place.findAll()
+        return res.json(result)
+    })
 
     // HTTP GET api that returns all the artists
     app.get("/artists", async (req, res) => {

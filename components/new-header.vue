@@ -51,7 +51,7 @@ export default {
             },
             {
             name: 'Places',
-            path: '/',
+            path: '/places',
             },
             {
             name: 'Contact Us',
