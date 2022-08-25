@@ -2,7 +2,7 @@
     <section class="section">
         <title-overlay-image class="header"/>
         <div class="overview-img-container">
-            <DescriptiveComponent class="overview-comp"/>
+            <OverviewBox class="overview-comp" :description="`La cucina del ristorante, focalizzata su specialità tipicamente romane, propone piatti semplici e gustosi che uniscono sapori e aromi in un perfetto ed armonico equilibrio. Una ricercata selezione di vini accompagna le pietanze proposte sul menù.`"/>
             <div class="img-comp">
                 <img src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_1280.jpg" alt="funny cat" class="image">
             </div>
@@ -29,11 +29,11 @@
 
 <script>
 import titleOverlayImage from '~/components/title-overlay-image.vue'
-import DescriptiveComponent from '~/components/descriptive-component.vue';
+import OverviewBox from '~/components/overview.vue';
 import InfoComponent from '~/components/information-components/info-component.vue';
 export default {
     name: "artist-page",
-    components: { titleOverlayImage, DescriptiveComponent, InfoComponent },
+    components: { titleOverlayImage, OverviewBox, InfoComponent },
 
 }
 </script>
