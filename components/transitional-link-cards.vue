@@ -12,7 +12,6 @@
                 :btnTxt="`See More`"
                 :btnDst="`/events/` + event.id"
                 />
-                
             </div>
         </div>
     </div>

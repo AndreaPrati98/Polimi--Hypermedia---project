@@ -139,27 +139,6 @@ async function runMainApi() {
         return res.json(result)
     })
 
-    app.get('/cats/:id', async (req, res) => {
-        const id = +req.params.id
-        const result = await models.Cat.findOne({ where: { id } })
-        return res.json(result)
-    })
-
-    // HTTP GET api that returns all the cats in our fake database
-    app.get("/cats", async (req, res) => {
-        const result = await models.Cat.findAll()
-        const filtered = []
-        for (const element of result) {
-            filtered.push({
-                name: element.name,
-                img: element.img,
-                breed: element.breed,
-                id: element.id,
-            })
-        }
-        return res.json(filtered)
-    })
-
     // HTTP GET api that returns all the artists
     app.get("/artists", async (req, res) => {
         const result = await models.Artist.findAll()
@@ -201,20 +180,12 @@ async function runMainApi() {
         return res.json(filtered)
     })
     
-        app.get("/places/:id", async (req, res) => {
-            const id = +req.params.id
-            const result = await models.Place.findAll({where: {id}, include: [ {model: models.Event}]})
-            return res.json(result)
-        })
-    
-
-
-    // HTTP POST apio that will push (and therefore create) a new element in 
-    // our fake database 
-    app.post("/cats", (req, res) => {
-        const { body } = req
-        catList.push(body)
-        return res.sendStatus(200)
+    // HTTP GET api that returns the info for the requested place (where placeId == :id) along 
+    // with the events that are hosted in that place
+    app.get("/places/:id", async (req, res) => {
+        const id = +req.params.id
+        const result = await models.Place.findAll({where: {id}, include: [ {model: models.Event}]})
+        return res.json(result)
     })
 }
 
