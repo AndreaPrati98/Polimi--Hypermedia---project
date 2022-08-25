@@ -33,7 +33,11 @@ import DescriptiveComponent from '~/components/descriptive-component.vue';
 import InfoComponent from '~/components/information-components/info-component.vue';
 export default {
     name: "artist-page",
-    components: { titleOverlayImage, DescriptiveComponent, InfoComponent },
+    components: { 
+        titleOverlayImage, 
+        DescriptiveComponent, 
+        InfoComponent, 
+    },
 
 }
 </script>
