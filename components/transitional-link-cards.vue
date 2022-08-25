@@ -10,7 +10,7 @@
                 :content="event.date"
                 :imgUrl="event.img"
                 :btnTxt="`See More`"
-                :btnDst="event.img"
+                :btnDst="`/events/` + event.id"
                 />
                 
             </div>
