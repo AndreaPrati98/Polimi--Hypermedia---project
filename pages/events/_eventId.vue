@@ -1,17 +1,17 @@
 <template>
     <section class="section">
-        <title-overlay-image class="header"/>
+        <the-header-with-title class="header"/>
         <div class="overview-img-container">
-            <DescriptiveComponent class="overview-comp"/>
+            <overview-component class="overview-comp"/>
             <div class="img-comp">
                 <img src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_1280.jpg" alt="funny cat" class="image">
             </div>
             <!-- <div class="overview-info-container"> -->
             <div class="art-container">
-                <info-component :title="'Artists Involved'" class="info-comp"/>
+                <multiple-short-overview-container :title="'Artists Involved'" class="info-comp"/>
             </div>
             
-            <descriptive-component class="place-comp"/>
+            <overview-component class="place-comp"/>
             <!-- </div> -->
         </div>
 
@@ -28,16 +28,18 @@
 </template>
 
 <script>
-import titleOverlayImage from '~/components/title-overlay-image.vue'
-import DescriptiveComponent from '~/components/descriptive-component.vue';
 import InfoComponent from '~/components/information-components/MultipleShortOverviewContainer.vue';
+import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue';
+import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
+import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue';
 export default {
     name: "artist-page",
-    components: { 
-        titleOverlayImage, 
-        DescriptiveComponent, 
-        InfoComponent, 
-    },
+    components: {
+    InfoComponent,
+    TheHeaderWithTitle,
+    OverviewComponent,
+    MultipleShortOverviewContainer
+},
 
 }
 </script>

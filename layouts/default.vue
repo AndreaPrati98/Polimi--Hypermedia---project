@@ -1,21 +1,22 @@
 <template>
   <div class="main-page">
-    <NewHeader/>
+    <the-navbar />
     <nuxt />
-    <Footer class="footer"/>
+    <the-footer class="footer"/>
   </div>
 </template>
 
 <script>
-import NewHeader from '~/components/new-header.vue';
-import Footer from '~/components/footer.vue';
+
+import TheFooter from '~/components/TheFooter.vue';
+import TheNavbar from '~/components/TheNavbar.vue';
 
 
 export default {
   name: 'DefaultLayout',
   components: {
-    NewHeader,
-    Footer
+    TheFooter,
+    TheNavbar
   },
 }
 </script>

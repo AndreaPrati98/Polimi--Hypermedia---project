@@ -27,7 +27,7 @@ export default {
     }
 
     .img {
-        background-image: url("../assets/imgs/palais-des-papes-g04269230e_1920.jpg");
+        background-image: url("~/assets/imgs/palais-des-papes-g04269230e_1920.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

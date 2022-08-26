@@ -24,7 +24,7 @@
                 </div>
                 <span class="separator"></span>
                 <div class="text-button-container">
-                    <button-std-animated class="ticket-button"
+                    <button-animated class="ticket-button"
                         :btnText="'Buy tickets'" 
                         :btnDst="'google.com'" 
                         :isNuxtLink="false" />
@@ -35,11 +35,11 @@
 </template>
 
 <script>
-import ButtonStdAnimated from '../utilities-components/button-std-animated.vue';
-import ButtonStd from '../utilities-components/button-std.vue';
+import ButtonAnimated from '../utilities-components/ButtonAnimated.vue';
 
 export default {
     name: "info-component",
+    components: { ButtonAnimated },
     props: {
         title: {
             type: String,
@@ -77,7 +77,6 @@ export default {
             },
         }
     },
-    components: { ButtonStd, ButtonStdAnimated },
 }
 </script>
 

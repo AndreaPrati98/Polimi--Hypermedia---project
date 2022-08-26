@@ -5,7 +5,7 @@
             <h3>{{ title }}</h3>
             <div class="focus-content">
             <p>{{ content }}</p>
-            <button-std
+            <button-standard
                     :btnTextSize="'12px'"
                     :btnText="btnTxt"
                     :btnDst="btnDst"/>
@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import buttonStd from '../utilities-components/button-std.vue'
+import ButtonStandard from '../utilities-components/ButtonStandard.vue';
 export default {
-  components: { buttonStd },
+  components: { ButtonStandard },
     name: "card-additional-content",
     props: {
         title: {

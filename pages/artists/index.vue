@@ -9,7 +9,7 @@ import GroupIntroComponent from '~/components/big-components/group-intro-compone
 
 export default {
     name: "artists",
-    components: { TitleOverlayImage, CardHover, SimpleBox, DescrComponent, GroupIntroComponent },
+    components: { GroupIntroComponent },
     async asyncData({ $axios }) {
          const { data } = await $axios.get("/api/artists");
          return {

@@ -2,38 +2,37 @@
     <section class="container">
         <section class="section">
             <div class="info">
-                <h1>Title</h1>
+                <h1>{{title}}</h1>
                 <h4>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quod facere porro
-                    repellendus distinctio, iusto doloribus dicta, aspernatur error optio deleniti beatae. 
-                    Officiis in consequuntur sit, quisquam quibusdam nulla veniam?
+                    {{subtitle}}
                 </h4>
             </div>
     
             <div class="imgs">
-                <card-hover-b-w 
-                    :descTxt="this.resultObj.tickets.description"
-                    :btnTxt="this.resultObj.tickets.buttonTxt"
-                    :btnDst="this.resultObj.tickets.buttonDst"
-                    :imgUrl="this.resultObj.tickets.imgUrl"/>
+                    
+                <card-hover-black-white 
+                    :descTxt="this.pageTxtList.description"
+                    :btnTxt="this.pageTxtList.buttonTxt"
+                    :btnDst="this.pageTxtList.buttonDst"
+                    :imgUrl="this.pageTxtList.imgUrl"/>
+            
+                <card-hover-black-white 
+                    :descTxt= "this.pageTxtList.date.description"
+                    :btnTxt= "this.pageTxtList.date.buttonTxt"
+                    :imgUrl="this.pageTxtList.date.imgUrl"
+                    :btnDst="this.pageTxtList.date.buttonDst"/>
                 
-                <card-hover-b-w 
-                    :descTxt= "this.resultObj.date.description"
-                    :btnTxt= "this.resultObj.date.buttonTxt"
-                    :imgUrl="this.resultObj.date.imgUrl"
-                    :btnDst="this.resultObj.date.buttonDst"/>
-                
-                <card-hover-b-w 
-                    :descTxt= "this.resultObj.accessibility.description"
-                    :btnTxt= "this.resultObj.accessibility.buttonTxt"
-                    :imgUrl="this.resultObj.accessibility.imgUrl"
-                    :btnDst="this.resultObj.accessibility.buttonDst"/>
+                <card-hover-black-white 
+                    :descTxt= "this.pageTxtList.accessibility.description"
+                    :btnTxt= "this.pageTxtList.accessibility.buttonTxt"
+                    :imgUrl="this.pageTxtList.accessibility.imgUrl"
+                    :btnDst="this.pageTxtList.accessibility.buttonDst"/>
     
-                <card-hover-b-w 
-                    :descTxt= "this.resultObj.location.description"
-                    :btnTxt= "this.resultObj.location.buttonTxt"
-                    :imgUrl="this.resultObj.location.imgUrl"
-                    :btnDst="this.resultObj.location.buttonDst"/>
+                <card-hover-black-white 
+                    :descTxt= "this.pageTxtList.location.description"
+                    :btnTxt= "this.pageTxtList.location.buttonTxt"
+                    :imgUrl="this.pageTxtList.location.imgUrl"
+                    :btnDst="this.pageTxtList.location.buttonDst"/>
     
             </div>
         </section>
@@ -41,11 +40,13 @@
 </template>
 
 <script>
-import cardHoverBW from './img-component/card-hover-b-w.vue'
-import CardHoverBW from './img-component/card-hover-b-w.vue';
+import CardHoverAdditionalContent from '../img-component/CardHoverAdditionalContent.vue';
+import CardHoverBlackWhite from '../img-component/CardHoverBlackWhite.vue';
+
 export default {
+  components: { CardHoverAdditionalContent, CardHoverBlackWhite },
     name: "header-w-imgs",
-    components: { cardHoverBW, CardHoverBW },
+    
     props: {
         title: {
             type: String,
@@ -54,10 +55,10 @@ export default {
         subtitle: {
             type: String,
             required: true,
-        }
+        },
     },
     data() {
-        // here we will use axios to retrieve content from the db
+        
         var pageTxtList = {
             tickets: {
                 description: "Go to tickets",
@@ -84,22 +85,8 @@ export default {
                 imgUrl: "https://cdn.pixabay.com/photo/2015/11/20/18/57/ampel-pusher-1053727_1280.jpg",
             },  
         }
-        // this return the number of entries 
-        const count = Object.keys(pageTxtList).length; 
-        var resultObj
-        // in case we consider more than 4 elements, the system returns only 4 of them
-        if(count > 4) {
-            var entries;
-            entries = Object.keys(pageTxtList);
-            for(const element of entries) {
-                resultObj[element] = pageTxtList[element]
-            }
-            console.log("Someone inserted more than 4 elements for the card content");
-            return resultObj
-        } else {
-            resultObj = pageTxtList
-        }
-        return { resultObj }
+        
+        return { pageTxtList }
     }
 }
 </script>

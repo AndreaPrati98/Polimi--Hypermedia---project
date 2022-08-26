@@ -5,17 +5,17 @@
                 <h2>{{this.titleTxt}}</h2>
                 <!-- <p>Piccola descrizione</p> -->
                 <p>{{this.descTxt}}</p>
-                <button-std class="btn" :btnDst="this.btnDst" :btnText="this.btnTxt"/>
+                <button-standard class="btn" :btnDst="this.btnDst" :btnText="this.btnTxt"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import buttonStd from '../utilities-components/button-std.vue'
+import ButtonStandard from '../utilities-components/ButtonStandard.vue'
 export default {
     name: "card-hover-b-w",
-    components: { buttonStd },
+    components: { ButtonStandard },
     props: {
         titleTxt: {
             type: String,

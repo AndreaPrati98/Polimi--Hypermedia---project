@@ -1,21 +1,21 @@
 <template>
     <section>
-        <title-overlay-image title="This Year's Artists" description="Check this out!" image="palais-des-papes-g04269230e_1920.jpg"/>
-        <DescrComponent />
-        <GridComponent :objList="objList"/>
+        <the-header-with-title title="This Year's Artists" description="Check this out!" image="palais-des-papes-g04269230e_1920.jpg"/>
+        <subheader-component />
+        <grid-component :objList="objList"/>
     </section>
 </template>
 
 <script>
-import DescrComponent from '../information-components/SubheaderComponent.vue'
-import TitleOverlayImage from '~/components/headers/'
 import GridComponent from '../medium-components/grid-component.vue';
+import TheHeaderWithTitle from '../headers/TheHeaderWithTitle.vue';
+import SubheaderComponent from '~/components/information-components/SubheaderComponent.vue';
 export default {
     name: 'group-intro-component',
     components: {
-    TitleOverlayImage,
-    DescrComponent,
-    GridComponent,
+        TheHeaderWithTitle,
+        GridComponent,
+        SubheaderComponent
     },
     props: {
         objList: {

@@ -14,11 +14,11 @@ export default {
         title: {
             type: String,
             required: false,
-            default: "OVERVIEW"
         },
         description: {
             type: String,
             required: true,
+            default: "missing description",
         }
 
     }
@@ -32,8 +32,8 @@ export default {
     width: 100%;
     height: 100%;
     overflow: hidden; 
+    --border-thickness: 1.5px;
 }
-
 
 .title {
     font-family: "Poppins";
@@ -41,8 +41,6 @@ export default {
     text-align: center;
     letter-spacing: 1.6px;
     line-height: 19.2px;
-    padding: 2%;
-
 }
 
 .text {
@@ -54,22 +52,21 @@ export default {
     padding: 2%;
 }
 
-
 .top, .bottom{
     width: 100%;
     height: 10px;
     display: block;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-left: var(--border-thickness, 2px) solid black;
+    border-right: var(--border-thickness, 2px) solid black;
 
 }
 
 .top {
-    border-top: 1px solid black;
+    border-top: var(--border-thickness, 2px) solid black;
 }
 
 .bottom {
-    border-bottom: 1px solid black;
+    border-bottom: var(--border-thickness, 2px) solid black;
 }
 
 
