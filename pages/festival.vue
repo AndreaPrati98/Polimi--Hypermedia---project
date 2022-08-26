@@ -1,7 +1,7 @@
 <template>
   <div>
     <TitleOverlayImage2 class="header" title="Festival" subtitle="this is the subtitle"/>
-    <DescriptiveComponent class="descriptive-component"/>
+      <DescriptiveComponent class="descriptive-component"/>
     <div class="double-section">
       <Card class="card"/>
       <InfoComponent :title="'Practical informations'" class="info-component"/>

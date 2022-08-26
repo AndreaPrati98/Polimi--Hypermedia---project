@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 import groupIntroComponent from '~/components/big-components/group-intro-component.vue'
 export default {
     name: 'event-page',

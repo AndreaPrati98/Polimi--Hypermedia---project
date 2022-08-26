@@ -127,16 +127,41 @@ async function runMainApi() {
         return res.json(result)
     })
 
-    app.get('/event-info/:id', async (req, res) => {
+    app.get('/events/:id', async (req, res) => {
         const id = +req.params.id
-        const result = await models.Event.findOne({ where: { id }, include: { model: models.Place } })
+        const result = await models.Event.findOne({ where: { id }, include: { model: models.Artist } })
         return res.json(result)
     })
 
-    app.get('/event-info/:id', async (req, res) => {
-        const id = +req.params.id
-        const result = await models.Event.findOne({ where: { id } })
-        return res.json(result)
+    app.get('/events', async (req, res) => {
+        const result = await models.Event.findAll()
+        const filtered = []
+        for (const element of result) {
+            filtered.push({
+                id: element.id,
+                title: element.title,
+                description: element.description,
+                img: element.img,
+                date: element.date,
+                time: element.time,
+                details: element.details
+
+
+                /**
+                 * 
+                 *         title: DataTypes.STRING,
+        description: DataTypes.STRING,
+        img: DataTypes.STRING,
+        date: DataTypes.STRING,
+        time: DataTypes.STRING,
+        details: DataTypes.STRING,
+                 * 
+                 * 
+                 * 
+                 */
+            })
+        }
+        return res.json(filtered)
     })
 
     app.get("/events", async (req, res) => {
@@ -160,6 +185,16 @@ async function runMainApi() {
                 img: element.img,
                 date_of_birth: element.date_of_birth,
                 description: element.description
+
+                /**
+                 * 
+                 * 
+                 * 
+                 *         name: DataTypes.STRING,
+        img: DataTypes.STRING,
+        date_of_birth: DataTypes.STRING,
+        description: DataTypes.STRING,
+                 */
             })
         }
         return res.json(filtered)
@@ -176,15 +211,25 @@ async function runMainApi() {
 
     // HTTP GET api that returns all the places
     app.get("/places", async (req, res) => {
-        const result = await models.Event.findAll()
+        const result = await models.Place.findAll()
         const filtered = []
         for (const element of result) {
             filtered.push({
+                id: element.id,
                 name: element.name,
                 img: element.img,
                 caption: element.caption,
                 description: element.description,
                 address: element.address,
+
+
+                /**
+                 *         name: DataTypes.STRING,
+        img: DataTypes.STRING,
+        caption:  DataTypes.STRING,
+        description:  DataTypes.STRING,
+        address: DataTypes.STRING,
+                 */
             })
         }
         return res.json(filtered)
