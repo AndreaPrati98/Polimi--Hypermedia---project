@@ -1,19 +1,20 @@
 <template>
-    <section class="section">
-        <title-overlay-image class="header"/>
+    <section class="box1">
+      <div class>
+
+
         <div class="overview-img-container">
             <OverviewBox class="overview-comp" :description="`La cucina del ristorante, focalizzata su specialità tipicamente romane, propone piatti semplici e gustosi che uniscono sapori e aromi in un perfetto ed armonico equilibrio. Una ricercata selezione di vini accompagna le pietanze proposte sul menù.`"/>
             <div class="img-comp">
                 <img src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_1280.jpg" alt="funny cat" class="image">
             </div>
-            <!-- <div class="overview-info-container"> -->
             <div class="art-container">
                 <info-component :title="'Artists Involved'" class="info-comp"/>
             </div>
             
             <descriptive-component class="place-comp"/>
-            <!-- </div> -->
         </div>
+      </div>
 
     <span class="separator"></span>
 
@@ -89,6 +90,14 @@ export default {
     }
     .image {
         width: 100%;
+    }
+
+    .box {
+      height: 100%;
+      width: 100%;
+      background-color: var(--palette-green-dark);
+
+
     }
 
 </style>

@@ -1,6 +1,8 @@
 <template>
     <section>
         <div class="box">
+
+            <nuxt />
         </div>
 
 

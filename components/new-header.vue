@@ -101,24 +101,25 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0rem 1rem;
-
-        border-bottom: 1px solid red;
+        padding: 1rem 1rem;
+        background-color: var(--palette-blue);
+        /*border-bottom: 1px solid red;*/
     }
 
     .nav-link {
-        --text-color-nav: var(--text-color-dark);
-        color: var(--text-color-dark);
+        --text-color-nav: var(--text-color-light);
+        color: var(--text-color-light);
         text-decoration: none;
 
         font-size: 1rem;
         font-weight: 400;
+        letter-spacing: 1.2px;
         padding: 0.8rem .5rem;
 
-        transition: color .5s ease-in;
+        transition: color .3s ease-in;
     }
     .nav-link:hover{
-        color: var(--palette-red-dark);
+        color: var(--palette-light-cyan);
     }
 
 
@@ -163,8 +164,11 @@ export default {
         text-decoration: none;
         font-size: 1.2rem;
         font-weight: 600;
-        --text-color-nav: var(--text-color-dark);
+        --text-color-nav: var(--text-color-light);
         color: var(--text-color-nav);
+        font-family: "Poppins";
+        font-size: 26px;
+        letter-spacing: 1.2px;
     }
 
     /* Responsiveness */

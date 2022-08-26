@@ -134,7 +134,7 @@ async function runMainApi() {
     })
 
     app.get('/events', async (req, res) => {
-        const result = await models.Event.findAll()
+        const result = await models.Event.findAll({include: {model: models.Artist} })
         const filtered = []
         for (const element of result) {
             filtered.push({
@@ -144,7 +144,9 @@ async function runMainApi() {
                 img: element.img,
                 date: element.date,
                 time: element.time,
-                details: element.details
+                details: element.details,
+                placeId: element.placeId,
+                artists: element.EventArtist
 
 
                 /**
