@@ -54,7 +54,7 @@ export default {
     .img {
         /* border: 2px solid red; */
         height: 100%;   
-        background-image: url("../assets/imgs/history_1920.jpg");
+        background-image: url("~/assets/imgs/history_1920.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: bottom;

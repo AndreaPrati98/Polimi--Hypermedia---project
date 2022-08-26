@@ -39,7 +39,7 @@ export default {
             },
             {
             name: 'Festival',
-            path: '/festival-intro',
+            path: '/festival',
             },
             {
             name: 'Events',

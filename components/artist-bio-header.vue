@@ -21,13 +21,10 @@ export default {
             required: true,
         }
     }
-
 }
 </script>
 
 <style scoped>
-
-
 .bar {
     display: flex;
     background-color: red;
@@ -35,7 +32,6 @@ export default {
     height: 30vh;
     flex-direction: column;
 }
-
 h1 {
     padding-left: 5%;
     width: 100%;
@@ -43,17 +39,14 @@ h1 {
     font-weight: 800;
     font-size: 2.5em;
 }
-
 ul {
     width: 100%;
     padding-left: 10%;
     font-family: 'Poppins';
-
     list-style-type:circle;
 }
 /* Do we need the following for bar?
     display: flex;
     flex-wrap: wrap;
 */
-
 </style>

@@ -2,25 +2,19 @@
   <section class="section">
         <!-- here we set up the image with the Title -->
         <!-- <img src="../assets/imgs/palais-des-papes-g48e250825_640.jpg" alt="Palace of the Popes" class="img"> -->
-
         <div class="img">
-            <img :src="require(`../assets/imgs/${image}`)">
+            
         </div>
         <div class="title-div">
-            <h1>{{ title }}</h1>
-            <h3>{{ description }}</h3>
+            <h1>Title</h1>
+            <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, quia.</h3>
         </div>
     </section>
 </template>
 
 <script>
 export default {
-    props: {
-        title: String,
-        description: String,
-        image: String
-    }
-
+    name: "header-w-title",
 }
 </script>
 
@@ -32,7 +26,8 @@ export default {
         height: 70vh;
     }
 
-    .image {
+    .img {
+        background-image: url("../assets/imgs/palais-des-papes-g04269230e_1920.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

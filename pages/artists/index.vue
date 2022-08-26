@@ -5,10 +5,6 @@
 </template>
 
 <script scoped>
-import TitleOverlayImage from '~/components/title-overlay-image.vue';
-import CardHover from '~/components/img-component/card-simple-hover.vue';
-import SimpleBox from '~/components/test-components/simple-box.vue';
-import DescrComponent from '~/components/information-components/descr-component.vue';
 import GroupIntroComponent from '~/components/big-components/group-intro-component.vue';
 
 export default {

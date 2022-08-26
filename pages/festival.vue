@@ -12,7 +12,7 @@
 
 <script>
 import DescriptiveComponent from '~/components/Descriptive-component';
-import Card from '~/components/card.vue';
+import Card from '~/components/img-component/card.vue';
 import InfoComponent from '~/components/information-components/info-component.vue';
 import Map from '~/components/map.vue';
 import Footer from '../components/footer.vue';

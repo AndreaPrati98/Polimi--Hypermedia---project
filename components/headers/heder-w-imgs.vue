@@ -44,7 +44,7 @@
 import cardHoverBW from './img-component/card-hover-b-w.vue'
 import CardHoverBW from './img-component/card-hover-b-w.vue';
 export default {
-    name: "title-overlay-2",
+    name: "header-w-imgs",
     components: { cardHoverBW, CardHoverBW },
     props: {
         title: {
