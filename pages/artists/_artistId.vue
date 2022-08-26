@@ -46,14 +46,10 @@ export default {
         }
     },
 
-
-
-
-
 }
 </script>
 
-<style>
+<style scoped>
 .bar {
     display: flex;
     background-color: red;

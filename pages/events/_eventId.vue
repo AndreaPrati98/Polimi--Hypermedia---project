@@ -1,7 +1,7 @@
 <template>
     <section class="section">
         <the-header-with-title class="header"/>
-        <div class="overview-img-container">
+        <div class="container-one">
             <overview-component class="overview-comp"/>
             <div class="img-comp">
                 <img src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_1280.jpg" alt="funny cat" class="image">
@@ -47,7 +47,7 @@ export default {
 <style scoped>
 
     /* here the layout settings */
-    .overview-img-container {
+    .container-one {
         padding: 0 3%;
         display: grid;
         grid-template: repeat(3, 1fr) / repeat(3, 1fr);
