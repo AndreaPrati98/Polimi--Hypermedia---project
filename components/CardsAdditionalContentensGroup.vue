@@ -20,7 +20,7 @@
 <script>
 
 
-import CardAdditionalContent from '~/components/img-component/card-additional-content.vue';
+import CardAdditionalContent from '~/components/img-component/CardHoverAdditionalContent.vue';
 export default {
     name: "transitional-links",
     components: {CardAdditionalContent},

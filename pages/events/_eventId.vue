@@ -30,7 +30,7 @@
 <script>
 import titleOverlayImage from '~/components/title-overlay-image.vue'
 import DescriptiveComponent from '~/components/descriptive-component.vue';
-import InfoComponent from '~/components/information-components/info-component.vue';
+import InfoComponent from '~/components/information-components/MultipleShortOverviewContainer.vue';
 export default {
     name: "artist-page",
     components: { 

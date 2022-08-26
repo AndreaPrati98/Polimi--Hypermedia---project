@@ -24,10 +24,10 @@
 </template>
 
 <script>
-import CardAdditionalContent from '~/components/img-component/card-additional-content.vue';
+import CardAdditionalContent from '~/components/img-component/CardHoverAdditionalContent.vue';
 import Default from '~/layouts/default.vue';
 import BioHeader from '~/components/artist-bio-header.vue';
-import TransitionalLinkCards from '~/components/transitional-link-cards.vue';
+import TransitionalLinkCards from '~/components/CardsAdditionalContentensGroup.vue';
 export default {
     name: "ArtistPage",
     components: {Default, BioHeader, CardAdditionalContent, TransitionalLinkCards},

@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import CardHoverBW from '../img-component/card-hover-b-w.vue';
+import CardHoverBW from '../img-component/CardHoverBlackWhite.vue';
 import cardSimpleHover from '../img-component/card-simple-hover.vue';
 
 export default {

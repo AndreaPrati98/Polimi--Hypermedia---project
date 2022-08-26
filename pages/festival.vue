@@ -13,7 +13,7 @@
 <script>
 import DescriptiveComponent from '~/components/Descriptive-component';
 import Card from '~/components/img-component/card.vue';
-import InfoComponent from '~/components/information-components/info-component.vue';
+import InfoComponent from '~/components/information-components/MultipleShortOverviewContainer.vue';
 import Map from '~/components/map.vue';
 import Footer from '../components/footer.vue';
 import ButtonStd from '~/components/utilities-components/button-std.vue';

@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import DescrComponent from '../information-components/descr-component.vue'
-import TitleOverlayImage from '../title-overlay-image.vue'
+import DescrComponent from '../information-components/SubheaderComponent.vue'
+import TitleOverlayImage from '~/components/headers/'
 import GridComponent from '../medium-components/grid-component.vue';
 export default {
     name: 'group-intro-component',

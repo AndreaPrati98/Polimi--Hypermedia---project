@@ -59,7 +59,6 @@ export default {
     width: 100%;
     height: 10px;
     display: block;
-    position: relative;
     border-left: 1px solid black;
     border-right: 1px solid black;
 
