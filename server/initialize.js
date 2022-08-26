@@ -224,14 +224,14 @@ export default async (models) => {
         },
         {
             name: "The Palace Theatre 2",
-            img: "https://cdn.pixabay.com/photo/2013/02/26/01/10/auditorium-86197_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg",
             caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, distinctio.",
             description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste optio delectus ducimus atque maiores sunt mollitia aspernatur laborum eveniet? Nostrum?",
             address: "address !! ",
         },
         {
             name: "Opéra Grand Avignon 3",
-            img: "https://cdn.pixabay.com/photo/2013/02/26/01/10/auditorium-86197_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2015/08/18/23/06/ballet-don-quijote-895062_1280.jpg",
             caption: "The Opéra d'Avignon is an opera house located in Avignon, France that has been in operation for almost two centuries.",
             description: "The initial opera house was constructed in 1824–1825, and opened with its inaugural performance on 30 October 1825. The original opera house was destroyed in a fire on 26 January 1846.",
             address: "Pl. de l'Horloge, 84000 Avignon, Francia",
