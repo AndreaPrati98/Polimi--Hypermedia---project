@@ -2,20 +2,26 @@
     <section class="card-container">
         <div class="box" v-for="(data, objIndex) of objList"
             :key="`data-index=${objIndex}`">
-            
-            <simple-box 
-                :artistName="data.name" 
-                :artistId="data.id" />
+
+            <card-hover-b-w
+                :titleTxt= "data.name"
+                :btnTxt= "'See more'"
+                :imgUrl= "data.img"
+                :btnDst= "'#'" />
         
         </div>
     </section>
 </template>
 
 <script>
+import CardHoverBW from '../img-component/card-hover-b-w.vue';
 import cardSimpleHover from '../img-component/card-simple-hover.vue';
-import SimpleBox from '../test-components/simple-box.vue';
+
 export default {
-  components: { cardSimpleHover, SimpleBox },
+    components: { 
+        cardSimpleHover,
+        CardHoverBW, 
+    },
     name: 'grid-component',
     props: {
         objList: {
@@ -31,8 +37,9 @@ export default {
 <style scoped>
     .card-container {
         display: grid;
-        grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+        gap: 2px;
 
+        grid-template: repeat(3, 1fr) / repeat(3, 1fr);
         grid-auto-flow: dense;
     }
 
@@ -46,12 +53,12 @@ export default {
     }
 
     .box:nth-child(4n + 1) {
-        border: 2px solid blue;
+        /* border: 2px solid blue; */
         grid-column: 1 / span 2;
     }
 
     .box:nth-child(4n + 3) {
-        border: 2px solid green;
+        /* border: 2px solid green; */
         grid-column: 2 / span 2;
     }
 
