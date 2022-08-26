@@ -1,7 +1,7 @@
 <template>
   <section>
     <div>
-        <bio-header :title="name" />
+        <bio-header :title="placeName" />
         <div class="left-slot">
 
         </div>
@@ -17,7 +17,7 @@
     </div>
     <hr/>
 
-    <transitional-link-cards linkText="Events including this artist" :events="events"/>
+    <transitional-link-cards linkText="Events hosted by this venue:" :events="placeEvents"/>
 
 
   </section>
@@ -29,20 +29,19 @@ import Default from '~/layouts/default.vue';
 import BioHeader from '~/components/artist-bio-header.vue';
 import TransitionalLinkCards from '~/components/transitional-link-cards.vue';
 export default {
-    name: "ArtistPage",
+    name: "PlacePage",
     components: {Default, BioHeader, CardAdditionalContent, TransitionalLinkCards},
 
     async asyncData({ route, $axios }) {
         const { id }  = route.params
-        const { data } = await $axios.get('/api/artists/' + id)
+        const { data } = await $axios.get('/api/places/' + id)
         return {
-            id: data[0].id,
-            name: data[0].name,
-            img: data[0].img,
-            date_of_birth: data[0].date_of_birth,
-            description: data[0].description,
-            events: data[0].events
-
+            placeName: data[0].name,
+            placeImg: data[0].img,
+            placeCaption: data[0].caption,
+            placeDescription: data[0].description,
+            placeAddress: data[0].address,
+            placeEvents: data[0].events
         }
     },
 
@@ -53,7 +52,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .bar {
     display: flex;
     background-color: red;
@@ -134,11 +133,4 @@ section {
     display: flex;
     flex-wrap: wrap;
 }
-
-
 </style>
-
-
-
-
-</script>

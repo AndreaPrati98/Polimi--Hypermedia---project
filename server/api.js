@@ -71,6 +71,7 @@ async function initializeDatabaseConnection() {
     Type_of_art.hasMany(Event)
     Event.belongsTo(Type_of_art)
 
+    /* This relation is not required in the project specs but we have added it for convenience. */
     Type_of_art.hasMany(Artist)
     Artist.belongsTo(Type_of_art)
 
@@ -138,27 +139,6 @@ async function runMainApi() {
         return res.json(result)
     })
 
-    app.get('/cats/:id', async (req, res) => {
-        const id = +req.params.id
-        const result = await models.Cat.findOne({ where: { id } })
-        return res.json(result)
-    })
-
-    // HTTP GET api that returns all the cats in our fake database
-    app.get("/cats", async (req, res) => {
-        const result = await models.Cat.findAll()
-        const filtered = []
-        for (const element of result) {
-            filtered.push({
-                name: element.name,
-                img: element.img,
-                breed: element.breed,
-                id: element.id,
-            })
-        }
-        return res.json(filtered)
-    })
-
     app.get("/events", async (req, res) => {
         const result =  await models.Event.findAll()
         return res.json(result)
@@ -185,21 +165,37 @@ async function runMainApi() {
         return res.json(filtered)
     })
 
+    // HTTP GET api that returns the info for the requested artist (where artistId == :id) along 
+    // with the events in which that artist performs in
     app.get("/artists/:id", async (req, res) => {
         const id = +req.params.id
-        console.log("API ID: ")
-        console.log(id)
-        const result = await models.Artist.findOne({ where: { id } })//, include: [{model: models.EventArtist}] })
+        const result = await models.Artist.findAll({where: {id}, include: [ {model: models.Event}]})
         return res.json(result)
     })
 
 
-    // HTTP POST apio that will push (and therefore create) a new element in 
-    // our fake database 
-    app.post("/cats", (req, res) => {
-        const { body } = req
-        catList.push(body)
-        return res.sendStatus(200)
+    // HTTP GET api that returns all the places
+    app.get("/places", async (req, res) => {
+        const result = await models.Event.findAll()
+        const filtered = []
+        for (const element of result) {
+            filtered.push({
+                name: element.name,
+                img: element.img,
+                caption: element.caption,
+                description: element.description,
+                address: element.address,
+            })
+        }
+        return res.json(filtered)
+    })
+    
+    // HTTP GET api that returns the info for the requested place (where placeId == :id) along 
+    // with the events that are hosted in that place
+    app.get("/places/:id", async (req, res) => {
+        const id = +req.params.id
+        const result = await models.Place.findAll({where: {id}, include: [ {model: models.Event}]})
+        return res.json(result)
     })
 }
 

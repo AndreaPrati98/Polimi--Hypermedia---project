@@ -3,15 +3,15 @@
         <h3>{{linkText}}</h3>
         <div class="scroll-window">
             <div class="events">
-                <card-additional-content class="event" title="Event 1" content="Friday 22/06 10AM" :imgUrl="'https://cdn.pixabay.com/photo/2016/11/21/16/01/buildings-1846133_1280.jpg'" btnTxt="See More" btnDst="~/pages/events/event1"/>
-                <card-additional-content class="event" title="Event 2" content="Saturday 19/06 7PM" :imgUrl="'https://cdn.pixabay.com/photo/2016/11/21/16/01/buildings-1846133_1280.jpg'" btnTxt="See More" btnDst="~/pages/events/event1"/>
-                <card-additional-content class="event" title="Event 3" content="Saturday 19/06 19:30pm" :imgUrl="'https://cdn.pixabay.com/photo/2016/11/21/16/01/buildings-1846133_1280.jpg'" btnTxt="See More" btnDst="~/pages/events/event1"/>
-                <card-additional-content class="event" title="Event 4" content="Friday 22/06 10AM" :imgUrl="'https://cdn.pixabay.com/photo/2016/11/21/16/01/buildings-1846133_1280.jpg'" btnTxt="See More" btnDst="~/pages/events/event1"/>
-                <card-additional-content class="event" title="Event 5" content="Saturday 19/06 7PM" :imgUrl="'https://cdn.pixabay.com/photo/2016/11/21/16/01/buildings-1846133_1280.jpg'" btnTxt="See More" btnDst="~/pages/events/event1"/>
-                <card-additional-content class="event" title="Event 6" content="Saturday 19/06 19:30pm" :imgUrl="'https://cdn.pixabay.com/photo/2016/11/21/16/01/buildings-1846133_1280.jpg'" btnTxt="See More" btnDst="~/pages/events/event1"/>
-                <card-additional-content class="event" title="Event 7" content="Friday 22/06 10AM" :imgUrl="'https://cdn.pixabay.com/photo/2016/11/21/16/01/buildings-1846133_1280.jpg'" btnTxt="See More" btnDst="~/pages/events/event1"/>
-                <card-additional-content class="event" title="Event 8" content="Saturday 19/06 7PM" :imgUrl="'https://cdn.pixabay.com/photo/2016/11/21/16/01/buildings-1846133_1280.jpg'" btnTxt="See More" btnDst="~/pages/events/event1"/>
-                <card-additional-content class="event" title="Event 9" content="Saturday 19/06 19:30pm" :imgUrl="'https://cdn.pixabay.com/photo/2016/11/21/16/01/buildings-1846133_1280.jpg'" btnTxt="See More" btnDst="~/pages/events/event1"/>
+
+                <card-additional-content class="event" v-for="(event, eventIndex) of events"
+                :key="`event-index=${eventIndex}`"
+                :title="event.title"
+                :content="event.date"
+                :imgUrl="event.img"
+                :btnTxt="`See More`"
+                :btnDst="`/events/` + event.id"
+                />
             </div>
         </div>
     </div>
@@ -27,6 +27,10 @@ export default {
     props: {
         linkText: {
             type: String,
+            required: true,
+        },
+        events: {
+            type: Array,
             required: true,
         }
     }
