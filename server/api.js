@@ -138,6 +138,16 @@ async function runMainApi() {
         const result = await models.Event.findOne({ where: { id }, include: { model: models.Artist } })
         return res.json(result)
     })
+    
+    app.get('/eventsByArt/:typeOfArt', async (req, res) => {
+        const typeOfArt = +req.params.typeOfArt
+        const result = await models.Event.findAll({ 
+            where: { typeOfArtId: typeOfArt },
+            include: { model: models.Type_of_art }            
+        })
+
+        return res.json(result)
+    })
 
     // HTTP GET api that returns all the artists
     app.get("/artists", async (req, res) => {
