@@ -7,7 +7,7 @@
                 :titleTxt= "data.name"
                 :btnTxt= "'See more'"
                 :imgUrl= "data.img"
-                :btnDst= "'#'" />
+                :btnDst= "`/events/${data.id}`"/>
         
         </div>
     </section>
@@ -15,11 +15,9 @@
 
 <script>
 import CardHoverBW from '../img-component/CardHoverBlackWhite.vue';
-import cardSimpleHover from '../img-component/card-simple-hover.vue';
 
 export default {
     components: { 
-        cardSimpleHover,
         CardHoverBW, 
     },
     name: 'grid-component',

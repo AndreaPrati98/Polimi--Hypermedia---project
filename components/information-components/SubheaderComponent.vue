@@ -1,10 +1,9 @@
 <template>
     <section class="description-container">
         <div class="description">
+
             <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Temporibus qui deleniti vero dignissimos consequatur earum officiis ut aut aspernatur omnis 
-            illum quaerat assumenda odit, laborum dicta iure ea saepe. Vel.
+                {{content}}
             </p>  
         </div>
     </section>
@@ -13,6 +12,16 @@
 <script>
 export default {
     name: 'descr-component',
+    props: {
+        title: {
+            type: String,
+            required: false,
+        },
+        content: {
+            type: String,
+            required: true,
+        }
+    }
 }
 </script>
 
@@ -28,6 +37,8 @@ export default {
 
   .description {
     display: flex;
+    flex-direction: column;
+    
     align-items: center;
     justify-content: center;
 

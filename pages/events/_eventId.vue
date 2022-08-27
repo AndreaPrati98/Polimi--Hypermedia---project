@@ -35,11 +35,17 @@ import MultipleShortOverviewContainer from '~/components/information-components/
 export default {
     name: "artist-page",
     components: {
-    InfoComponent,
-    TheHeaderWithTitle,
-    OverviewComponent,
-    MultipleShortOverviewContainer
-},
+        InfoComponent,
+        TheHeaderWithTitle,
+        OverviewComponent,
+        MultipleShortOverviewContainer
+    },
+    props: {
+        eventTitle: {
+            type: String,
+            required: true,
+        }
+    },
 
 }
 </script>
