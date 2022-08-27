@@ -1,6 +1,9 @@
 <template>
     <section>
-        <the-header-with-title title="This Year's Artists" description="Check this out!" image="palais-des-papes-g04269230e_1920.jpg"/>
+        <the-header-with-title class="header"
+            title="This Year's Artists" 
+            description="Check this out!" 
+            image="palais-des-papes-g04269230e_1920.jpg" />
         <subheader-component />
         <grid-component :objList="objList"/>
     </section>

@@ -1,10 +1,13 @@
 <template>
-  <section class="section">
+  <section class="section" :style="cssProps">
         <!-- here we set up the image with the Title -->
-        <!-- <img src="../assets/imgs/palais-des-papes-g48e250825_640.jpg" alt="Palace of the Popes" class="img"> -->
-        <div class="img">
+            
+        <div class="img" :style="`background-image: url(${this.imgUrl}) `">
             
         </div>
+        
+        <!-- <img :src="imgUrl" alt="" class="img"> -->
+
         <div class="title-div">
             <h1>Title</h1>
             <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, quia.</h3>
@@ -15,6 +18,21 @@
 <script>
 export default {
     name: "header-w-title",
+    props: {
+        title: {
+            type: String,
+            required: true,
+        },
+        subtitle: {
+            type: String,
+        },
+        imgUrl: {
+            type: String,
+            
+            default: "https://cdn.pixabay.com/photo/2015/07/27/18/12/bridge-of-avignon-862948_1280.jpg",
+        }
+    },
+    
 }
 </script>
 
@@ -24,6 +42,8 @@ export default {
         display: grid;
         grid-template: repeat(4, 1fr) / repeat(4, 1fr);
         height: 70vh;
+        /* border: 2px solid red; */
+        overflow: hidden;
     }
 
     .img {
@@ -31,8 +51,11 @@ export default {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        /* object-fit: cover;
+        object-position: 50% 50% ; */
 
-        width: auto;
+        width: 100%;
+        
         grid-area: 1 / 1 / 5 / 5;
     }
 
