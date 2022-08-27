@@ -143,7 +143,10 @@ async function runMainApi() {
         const typeOfArt = +req.params.typeOfArt
         const result = await models.Event.findAll({ 
             where: { typeOfArtId: typeOfArt },
-            include: { model: models.Type_of_art }            
+            include: [
+                { model: models.Type_of_art },
+                { model: models.Artist }
+            ]      
         })
 
         return res.json(result)
