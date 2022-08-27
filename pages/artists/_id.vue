@@ -36,12 +36,12 @@ export default {
         const { id }  = route.params
         const { data } = await $axios.get('/api/artists/' + id)
         return {
-            id: data[0].id,
-            name: data[0].name,
-            img: data[0].img,
-            date_of_birth: data[0].date_of_birth,
-            description: data[0].description,
-            events: data[0].events
+            id: data.id,
+            name: data.name,
+            img: data.img,
+            date_of_birth: data.date_of_birth,
+            description: data.description,
+            events: data.events
 
         }
     },

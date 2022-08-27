@@ -6,7 +6,9 @@
             :image="pageData.imgUrl" />
         <subheader-component class="subheader"
             :content="pageData.description" />
-        <grid-component :objList="allEvents"/>
+        <grid-component 
+            :partialPath="'events'"
+            :objList="allEvents"/>
     </section>
 </template>
 

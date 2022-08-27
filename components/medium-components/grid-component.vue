@@ -7,7 +7,7 @@
                 :titleTxt= "data.name"
                 :btnTxt= "'See more'"
                 :imgUrl= "data.img"
-                :btnDst= "`/events/${data.id}`"/>
+                :btnDst= "`/${partialPath}/${data.id}`"/>
         
         </div>
     </section>
@@ -25,6 +25,14 @@ export default {
         objList: {
             type: Array,
             required: true,
+        },
+        partialPath: {
+            type: String,
+            required: true,
+            validator: function (value) {
+                // The value must match one of these strings
+                return ['events', 'artists', 'places'].includes(value)
+            }
         }
     },
     

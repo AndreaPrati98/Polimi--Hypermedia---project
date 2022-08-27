@@ -33,15 +33,15 @@ export default {
     components: {Default, BioHeader, CardAdditionalContent, TransitionalLinkCards},
 
     async asyncData({ route, $axios }) {
-        const { id }  = route.params
+        const  { id }  = route.params
         const { data } = await $axios.get('/api/places/' + id)
         return {
-            placeName: data[0].name,
-            placeImg: data[0].img,
-            placeCaption: data[0].caption,
-            placeDescription: data[0].description,
-            placeAddress: data[0].address,
-            placeEvents: data[0].events
+            placeName: data.name,
+            placeImg: data.img,
+            placeCaption: data.caption,
+            placeDescription: data.description,
+            placeAddress: data.address,
+            placeEvents: data.events
         }
     },
 
