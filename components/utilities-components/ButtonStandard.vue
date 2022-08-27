@@ -60,11 +60,13 @@ export default {
         padding: 14px 30px;
         background-color: var(--btn-bkgd-color);
         transition: box-shadow .3s ease-out,
+                    transform .3s ease-out,
                     opacity .5s ease;
     }
 
     .btn:hover {
-        box-shadow: 4px 4px 2px #454545;
+        box-shadow: 4px 4px 6px #454545;
+        transform: translate3d(-1.7px, -1.7px, 2px);
     }
 
     .btn:active {

@@ -7,7 +7,7 @@
                 :titleTxt= "data.name"
                 :btnTxt= "'See more'"
                 :imgUrl= "data.img"
-                :btnDst= "'#'" />
+                :btnDst= "`/${partialPath}/${data.id}`"/>
         
         </div>
     </section>
@@ -15,11 +15,9 @@
 
 <script>
 import CardHoverBW from '../img-component/CardHoverBlackWhite.vue';
-import cardSimpleHover from '../img-component/card-simple-hover.vue';
 
 export default {
     components: { 
-        cardSimpleHover,
         CardHoverBW, 
     },
     name: 'grid-component',
@@ -27,6 +25,14 @@ export default {
         objList: {
             type: Array,
             required: true,
+        },
+        partialPath: {
+            type: String,
+            required: true,
+            validator: function (value) {
+                // The value must match one of these strings
+                return ['events', 'artists', 'places'].includes(value)
+            }
         }
     },
     

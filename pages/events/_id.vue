@@ -1,16 +1,16 @@
 <template>
     <section class="section">
-        <the-header-with-title class="header"/>
+        <the-header-with-title :title="title" class="header"/>
 
         <div class="all-sections">
             <div class="section1">
                 <div class="overview-comp">
-                    <overview-component title="OVERVIEW" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, nemo soluta dolorum magni commodi aperiam debitis sunt atque quo consequatur animi eligendi quibusdam id voluptate porro omnis, inventore neque hic nihil incidunt error ea aspernatur nulla officia? Vero quos aperiam tenetur assumenda pariatur impedit earum animi nobis, laborum accusantium? Incidunt!"/>
+                    <overview-component title="OVERVIEW" :description="description"/>
                 </div>
 
                 
                 <div class="img-comp">
-                    <img src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_1280.jpg" alt="funny cat" class="image">
+                    <img :src="img" alt="funny cat" class="image">
                 </div>
             </div>
             <div class="section2">
@@ -83,7 +83,13 @@ export default {
     MultipleShortOverviewContainer,
         TabBox,
         CardsAdditionalContentensGroup
-},
+    },
+    props: {
+        eventTitle: {
+            type: String,
+            required: true,
+        }
+    },
 
 data() {
     return{
@@ -92,6 +98,24 @@ data() {
 
         }
     },
+
+    async asyncData({ route, $axios }) {
+        const { id }  = route.params
+        const { data } = await $axios.get('/api/events/' + id)
+        return {
+            id: data.id,
+            title: data.title,
+            description: data.description,
+            img: data.img,
+            date: data.date,
+            time: data.time,
+            placeId: data.placeId,
+            artists: data.EventArtist
+        }
+    },
+
+
+    
 }
 </script>
 
