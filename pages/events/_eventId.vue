@@ -23,11 +23,39 @@
             </div>
 
             <div class="section4">
-                <div class="text">
+                <div class="seeall">
                     <h2>See all other events</h2>
+                    <div class="arrowButton">
+                        <button>
+                            <p>
+                                <i class="arrow left"></i>
+                            </p>
+                        </button>
+                    </div>
                 </div>
-                <div class="list">
-       
+                <div class="wrapper">
+                    <div class="typing">
+                        <h2>See all by...</h2>
+                    </div>
+                </div>
+                        <div class="arrowButton">
+
+                            <button><p><i class="arrow right"></i></p></button>
+
+                        </div>
+
+                        <div class="arrowButton">
+                            <button><p><i class="arrow right"></i></p></button>
+                        </div>
+                        <div class="arrowButton">
+                            <button><p><i class="arrow right"></i></p></button>
+                        </div>
+                         <div class="arrowButton">
+
+                            <button><p><i class="arrow right"></i></p></button>
+
+                        </div>
+                    </div>
                 </div>
 
 
@@ -90,12 +118,51 @@ data() {
 
 
 .section4 {
-    background-color: var(--palette-green-light);
+    background-color: var(--palette-green);
+    display: flex;
+    flex-direction: row;
+    padding: 10%;
+    
+}
 
+.arrow {
+  border: solid var(--palette-green);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
 
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 
 
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+
+button {
+    all: unset;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+.arrowButton {
+    background-color: var(--palette-red-dark);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.seeall {
+    border-right: 3px solid var(--palette-red-dark);
+}
 
 .overview-comp {
     padding: 15% 5%;
@@ -121,5 +188,39 @@ data() {
 .image {
     width: 100%;
 }
+
+
+
+
+.wrapper{ 
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.typing{
+    width: 22ch;
+    animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid black;
+    font-family: monospace;
+    font-size: 2em;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    
+}
+
+
 
 </style>
