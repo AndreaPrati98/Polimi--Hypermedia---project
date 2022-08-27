@@ -2,16 +2,16 @@
     <section class="section">
         <the-header-with-title class="header"/>
         <div class="overview-img-container">
-            <overview-component class="overview-comp"/>
+            <overview-component class="overview-comp" title="OVERVIEW" description="fcgvhbjnhgvfcvbhgv"/>
             <div class="img-comp">
                 <img src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_1280.jpg" alt="funny cat" class="image">
             </div>
             <!-- <div class="overview-info-container"> -->
             <div class="art-container">
-                <multiple-short-overview-container :title="'Artists Involved'" class="info-comp"/>
+                <tab-box :title="'Artists Involved'" class="info-comp"/>
             </div>
             
-            <overview-component class="place-comp"/>
+            <overview-component class="place-comp" title="ABOUT" description="erfghjnjhgfcdxsdfgbhjnmnhbgvfcvgbhn"/>
             <!-- </div> -->
         </div>
 
@@ -32,13 +32,15 @@ import InfoComponent from '~/components/information-components/MultipleShortOver
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue';
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
 import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue';
+import TabBox from '~/components/information-components/TabBox.vue';
 export default {
     name: "artist-page",
     components: {
     InfoComponent,
     TheHeaderWithTitle,
     OverviewComponent,
-    MultipleShortOverviewContainer
+    MultipleShortOverviewContainer,
+        TabBox
 },
 
 }
@@ -54,6 +56,7 @@ export default {
         grid-template-areas:    'ev ev img'
                                 'art art art'
                                 'place place place';
+
     }
 
     .overview-comp {
