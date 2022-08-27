@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <span class="top"/>
-        <p class="title">{{title}}</p>
+        <h3 class="title">{{title}}</h3>
         <p class="text">{{description}}</p>
     </div>
 </template>
@@ -56,8 +56,16 @@ export default {
 
 .top {
     display: block;
-    border-top: var(--border-thickness, 2px) solid black;
+    border-top: var(--border-thickness, 2px) solid var(--palette-light-cyan);
 }
 
-
+h3 {
+    width: 100%;
+    font-size: 25px;
+    font-family: "Poppins";
+    font-weight: 600;
+    margin-bottom: 50px;
+    text-align: center;
+    letter-spacing: 1.2px;
+}
 </style>
