@@ -1,6 +1,38 @@
 <template>
+
+
+
     <section class="section">
         <the-header-with-title class="header"/>
+
+        <div class="all-sections">
+            <div class="section1">
+                <overview-component class="overview-comp" title="OVERVIEW" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, nemo soluta dolorum magni commodi aperiam debitis sunt atque quo consequatur animi eligendi quibusdam id voluptate porro omnis, inventore neque hic nihil incidunt error ea aspernatur nulla officia? Vero quos aperiam tenetur assumenda pariatur impedit earum animi nobis, laborum accusantium? Incidunt!"/>
+
+
+                
+                <div class="img-comp">
+                    <img src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_1280.jpg" alt="funny cat" class="image">
+                </div>
+            </div>
+            <div class="section2">
+                <tab-box :title="'Artists Involved'" class="info-comp"/>
+            </div>
+
+
+            <div class="section3">
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
         <div class="overview-img-container">
             <overview-component class="overview-comp" title="OVERVIEW" description="fcgvhbjnhgvfcvbhgv"/>
             <div class="img-comp">
@@ -47,6 +79,37 @@ export default {
 </script>
 
 <style scoped>
+
+
+.all-sections {
+    display: flex;
+    flex-direction: column;
+}
+.section1 {
+    background-color: var(--palette-soft-blue);
+    display: flex;
+    
+}
+.section2 {
+    background-color: var(--palette-green-dark);
+}
+.section3 {
+    background-color: var(--palette-blue);
+}
+
+.overview-comp {
+    padding: 15% 15%;
+}
+
+.img-comp {
+    margin: 5% 5%;
+}
+
+
+
+
+
+
 
     /* here the layout settings */
     .overview-img-container {
