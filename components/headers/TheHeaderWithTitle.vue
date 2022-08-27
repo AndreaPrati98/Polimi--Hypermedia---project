@@ -1,5 +1,5 @@
 <template>
-  <section class="section" :style="cssProps">
+  <section class="section">
         <!-- here we set up the image with the Title -->
             
         <div class="img" :style="`background-image: url(${this.imgUrl}) `">
@@ -9,8 +9,8 @@
         <!-- <img :src="imgUrl" alt="" class="img"> -->
 
         <div class="title-div">
-            <h1>Title</h1>
-            <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, quia.</h3>
+            <h1>{{title}}</h1>
+            <h3>{{subtitle}}</h3>
         </div>
     </section>
 </template>
@@ -28,7 +28,6 @@ export default {
         },
         imgUrl: {
             type: String,
-            
             default: "https://cdn.pixabay.com/photo/2015/07/27/18/12/bridge-of-avignon-862948_1280.jpg",
         }
     },
