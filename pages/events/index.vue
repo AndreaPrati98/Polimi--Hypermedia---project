@@ -6,12 +6,15 @@
             :image="pageData.imgUrl" />
         <subheader-component class="subheader"
             :content="pageData.description" />
-        <input v-model="typeOfArtFilter" type="text" name="" id=""> {{typeOfArtFilter}}
-        <button @click="filterObjList(typeOfArtFilter)">Filter by art</button>
+        <dropdown-component 
+            :formName="'type of art selector'"
+            :objList="allTypeOfArts" 
+            @change="filterObjList"/>
+        
         <grid-component 
             :partialPath="'events'"
             :objList="eventsToDisplay"/>
-
+        
     </section>
 </template>
 
@@ -19,13 +22,14 @@
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue'
 import SubheaderComponent from '~/components/information-components/SubheaderComponent.vue'
 import GridComponent from '~/components/medium-components/GridComponent.vue'
+import DropdownComponent from '~/components/utilities-components/DropdownComponent.vue'
 export default {
     name: 'event-page',
     components: { 
         TheHeaderWithTitle,
         SubheaderComponent,
         GridComponent,
-        GridComponent,
+        DropdownComponent
     },
     data() {
         const pageData = {
@@ -37,22 +41,26 @@ export default {
 
         return {
             pageData,
-            typeOfArtFilter: "",
+            typeOfArtFilter: "All",
         }
     },
     async asyncData({ $axios }) {
         
-        const { data } = await $axios.get('/api/events')
+        const  [events, typeOfArts]  = await Promise.all([
+                $axios.get('/api/events'),
+                $axios.get('/api/typeofart'),
+                ])
         return {
-            allEvents: data,
-            eventsToDisplay: data,
+            allEvents: events.data,
+            eventsToDisplay: events.data,
+            allTypeOfArts: typeOfArts.data,
         }
     },
     methods: {
         filterObjList(id) {
             // let's filter over the type of art Id
-            if(id !== "") {
-                this.eventsToDisplay = this.allEvents.filter(el => (el.typeOfArtId === (+id)))
+            if(id !== "All") {
+                this.eventsToDisplay = this.allEvents.filter(el => (el.typeOfArtId === (id)))
             } else {
                 this.eventsToDisplay = this.allEvents
             }
