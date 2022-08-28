@@ -3,7 +3,7 @@ export default async (models) => {
     /* 10 */
     const eventList = [
         {
-            title: "Theater 1",
+            name: "Theater 1",
             description: "Theater 1 um dolor sit ame elit. Integer cursus eleifend mi id dapibus. ",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "17/06/2022",
@@ -11,7 +11,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 2",
+            name: "Theater 2",
             description: "Theater 2 um dolor sit amet, consectetur adipisnd mi id dapibus. ",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "18/06/2022",
@@ -19,7 +19,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 3",
+            name: "Theater 3",
             description: "Theater 3 um dolor sit amet, consecteger cursus eleifend mi id dapibus. Ut vestibulum pellentesque molestie. ",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "19/06/2022",
@@ -27,7 +27,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 4",
+            name: "Theater 4",
             description: "Theater 4 um dolor sit amet, consectetur adipiscing apibus. Ut vestib",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "20/06/2022",
@@ -35,7 +35,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 5",
+            name: "Theater 5",
             description: "Theater 5 um dolor sit amet, conseifend mi id dapibus. Ut vestibulum pellentesque molestie.",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "21/06/2022",
@@ -43,7 +43,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 6",
+            name: "Theater 6",
             description: "Theater 6 um dolor selit. Integer cursus eleifend mi id dapibus. Ut vestibulum pellentesq",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "17/07/2022",
@@ -51,7 +51,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 7",
+            name: "Theater 7",
             description: "Theater 7 um dolor sit amet, consectetur adipiscing elit. Integer cursus bus.",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "18/07/2022",
@@ -59,7 +59,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 8",
+            name: "Theater 8",
             description: "Theater 8 um dolor sit amet, consectetur adipiscing elit. Integer",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "19/07/2022",
@@ -67,7 +67,7 @@ export default async (models) => {
             details: "blah 8",
         },
         {
-            title: "Theater 9",
+            name: "Theater 9",
             description: "Theater 9 um dolor sit amet, consectetur adipiscing elit. Integepib",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "20/07/2022",
@@ -75,7 +75,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 10",
+            name: "Theater 10",
             description: "Theater 10 um dolor sit amet, consectetur adipiscingdapibus. Ut vesti",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "21/07/2022",

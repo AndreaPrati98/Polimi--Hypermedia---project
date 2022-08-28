@@ -30,7 +30,7 @@ if(process.env.NODE_ENV !== "production"){
 async function initializeDatabaseConnection() {
     await database.authenticate()
     const Event = database.define("event", {
-        title: DataTypes.STRING,
+        name: DataTypes.STRING,
         description: DataTypes.STRING,
         img: DataTypes.STRING,
         date: DataTypes.STRING,
