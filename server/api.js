@@ -145,7 +145,7 @@ async function runMainApi() {
             where: { typeOfArtId: typeOfArt },
             include: [
                 { model: models.Type_of_art },
-                { model: models.Artist }
+                // { model: models.Artist }
             ]      
         })
 
