@@ -10,7 +10,9 @@
     </section>
     <div class="double-section">
       <card class="card"/>
-      <MultipleShortOverviewContainer :title="'Practical informations'" class="info-component"/>
+      <MultipleShortOverviewContainer class="info-component"
+        :title="'Practical informations'" 
+        :objList="practicalInfo"/>
     </div>
     
   </div>
@@ -31,8 +33,27 @@ export default {
         title: "Overview",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ab accusantium harum! Nam placeat laboriosam ducimus odio et aut doloremque voluptatibus fugit odit harum? Quaerat aliquam quo sit? Mollitia facilis harum aliquid accusamus quasi error temporibus id totam ratione? Aperiam molestiae veniam sit? Odit, laborum. Explicabo minima doloremque dignissimos. Nihil ratione repudiandae quibusdam, incidunt qui veritatis nesciunt debitis velit quos. Quos tenetur neque repellendus aspernatur iste sed sunt porro rem adipisci labore nulla enim ea explicabo corporis ipsam officiis accusantium perferendis vero tempore soluta unde, aliquam reiciendis temporibus. Suscipit, explicabo doloribus? At nobis sequi voluptatum, quo ullam incidunt quos aspernatur?"
       }  
+      const practicalInfo = [
+        {
+          name: "Date",
+          description: "Here is the explanation on when and how",
+        },
+        {
+          name: "Accessibility",
+          description: "here all the infos about accessibility at Festival d'avigon",
+        },
+        {
+          name: "tickets",
+          description: "Here we want to explain the differences between the tickets you can buy",
+        },
+        {
+          name: "Location",
+          description: "Here some tips so that you will always know where to be at the right moment",
+        }
+      ]
       return {
-        content
+        content,
+        practicalInfo,
       }
     }
   
