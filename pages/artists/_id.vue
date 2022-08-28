@@ -12,10 +12,17 @@
     <multiple-short-overview-container 
         :title="eventsRelatedTitle"
         :objList="artist.events"/>
+
+    <span class="separator"></span>
+
+    <cards-additional-contentens-group 
+        :title="'Other events related to this artis'"
+        :objList="artist.events"/>
   </section>
 </template>
 
 <script>
+import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue'
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue'
 import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue'
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue'
@@ -25,6 +32,7 @@ export default {
         TheHeaderWithTitle, 
         OverviewComponent, 
         MultipleShortOverviewContainer,
+        CardsAdditionalContentensGroup,
     },
     data() {
         // everything we see here has to be retrieved from the DB
@@ -47,7 +55,12 @@ export default {
 </script>
 
 <style scoped>
-
+    .separator {
+        display: block;
+        width: 70%;
+        border-top: 2px solid black;
+        margin: 0 auto;
+    }
 </style>
 
 

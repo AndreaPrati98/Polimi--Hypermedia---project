@@ -1,17 +1,16 @@
 <template>
     <div class="where">
-        <h3>{{linkText}}</h3>
+        <h3>{{title}}</h3>
         <div class="scroll-window">
-            <div class="events">
+            <div class="cards-container">
 
-                <card-additional-content class="event" v-for="(event, eventIndex) of events"
-                :key="`event-index=${eventIndex}`"
-                :title="event.title"
-                :content="event.date"
-                :imgUrl="event.img"
-                :btnTxt="`See More`"
-                :btnDst="`/events/` + event.id"
-                />
+                <card-additional-content class="event" v-for="(element, index) of objList"
+                    :key="`card-${index}`"
+                    :title="element.name"
+                    :content="element.date"
+                    :imgUrl="element.img"
+                    :btnTxt="`See More`"
+                    :btnDst="`${partialPath}/` + element.id" />
             </div>
         </div>
     </div>
@@ -23,14 +22,20 @@
 import CardAdditionalContent from '~/components/img-component/CardHoverAdditionalContent.vue';
 export default {
     name: "transitional-links",
-    components: {CardAdditionalContent},
+    components: { 
+        CardAdditionalContent
+    },
     props: {
-        linkText: {
+        title: {
             type: String,
             required: true,
         },
-        events: {
+        objList: {
             type: Array,
+            required: true,
+        },
+        partialPath: {
+            type: String,
             required: true,
         }
     }
@@ -47,7 +52,7 @@ export default {
     flex-direction: column;
 }
 
-.events{
+.cards-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
