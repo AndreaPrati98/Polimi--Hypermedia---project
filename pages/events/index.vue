@@ -45,11 +45,17 @@ export default {
         }
     },
     async asyncData({ $axios }) {
-        
+        // here we retrieve also type of art so that we can create the proper filter
         const  [events, typeOfArts]  = await Promise.all([
                 $axios.get('/api/events'),
                 $axios.get('/api/typeofart'),
                 ])
+        /* 
+            the eventsToDisplay is there because it will be the
+            element displayed, otherwise if we would filter over
+            the original list we would have to re-do the api call
+            to get again all the events
+        */ 
         return {
             allEvents: events.data,
             eventsToDisplay: events.data,
