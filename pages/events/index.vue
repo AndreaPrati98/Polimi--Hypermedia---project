@@ -63,5 +63,9 @@ export default {
         height: 100%;
     }
 
+    .section2 {
+        background-color: var(--palette-light-cyan);
+    }
+
     
 </style>

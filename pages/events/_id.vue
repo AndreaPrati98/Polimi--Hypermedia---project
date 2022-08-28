@@ -1,25 +1,23 @@
 <template>
     <section class="section">
-        <the-header-with-title :title="title" class="header"/>
+        <the-header-with-title :title="eventTitle" class="header"/>
 
         <div class="all-sections">
+
             <div class="section1">
                 <div class="overview-comp">
-                    <overview-component title="OVERVIEW" :description="description"/>
+                    <overview-component title="OVERVIEW" :description="eventDescription"/>
                 </div>
-
-                
                 <div class="img-comp">
-                    <img :src="img" alt="funny cat" class="image">
+                    <img :src="eventImg" alt="funny cat" class="image">
                 </div>
             </div>
             <div class="section2">
-                <tab-box :title="'Artists Involved'" class="info-comp"/>
+                <tab-box :title="'Venues for this Event'" class="info-comp"/>
             </div>
 
-
             <div class="section3">
-                <cards-additional-contentens-group class="events-comp" :linkText="text" :events="eventsList"/>
+                <cards-additional-contentens-group class="events-comp" :linkText="text" :events="eventArtistList"/>
             </div>
 
             <div class="section4">
@@ -79,35 +77,30 @@ export default {
         CardsAdditionalContentensGroup,
         ButtonStandard
     },
-    props: {
-        eventTitle: {
-            type: String,
-            required: true,
-        }
-    },
-
-data() {
-    return{
-        text: "Places for this Event",
-        eventsList: [{"id":1,"title":"Theater 1","description":"Theater 1 um dolor sit ame elit. Integer cursus eleifend mi id dapibus. ","img":"https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg","date":"17/06/2022","time":"18:15","details":"blah "},{"id":2,"title":"Theater 2","description":"Theater 2 um dolor sit amet, consectetur adipisnd mi id dapibus. ","img":"https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg","date":"18/06/2022","time":"18:15","details":"blah "},{"id":3,"title":"Theater 3","description":"Theater 3 um dolor sit amet, consecteger cursus eleifend mi id dapibus. Ut vestibulum pellentesque molestie. ","img":"https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg","date":"19/06/2022","time":"18:15","details":"blah "},{"id":4,"title":"Theater 4","description":"Theater 4 um dolor sit amet, consectetur adipiscing apibus. Ut vestib","img":"https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg","date":"20/06/2022","time":"18:15","details":"blah "},{"id":5,"title":"Theater 5","description":"Theater 5 um dolor sit amet, conseifend mi id dapibus. Ut vestibulum pellentesque molestie.","img":"https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg","date":"21/06/2022","time":"18:15","details":"blah "},{"id":6,"title":"Theater 6","description":"Theater 6 um dolor selit. Integer cursus eleifend mi id dapibus. Ut vestibulum pellentesq","img":"https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg","date":"17/07/2022","time":"18:15","details":"blah "},{"id":7,"title":"Theater 7","description":"Theater 7 um dolor sit amet, consectetur adipiscing elit. Integer cursus bus.","img":"https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg","date":"18/07/2022","time":"18:15","details":"blah "},{"id":8,"title":"Theater 8","description":"Theater 8 um dolor sit amet, consectetur adipiscing elit. Integer","img":"https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg","date":"19/07/2022","time":"18:15","details":"blah 8"},{"id":9,"title":"Theater 9","description":"Theater 9 um dolor sit amet, consectetur adipiscing elit. Integepib","img":"https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg","date":"20/07/2022","time":"18:15","details":"blah "},{"id":10,"title":"Theater 10","description":"Theater 10 um dolor sit amet, consectetur adipiscingdapibus. Ut vesti","img":"https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg","date":"21/07/2022","time":"18:15","details":"blah "}],
-
-        }
-    },
 
     async asyncData({ route, $axios }) {
-        const { id }  = route.params
+        const  { id }  = route.params
         const { data } = await $axios.get('/api/events/' + id)
         return {
-            id: data.id,
-            title: data.title,
-            description: data.description, 
-            img: data.img,
-            date: data.date,
-            time: data.time,
-            placeId: data.placeId,
-            artists: data.EventArtist
-        }
+            eventTitle: data.title,
+            eventDescription: data.description,
+            eventImg: data.img,
+            eventDate: data.date,
+            eventTime: data.time,
+            eventDetails: data.details,
+            eventPlaceId: data.placeId,
+            eventType: data.typeOfArtId,
+            eventArtistList: data.artists,
+            }
     },
+
+    data() {
+        return{
+            text: "Artists Performing at this Event",
+            }
+        },
+
+
 
 
     
