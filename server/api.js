@@ -172,7 +172,7 @@ async function runMainApi() {
     // with the events in which that artist performs in
     app.get("/artists/:id", async (req, res) => {
         const id = +req.params.id
-        const result = await models.Artist.findAll({where: {id}, include: [ {model: models.Event}]})
+        const result = await models.Artist.findOne({where: {id}, include: [ {model: models.Event}]})
         return res.json(result)
     })
 
