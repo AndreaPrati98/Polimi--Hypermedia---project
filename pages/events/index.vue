@@ -6,9 +6,12 @@
             :image="pageData.imgUrl" />
         <subheader-component class="subheader"
             :content="pageData.description" />
+        <input v-model="typeOfArtFilter" type="text" name="" id=""> {{typeOfArtFilter}}
+        <button @click="filterObjList(typeOfArtFilter)">Filter by art</button>
         <grid-component 
             :partialPath="'events'"
-            :objList="allEvents"/>
+            :objList="eventsToDisplay"/>
+
     </section>
 </template>
 
@@ -33,7 +36,8 @@ export default {
         }
 
         return {
-            pageData
+            pageData,
+            typeOfArtFilter: "",
         }
     },
     async asyncData({ $axios }) {
@@ -41,8 +45,19 @@ export default {
         const { data } = await $axios.get('/api/events')
         return {
             allEvents: data,
+            eventsToDisplay: data,
         }
     },
+    methods: {
+        filterObjList(id) {
+            // let's filter over the type of art Id
+            if(id !== "") {
+                this.eventsToDisplay = this.allEvents.filter(el => (el.typeOfArtId === (+id)))
+            } else {
+                this.eventsToDisplay = this.allEvents
+            }
+        }
+    }
 
 }
 </script>
