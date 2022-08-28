@@ -24,46 +24,39 @@
 
             <div class="section4">
                 <div class="seeall">
-                    <h2>See all other events</h2>
-                    <div class="arrowButton">
-                        <button>
-                            <p>
-                                <i class="arrow left"></i>
-                            </p>
-                        </button>
+                    <div class="see-text">
+                        <p>See all other events</p>
                     </div>
-                </div>
-                <div class="wrapper">
-                    <div class="typing">
-                        <h2>See all by...</h2>
-                    </div>
-                </div>
-                        <div class="arrowButton">
-
-                            <button><p><i class="arrow right"></i></p></button>
-
-                        </div>
-
-                        <div class="arrowButton">
-                            <button><p><i class="arrow right"></i></p></button>
-                        </div>
-                        <div class="arrowButton">
-                            <button><p><i class="arrow right"></i></p></button>
-                        </div>
-                         <div class="arrowButton">
-
-                            <button><p><i class="arrow right"></i></p></button>
-
+                    <div class="allButtons">
+                        <div class="button-box">
+                            <div class="all-other-btn">
+                                <button-standard class="group-btn" btnText="All Events" btnDst="/events" btnTextSize="20px" :btnBkgdColor="`var(--palette-red-dark)`" />
+                            </div>
                         </div>
                     </div>
                 </div>
 
-
+                <div class="seeallby">
+                    <div class="see-text">
+                        <p>See all events by...</p>
+                    </div>
+                    <div class="allButtons">
+                        <div class="button-box">
+                            <div class="theater-btn">
+                                <button-standard class="group-btn" btnText="Theater" btnDst="/events" btnTextSize="20px" :btnBkgdColor="`var(--palette-red-dark)`" />
+                            </div>
+                            <div class="music-btn">
+                                <button-standard class="group-btn" btnText="Music" btnDst="/events" btnTextSize="20px" :btnBkgdColor="`var(--palette-red-dark)`" />
+                            </div>
+                            <div class="dance-btn">
+                                <button-standard class="group-btn" btnText="Dance" btnDst="/events" btnTextSize="20px" :btnBkgdColor="`var(--palette-red-dark)`" />
+                            </div>
+                        </div>
+                    </div>
+                        
+                    </div>
+                </div>
             </div>
-
-        </div>
-
-
     </section>
 </template>
 
@@ -74,6 +67,7 @@ import OverviewComponent from '~/components/information-components/OverviewCompo
 import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue';
 import TabBox from '~/components/information-components/TabBox.vue';
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue';
+import ButtonStandard from '~/components/utilities-components/ButtonStandard.vue';
 export default {
     name: "artist-page",
     components: {
@@ -82,7 +76,8 @@ export default {
     OverviewComponent,
     MultipleShortOverviewContainer,
         TabBox,
-        CardsAdditionalContentensGroup
+        CardsAdditionalContentensGroup,
+        ButtonStandard
     },
     props: {
         eventTitle: {
@@ -105,7 +100,7 @@ data() {
         return {
             id: data.id,
             title: data.title,
-            description: data.description,
+            description: data.description, 
             img: data.img,
             date: data.date,
             time: data.time,
@@ -120,6 +115,35 @@ data() {
 </script>
 
 <style scoped>
+
+
+
+.see-text {
+    font-family: "Poppins";
+    font-size: 36px;
+    font-weight: 200;
+    padding-bottom: 5%;
+    color: var(--palette-blue)
+}
+.allButtons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.button-box {
+    width:80%;
+    max-width: 180px;
+}
+
+.group-btn {
+    width:100%;
+    margin:5% 0;
+}
+
+
 
 
 .all-sections {
@@ -146,46 +170,36 @@ data() {
     display: flex;
     flex-direction: row;
     padding: 10%;
-    
-}
-
-.arrow {
-  border: solid var(--palette-green);
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-}
-
-.left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-}
-
-
-
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-
-
-button {
-    all: unset;
-    cursor: pointer;
-    height: 100%;
     width: 100%;
+    height:100%;
 }
 
-.arrowButton {
-    background-color: var(--palette-red-dark);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-align: center;
-}
+
+
+
+
 
 .seeall {
-    border-right: 3px solid var(--palette-red-dark);
+    width: 50%;
+    text-align: center;
+
+
+
+}
+
+.seeallby{
+    border-left: 4px solid var(--palette-red-dark);
+
+    display: flex;
+    flex-direction: column;
+    padding-left:20px;
+    width: 50%;
+    justify-self: center;
+    text-align: center;
+
+
+    
+
 }
 
 .overview-comp {
@@ -217,7 +231,7 @@ button {
 
 
 .wrapper{ 
-    height: 100vh;
+    height: 100%;
     display: grid;
     place-items: center;
 }
