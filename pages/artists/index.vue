@@ -7,7 +7,7 @@
         <subheader-component class="subheader"
             :content="pageData.description" />
         <grid-component 
-            :partialPath="'places'"
+            :partialPath="'artists'"
             :objList="allArtists"/>
     </section>
 </template>
