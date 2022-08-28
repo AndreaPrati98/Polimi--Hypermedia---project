@@ -32,7 +32,7 @@ export default {
     align-items: center;
 
     /* width: 100%; */  
-    background-color: var(--palette-red);
+    background-color: var(--palette-green-dark);
   }
 
   .description {
@@ -45,11 +45,19 @@ export default {
     height: 70%;
     width: 90%;
     
-    border: 2px solid var(--text-color-light);
-    color: var(--text-color-light);
+    border: 0.5px solid var(--palette-red);
+    color: var(--palette);
 
     margin: 2% 0;
-    padding: 8px 10px;
-    font-size: 30px;
+    padding: 7% 7%;
+
+
+    font-family: "Poppins";
+    font-weight: 200;
+    font-size: 20px;
+    color: var(--palette-blue);
+    letter-spacing: 1.4px;
   }
+
+
 </style>

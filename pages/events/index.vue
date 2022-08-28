@@ -1,14 +1,18 @@
 <template>
-    <section>
+    <section class=all-sections>
         <the-header-with-title class="header"
             :title="pageData.title" 
             :subtitle="pageData.shortDescription" 
             :image="pageData.imgUrl" />
-        <subheader-component class="subheader"
-            :content="pageData.description" />
-        <grid-component 
-            :partialPath="'events'"
-            :objList="allEvents"/>
+        <div class="section1">
+            <subheader-component class="subheader"
+                :content="pageData.description" />
+        </div>
+        <div class="section2">
+            <grid-component 
+                :partialPath="'events'"
+                :objList="allEvents"/>
+        </div>
     </section>
 </template>
 
@@ -49,5 +53,15 @@ export default {
 <style scoped>
     .subheader {
         margin-bottom: 2px;
+        padding: 10% 7%;
     }
+
+
+
+    .section1, .section2{
+        width: 100%;
+        height: 100%;
+    }
+
+    
 </style>

@@ -56,7 +56,7 @@ export default {
 
 .top {
     display: block;
-    border-top: var(--border-thickness, 2px) solid var(--palette-light-cyan);
+    border-top: var(--border-thickness, 2px) solid var(--text-color-light);
 }
 
 h3 {
