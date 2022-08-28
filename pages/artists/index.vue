@@ -15,7 +15,7 @@
 <script scoped>
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue'
 import SubheaderComponent from '~/components/information-components/SubheaderComponent.vue'
-import GridComponent from '~/components/medium-components/grid-component.vue'
+import GridComponent from '~/components/medium-components/GridComponent.vue'
 
 export default {
     name: "artists-page",
