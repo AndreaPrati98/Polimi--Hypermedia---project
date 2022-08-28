@@ -201,6 +201,11 @@ async function runMainApi() {
         const result = await models.Place.findAll({where: {id}, include: [ {model: models.Event}]})
         return res.json(result)
     })
+
+    app.get("/typeofart", async (req, res) => {
+        const result = await models.Type_of_art.findAll()
+        return res.json(result)
+    }) 
 }
 
 runMainApi()
