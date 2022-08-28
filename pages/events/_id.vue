@@ -1,6 +1,7 @@
 <template>
     <section class="section">
-        <the-header-with-title class="header"/>
+        <the-header-with-title class="header"
+             />
         <div class="container-one">
             <overview-component class="overview-comp"/>
             <div class="img-comp">
@@ -46,6 +47,14 @@ export default {
             required: true,
         }
     },
+    async asyncData({ route, $axios }) {
+        const { id }  = route.params
+        const { data } = await $axios.get('/api/events/' + id)
+    
+        return {
+            event: data,
+        } 
+    }
 
 }
 </script>
