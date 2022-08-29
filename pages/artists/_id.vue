@@ -44,7 +44,7 @@ export default {
                 content: element.date,
                 imgUrl: element.img,
                 btnText: "See More",
-                btnDst:"`/events/` + element.id",
+                destination:"/events/" + element.id,
             })
         }
         return {

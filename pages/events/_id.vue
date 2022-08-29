@@ -85,7 +85,7 @@ export default {
                 title: element.name,
                 content: "",
                 imgUrl: element.img,
-                btnDst:"`/artists/` + element.id",
+                destination:"/artists/" + element.id,
             })
         }
 
