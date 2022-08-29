@@ -13,11 +13,11 @@
                 </div>
             </div>
             <div class="section2">
-                <tab-box :title="'Venues for this Event'" class="info-comp"/>
+                <MultipleShortOverviewContainer :title="'Event Information'" class="info-comp"/>
             </div>
 
             <div class="section3">
-                <cards-additional-contentens-group class="events-comp" :linkText="text" :events="eventArtistList"/>
+                <cards-additional-contentens-group class="events-comp" :linkText="text" :list="list"/>
             </div>
 
             <div class="section4">
@@ -63,7 +63,6 @@ import InfoComponent from '~/components/information-components/MultipleShortOver
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue';
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
 import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue';
-import TabBox from '~/components/information-components/TabBox.vue';
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue';
 import ButtonStandard from '~/components/utilities-components/ButtonStandard.vue';
 export default {
@@ -73,7 +72,6 @@ export default {
     TheHeaderWithTitle,
     OverviewComponent,
     MultipleShortOverviewContainer,
-        TabBox,
         CardsAdditionalContentensGroup,
         ButtonStandard
     },
@@ -81,6 +79,18 @@ export default {
     async asyncData({ route, $axios }) {
         const  { id }  = route.params
         const { data } = await $axios.get('/api/events/' + id)
+        const list = []
+        for(const element of data.artists) {
+            list.push({
+                title: element.name,
+                content: "",
+                imgUrl: element.img,
+                btnDst:"`/artists/` + element.id",
+            })
+        }
+
+
+
         return {
             eventTitle: data.title,
             eventDescription: data.description,
@@ -91,6 +101,10 @@ export default {
             eventPlaceId: data.placeId,
             eventType: data.typeOfArtId,
             eventArtistList: data.artists,
+            list: list,
+
+
+            
             }
     },
 

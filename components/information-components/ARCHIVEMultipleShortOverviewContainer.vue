@@ -3,21 +3,26 @@
         <div class="title">
             <h1>{{ title }}</h1>
         </div>
+        <span class="separator"></span>
         <div class="content">
-            <div class="indicies-container">
+            <div class="indices-container">
                 <ul>
-                    <li v-for="(info, infoIndex) of btnInfos" :key="`information${infoIndex}`">
-                        <button @click="visibleText = info;" class="button">
+                    <li v-for="(info, infoIndex) of btnInfos"
+                        :key="`information${infoIndex}`"
+                        >
+                        <button @click="visibleText = info" class="button">
                             {{info.buttonTxt}}
                         </button>
                     </li>
                 </ul>
             </div>
+            <span class="separator"></span>
             <div class="inner-container">
                 <div class="text-container">
                     <h1>{{ visibleText.buttonTxt }}</h1>
                     <p>{{ visibleText.content }}</p>
                 </div>
+                <span class="separator"></span>
                 <div class="text-button-container">
                     <button-animated class="ticket-button"
                         :btnText="'Buy tickets'" 
@@ -67,113 +72,112 @@ export default {
 
             ],
             visibleText: {
-                buttonTxt: "",
+                buttonTxt: "Click on the upper buttons",
                 content: "",
             },
-            activeState: {
-                activeState: false,
-            }
         }
     },
 }
-
-
-
 </script>
 
 <style scoped>
+    .section {
+        width: 35%;
+        height: 100%;
+        margin: 30px 0;
+    }
 
-
-.inner-container {
-    /*border: 1px solid black;*/
-    height: 300px;
-    overflow: scroll;
-}
-
-.text-button-container {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 10px;
-
-}
-
-.text-container {
-    display: flex;
-    flex-flow: column;
-    padding: 6px 20px;
-    font-family: "Poppins";
-    font-weight:300;
-}
- 
-.ticket-button {
-    width: 150px;
-    font-size: 13px;
-    margin: 30px;
-}
-
-
-.separator {
-    margin: 0 auto;
-    border-top: 1px solid red;
-    width: 40%;
-    height: 5px;
-    display: block;   
-}
-
-.section {
-    width: 100%;
-    height: 100%;
-    margin: 30px 0px;
-}
-
-.title h1 {
-    width: 100%;
-    font-size: 25px;
-    font-family: "Poppins";
-    font-weight: 600;
-    margin-bottom: 50px;
-    text-align: center;
-    letter-spacing: 1.2px;
-}
-
-.content {
-    width: 100%;
-}
-
-.content ul {
-    display: flex;
-    justify-content: center;
     
-}
 
-.content li {
-    margin: 5px 5px;
-    display: inline-block;
-    color: var(--palette-blue);
-    border-bottom: 3px solid var(--palette-green-dark);
+    .title h1 {
+        margin: 0;
+    }
+    .separator {
+        border-top: 1px solid #333;
+        width: 100%;
+        height: 5px;
+        display: block;   
+    }
+
+    .content {
+        width: 100%;
+    }
+    .content ul {
+        
+        display: flex;
+        /* flex-wrap: wrap; */
+        
+        /* to make the overflow: scroll work it's necessary to set justify-content: start*/
+        justify-content: flex-start;
+        overflow: scroll;
+
+        padding: 0;
+        width: 100%;
+    }
+    .content li{
+        margin: 5px 5px;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    .indices-container {
+        width: 100%;
+    }
+
+    .inner-container {
+        border: 1px solid black;
+        height: 300px;
+        overflow: scroll;
+    }
+    .inner-container .separator {
+        margin: 0 auto;
+        border-top: 1px solid red;
+        width: 40%;
+    }
+
+    .text-button-container {
+        display: flex;
+        justify-content: center;
+
+        padding-bottom: 10px;
+    }
+
+    /* Button style */
+
+    .button {
+        display: inline-block;
+        font-family: 'Poppins', sans-serif;
+        font-size: 11px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--text-color-light);
+        padding: 11px 25px;
+        background-color: var(--palette-red);
+        transition: box-shadow .3s ease-out,
+                    opacity .5s ease;
+
+        border-radius: 5px;
+    }
     
-}
+    .text-container {
+        display: flex;
+        flex-flow: column;
 
-.indicies-container {
-    width: 100%;
-}
+        padding: 6px 20px;
+    }
 
-.button {
-    all: unset;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Poppins";
-    font-weight: 200;
-    font-size: 18px;
-    text-decoration: none;
-    padding: 11px 25px;
-    transition: 0.2s ease-in;
-}
+    .button:hover {
+        box-shadow: 4px 4px 2px #454545;
+    }
 
-.button:hover {
-    background-color: var(--palette-green);
-}
+    .button:active {
+        box-shadow: 2px 2px 10px #454545;
+        opacity: .6;
+    }
 
-
+    .ticket-button {
+        width: 150px;
+        font-size: 13px;
+    }
 
 </style>

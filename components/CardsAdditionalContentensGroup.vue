@@ -2,15 +2,15 @@
     <div class="where">
         <h3>{{linkText}}</h3>
         <div class="scroll-window">
-            <div class="events">
+            <div class="items">
 
-                <card-additional-content class="event" v-for="(event, eventIndex) of events"
-                :key="`event-index=${eventIndex}`"
-                :title="event.title"
-                :content="event.date"
-                :imgUrl="event.img"
+                <card-additional-content class="item" v-for="(item, index) of list"
+                :key="`item-index=${index}`"
+                :title="item.title"
+                :content="item.content"
+                :imgUrl="item.img"
                 :btnTxt="`See More`"
-                :btnDst="`/events/` + event.id"
+                :btnDst="item.destination"
                 />
             </div>
         </div>
@@ -29,11 +29,11 @@ export default {
             type: String,
             required: true,
         },
-        events: {
+        list: {
             type: Array,
             required: true,
-        }
-    }
+        },
+    },
 };
 </script>
 
@@ -47,7 +47,7 @@ export default {
     flex-direction: column;
 }
 
-.events{
+.items {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -58,7 +58,7 @@ export default {
     overflow: auto;
     white-space: nowrap;
 }
-.event {
+.item {
     margin:25px;
 }
 
