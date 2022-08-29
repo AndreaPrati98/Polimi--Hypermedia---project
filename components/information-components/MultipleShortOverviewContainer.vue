@@ -128,23 +128,7 @@ export default {
 
     /* Button style */
 
-    .button {
-        all: unset;
-        display: inline-block;
-        font-family: 'Poppins', sans-serif;
-        font-size: 18px;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 11px 25px;
-        color: var(--palette-blue);
-        border-bottom: 3px solid var(--palette-green-dark);
 
-        transition: box-shadow .3s ease-out,
-                    transform .3s ease-out,
-                    opacity .5s ease;
-
-        
-    }
     
     .text-container {
         display: flex;
@@ -158,10 +142,7 @@ export default {
         transform: translate3d(-1.7px, -1.7px, 2px);
     }
 
-    .button:active {
-        box-shadow: 2px 2px 10px #454545;
-        opacity: .6;
-    }
+    
 
     .ticket-button {
         width: 150px;
