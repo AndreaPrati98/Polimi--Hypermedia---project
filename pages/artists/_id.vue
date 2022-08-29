@@ -1,10 +1,13 @@
 <template>
-  <section>
-    <div>
-        <bio-header :title="name" />
-        <div class="left-slot">
+  <section class="allSections">
+    <div class="section1">
+        <bio-header :title="name"/>
+        <!--img class="left-slot" :src="img"-->
+    </div>
 
-        </div>
+
+
+    <div class="section2">
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum augue in lectus maximus volutpat. Ut ac libero pulvinar, dignissim ex in, placerat nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; </p>
         <div class="picure1">
             <img class="picture left" src="~/assets/imgs/artists/samples/sydney.jpg"/>
@@ -15,11 +18,13 @@
         </div>
         <p> Praesent ipsum diam, scelerisque eu maximus vel, semper vitae urna. Nam egestas ac justo nec condimentum. Praesent egestas at mauris at pharetra. Nulla id risus nec tortor facilisis faucibus. Duis feugiat viverra mauris, eget blandit libero.</p>
     </div>
-    <hr/>
-
-    <transitional-link-cards linkText="Events including this artist" :list="list"/>
 
 
+
+    <div class="section3">
+        <transitional-link-cards linkText="Events including this artist" :list="list"/>
+
+    </div>
 
 
   </section>
@@ -55,6 +60,7 @@ export default {
             description: data[0].description,
             list: list
 
+
         }
     },
 
@@ -63,8 +69,26 @@ export default {
 
 <style scoped>
 
+
+.allSections {
+    max-width: 100%;
+}
+.section1 {
+    width: 100%;
+
+}
+
+.section2 {
+    background-color: var(--palette-green);
+    width: 100%;
+}
+
+.section3 {
+    background-color: var(--palette-light-cyan);
+    width: 100%;
+}
+
 .left-slot {
-    background-image: url(~/assets/imgs/artists/music3.jpg);
     border-radius: 50%;
     align-items: right;
     width: 300px;

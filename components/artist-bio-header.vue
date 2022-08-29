@@ -2,22 +2,11 @@
     <div class="bar">
         <h1>{{ title }}</h1>
         <div>
-            <!-- TODO: can we pass json-style list that will be printed here in bullets? -->
             <ul>
                 <li>Jazz musician</li>
                 <li>Active since 2014</li>
-                <li>Seattle, WA</li>
-
-
-
-                <!--li class="bullet-points" v-for="(item, index) of bullets" :key="bullet-${index}">${item}</li-->
-                
-                
+                <li>Seattle, WA</li>                
             </ul>
-
-
-
-            
         </div>
     </div>
 </template>
@@ -33,7 +22,7 @@ export default {
         bullets: {
             type: Array,
             required: false,
-        }
+        },
     }
 }
 </script>
@@ -43,22 +32,32 @@ export default {
     display: flex;
     background-color: var(--palette-soft-blue);
     width: 100%;
-    height: 30vh;
+    max-height: 30vh;
     flex-direction: column;
 }
 h1 {
     padding-left: 5%;
     width: 100%;
-    font-family: 'Open Sans';
+    font-family: 'Oswald';
     font-weight: 800;
-    font-size: 2.5em;
+    font-size: 2.7em;
+    letter-spacing: 1.3px;
+    color: var(--text-color-light);
 }
 ul {
     width: 100%;
     padding-left: 10%;
     font-family: 'Poppins';
-    list-style-type:circle;
+    list-style-type:disc;
+    color: var(--palette-red-dark);
 }
+
+li {
+    color: var(--text-color-light);
+}
+
+
+
 /* Do we need the following for bar?
     display: flex;
     flex-wrap: wrap;
