@@ -17,7 +17,9 @@
     </div>
     <hr/>
 
-    <transitional-link-cards linkText="Events including this artist" :events="events"/>
+    <transitional-link-cards linkText="Events including this artist" :list="list"/>
+
+
 
 
   </section>
@@ -35,13 +37,24 @@ export default {
     async asyncData({ route, $axios }) {
         const { id }  = route.params
         const { data } = await $axios.get('/api/artists/' + id)
+        const list = []
+        for (const element of data[0].events) {
+            list.push({
+                title: element.title,
+                content: element.date,
+                imgUrl: element.img,
+                btnText: "See More",
+                btnDst:"`/events/` + element.id",
+            })
+        }
         return {
             id: data.id,
             name: data.name,
             img: data.img,
             date_of_birth: data.date_of_birth,
             description: data.description,
-            events: data.events
+            events: data.events,
+            list: list
 
         }
     },
