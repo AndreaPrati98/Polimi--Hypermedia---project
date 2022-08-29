@@ -17,7 +17,8 @@
 
     <cards-additional-contentens-group 
         :title="'Other events related to this artis'"
-        :objList="artist.events"/>
+        :objList="artist.events"
+        :partialPath="'/events'"/>
   </section>
 </template>
 
