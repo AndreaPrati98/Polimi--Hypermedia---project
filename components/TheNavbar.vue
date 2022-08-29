@@ -101,24 +101,24 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0rem 1rem;
+        padding: 1rem 1rem;
+        background-color: var(--palette-blue);
 
-        border-bottom: 1px solid red;
     }
 
     .nav-link {
         --text-color-nav: var(--text-color-dark);
-        color: var(--text-color-dark);
+        color: var(--palette-soft-blue);
         text-decoration: none;
 
         font-size: 1rem;
         font-weight: 400;
         padding: 0.8rem .5rem;
 
-        transition: color .5s ease-in;
+        transition: color .2s ease-in;
     }
     .nav-link:hover{
-        color: var(--palette-red-dark);
+        color: var(--text-color-light);
     }
 
 
@@ -151,6 +151,11 @@ export default {
     .nav-item {
         margin-left: 2rem;
         list-style: none;
+        font-family: "Open Sans";
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 1.2px;
+        color: var(--text-color-light);
 
     }
 
@@ -161,10 +166,12 @@ export default {
 
     .nav-logo {
         text-decoration: none;
-        font-size: 1.2rem;
+        font-size: 30px;
         font-weight: 600;
+        letter-spacing: 1.2px;
+        font-family: "Poppins";
         --text-color-nav: var(--text-color-dark);
-        color: var(--text-color-nav);
+        color: var(--text-color-light);
     }
 
     /* Responsiveness */

@@ -1,30 +1,61 @@
 <template>
     <section class="section">
-        <the-header-with-title class="header"
-             />
-        <div class="container-one">
-            <overview-component class="overview-comp"/>
-            <div class="img-comp">
-                <img src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_1280.jpg" alt="funny cat" class="image">
+
+        <the-header-with-title :title="eventTitle" class="header"/>
+
+        <div class="all-sections">
+
+            <div class="section1">
+                <div class="overview-comp">
+                    <overview-component title="OVERVIEW" :description="eventDescription"/>
+                </div>
+                <div class="img-comp">
+                    <img :src="eventImg" alt="funny cat" class="image">
+                </div>
             </div>
-            <!-- <div class="overview-info-container"> -->
-            <div class="art-container">
-                <multiple-short-overview-container :title="'Artists Involved'" class="info-comp"/>
+            <div class="section2">
+                <tab-box :title="'Venues for this Event'" class="info-comp"/>
             </div>
-            
-            <overview-component class="place-comp"/>
-            <!-- </div> -->
-        </div>
 
-    <span class="separator"></span>
+            <div class="section3">
+                <cards-additional-contentens-group class="events-comp" :linkText="text" :events="eventArtistList"/>
+            </div>
 
-    <!-- here the group links -->
-        <div class="all-events">
-            
-        </div>
-        <div class="all-events by-type">
+            <div class="section4">
+                <div class="seeall">
+                    <div class="see-text">
+                        <p>See all other events</p>
+                    </div>
+                    <div class="allButtons">
+                        <div class="button-box">
+                            <div class="all-other-btn">
+                                <button-standard class="group-btn" btnText="All Events" btnDst="/events" btnTextSize="20px" :btnBkgdColor="`var(--palette-red-dark)`" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        </div>
+                <div class="seeallby">
+                    <div class="see-text">
+                        <p>See all events by...</p>
+                    </div>
+                    <div class="allButtons">
+                        <div class="button-box">
+                            <div class="theater-btn">
+                                <button-standard class="group-btn" btnText="Theater" btnDst="/events" btnTextSize="20px" :btnBkgdColor="`var(--palette-red-dark)`" />
+                            </div>
+                            <div class="music-btn">
+                                <button-standard class="group-btn" btnText="Music" btnDst="/events" btnTextSize="20px" :btnBkgdColor="`var(--palette-red-dark)`" />
+                            </div>
+                            <div class="dance-btn">
+                                <button-standard class="group-btn" btnText="Dance" btnDst="/events" btnTextSize="20px" :btnBkgdColor="`var(--palette-red-dark)`" />
+                            </div>
+                        </div>
+                    </div>
+                        
+                    </div>
+                </div>
+            </div>
     </section>
 </template>
 
@@ -33,19 +64,35 @@ import InfoComponent from '~/components/information-components/MultipleShortOver
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue';
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
 import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue';
+import TabBox from '~/components/information-components/TabBox.vue';
+import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue';
+import ButtonStandard from '~/components/utilities-components/ButtonStandard.vue';
 export default {
     name: "artist-page",
     components: {
-        InfoComponent,
-        TheHeaderWithTitle,
-        OverviewComponent,
-        MultipleShortOverviewContainer
+    InfoComponent,
+    TheHeaderWithTitle,
+    OverviewComponent,
+    MultipleShortOverviewContainer,
+        TabBox,
+        CardsAdditionalContentensGroup,
+        ButtonStandard
     },
-    props: {
-        eventTitle: {
-            type: String,
-            required: true,
-        }
+
+    async asyncData({ route, $axios }) {
+        const  { id }  = route.params
+        const { data } = await $axios.get('/api/events/' + id)
+        return {
+            eventTitle: data.title,
+            eventDescription: data.description,
+            eventImg: data.img,
+            eventDate: data.date,
+            eventTime: data.time,
+            eventDetails: data.details,
+            eventPlaceId: data.placeId,
+            eventType: data.typeOfArtId,
+            eventArtistList: data.artists,
+            }
     },
     async asyncData({ route, $axios }) {
         const { id }  = route.params
@@ -54,62 +101,145 @@ export default {
         return {
             event: data,
         } 
-    }
-
+    },
+    data() {
+        return{
+            text: "Artists Performing at this Event",
+            }
+        },
+    
 }
 </script>
 
 <style scoped>
 
-    /* here the layout settings */
-    .container-one {
-        padding: 0 3%;
-        display: grid;
-        grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-        grid-template-areas:    'ev ev img'
-                                'art art art'
-                                'place place place';
-    }
+.see-text {
+    font-family: "Poppins";
+    font-size: 36px;
+    font-weight: 200;
+    padding-bottom: 5%;
+    color: var(--palette-blue)
+}
+.allButtons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
 
-    .overview-comp {
-        grid-area: ev;
-    }
+.button-box {
+    width:80%;
+    max-width: 180px;
+}
 
-    .img-comp{
-        grid-area: img;
-    }
+.group-btn {
+    width:100%;
+    margin:5% 0;
+}
 
-    .place-comp {
-        grid-area: place;
-    }
+.all-sections {
+    display: flex;
+    flex-direction: column;
+}
+.section1 {
+    background-color: var(--palette-soft-blue);
+    color: var(--text-color-light);
+    display: flex;
+    
+}
+.section2 {
+    background-color: var(--palette-green-dark);
+}
+.section3 {
+    background-color: var(--palette-blue);
+    color: var(--text-color-light)
+}
 
-    .art-container {
-        grid-area: art;
-        display: flex;
-        justify-content: center;
-    }
 
-    /* here the single style settings */
+.section4 {
+    background-color: var(--palette-green);
+    display: flex;
+    flex-direction: row;
+    padding: 10%;
+    width: 100%;
+    height:100%;
+}
 
-    .separator {
-        border-top: 1px solid red;
-        margin: 0 auto;
-        width: 70%;
-        height: 1px;
-        display: block;
-    }
+.seeall {
+    width: 50%;
+    text-align: center;
 
-    .info-comp {
-        width: 100%;
-    }
+}
 
-    .img-comp {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+.seeallby{
+    border-left: 4px solid var(--palette-red-dark);
+
+    display: flex;
+    flex-direction: column;
+    padding-left:20px;
+    width: 50%;
+    justify-self: center;
+    text-align: center;
+}
+
+.overview-comp {
+    padding: 15% 5%;
+
+}
+
+.img-comp {
+    margin: 5% 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-comp {
+    width: 100%;
+    padding: 5% 15%;  
+}
+
+.events-comp {
+    padding: 5%;
+}
+
+.image {
+    width: 100%;
+}
+
+
+
+
+.wrapper{ 
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.typing{
+    width: 22ch;
+    animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid black;
+    font-family: monospace;
+    font-size: 2em;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
     }
-    .image {
-        width: 100%;
+}
+
+@keyframes typing {
+    from {
+        width: 0
     }
+    
+}
+
+
 
 </style>

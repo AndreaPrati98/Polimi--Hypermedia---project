@@ -1,20 +1,27 @@
 <template>
-    <section>
+    <section class=all-sections>
         <the-header-with-title class="header"
             :title="pageData.title" 
             :subtitle="pageData.shortDescription" 
             :image="pageData.imgUrl" />
-        <subheader-component class="subheader"
-            :content="pageData.description" />
+
+        <div class="section1">
+            <subheader-component class="subheader"
+                :content="pageData.description" />
+        </div>
+        
         <dropdown-component 
             :formName="'type of art selector'"
             :objList="allTypeOfArts" 
             @change="filterObjList"/>
         
-        <grid-component 
-            :partialPath="'events'"
-            :objList="eventsToDisplay"/>
+        <div class="section2">
+            <grid-component 
+                :partialPath="'events'"
+                :objList="eventsToDisplay"/>
         
+        </div>
+
     </section>
 </template>
 
@@ -79,5 +86,16 @@ export default {
 <style scoped>
     .subheader {
         margin-bottom: 2px;
+        padding: 10% 7%;
     }
+
+    .section1, .section2{
+        width: 100%;
+        height: 100%;
+    }
+
+    .section2 {
+        background-color: var(--palette-light-cyan);
+    }
+    
 </style>

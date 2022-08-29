@@ -66,6 +66,8 @@ export default {
         margin: 30px 0;
     }
 
+    
+
     .title h1 {
         margin: 0;
     }

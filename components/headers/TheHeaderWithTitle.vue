@@ -9,8 +9,8 @@
         <!-- <img :src="imgUrl" alt="" class="img"> -->
 
         <div class="title-div">
-            <h1>{{title}}</h1>
-            <h3>{{subtitle}}</h3>
+            <h1 class="title">{{title}}</h1>
+            <h3 class="subheading">{{subtitle}}</h3>
         </div>
     </section>
 </template>
@@ -64,10 +64,25 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        background-color: white;
-        
+        color: var(--palette-blue);
+        background-color: var(--palette-green);
     }
+
+
+    .title {
+        font-family: "Poppins";
+        font-weight: 700;
+        font-size: 40px;
+    }
+
+    .subheading {
+        font-family: "Oswald";
+        font-weight: 300;
+        letter-spacing: 1.2px;
+        margin-bottom: 30px;
+
+    }
+
 
     @media only screen and (width: 1400px) {
         .img {

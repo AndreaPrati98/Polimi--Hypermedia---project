@@ -56,7 +56,6 @@ export default {
     
     .img {
         width: 100%;
-
         background-position: center;
         background-repeat: no-repeat;
         

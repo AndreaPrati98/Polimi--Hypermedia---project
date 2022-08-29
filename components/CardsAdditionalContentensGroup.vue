@@ -68,11 +68,21 @@ export default {
 }
 
 .scroll-window{
-    width:60%;
-    margin-left: 20%;
+    width:70%;
+    margin-left: 15%;
     display: flex;
 
 
+}
+
+h3 {
+    width: 100%;
+    font-size: 25px;
+    font-family: "Poppins";
+    font-weight: 600;
+    margin-bottom: 50px;
+    text-align: center;
+    letter-spacing: 1.2px;
 }
 
 </style>
