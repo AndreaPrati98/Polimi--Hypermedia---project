@@ -7,7 +7,7 @@
         <subheader-component class="subheader"
             :content="pageData.description" />
         <grid-component 
-            :partialPath="'places'"
+            :partialPath="'artists'"
             :objList="allArtists"/>
     </section>
 </template>
@@ -26,8 +26,8 @@ export default {
     },
     data() {
         const pageData = {
-            title: "All the Places",
-            shortDescription: "Getting fascinated by Avignon is easy. The places are all amazing.",
+            title: "All the Artists",
+            shortDescription: "Getting fascinated by Avignon is easy. The performers are all amazing.",
             description: "The theaters are beautiful. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsam sed tempora rem itaque atque error aut temporibus blanditiis! Atque ea libero inventore, officiis vero minus et sapiente tempore nihil.",
             imgUrl: "palais-des-papes-g04269230e_1920.jpg",
         }
