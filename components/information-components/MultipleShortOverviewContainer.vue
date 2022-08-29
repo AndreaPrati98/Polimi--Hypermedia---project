@@ -61,15 +61,18 @@ export default {
 
 <style scoped>
     .section {
-        width: 35%;
+        width: 100%;
         height: 100%;
         margin: 30px 0;
     }
 
-    
-
     .title h1 {
-        margin: 0;
+        font-size: 25px;
+        font-family: "Poppins";
+        font-weight: 600;
+        /* margin-bottom: 10px; */
+        text-align: center;
+        letter-spacing: 1.2px;
     }
     .separator {
         border-top: 1px solid #333;
@@ -94,9 +97,11 @@ export default {
         width: 100%;
     }
     .content li{
+        all: unset;
         margin: 5px 5px;
         display: inline-block;
-        font-weight: bold;
+        
+    
     }
 
     .indices-container {
@@ -124,18 +129,21 @@ export default {
     /* Button style */
 
     .button {
+        all: unset;
         display: inline-block;
         font-family: 'Poppins', sans-serif;
-        font-size: 11px;
+        font-size: 18px;
         text-decoration: none;
         text-transform: uppercase;
-        color: var(--text-color-light);
         padding: 11px 25px;
-        background-color: var(--palette-red);
+        color: var(--palette-blue);
+        border-bottom: 3px solid var(--palette-green-dark);
+
         transition: box-shadow .3s ease-out,
+                    transform .3s ease-out,
                     opacity .5s ease;
 
-        border-radius: 5px;
+        
     }
     
     .text-container {
@@ -146,7 +154,8 @@ export default {
     }
 
     .button:hover {
-        box-shadow: 4px 4px 2px #454545;
+        box-shadow: 4px 4px 10px var(--palette-green-dark,#454545);
+        transform: translate3d(-1.7px, -1.7px, 2px);
     }
 
     .button:active {
