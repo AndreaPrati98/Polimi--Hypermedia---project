@@ -62,13 +62,7 @@ export default {
 </script>
 
 <style scoped>
-.bar {
-    display: flex;
-    background-color: red;
-    width: 100%;
-    height: 30vh;
-    flex-direction: column;
-}
+
 .left-slot {
     background-image: url(~/assets/imgs/artists/music3.jpg);
     border-radius: 50%;

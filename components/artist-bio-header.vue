@@ -7,7 +7,17 @@
                 <li>Jazz musician</li>
                 <li>Active since 2014</li>
                 <li>Seattle, WA</li>
+
+
+
+                <!--li class="bullet-points" v-for="(item, index) of bullets" :key="bullet-${index}">${item}</li-->
+                
+                
             </ul>
+
+
+
+            
         </div>
     </div>
 </template>
@@ -19,6 +29,10 @@ export default {
         title: {
             type: String,
             required: true,
+        },
+        bullets: {
+            type: Array,
+            required: false,
         }
     }
 }
@@ -27,7 +41,7 @@ export default {
 <style scoped>
 .bar {
     display: flex;
-    background-color: red;
+    background-color: var(--palette-soft-blue);
     width: 100%;
     height: 30vh;
     flex-direction: column;

@@ -6,23 +6,23 @@
         <div class="content">
             <div class="indicies-container">
                 <ul>
-                    <li v-for="(info, infoIndex) of btnInfos" :key="`information${infoIndex}`">
-                        <button @click="visibleText = info;" class="button">
-                            {{info.buttonTxt}}
+                    <li v-for="(tab, index) of items" :key="`tab-${index}`">
+                        <button @click="visibleText = tab" class="button">
+                            {{tab.tabTitle}}
                         </button>
                     </li>
                 </ul>
             </div>
             <div class="inner-container">
                 <div class="text-container">
-                    <h1>{{ visibleText.buttonTxt }}</h1>
-                    <p>{{ visibleText.content }}</p>
+                    <h1>{{ visibleText.tabTitle }}</h1>
+                    <p>{{ visibleText.tabContent }}</p>
                 </div>
-                <div class="text-button-container">
+                <div v-if="visibleText.link" class="text-button-container">
                     <button-animated class="ticket-button"
-                        :btnText="'Buy tickets'" 
-                        :btnDst="'google.com'" 
-                        :isNuxtLink="false" />
+                        :btnText="'See More'" 
+                        :btnDst="visibleText.link" 
+                        :isNuxtLink="true" />
                 </div>
             </div>
         </div>
@@ -39,6 +39,18 @@ export default {
         title: {
             type: String,
             required: true,
+        },
+        items : {
+            type: Array,
+            required: true,
+            /** expected structure:
+             * 
+             * {
+             *  tabTitle: ____, [String]
+             *  tabContent: ___, [String]
+             * }
+             * 
+             */
         }
     },
     data() {

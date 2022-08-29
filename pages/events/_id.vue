@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="section2">
-                <MultipleShortOverviewContainer :title="'Event Information'" class="info-comp"/>
+                <MultipleShortOverviewContainer :title="'Event Information'" :items="items" class="info-comp"/>
             </div>
 
             <div class="section3">
@@ -79,6 +79,7 @@ export default {
     async asyncData({ route, $axios }) {
         const  { id }  = route.params
         const { data } = await $axios.get('/api/events/' + id)
+
         const list = []
         for(const element of data.artists) {
             list.push({
@@ -88,6 +89,25 @@ export default {
                 destination:"/artists/" + element.id,
             })
         }
+
+
+        const items  = [
+
+            {
+                tabTitle: "Date",
+                tabContent: "This event will take place on " + data.date,
+            },
+            {
+                tabTitle: "Time",
+                tabContent: "This event will be held at " + data.time,
+
+            },
+            {
+                tabTitle: "Venue",
+                tabContent: "This event will take place at " + data.place.name,
+                link: "/places/" + data.place.id, 
+            }
+        ]
 
 
 
@@ -102,6 +122,7 @@ export default {
             eventType: data.typeOfArtId,
             eventArtistList: data.artists,
             list: list,
+            items: items,
 
 
             
