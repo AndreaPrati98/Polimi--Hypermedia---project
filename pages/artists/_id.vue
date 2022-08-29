@@ -48,12 +48,11 @@ export default {
             })
         }
         return {
-            id: data.id,
-            name: data.name,
-            img: data.img,
-            date_of_birth: data.date_of_birth,
-            description: data.description,
-            events: data.events,
+            id: data[0].id,
+            name: data[0].name,
+            img: data[0].img,
+            date_of_birth: data[0].date_of_birth,
+            description: data[0].description,
             list: list
 
         }
