@@ -8,7 +8,7 @@
                 :key="`item-index=${index}`"
                 :title="item.title"
                 :content="item.content"
-                :imgUrl="item.img"
+                :imgUrl="item.imgUrl"
                 :btnTxt="`See More`"
                 :btnDst="item.destination"
                 />

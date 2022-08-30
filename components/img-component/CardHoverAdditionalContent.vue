@@ -6,11 +6,9 @@
             <div class="focus-content">
             <p>{{ content }}</p>
             <button-standard
-                    :btnTextSize="'12px'"
-                    :btnText="btnTxt"
-                    :btnDst="btnDst"/>
-                
-                
+                :btnTextSize="'12px'"
+                :btnText="btnTxt"
+                :btnDst="btnDst"/>
             </div>
         </div>
     </div>

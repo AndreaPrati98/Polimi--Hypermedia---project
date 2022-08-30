@@ -1,25 +1,18 @@
 <template>
   <section class="allSections">
+
     <div class="section1">
         <bio-header :title="name"/>
-        <!--img class="left-slot" :src="img"-->
     </div>
-
-
 
     <div class="section2">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum augue in lectus maximus volutpat. Ut ac libero pulvinar, dignissim ex in, placerat nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; </p>
-        <div class="picure1">
-            <img class="picture left" src="~/assets/imgs/artists/samples/sydney.jpg"/>
+        <div class="overview-comp">
+            <overview-component title="ABOUT" :description="description" />
         </div>
-        <p>Nullam at pharetra nisl. Vivamus lobortis elit in nisl feugiat, ac dapibus nibh vehicula. Fusce vel risus eu ante ultricies rutrum et id arcu. Ut massa tellus, consectetur non neque nec, fermentum consectetur risus. Ut ut venenatis diam, sit amet suscipit nunc. Vivamus sem urna, pellentesque non justo vel, faucibus aliquam sem.Cras lacus eros, ullamcorper suscipit suscipit at, eleifend et mauris. Suspendisse eleifend ante sed lacus ultrices lobortis. Etiam vitae massa eros. Cras vestibulum facilisis suscipit. Sed venenatis nisl non ante volutpat, vitae porta quam faucibus. Nam ultrices, enim nec aliquam iaculis, eros mi porta turpis, et fringilla augue est non nulla. Nam id quam a ligula accumsan elementum.Praesent dictum purus vitae nunc eleifend sodales. Nulla dignissim arcu eu arcu lacinia, in dapibus tellus tempus.</p>
-        <div class="picture2">
-            <img class="picture right" src="~/assets/imgs/artists/samples/violin.jpg"/>
+        <div class="img-comp">
+            <img :src="img" />
         </div>
-        <p> Praesent ipsum diam, scelerisque eu maximus vel, semper vitae urna. Nam egestas ac justo nec condimentum. Praesent egestas at mauris at pharetra. Nulla id risus nec tortor facilisis faucibus. Duis feugiat viverra mauris, eget blandit libero.</p>
     </div>
-
-
 
     <div class="section3">
         <transitional-link-cards linkText="Events including this artist" :list="list"/>
@@ -35,9 +28,10 @@ import CardAdditionalContent from '~/components/img-component/CardHoverAdditiona
 import Default from '~/layouts/default.vue';
 import BioHeader from '~/components/artist-bio-header.vue';
 import TransitionalLinkCards from '~/components/CardsAdditionalContentensGroup.vue';
+import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
 export default {
     name: "ArtistPage",
-    components: {Default, BioHeader, CardAdditionalContent, TransitionalLinkCards},
+    components: {Default, BioHeader, CardAdditionalContent, TransitionalLinkCards, OverviewComponent},
 
     async asyncData({ route, $axios }) {
         const { id }  = route.params
@@ -81,6 +75,21 @@ export default {
 .section2 {
     background-color: var(--palette-green);
     width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.overview-comp {
+    padding: 15% 5%;
+
+}
+
+.img-comp {
+    margin: 5% 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .section3 {

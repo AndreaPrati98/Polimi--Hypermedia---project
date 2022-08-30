@@ -1,25 +1,33 @@
 <template>
     <section class="section">
-        <the-header-with-title :title="eventTitle" class="header"/>
-
+        <the-header-with-title class="header"
+            :title="eventTitle" />
         <div class="all-sections">
-
+            <!-- SECTION 1-->
             <div class="section1">
                 <div class="overview-comp">
-                    <overview-component title="OVERVIEW" :description="eventDescription"/>
+                    <overview-component 
+                        title="OVERVIEW" 
+                        :description="eventDescription"/>
                 </div>
                 <div class="img-comp">
-                    <img :src="eventImg" alt="funny cat" class="image">
+                    <img alt="funny cat" class="image"
+                        :src="eventImg" >
                 </div>
             </div>
+            <!-- SECTION 2-->
             <div class="section2">
-                <MultipleShortOverviewContainer :title="'Event Information'" :items="items" class="info-comp"/>
+                <MultipleShortOverviewContainer class="info-comp"
+                    :title="'Event Information'" 
+                    :items="items" />
             </div>
-
+            <!-- SECTION 3-->
             <div class="section3">
-                <cards-additional-contentens-group class="events-comp" :linkText="text" :list="list"/>
+                <cards-additional-contentens-group class="events-comp" 
+                    :linkText="text" 
+                    :list="list"/>
             </div>
-
+            <!-- SECTION 4-->
             <div class="section4">
                 <div class="seeall">
                     <div class="see-text">
@@ -28,7 +36,11 @@
                     <div class="allButtons">
                         <div class="button-box">
                             <div class="all-other-btn">
-                                <button-standard class="group-btn" btnText="All Events" btnDst="/events" btnTextSize="20px" :btnBkgdColor="`var(--palette-red-dark)`" />
+                                <button-standard class="group-btn" 
+                                    btnText="All Events" 
+                                    btnDst="/events" 
+                                    btnTextSize="20px" 
+                                    :btnBkgdColor="`var(--palette-red-dark)`" />
                             </div>
                         </div>
                     </div>
@@ -41,20 +53,31 @@
                     <div class="allButtons">
                         <div class="button-box">
                             <div class="theater-btn">
-                                <button-standard class="group-btn" btnText="Theater" btnDst="/events" btnTextSize="20px" :btnBkgdColor="`var(--palette-red-dark)`" />
+                                <button-standard class="group-btn" 
+                                    btnText="Theater" 
+                                    btnDst="/events" 
+                                    btnTextSize="20px" 
+                                    :btnBkgdColor="`var(--palette-red-dark)`" />
                             </div>
                             <div class="music-btn">
-                                <button-standard class="group-btn" btnText="Music" btnDst="/events" btnTextSize="20px" :btnBkgdColor="`var(--palette-red-dark)`" />
+                                <button-standard class="group-btn" 
+                                    btnText="Music" 
+                                    btnDst="/events" 
+                                    btnTextSize="20px" 
+                                    :btnBkgdColor="`var(--palette-red-dark)`" />
                             </div>
                             <div class="dance-btn">
-                                <button-standard class="group-btn" btnText="Dance" btnDst="/events" btnTextSize="20px" :btnBkgdColor="`var(--palette-red-dark)`" />
+                                <button-standard class="group-btn" 
+                                    btnText="Dance" 
+                                    btnDst="/events" 
+                                    btnTextSize="20px" 
+                                    :btnBkgdColor="`var(--palette-red-dark)`" />
                             </div>
                         </div>
                     </div>
-                        
-                    </div>
                 </div>
             </div>
+         </div>
     </section>
 </template>
 
@@ -90,9 +113,7 @@ export default {
             })
         }
 
-
         const items  = [
-
             {
                 tabTitle: "Date",
                 tabContent: "This event will take place on " + data.date,
@@ -100,7 +121,6 @@ export default {
             {
                 tabTitle: "Time",
                 tabContent: "This event will be held at " + data.time,
-
             },
             {
                 tabTitle: "Venue",
@@ -123,28 +143,18 @@ export default {
             eventArtistList: data.artists,
             list: list,
             items: items,
-
-
-            
             }
     },
 
     data() {
         return{
             text: "Artists Performing at this Event",
-            }
-        },
-
-
-
-
-    
+        }
+    },
 }
 </script>
 
 <style scoped>
-
-
 
 .see-text {
     font-family: "Poppins";
@@ -160,20 +170,14 @@ export default {
     height: 100%;
     align-items: center;
 }
-
 .button-box {
     width:80%;
     max-width: 180px;
 }
-
 .group-btn {
     width:100%;
     margin:5% 0;
 }
-
-
-
-
 .all-sections {
     display: flex;
     flex-direction: column;
@@ -181,8 +185,7 @@ export default {
 .section1 {
     background-color: var(--palette-soft-blue);
     color: var(--text-color-light);
-    display: flex;
-    
+    display: flex;   
 }
 .section2 {
     background-color: var(--palette-green-dark);
@@ -191,8 +194,6 @@ export default {
     background-color: var(--palette-blue);
     color: var(--text-color-light)
 }
-
-
 .section4 {
     background-color: var(--palette-green);
     display: flex;
@@ -201,69 +202,43 @@ export default {
     width: 100%;
     height:100%;
 }
-
-
-
-
-
-
 .seeall {
     width: 50%;
     text-align: center;
-
-
-
 }
-
 .seeallby{
     border-left: 4px solid var(--palette-red-dark);
-
     display: flex;
     flex-direction: column;
     padding-left:20px;
     width: 50%;
     justify-self: center;
     text-align: center;
-
-
-    
-
 }
-
 .overview-comp {
     padding: 15% 5%;
-
 }
-
 .img-comp {
     margin: 5% 5%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .info-comp {
     width: 100%;
     padding: 5% 15%;  
 }
-
 .events-comp {
     padding: 5%;
 }
-
 .image {
     width: 100%;
 }
-
-
-
-
 .wrapper{ 
     height: 100%;
     display: grid;
     place-items: center;
 }
-
 .typing{
     width: 22ch;
     animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
@@ -284,9 +259,5 @@ export default {
     from {
         width: 0
     }
-    
 }
-
-
-
 </style>
