@@ -155,17 +155,7 @@ async function runMainApi() {
     // HTTP GET api that returns all the artists
     app.get("/artists", async (req, res) => {
         const result = await models.Artist.findAll()
-        const filtered = []
-        for (const element of result) {
-            filtered.push({
-                id: element.id,
-                name: element.name,
-                img: element.img,
-                date_of_birth: element.date_of_birth,
-                description: element.description
-            })
-        }
-        return res.json(filtered)
+        return res.json(result)
     })
 
     // HTTP GET api that returns the info for the requested artist (where artistId == :id) along 
