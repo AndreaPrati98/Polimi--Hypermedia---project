@@ -105,7 +105,7 @@ export default {
             {
                 tabTitle: "Venue",
                 tabContent: "This event will take place at " + data.place.name,
-                link: "/places/" + data.place.id, 
+                link: {button: "See More", destination:"/places/" + data.place.id, nuxtLink:true}, 
             }
         ]
 

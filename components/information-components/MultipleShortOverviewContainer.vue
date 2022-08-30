@@ -20,9 +20,9 @@
                 </div>
                 <div v-if="visibleText.link" class="text-button-container">
                     <button-animated class="ticket-button"
-                        :btnText="'See More'" 
-                        :btnDst="visibleText.link" 
-                        :isNuxtLink="true" />
+                        :btnText="visibleText.link.button" 
+                        :btnDst="visibleText.link.destination" 
+                        :isNuxtLink="visibleText.link.nuxtLink" />
                 </div>
             </div>
         </div>
