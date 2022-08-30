@@ -30,7 +30,9 @@ export default {
         const crumbs = [];
 
         let path = ''
-        
+
+        crumbs.push({ param: "Home", path: "/" })
+
         params.forEach((param, index) => {
             path = `${path}/${param}`;
             const match = this.$router.match(path);
@@ -50,6 +52,10 @@ export default {
 
 <style scoped>
 
+    .crumbs {
+        background-color: var(--palette-green);
+        margin: 0 30px;
+    }
     .crumbs ul {
         /* display: block; */
         list-style-type: none;

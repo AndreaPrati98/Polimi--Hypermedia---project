@@ -4,6 +4,10 @@
             :header="place.name"
             :subheader="place.address"
             :imgUrl="place.img"/>
+        
+        <div class="breadcrumbs-container">
+            <breadcrumbs class="breadcrumbs"/>
+        </div>
         <overview-component class="overview"
             :title="overviewTitle"
             :description="place.description" />
@@ -21,13 +25,15 @@
 import TheHeaderRoundedImage from '~/components/headers/TheHeaderRoundedImage.vue'
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue'
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue'
+import Breadcrumbs from '~/components/utilities-components/breadcrumbs'
 
 export default {
     name: "PlacePage",
     components: {
         TheHeaderRoundedImage,
         OverviewComponent,
-        CardsAdditionalContentensGroup
+        CardsAdditionalContentensGroup,
+        Breadcrumbs,
     },
     data() {
         return {
@@ -59,4 +65,5 @@ export default {
         margin: 0 auto;
         border-top: 2px solid black;
     }
+    
 </style>
