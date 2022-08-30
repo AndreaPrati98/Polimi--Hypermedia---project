@@ -1,12 +1,10 @@
 <template>
   <section class="all-sections">
-
+    <!-- SECTION 1 -->
     <div class="section1">
         <bio-header :title="name"/>
     </div>
-
-
-
+    <!-- SECTION 2 -->
     <div class="section2">
         <div class="overview-comp">
             <overview-component 
@@ -18,10 +16,11 @@
                 :src="img" >
         </div>
     </div>
-
+    <!-- SECTION 3 -->
     <div class="section3">
-        <transitional-link-cards linkText="Events including this artist" :list="list"/>
-
+        <transitional-link-cards 
+            linkText="Events including this artist" 
+            :list="list"/>
     </div>
 
 
