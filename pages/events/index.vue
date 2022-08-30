@@ -3,7 +3,7 @@
         <the-header-with-title class="header"
             :title="pageData.title" 
             :subtitle="pageData.shortDescription" 
-            :image="pageData.imgUrl" />
+            :imgUrl="pageData.imgUrl" />
 
         <div class="section1">
             <subheader-component class="subheader"
@@ -43,7 +43,7 @@ export default {
             title: "All the Events",
             shortDescription: "Here we are with all the upcoming events of the festival",
             description: "The programme includes shows, but also readings, exhibitions, films, and debates, which are so many gateways into the worlds of the artists and intellectuals invited to the Festival. Every evening, there is at least one show première, making Avignon a place of true creation and adventure for artists and spectators alike.",
-            imgUrl: "palais-des-papes-g04269230e_1920.jpg",
+            imgUrl: "https://cdn.pixabay.com/photo/2015/05/29/19/18/crowd-789652_1280.jpg",
         }
 
         return {

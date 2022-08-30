@@ -3,7 +3,7 @@
         <the-header-with-title class="header"
             :title="pageData.title" 
             :subtitle="pageData.shortDescription" 
-            :image="pageData.imgUrl" />
+            :imgUrl="pageData.imgUrl" />
         <subheader-component class="subheader"
             :content="pageData.description" />
         <grid-component 
@@ -29,7 +29,7 @@ export default {
             title: "All the Places",
             shortDescription: "Getting fascinated by Avignon is easy. The places are all amazing.",
             description: "The theaters are beautiful. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsam sed tempora rem itaque atque error aut temporibus blanditiis! Atque ea libero inventore, officiis vero minus et sapiente tempore nihil.",
-            imgUrl: "palais-des-papes-g04269230e_1920.jpg",
+            imgUrl: "https://cdn.pixabay.com/photo/2016/03/10/17/01/stage-1248769__480.jpg",
         }
 
         return {
