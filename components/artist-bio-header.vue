@@ -34,6 +34,7 @@ export default {
     width: 100%;
     max-height: 30vh;
     flex-direction: column;
+    padding-bottom: 2%;
 }
 h1 {
     padding-left: 5%;
