@@ -188,7 +188,7 @@ async function runMainApi() {
     // with the events that are hosted in that place
     app.get("/places/:id", async (req, res) => {
         const id = +req.params.id
-        const result = await models.Place.findAll({where: {id}, include: [ {model: models.Event}]})
+        const result = await models.Place.findOne({where: {id}, include: [ {model: models.Event}]})
         return res.json(result)
     })
 
