@@ -130,6 +130,7 @@ export default {
 
         return {
             data,
+            items,
         }
     },
     data() {

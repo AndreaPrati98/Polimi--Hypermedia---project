@@ -10,7 +10,7 @@
                         :key="`element-${index}`"
                         >
                         <button @click="visibleText = element" class="button">
-                            {{element.name}}
+                            {{element.tabTitle}}
                         </button>
                     </li>
                 </ul>

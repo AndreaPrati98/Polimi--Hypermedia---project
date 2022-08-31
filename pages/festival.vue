@@ -19,8 +19,8 @@
   <!-- SECTION 3 -->
   <div class="section3" id="section-3">
     <MultipleShortOverviewContainer class="info-component"
-      :title="content.tabTitle"
-      :objList="items" 
+      :title="content.tabComponentTitle"
+      :objList="tabItems" 
        />
   </div>
 
@@ -51,7 +51,7 @@ export default {
       const content = {
         overviewTitle: "OVERVIEW",
         overviewDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ab accusantium harum! Nam placeat laboriosam ducimus odio et aut doloremque voluptatibus fugit odit harum? Quaerat aliquam quo sit? Mollitia facilis harum aliquid accusamus quasi error temporibus id totam ratione? Aperiam molestiae veniam sit? Odit, laborum. Explicabo minima doloremque dignissimos. Nihil ratione repudiandae quibusdam, incidunt qui veritatis nesciunt debitis velit quos. Quos tenetur neque repellendus aspernatur iste sed sunt porro rem adipisci labore nulla enim ea explicabo corporis ipsam officiis accusantium perferendis vero tempore soluta unde, aliquam reiciendis temporibus. Suscipit, explicabo doloribus? At nobis sequi voluptatum, quo ullam incidunt quos aspernatur?",
-        tabTitle: "Practical Information",
+        tabComponentTitle: "Practical Information",
       }  
 
       const tabItems = [
@@ -70,7 +70,7 @@ export default {
       ]
       return {
         content: content,
-        items: tabItems,
+        tabItems: tabItems,
         timelineItems: timelineItems,
       }
     },
