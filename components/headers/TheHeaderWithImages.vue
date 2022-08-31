@@ -106,15 +106,6 @@ export default {
         grid-template: 1fr 1fr / 1fr 1fr;
     }
 
-    .imgs div {
-        background-position: center;
-        background-repeat: no-repeat;
-        
-        transition: filter .2s linear .3s,
-                    opacity .3s linear;    
-        
-    }
-
     .info {
         display: flex;
         flex-direction: column;

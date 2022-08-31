@@ -62,12 +62,12 @@ export default {
   }
 
   .box:nth-child(4n + 1) {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     grid-column: 1 / span 2;
   }
 
   .box:nth-child(4n + 3) {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     grid-column: 2 / span 2;
   }
 

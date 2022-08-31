@@ -95,14 +95,14 @@ export default async (models) => {
 
         {
             name: "Maria2",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2016/02/24/08/31/girl-1219339_1280.jpg",
             date_of_birth: "27/06/96",
             description: "academy awards",
             
         },
         {
             name: "Maria3",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2016/09/10/11/11/musician-1658887__480.jpg",
             date_of_birth: "27/06/96",
             description: "she is amazing",
             
@@ -110,7 +110,7 @@ export default async (models) => {
 
         {
             name: "Maria4",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2016/11/08/05/15/ramayana-festival-1807516__480.jpg",
             date_of_birth: "27/06/96",
             description: "she is amazing",
             
@@ -122,17 +122,16 @@ export default async (models) => {
             description: "active since 1965",
             
         },
-
         {
             name: "Maria6",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2016/12/29/15/24/juggler-1938714__480.jpg",
             date_of_birth: "27/06/96",
             description: "active since 1965",
             
         },
         {
             name: "Maria7",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2021/01/29/08/10/musician-5960112__480.jpg",
             date_of_birth: "27/06/96",
             description: "active since 1965",
             
@@ -140,14 +139,14 @@ export default async (models) => {
 
         {
             name: "Maria8",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2020/06/29/10/08/ballet-5352231__480.jpg",
             date_of_birth: "27/06/96",
             description: "academy awards",
             
         },
         {
             name: "Maria9",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2020/06/21/15/24/mim-5325414__480.jpg",
             date_of_birth: "27/06/96",
             description: "she is amazing",
             
@@ -155,7 +154,7 @@ export default async (models) => {
 
         {
             name: "Maria10",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2015/09/17/14/24/woman-944261__480.jpg",
             date_of_birth: "27/06/96",
             description: "academy awards",
             
@@ -177,7 +176,7 @@ export default async (models) => {
         },
         {
             name: "Maria13",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2016/11/19/21/05/bass-guitar-1841186__480.jpg",
             date_of_birth: "27/06/96",
             description: "she is amazing",
             
@@ -185,17 +184,22 @@ export default async (models) => {
 
         {
             name: "Maria14",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2013/09/11/09/44/dancer-181208__480.jpg",
             date_of_birth: "27/06/96",
             description: "active since 1965",
             
         },
         {
             name: "Maria15",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2016/11/23/18/05/concert-1854113__480.jpg",
             date_of_birth: "27/06/96",
             description: "she is amazing",
-            
+        },
+        {
+            name: "Maria16",
+            img: "https://cdn.pixabay.com/photo/2017/03/21/19/10/musician-2163011__480.jpg",
+            date_of_birth: "27/06/96",
+            description: "she is amazing",
         }
     ]
 
