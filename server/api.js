@@ -130,7 +130,20 @@ async function runMainApi() {
     
     app.get("/events", async (req, res) => {
         const result =  await models.Event.findAll()
-        return res.json(result)
+        const filtered = []
+        for (const element of result) {
+            filtered.push({
+                id: element.id,
+                title: element.title,
+                description: element.description,
+                img: element.img,
+                date: element.date,
+                time: element.time,
+                details: element.details,
+                placeId: element.placeId,
+            })
+        }
+        return res.json(filtered)
     })
     
     app.get('/events/:id', async (req, res) => {

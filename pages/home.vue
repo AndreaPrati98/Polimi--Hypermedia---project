@@ -30,8 +30,17 @@
 
     <!-- SECTION 3 -->
     <div class="section3">
+        <div class="both-boxes">
+            <div class="background-box"></div>
+            <div class="explore1-box"><a class="explore1-button" href="../events">
+                <overview-component class="explore1"
+                    :title="content.overviewTitle" 
+                    :description="content.overviewDescription" /></a>
+            </div>
+        </div>
+
         <!--cards-additional-contentens-group :linkText="content.cardsTitle" :list="events"/-->
-        <!-- VERTICAL BARS EXAMPLE -->
+        <!-- VERTICAL BARS EXAMPLE
         <div class="vertical-bars-container">
 
             <div class="item">
@@ -58,6 +67,7 @@
                 </div>
             </div>
         </div>
+        -->
     </div>
 
     <!-- SECTION 4-->
@@ -79,8 +89,8 @@ export default {
     name: "home",
     data() {
         const content = {
-            overviewTitle: "OVERVIEW",
-            overviewDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ab accusantium harum! Nam placeat laboriosam ducimus odio et aut doloremque voluptatibus fugit odit harum? Quaerat aliquam quo sit? Mollitia facilis harum aliquid accusamus quasi error temporibus id totam ratione? Aperiam molestiae veniam sit? Odit, laborum. Explicabo minima doloremque dignissimos. Nihil ratione repudiandae quibusdam, incidunt qui veritatis nesciunt debitis velit quos. Quos tenetur neque repellendus aspernatur iste sed sunt porro rem adipisci labore nulla enim ea explicabo corporis ipsam officiis accusantium perferendis vero tempore soluta unde, aliquam reiciendis temporibus. Suscipit, explicabo doloribus? At nobis sequi voluptatum, quo ullam incidunt quos aspernatur?",
+            overviewTitle: "Explore Events",
+            overviewDescription: "Check out all of the events this year. You can explore by different types of performances and learn more about the artists performing at the events, the venues hosting the events, and much more!",
             cardsTitle: "Explore Events",
         }
         return {
@@ -111,7 +121,40 @@ export default {
 <style scoped>
 
 
-/* VERTICAL BARS EXAMPLE */
+.explore1-button {
+    all:unset;
+
+}
+.both-boxes {
+    width: 30%;
+    height: 40%;
+    padding: 5%;
+}
+.background-box{
+    background: var(--palette-red);
+    position: absolute;
+    transition: transform 0.8s;
+    width: inherit;
+    height: inherit;
+}
+.explore1-box {
+    background: var(--palette-green-dark);
+    transition: transform 0.8s;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    cursor: pointer;
+    
+
+}
+
+.explore1-box:hover {
+    transform: translate(5%,5%);
+}
+
+
+
+/* VERTICAL BARS EXAMPLE 
 .vertical-bars-container{
     display: flex;
     flex-direction: row;
@@ -145,7 +188,7 @@ export default {
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%);
     z-index: 1;
     opacity: 0;
-    /*transition: opacity 0.5s ease, transform 0.5s ease;*/
+    /*transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
 .item:hover {

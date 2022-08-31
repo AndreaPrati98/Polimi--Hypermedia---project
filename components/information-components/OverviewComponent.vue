@@ -32,6 +32,8 @@ export default {
     height: 100%;
     overflow: hidden; 
     --border-thickness: 1.5px;
+    overflow-y: scroll;
+
 }
 
 .title {
@@ -52,6 +54,7 @@ export default {
     line-height: 25px;
     padding-right: 5%;
     padding-left:5%;
+
 }
 
 .top {

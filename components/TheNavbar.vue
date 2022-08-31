@@ -35,7 +35,7 @@ export default {
         headerList: [
             {
             name: 'Home',
-            path: '/',
+            path: '/home',
             },
             {
             name: 'Festival',
