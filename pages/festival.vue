@@ -18,10 +18,24 @@
 
   <!-- SECTION 3 -->
   <div class="section3" id="section-3">
-    <MultipleShortOverviewContainer class="info-component"
-      :title="content.tabComponentTitle"
-      :objList="tabItems" 
-       />
+
+    <div class="col" v-for="(element, index) of tabItems"
+      :key="`col-${index}`">
+      <div class="title">
+        {{element.tabTitle}}
+      </div>
+      <div class="content">
+        {{element.tabContent}}
+      </div>
+
+      <div v-if="element.link" class="text-button-container">
+        <button-animated class="ticket-button"
+          :btnText="element.link.button" 
+          :btnDst="element.link.destination" 
+          :isNuxtLink="element.link.nuxtLink" />
+      </div>
+    </div>
+    
   </div>
 
   <!-- SECTION 4 -->
@@ -42,9 +56,10 @@ import MultipleShortOverviewContainer from '~/components/information-components/
 import Default from '~/layouts/default.vue';
 import VerticalBars from '~/components/img-component/VerticalBars.vue';
 import Timeline from '~/components/Timeline.vue';
+import ButtonAnimated from '~/components/utilities-components/ButtonAnimated.vue'
 
 export default {
-    components: { Map, TheHeaderWithImages, OverviewComponent, Card, OverviewComponent, MultipleShortOverviewContainer, Default, VerticalBars, Timeline },
+    components: { Map, TheHeaderWithImages, OverviewComponent, Card, OverviewComponent, MultipleShortOverviewContainer, Default, VerticalBars, Timeline, ButtonAnimated },
     name: "festival-intro",
     data() {
       const content = {
@@ -54,10 +69,23 @@ export default {
       }  
 
       const tabItems = [
-        {tabTitle: "Date", tabContent: "This festival is usually held during the first two weeks of June. This year the festival starts with the Welcome Celebration held on n 1 June. For the first week, music events will be the focal point occuying our largest venues. For the second week, the festival will shift and highlight mainly theater and music events. Regardless, all visitors will be able to find an experience to suits their preferences!"},
-        {tabTitle: "Location", tabContent: "text"},
-        {tabTitle: "Tickets", tabContent: "these are tickets", link:{button: "Buy Tickets", destination:"www.google.com", nuxtLink:false}}
-      ]
+        { 
+          tabTitle: "Date", 
+          tabContent: "01 June 2022 - 14 June 2022"
+        },
+        { 
+          tabTitle: "Location", 
+          tabContent: `Cloître Saint-Louis, 20 rue du Portail Boquier, 84000 Avignon`
+        },
+        { 
+          tabTitle: "Tickets", 
+          tabContent: "Day Passes or Full Passes are available.", 
+          link: { 
+                  button: "Buy Tickets", 
+                  destination:"www.ticketmaster.com", 
+                  nuxtLink:false
+                }
+        }]
 
 
       const timelineItems = [
@@ -121,6 +149,12 @@ scroll-behavior: smooth;
 .section3 {
   width: 100%;
   background-color: var(--palette-green-dark);
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+  padding: 7% 0;
+  justify-content: space-around;
+  
 }
 
 .section4 {
@@ -139,6 +173,35 @@ scroll-behavior: smooth;
 .picture {
   overflow: hidden;
   object-fit: cover;
+}
+
+
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  
+}
+
+.title {
+  font-family: "Oswald";
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20%;
+  color: var(--palette-red-dark);
+
+}
+
+.content {
+  font-family: "Poppins";
+  font-weight: 200;
+  line-height: 1.7rem;
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  color: var(--palette-blue);
+  margin-bottom: 10%;
+
 }
 
 </style>
