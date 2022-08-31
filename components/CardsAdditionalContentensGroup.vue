@@ -4,7 +4,7 @@
         <div class="scroll-window">
             <div class="cards-container">
 
-                <card-additional-content class="event" v-for="(element, index) of objList"
+                <card-additional-content class="item" v-for="(element, index) of objList"
                     :key="`card-${index}`"
                     :title="element.name"
                     :content="element.content"
