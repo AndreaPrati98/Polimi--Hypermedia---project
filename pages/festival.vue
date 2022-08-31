@@ -22,6 +22,9 @@
                 </a>
             </div>
         </div>
+        <div class="heading">
+          Festival Information
+        </div>
   </div>
 
   <!-- SECTION 2 -->
@@ -136,6 +139,18 @@ export default {
 </script>
 
 <style scoped>
+
+.heading {
+  display: flex;
+  font-family: "Poppins";
+  font-weight: 800;
+  font-size: 3rem;
+  text-align: right;
+  margin-right: 10px;
+  color: var(--palette-blue);
+}
+
+
 
 .bar-button {
   all:unset;
