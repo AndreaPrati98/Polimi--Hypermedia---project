@@ -37,13 +37,29 @@
   </div>
 
   <div class="section4">
-
-
-
-
-
-
-
+    <h2 class="history-title"> History </h2>
+    <div class="timeline-component"> 
+      <div class="timeline-box">
+        <div class="item-box">
+          <div class="item">
+            <h3 class="title">Date</h3>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="item">
+            <h3 class="title">Date</h3>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="item">
+            <h3 class="title">Date</h3>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 </template>
@@ -80,6 +96,79 @@ export default {
 </script>
 
 <style scoped>
+
+
+
+.history-title {
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 700;
+  color: var(--text-color-light);
+  font-size: 45px;
+  padding: 4% 0% 6% 0%;
+}
+
+/* Timeline Container */
+.timeline-component {
+  padding: 20px;
+  display: flex;
+ 
+  justify-content: center;
+  
+
+}
+
+/* Outer Layer with the timeline border */
+.timeline-box {
+  border-left: 5px solid var(--palette-green);
+}
+
+/* Card container */
+.item-box {
+  position: relative;
+  margin: 0 0 20px 20px;
+  padding: 10px;
+  background: var(--palette-soft-blue);
+  color: var(--palette-green-dark);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Information about the timeline */
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* Title of the card */
+.title {
+  color: var(--palette-green-dark);
+  position: relative;
+  font-family: "Oswald";
+  font-weight: 600;
+  font-size: 25px;
+  letter-spacing: 1.1px;
+}
+
+/* Timeline dot  */
+.title::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--palette-green);
+  border-radius: 999px;
+  left: -40px;
+  border: 3px solid var(--palette-green);
+}
+
+.text {
+  font-family: "Poppins";
+  font-weight: 300;
+  letter-spacing: 1.1px;
+  line-height: 1.2rem;
+}
 
 
 .scroll-header {
@@ -153,6 +242,11 @@ flex-direction: column;
 .section3 {
   width: 100%;
   background-color: var(--palette-green);
+}
+
+.section4 {
+  width: 100%;
+  background-color: var(--palette-blue);
 }
 
 .overview-component {
