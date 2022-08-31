@@ -7,7 +7,7 @@
                 <card-additional-content class="event" v-for="(element, index) of objList"
                     :key="`card-${index}`"
                     :title="element.name"
-                    :content="element.date"
+                    :content="element.content"
                     :imgUrl="element.img"
                     :btnTxt="`See More`"
                     :btnDst="`${partialPath}/` + element.id" />

@@ -22,9 +22,8 @@
             <div class="section3">
                 <cards-additional-contentens-group class="events-comp" 
                     :title="text" 
-                    
                     :objList="data.list"
-                    :partialPath="'/places/'"/>
+                    :partialPath="'/artists'"/>
             </div>
             <!-- SECTION 4-->
             <div class="section4">
@@ -106,12 +105,11 @@ export default {
         for(const element of data.artists) {
             list.push({
                 id: element.id,
-                title: element.name,
+                name: element.name,
                 content: "",
-                imgUrl: element.img,
+                img: element.img,
             })
         }
-        
         data.list = list
 
         const items  = [
@@ -132,7 +130,6 @@ export default {
 
         return {
             data,
-            items,
         }
     },
     data() {

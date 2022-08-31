@@ -13,7 +13,7 @@
     <span class="separator"></span>
 
     <cards-additional-contentens-group 
-        :title="'Other events related to this artis'"
+        :title="'Other events related to this artist'"
         :objList="artist.list"
         :partialPath="'/events'"/>
   </section>
@@ -46,14 +46,14 @@ export default {
         const list = []
         for (const element of data.events) {
             list.push({
-                title: element.title,
+                id: element.id,
+                name: element.name,
                 content: element.date,
-                imgUrl: element.img,
-                btnText: "See More",
-                destination: element.id,
+                img: element.img,
             })
         }
-        data.list = list;
+        data.list = list
+        
         
         return {
             artist: data,
