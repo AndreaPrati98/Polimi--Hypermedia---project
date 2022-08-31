@@ -5,17 +5,17 @@
                 <h2>{{this.titleTxt}}</h2>
                 <!-- <p>Piccola descrizione</p> -->
                 <p>{{this.descTxt}}</p>
-                <button-std class="btn" :btnDst="this.btnDst" :btnText="this.btnTxt"/>
+                <button-standard class="btn" :btnDst="this.btnDst" :btnText="this.btnTxt"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import buttonStd from '../utilities-components/button-std.vue'
+import ButtonStandard from '../utilities-components/ButtonStandard.vue'
 export default {
     name: "card-hover-b-w",
-    components: { buttonStd },
+    components: { ButtonStandard },
     props: {
         titleTxt: {
             type: String,
@@ -52,15 +52,18 @@ export default {
 </script>
 
 <style scoped>
-
-    
     .img {
+        width: 100%;
         background-position: center;
         background-repeat: no-repeat;
         
         background-image: var(--img-url);
         background-size: cover;
-        
+        transition: transform .3s ease-in;
+    }
+
+    .img:hover {
+        transform: scale(1.06);
     }
 
     .txt-wrapper {
@@ -78,8 +81,9 @@ export default {
     }
 
     .txt-wrapper:hover {
-        backdrop-filter: grayscale(100%);
-        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: grayscale(100%) contrast(1.3);
+        background-color: rgba(255, 255, 255, 0.4);
+        
     }
 
     .txt {

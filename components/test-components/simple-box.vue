@@ -1,13 +1,22 @@
 <template> 
     <div class="card">
-        Test box
+        {{artistId}}
+        {{artistName}}
     </div>
   
 </template>
 
 <script>
 export default {
-
+    name: 'simple-test-box',
+    props: {
+        artistId: {
+            type: String,
+        },
+        artistName: {
+            type: String
+        },
+    },
 }
 </script>
 
@@ -17,8 +26,6 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        border: 1px solid red;
         
     }
 </style>

@@ -3,7 +3,7 @@ export default async (models) => {
     /* 10 */
     const eventList = [
         {
-            title: "Theater 1",
+            name: "Theater 1",
             description: "Theater 1 um dolor sit ame elit. Integer cursus eleifend mi id dapibus. ",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "17/06/2022",
@@ -11,7 +11,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 2",
+            name: "Theater 2",
             description: "Theater 2 um dolor sit amet, consectetur adipisnd mi id dapibus. ",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "18/06/2022",
@@ -19,7 +19,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 3",
+            name: "Theater 3",
             description: "Theater 3 um dolor sit amet, consecteger cursus eleifend mi id dapibus. Ut vestibulum pellentesque molestie. ",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "19/06/2022",
@@ -27,7 +27,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 4",
+            name: "Theater 4",
             description: "Theater 4 um dolor sit amet, consectetur adipiscing apibus. Ut vestib",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "20/06/2022",
@@ -35,7 +35,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 5",
+            name: "Theater 5",
             description: "Theater 5 um dolor sit amet, conseifend mi id dapibus. Ut vestibulum pellentesque molestie.",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "21/06/2022",
@@ -43,7 +43,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 6",
+            name: "Theater 6",
             description: "Theater 6 um dolor selit. Integer cursus eleifend mi id dapibus. Ut vestibulum pellentesq",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "17/07/2022",
@@ -51,7 +51,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 7",
+            name: "Theater 7",
             description: "Theater 7 um dolor sit amet, consectetur adipiscing elit. Integer cursus bus.",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "18/07/2022",
@@ -59,7 +59,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 8",
+            name: "Theater 8",
             description: "Theater 8 um dolor sit amet, consectetur adipiscing elit. Integer",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "19/07/2022",
@@ -67,7 +67,7 @@ export default async (models) => {
             details: "blah 8",
         },
         {
-            title: "Theater 9",
+            name: "Theater 9",
             description: "Theater 9 um dolor sit amet, consectetur adipiscing elit. Integepib",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "20/07/2022",
@@ -75,7 +75,7 @@ export default async (models) => {
             details: "blah ",
         },
         {
-            title: "Theater 10",
+            name: "Theater 10",
             description: "Theater 10 um dolor sit amet, consectetur adipiscingdapibus. Ut vesti",
             img: "https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg",
             date: "21/07/2022",
@@ -95,14 +95,14 @@ export default async (models) => {
 
         {
             name: "Maria2",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2016/02/24/08/31/girl-1219339_1280.jpg",
             date_of_birth: "27/06/96",
             description: "academy awards",
             
         },
         {
             name: "Maria3",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2016/09/10/11/11/musician-1658887__480.jpg",
             date_of_birth: "27/06/96",
             description: "she is amazing",
             
@@ -110,7 +110,7 @@ export default async (models) => {
 
         {
             name: "Maria4",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2016/11/08/05/15/ramayana-festival-1807516__480.jpg",
             date_of_birth: "27/06/96",
             description: "she is amazing",
             
@@ -122,17 +122,16 @@ export default async (models) => {
             description: "active since 1965",
             
         },
-
         {
             name: "Maria6",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2016/12/29/15/24/juggler-1938714__480.jpg",
             date_of_birth: "27/06/96",
             description: "active since 1965",
             
         },
         {
             name: "Maria7",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2021/01/29/08/10/musician-5960112__480.jpg",
             date_of_birth: "27/06/96",
             description: "active since 1965",
             
@@ -140,14 +139,14 @@ export default async (models) => {
 
         {
             name: "Maria8",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2020/06/29/10/08/ballet-5352231__480.jpg",
             date_of_birth: "27/06/96",
             description: "academy awards",
             
         },
         {
             name: "Maria9",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2020/06/21/15/24/mim-5325414__480.jpg",
             date_of_birth: "27/06/96",
             description: "she is amazing",
             
@@ -155,7 +154,7 @@ export default async (models) => {
 
         {
             name: "Maria10",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2015/09/17/14/24/woman-944261__480.jpg",
             date_of_birth: "27/06/96",
             description: "academy awards",
             
@@ -177,7 +176,7 @@ export default async (models) => {
         },
         {
             name: "Maria13",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2016/11/19/21/05/bass-guitar-1841186__480.jpg",
             date_of_birth: "27/06/96",
             description: "she is amazing",
             
@@ -185,17 +184,22 @@ export default async (models) => {
 
         {
             name: "Maria14",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2013/09/11/09/44/dancer-181208__480.jpg",
             date_of_birth: "27/06/96",
             description: "active since 1965",
             
         },
         {
             name: "Maria15",
-            img: "https://cdn.pixabay.com/photo/2016/03/27/21/44/musician-1284394_1280.jpg",
+            img: "https://cdn.pixabay.com/photo/2016/11/23/18/05/concert-1854113__480.jpg",
             date_of_birth: "27/06/96",
             description: "she is amazing",
-            
+        },
+        {
+            name: "Maria16",
+            img: "https://cdn.pixabay.com/photo/2017/03/21/19/10/musician-2163011__480.jpg",
+            date_of_birth: "27/06/96",
+            description: "she is amazing",
         }
     ]
 
@@ -216,39 +220,46 @@ export default async (models) => {
 /* 5 */
     const placesList = [
         {
-            name: "Opéra Grand Avignon 1",
-            img: "https://lh5.googleusercontent.com/p/AF1QipN_SwYCX8gFQQM0Z7uM2wZFMmp7eALV-gdsAY83=w408-h304-k-no",
+            name: "Opéra Grand Avignon",
+            img: "https://festival-avignon.com/storage/image/41/183941_62012fa83e91a.jpeg",
             caption: "The Opéra d'Avignon is an opera house located in Avignon, France that has been in operation for almost two centuries.",
             description: "The initial opera house was constructed in 1824–1825, and opened with its inaugural performance on 30 October 1825. The original opera house was destroyed in a fire on 26 January 1846.",
             address: "Pl. de l'Horloge, 84000 Avignon, Francia",
         },
         {
-            name: "The Palace Theatre 2",
-            img: "https://lh5.googleusercontent.com/p/AF1QipNDRr2bNcudAesBHp09U6bhZBVMkEm1Ep431poW=w408-h725-k-no",
-            caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, distinctio.",
-            description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste optio delectus ducimus atque maiores sunt mollitia aspernatur laborum eveniet? Nostrum?",
-            address: "address !! ",
+            name: "Cour d'Honneur of the Palais des papes",
+            img: "https://festival-avignon.com/storage/image/6/132106_615c4a55a5a7a.jpeg",
+            caption: "It was in the Cour d'Honneur of the Palais des papes that the Festival d'Avignon began in 1947, with William Shakespeare's The Tragedy of King Richard II, directed by Jean Vilar.",
+            description: "It has long remained the main venue of the Festival. It was only from the mid-1960s that new venues open. These new locations, often historical and seldom dedicated to live performance, offer surprising and original theatrical spaces and give Avignon its personality each summer as a city-theatre.",
+            address: "Place du Palais 84000 Avignon",
         },
         {
-            name: "Opéra Grand Avignon 3",
-            img: "https://lh5.googleusercontent.com/p/AF1QipN_SwYCX8gFQQM0Z7uM2wZFMmp7eALV-gdsAY83=w408-h304-k-no",
-            caption: "The Opéra d'Avignon is an opera house located in Avignon, France that has been in operation for almost two centuries.",
-            description: "The initial opera house was constructed in 1824–1825, and opened with its inaugural performance on 30 October 1825. The original opera house was destroyed in a fire on 26 January 1846.",
-            address: "Pl. de l'Horloge, 84000 Avignon, Francia",
+            name: "CloîTtre des carmes",
+            img: "https://festival-avignon.com/storage/image/75//1675_5ece1c36bf33e.jpg",
+            caption: "The cloister of the Carmelites , located on Place des Carmes and dependent on the conventual church of the Carmelites , is one of the many examples of the convents built in Avignon during the 13th  century .",
+            description: "A former Carmelite cloister, The Cloître des Carmes was the first venue to have been invested by the Festival after the Palais des papes. It has been hosting theatre and dance shows since 1967. Within its 14th-century walls, this venue offers an open-air stage that extends under the arcades and can accomodate nearly 500 spectators.",
+            address: "Place des Carmes 84000 Avignon",
         },
         {
-            name: "The Palace Theatre 4",
-            img: "https://lh5.googleusercontent.com/p/AF1QipNDRr2bNcudAesBHp09U6bhZBVMkEm1Ep431poW=w408-h725-k-no",
-            caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, distinctio.",
-            description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste optio delectus ducimus atque maiores sunt mollitia aspernatur laborum eveniet? Nostrum?",
-            address: "address !! ",
+            name: "Cour du lycée saint-joseph",
+            img: "https://festival-avignon.com/storage/image/79//1679_5ece1c36cdd71.jpg",
+            caption: "Lycée Saint-Joseph of Avignon is a private Catholic secondary school located in the city of Avignon, Vaucluse, in the Provence-Alpes-Côte d'Azur, France.",
+            description: "Built in the 19th century by Jesuits on the site of the Cordeliers convent, the lycée Saint-Joseph is a key venue of the Festival d'Avignon. Every summer, its large square courtyard welcomes a large open-air stage with a 750 seating area.",
+            address: "62 rue des Lices 84000 Avignon",
         },
         {
-            name: "The Palace Theatre 5",
-            img: "https://lh5.googleusercontent.com/p/AF1QipNDRr2bNcudAesBHp09U6bhZBVMkEm1Ep431poW=w408-h725-k-no",
-            caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, distinctio.",
-            description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste optio delectus ducimus atque maiores sunt mollitia aspernatur laborum eveniet? Nostrum?",
-            address: "address !! ",
+            name: "La Fabrica",
+            img: "https://festival-avignon.com/storage/image/57//1657_5ece1c3680d80.jpg",
+            caption: "A modern stage of the Festival d'Avignon designed by Polish architect Maria Godlewska.",
+            description: "Composed of a hall the size of the stage of the Cour d'honneur, 18 living quarters and 2 adjoining technical spaces, this theatrical “factory” provides a year-round residence for artistic teams working to prepare their next creation for the Festival d'Avignon. This regular presence of artists on the Avignon territory allows the Festival to intensify its work to raise awareness on the performing arts among all audiences.",
+            address: "11 rue Paul Achard 84000 Avignon",
+        },
+        {
+            name: "Jardin Ceccano",
+            img: "https://festival-avignon.com/storage/image/69//1869_5ece1c392e257.jpg",
+            caption: "The médiathèque Ceccano is a former residence of the Avignon cardinals and its garden, with its old stones and ancient trees, has served as the backdrop to our dramatic series for the past 4 years.",
+            description: "In 2018, as a counterpart to the series Mesdames, Messieurs et le reste du monde, the city library gave the spectators the opportunity to discover the texts read every day in their entirety, as well as other great texts. The library also partners with the Festival for the creation of the young spectator's guide, as well as for the game “la poursuite des cambrioleurs,” invented to help children discover the Festival d'Avignon, the cultural legacy of the city, and the performing arts.",
+            address: "2 bis rue Laboureur 84000 Avignon",
         }
 
     ]

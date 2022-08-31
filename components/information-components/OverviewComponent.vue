@@ -1,9 +1,8 @@
 <template>
     <div class="box">
         <span class="top"/>
-        <p class="title">{{title}}</p>
+        <h3 class="title">{{title}}</h3>
         <p class="text">{{description}}</p>
-        <span class="bottom"/>
     </div>
 </template>
 
@@ -14,11 +13,11 @@ export default {
         title: {
             type: String,
             required: false,
-            default: "OVERVIEW"
         },
         description: {
             type: String,
             required: true,
+            default: "missing description",
         }
 
     }
@@ -32,17 +31,19 @@ export default {
     width: 100%;
     height: 100%;
     overflow: hidden; 
-}
+    --border-thickness: 1.5px;
+    overflow-y: scroll;
 
+}
 
 .title {
     font-family: "Poppins";
     font-weight: 600;
     text-align: center;
     letter-spacing: 1.6px;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
     line-height: 19.2px;
-    padding: 2%;
-
 }
 
 .text {
@@ -51,27 +52,23 @@ export default {
     font-size: 14px;
     letter-spacing: 0.28px;
     line-height: 25px;
-    padding: 2%;
-}
-
-
-.top, .bottom{
-    width: 100%;
-    height: 10px;
-    display: block;
-    position: relative;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    padding-right: 5%;
+    padding-left:5%;
 
 }
 
 .top {
-    border-top: 1px solid black;
+    display: block;
+    border-top: var(--border-thickness, 2px) solid var(--text-color-light);
 }
 
-.bottom {
-    border-bottom: 1px solid black;
+h3 {
+    width: 100%;
+    font-size: 25px;
+    font-family: "Poppins";
+    font-weight: 600;
+    margin-bottom: 50px;
+    text-align: center;
+    letter-spacing: 1.2px;
 }
-
-
 </style>

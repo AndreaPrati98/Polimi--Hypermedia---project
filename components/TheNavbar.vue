@@ -35,11 +35,11 @@ export default {
         headerList: [
             {
             name: 'Home',
-            path: '/',
+            path: '/home',
             },
             {
             name: 'Festival',
-            path: '/festival-intro',
+            path: '/festival',
             },
             {
             name: 'Events',
@@ -51,7 +51,7 @@ export default {
             },
             {
             name: 'Places',
-            path: '/',
+            path: '/places',
             },
             {
             name: 'Contact Us',
@@ -103,12 +103,12 @@ export default {
         align-items: center;
         padding: 1rem 1rem;
         background-color: var(--palette-blue);
-        /*border-bottom: 1px solid red;*/
+
     }
 
     .nav-link {
-        --text-color-nav: var(--text-color-light);
-        color: var(--text-color-light);
+        --text-color-nav: var(--text-color-dark);
+        color: var(--palette-soft-blue);
         text-decoration: none;
 
         font-size: 1rem;
@@ -116,10 +116,10 @@ export default {
         letter-spacing: 1.2px;
         padding: 0.8rem .5rem;
 
-        transition: color .3s ease-in;
+        transition: color .2s ease-in;
     }
     .nav-link:hover{
-        color: var(--palette-light-cyan);
+        color: var(--text-color-light);
     }
 
 
@@ -152,6 +152,11 @@ export default {
     .nav-item {
         margin-left: 2rem;
         list-style: none;
+        font-family: "Open Sans";
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 1.2px;
+        color: var(--text-color-light);
 
     }
 
@@ -162,13 +167,12 @@ export default {
 
     .nav-logo {
         text-decoration: none;
-        font-size: 1.2rem;
+        font-size: 30px;
         font-weight: 600;
-        --text-color-nav: var(--text-color-light);
-        color: var(--text-color-nav);
-        font-family: "Poppins";
-        font-size: 26px;
         letter-spacing: 1.2px;
+        font-family: "Poppins";
+        --text-color-nav: var(--text-color-dark);
+        color: var(--text-color-light);
     }
 
     /* Responsiveness */

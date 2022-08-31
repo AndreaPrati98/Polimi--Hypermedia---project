@@ -5,21 +5,19 @@
             <h3>{{ title }}</h3>
             <div class="focus-content">
             <p>{{ content }}</p>
-            <button-std
-                    :btnTextSize="'12px'"
-                    :btnText="btnTxt"
-                    :btnDst="btnDst"/>
-                
-                
+            <button-standard
+                :btnTextSize="'12px'"
+                :btnText="btnTxt"
+                :btnDst="btnDst"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import buttonStd from '../utilities-components/button-std.vue'
+import ButtonStandard from '../utilities-components/ButtonStandard.vue';
 export default {
-  components: { buttonStd },
+  components: { ButtonStandard },
     name: "card-additional-content",
     props: {
         title: {
@@ -45,13 +43,30 @@ export default {
 
 <style scoped>
 
+h3 {
+
+  width: 100%;
+  font-size: 25px;
+  font-family: "Poppins";
+  font-weight: 100;
+  margin-bottom: 50px;
+  text-align: center;
+  /*letter-spacing: 1.2px;*/
+}
+
+
+p {
+    font-family: "Oswald";
+    font-weight: 300;
+}
+
+
     .card {
     width: 300px;
     /* height: 280px; */
     height: 330px;
     padding: 0;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-    border-radius: 8px;
     box-sizing: border-box;
     overflow: hidden;
     }
@@ -72,7 +87,7 @@ export default {
     margin: 0;
     padding: 12px 12px 48px;
     line-height: 32px;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 20px;
     }
 

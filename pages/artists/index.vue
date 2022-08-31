@@ -1,90 +1,51 @@
 <template>
-  <section>
-    <title-overlay-image class="title-overlay-image-props" title="This Year's Artists" description="Check this out!" image="palais-des-papes-g04269230e_1920.jpg"/>
-    
-    <div class="description-container">
-      <div class="description">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Temporibus qui deleniti vero dignissimos consequatur earum officiis ut aut aspernatur omnis 
-          illum quaerat assumenda odit, laborum dicta iure ea saepe. Vel.
-        </p>  
-      </div>
-    </div>
-    
-    <div class="card-container">
-      <!-- <card-hover v-for="(artist, artistIndex) of artistList"
-      :key="`artist-index=${artistIndex}`"
-      :artistName="artist.name"
-      :imageName="artist.img"
-      :artistId="artist.id"
-      /> -->
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-
-      <SimpleBox class="box"/>
-
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-      <SimpleBox class="box"/>
-    
-    </div>
-        
-      
-  </section>
+    <section>
+        <the-header-with-title class="header"
+            :title="pageData.title" 
+            :subtitle="pageData.shortDescription" 
+            :imgUrl="pageData.imgUrl" />
+        <subheader-component class="subheader"
+            :content="pageData.description" />
+        <grid-component 
+            :partialPath="'artists'"
+            :objList="allArtists"/>
+    </section>
 </template>
 
 <script scoped>
-import TitleOverlayImage from '~/components/title-overlay-image.vue';
-import CardHover from '~/components/img-component/card-simple-hover.vue';
-import SimpleBox from '~/components/test-components/simple-box.vue';
+import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue'
+import SubheaderComponent from '~/components/information-components/SubheaderComponent.vue'
+import GridComponent from '~/components/medium-components/GridComponent.vue'
 
 export default {
-    name: "artists",
-    components: { TitleOverlayImage, CardHover, SimpleBox},
+    name: "artists-page",
+    components: { 
+        TheHeaderWithTitle,
+        SubheaderComponent,
+        GridComponent,
+    },
+    data() {
+        const pageData = {
+            title: "All the Artists",
+            shortDescription: "Getting fascinated by Avignon is easy. The performers are all amazing.",
+            description: "The theaters are beautiful. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsam sed tempora rem itaque atque error aut temporibus blanditiis! Atque ea libero inventore, officiis vero minus et sapiente tempore nihil.",
+            imgUrl: "https://cdn.pixabay.com/photo/2017/11/29/09/15/paint-2985569__480.jpg",
+        }
+
+        return {
+            pageData
+        }
+    },
     async asyncData({ $axios }) {
          const { data } = await $axios.get("/api/artists");
          return {
-           artistList: data,
+           allArtists: data,
          }
      },
 }
 </script>
 
 <style scoped>
-
-  .description-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* width: 100%; */  
-    background-color: var(--palette-red);
-  }
-
-  .description {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    height: 70%;
-    width: 90%;
-    
-    border: 2px solid var(--text-color-light);
-    color: var(--text-color-light);
-
-    margin: 2% 0;
-    padding: 8px 10px;
-    font-size: 30px;
-  }
 
   .card-container {
     display: grid;
@@ -101,13 +62,13 @@ export default {
   }
 
   .box:nth-child(4n + 1) {
-    border: 2px solid blue;
-    grid-column: span 2;
+    /* border: 2px solid blue; */
+    grid-column: 1 / span 2;
   }
 
-  .box:nth-child(4n + 4) {
-    border: 2px solid green;
-    grid-column: span 2;
+  .box:nth-child(4n + 3) {
+    /* border: 2px solid green; */
+    grid-column: 2 / span 2;
   }
 
 </style>
