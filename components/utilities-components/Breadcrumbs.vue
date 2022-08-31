@@ -10,6 +10,7 @@
             </nuxt-link> 
         </li>
     </ul>
+    <button @click="goToPrev">Go Back</button>
   </div>
 </template>
 
@@ -53,8 +54,10 @@ export default {
 <style scoped>
 
     .crumbs {
-        background-color: var(--palette-green);
-        margin: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      background-color: var(--palette-green);
+      margin: 0 30px;
     }
     .crumbs ul {
         /* display: block; */
