@@ -130,20 +130,8 @@ async function runMainApi() {
     
     app.get("/events", async (req, res) => {
         const result =  await models.Event.findAll()
-        const filtered = []
-        for (const element of result) {
-            filtered.push({
-                id: element.id,
-                title: element.title,
-                description: element.description,
-                img: element.img,
-                date: element.date,
-                time: element.time,
-                details: element.details,
-                placeId: element.placeId,
-            })
-        }
-        return res.json(filtered)
+
+        return res.json(result)
     })
     
     app.get('/events/:id', async (req, res) => {
@@ -183,18 +171,7 @@ async function runMainApi() {
     // HTTP GET api that returns all the places
     app.get("/places", async (req, res) => {
         const result = await models.Place.findAll()
-        const filtered = []
-        for (const element of result) {
-            filtered.push({
-                id: element.id,
-                name: element.name,
-                img: element.img,
-                caption: element.caption,
-                description: element.description,
-                address: element.address,
-            })
-        }
-        return res.json(filtered)
+        return res.json(result)
     })
     
     // HTTP GET api that returns the info for the requested place (where placeId == :id) along 

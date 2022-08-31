@@ -40,13 +40,12 @@
 </template>
 
 <script>
-import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue';
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
 import Quote from '~/components/quote.vue';
 import Default from '~/layouts/default.vue';
 
 export default {
-    components: { OverviewComponent, Default, CardsAdditionalContentensGroup, Quote },
+    components: { OverviewComponent, Default, Quote },
     name: "home",
     data() {
         const content = {
