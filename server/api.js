@@ -55,7 +55,7 @@ async function initializeDatabaseConnection() {
         name: DataTypes.STRING,
         img: DataTypes.STRING,
         caption:  DataTypes.STRING,
-        description:  DataTypes.STRING,
+        description:  DataTypes.STRING(1000),
         address: DataTypes.STRING,
     }, {timestamps: false})
 
@@ -72,8 +72,8 @@ async function initializeDatabaseConnection() {
     Event.belongsTo(Type_of_art)
 
     /* This relation is not required in the project specs but we have added it for convenience. */
-    Type_of_art.hasMany(Artist)
-    Artist.belongsTo(Type_of_art)
+    // Type_of_art.hasMany(Artist)
+    // Artist.belongsTo(Type_of_art)
 
     await database.sync({ force: true })
     return {
