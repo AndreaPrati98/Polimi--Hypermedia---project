@@ -162,7 +162,6 @@ export default {
     margin: 5px 5px;
     display: inline-block;
     color: var(--palette-blue);
-    border-bottom: 3px solid var(--palette-green-dark);
     
 }
 

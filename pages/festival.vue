@@ -1,45 +1,77 @@
 <template>
 <section class="all-sections">
   <!-- SECTION 1 -->
-  <div class="section1">
-    <div class="scroll-header">
-    <h1 class="themes-intro">Welcome to
-      <div class="scroller">
-        <span>
-          Culture<br />
-          Art<br />
-          Ambition<br />
-          Bravery<br />
-          Color<br />
-        </span>
-      </div>
-
-
-    </h1>
-    </div>
-
-    <img class="picture" src="https://www.culturelink.fr/sites/default/files/2020-03/cour%20d'honneur.jpg"/>
-
+  <div class="section1" id="section-1">
+        <div class="vertical-bars-container">
+            <div class="item">
+                <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
+                <a href="#section-2">
+                <div class="bar-title"><p>Overview</p></div>
+                </a>
+            </div>
+            <div class="item">
+                <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
+                <a href="#section-3">
+                <div class="bar-title"><p>Information</p></div>
+                </a>
+            </div>
+            <div class="item">
+                <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
+                <a href="#section-4">
+                <div class="bar-title"><p>History</p></div>
+                </a>
+            </div>
+        </div>
   </div>
 
   <!-- SECTION 2 -->
-  <div class="section2">
+  <div class="section2" id="section-2">
     <overview-component class="overview-component"
       :title="content.overviewTitle"
       :description="content.overviewDescription"/>
   </div>
 
   <!-- SECTION 3 -->
-  <div class="section3">
+  <div class="section3" id="section-3">
     <MultipleShortOverviewContainer class="info-component"
       :title="content.tabTitle"
       :items="items" />
   </div>
 
-  <div class="section4">
+  <div class="section4" id="section-4">
     <h2 class="history-title"> History </h2>
     <div class="timeline-component"> 
       <div class="timeline-box">
+        <div class="item-box">
+          <div class="item">
+            <h3 class="title">Date</h3>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="item">
+            <h3 class="title">Date</h3>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="item">
+            <h3 class="title">Date</h3>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="item">
+            <h3 class="title">Date</h3>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="item">
+            <h3 class="title">Date</h3>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+          </div>
+        </div>
         <div class="item-box">
           <div class="item">
             <h3 class="title">Date</h3>
@@ -96,6 +128,87 @@ export default {
 </script>
 
 <style scoped>
+
+.bar-button {
+  all:unset;
+  cursor: pointer;
+}
+/* VERTICAL BARS EXAMPLE */
+.vertical-bars-container{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 100%;
+}
+
+
+.item {
+  position: relative;
+  width: 33%;
+  height: inherit;
+  min-height: 600px;
+  color: #fff;
+  overflow: hidden;
+  transition: width 0.5s ease;}
+  
+.item:before, .item:after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+  }
+
+.item:after {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+.item:before {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%);
+    z-index: 1;
+    opacity: 0;
+    /*transition: opacity 0.5s ease, transform 0.5s ease;*/
+  }
+
+.item:hover {
+    width: 40% !important;
+}
+
+
+.item:hover::before {
+      opacity: 1;
+}
+    
+
+
+.bar-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+    font-family: "Oswald";
+    font-size: 1.728rem;
+    line-height: 0;
+}
+
+.image {
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  top: 0; left: 0;
+  background-size: cover;
+  background-position: center center;
+  transition: filter 0.5s ease;
+  filter: grayscale(100%);
+  overflow: hidden;
+
+}
+
+
+
+/* END OF MOVING VERTICAL BARS EXAMPLE */
+
 
 
 
@@ -171,65 +284,16 @@ export default {
 }
 
 
-.scroll-header {
-  width: 55ch;
-  margin-left: 0%;
-  border-left: 50px solid var(--palette-red-dark);
-}
-
-.themes-intro {
-  font-family: "Poppins";
-  font-weight: 700;
-  font-size: 70px;
-  color: var(--palette-blue)
-  
-}
-/* Scroller styling */
-.scroller {
-  height: 1.2em;
-  line-height: 1.2em;
-  position: relative;
-  overflow: hidden;
-  width: 40em;
-  margin-top: 0.5em;
-  color: var(--palette-red-dark);
-}
-.scroller > span {
-  position: absolute;
-  top: 0;
-  animation: slide 7s infinite;
-  font-family: "Oswald";
-  font-size: 70px;
-  font-weight: 500;
-  
-}
-@keyframes slide {
-  0% {
-    top: 0;
-  }
-  20% {
-    top: -1.2em;
-  }
-  40% {
-    top: -2.4em;
-  }
-  60% {
-    top: -3.6em;
-  }
-  80%{
-    top: -4.8em;
-  }
-}
-
 
 .all-sections {
 display: flex;
 flex-direction: column;
+scroll-behavior: smooth;
 }
 
 .section1 {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   background-color: var(--palette-green-dark);
   display: flex;
 }
@@ -241,7 +305,7 @@ flex-direction: column;
 
 .section3 {
   width: 100%;
-  background-color: var(--palette-green);
+  background-color: var(--palette-green-dark);
 }
 
 .section4 {
@@ -255,7 +319,6 @@ flex-direction: column;
 
 .info-component {
   padding: 5% 15%;
-  border: 1px solid red;
 }
   
 .picture {
