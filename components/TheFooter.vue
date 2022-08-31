@@ -1,9 +1,13 @@
 <template> 
     <footer class="footer">
-        <div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quis quam harum, consectetur nesciunt hic magnam nam excepturi totam sapiente numquam dolorum, nemo debitis, maiores error fugit assumenda consequatur laboriosam?
-            </p>
+        <div class="all-links">
+            <p>Quick Links</p>
+            <a href="/home">Home</a>
+            <a href="/festival">Festival</a>
+            <a href="/events">Events</a>
+            <a href="/artists">Artists</a>
+            <a href="/places">Places</a>
+            <a href="/contacts">Contact Us</a>
         </div>
         <div>
             <p>
@@ -25,11 +29,23 @@ export default {
         background-color: #666666;
         color: seashell;
         display: flex;
-        height: 20vh;
-        margin-top: 30px;
+        height: 25vh;
+        padding-top: 30px;
+        font-family: "Poppins";
+        font-weight: 100;
+        letter-spacing: 1.3px;
+        line-height: 1.3em;
+
     }
 
-    .footer p {
-        width: 80%;
+    .all-links {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        padding-left: 30px;
+        border-right: 0.5px solid var(--palette-red-dark);
     }
+
+ 
+    
 </style>
