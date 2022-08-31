@@ -3,65 +3,202 @@
         <!-- SECTION 1 -->
         <div class="section1">
             <div class="scroll-header">
-            <h1 class="themes-intro">Welcome to
-                <div class="scroller">
-                    <span>
-                    Culture<br />
-                    Art<br />
-                    Ambition<br />
-                    Bravery<br />
-                    Color<br />
-                    </span>
-                </div>
-            </h1>
+                <h1 class="themes-intro">Welcome to
+                    <div class="scroller">
+                        <span>
+                        Culture<br />
+                        Art<br />
+                        Ambition<br />
+                        Bravery<br />
+                        Color<br />
+                        </span>
+                    </div>
+                </h1>
+            </div>
+            <img class="picture" src="https://www.culturelink.fr/sites/default/files/2020-03/cour%20d'honneur.jpg"/>
         </div>
-        <img class="picture" src="https://www.culturelink.fr/sites/default/files/2020-03/cour%20d'honneur.jpg"/>
+
+        <!-- SECTION 2 -->
+        <div class="section2">
+            <div class="quote-container">
+                <div class="quote">
+                    <h3>Culture is the arts elevated to a set of beliefs.</h3>
+                </div>
+                <p class="quote-by">Thomas Wolfe</p>
+            </div>
+        </div>
+
+    <!-- SECTION 3 -->
+    <div class="section3">
+        <!--cards-additional-contentens-group :linkText="content.cardsTitle" :list="events"/-->
+        <!-- VERTICAL BARS EXAMPLE -->
+        <div class="vertical-bars-container">
+
+            <div class="item">
+                <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
+                <div class="bar-title"><p>Events</p></div>
+                <div class="bar-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
+                <div class="bar-title"><p>Venues</p></div>
+                <div class="bar-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
+                <div class="bar-title"><p>Performers</p></div>
+                <div class="bar-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-  <!-- SECTION 2 -->
-  <div class="section2">
-        <div class="quote-container">
-            <div class="quote">
-                <h3>Culture is the arts elevated to a set of beliefs</h3>
-            </div>
-            <p class="quote-by">Thomas Wolfe</p>
-        </div>
-  </div>
+    <!-- SECTION 4-->
+    <div class="section4">
+
+    </div>
 
 
   </div>
 </template>
 
 <script>
-    
-    import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
-    import Default from '~/layouts/default.vue';
+import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue';
+import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
+import Default from '~/layouts/default.vue';
 
 export default {
-    components: { OverviewComponent, Default },
+    components: { OverviewComponent, Default, CardsAdditionalContentensGroup },
     name: "home",
     data() {
-      const content = {
-        title: "OVERVIEW",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ab accusantium harum! Nam placeat laboriosam ducimus odio et aut doloremque voluptatibus fugit odit harum? Quaerat aliquam quo sit? Mollitia facilis harum aliquid accusamus quasi error temporibus id totam ratione? Aperiam molestiae veniam sit? Odit, laborum. Explicabo minima doloremque dignissimos. Nihil ratione repudiandae quibusdam, incidunt qui veritatis nesciunt debitis velit quos. Quos tenetur neque repellendus aspernatur iste sed sunt porro rem adipisci labore nulla enim ea explicabo corporis ipsam officiis accusantium perferendis vero tempore soluta unde, aliquam reiciendis temporibus. Suscipit, explicabo doloribus? At nobis sequi voluptatum, quo ullam incidunt quos aspernatur?"
-      }  
-
-      const itemsA = [
-        {tabTitle: "title1", tabContent: "text"},
-        {tabTitle: "title2", tabContent: "text"},
-        {tabTitle: "title3", tabContent: "these are tickets", link:{button: "Buy Tickets", destination:"www.google.com", nuxtLink:false}}
-      ]
-      return {
-        content:content,
-        items: itemsA,
-      }
-    }
+        const content = {
+            overviewTitle: "OVERVIEW",
+            overviewDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ab accusantium harum! Nam placeat laboriosam ducimus odio et aut doloremque voluptatibus fugit odit harum? Quaerat aliquam quo sit? Mollitia facilis harum aliquid accusamus quasi error temporibus id totam ratione? Aperiam molestiae veniam sit? Odit, laborum. Explicabo minima doloremque dignissimos. Nihil ratione repudiandae quibusdam, incidunt qui veritatis nesciunt debitis velit quos. Quos tenetur neque repellendus aspernatur iste sed sunt porro rem adipisci labore nulla enim ea explicabo corporis ipsam officiis accusantium perferendis vero tempore soluta unde, aliquam reiciendis temporibus. Suscipit, explicabo doloribus? At nobis sequi voluptatum, quo ullam incidunt quos aspernatur?",
+            cardsTitle: "Explore Events",
+        }
+        return {
+            content:content,
+        }
+    },
+    
+    /* Does not work */
+    async asyncData({ route, $axios }) {
+        const  {events}     = await $axios.get("/api/events");
+        const listEvents = []
+        /*for (element in events) {
+            listEvents.push({
+                title: "element.title",
+                content:"element.date",
+                imgUrl:"element.img",
+                destination: "/events/" + "element.id",
+            })
+        }*/
+        
+        return {
+            events: events,
+        }
+    },
 }
 </script>
 
 <style scoped>
 
 
+/* VERTICAL BARS EXAMPLE */
+.vertical-bars-container{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    max-height: 60%;
+}
+
+
+.item {
+  position: relative;
+  width: 33%;
+  height: inherit;
+  min-height: 600px;
+  color: #fff;
+  overflow: hidden;
+  transition: width 0.5s ease;}
+  
+.item:before, .item:after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+  }
+
+.item:after {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+.item:before {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%);
+    z-index: 1;
+    opacity: 0;
+    /*transition: opacity 0.5s ease, transform 0.5s ease;*/
+  }
+
+.item:hover {
+    width: 40% !important;
+}
+
+
+.item:hover::before {
+      opacity: 1;
+}
+    
+.bar-content {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.75s ease 0.5s;
+    }
+  
+
+
+.bar-content {
+  transform: translate3d(0, 0, 0) translateY(25px);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 0 1.618em;
+  top: 55%;
+  opacity: 0;}
+
+
+.bar-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+    font-family: "Oswald";
+    font-size: 1.728rem;
+    line-height: 0;
+}
+
+.image {
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  background-size: cover;
+  background-position: center center;
+  transition: filter 0.5s ease;
+  filter: grayscale(100%);
+}
+
+
+
+/* END OF MOVING VERTICAL BARS EXAMPLE */
 .scroll-header {
   width: 55ch;
   margin-left: 0%;
@@ -81,7 +218,7 @@ export default {
   line-height: 1.2em;
   position: relative;
   overflow: hidden;
-  width: 40em;
+  max-width: 400px;
   margin-top: 0.5em;
   color: var(--palette-red-dark);
 }
@@ -115,6 +252,7 @@ export default {
 
 .all-sections {
 display: flex;
+width: 100%;
 flex-direction: column;
 }
 
@@ -132,6 +270,7 @@ flex-direction: column;
 
 .section3 {
   width: 100%;
+  height: 800px;
   background-color: var(--palette-green);
 }
 
@@ -208,8 +347,9 @@ max-width: 400px;
 
 
 .quote-container {
-    border: 1px solid red;
     padding: 5%;
 }
+
+
 
 </style>
