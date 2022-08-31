@@ -1,21 +1,21 @@
 <template>
     <div class="page">
         <the-header-rounded-image class="header"
-            :header="place.name"
-            :subheader="place.address"
-            :imgUrl="place.img"/>
+            :header="data.name"
+            :subheader="data.address"
+            :imgUrl="data.img"/>
         
         <div class="breadcrumbs-container">
             <breadcrumbs class="breadcrumbs"/>
         </div>
         <overview-component class="overview"
             :title="overviewTitle"
-            :description="place.description" />
+            :description="data.description" />
 
         <span class="separator"></span>
         <cards-additional-contentens-group 
             :title="cardGroupTitle"
-            :objList="place.events"
+            :objList="data.list"
             :partialPath="cardGroupPartialPath"/>
         
     </div>
@@ -46,8 +46,20 @@ export default {
     async asyncData({ route, $axios }) {
         const  { id }  = route.params
         const { data } = await $axios.get('/api/places/' + id)
+        const list = []
+        for(const element of data.events) {
+            list.push({
+                id: element.id,
+                name: element.name,
+                content: "",
+                img: element.img,
+            })
+        }
+
+        data.list = list
+
         return {
-            place: data,
+            data,
         }
     },
 
