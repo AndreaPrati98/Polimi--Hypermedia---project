@@ -95,7 +95,6 @@ export default {
   background-position: center center;
   transition: filter 0.5s ease;
   filter: grayscale(100%);
-  overflow: hidden;
 
 }
 

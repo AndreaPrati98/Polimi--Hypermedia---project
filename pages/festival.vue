@@ -22,68 +22,12 @@
       :items="items" />
   </div>
 
+  <!-- SECTION 4 -->
   <div class="section4" id="section-4">
     <h2 class="history-title"> History </h2>
-    <div class="timeline-component"> 
-
-      <div class="timeline-box">
-
-        <div class="timeline-item-box">
-          <div class="timeline-item">
-            <h3 class="timeline-item-title">Date</h3>
-            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
-          </div>
-        </div>
-        <div class="timeline-item-box">
-          <div class="timeline-item">
-            <h3 class="timeline-item-title">Date</h3>
-            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
-          </div>
-        </div>
-        <div class="timeline-item-box">
-          <div class="timeline-item">
-            <h3 class="timeline-item-title">Date</h3>
-            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
-          </div>
-        </div>
-        <div class="timeline-item-box">
-          <div class="timeline-item">
-            <h3 class="timeline-item-title">Date</h3>
-            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
-          </div>
-        </div>
-        <div class="timeline-item-box">
-          <div class="timeline-item">
-            <h3 class="timeline-item-title">Date</h3>
-            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
-          </div>
-        </div>
-        <div class="timeline-item-box">
-          <div class="timeline-item">
-            <h3 class="timeline-item-title">Date</h3>
-            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
-          </div>
-        </div>
-        <div class="timeline-item-box">
-          <div class="timeline-item">
-            <h3 class="timeline-item-title">Date</h3>
-            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
-          </div>
-        </div>
-        <div class="timeline-item-box">
-          <div class="timeline-item">
-            <h3 class="timeline-item-title">Date</h3>
-            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
-          </div>
-        </div>
-        <div class="timeline-item-box">
-          <div class="timeline-item">
-            <h3 class="timeline-item-title">Date</h3>
-            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <timeline
+      :items="timelineItems" />
+    
   </div>
 </section>
 </template>
@@ -96,9 +40,10 @@ import OverviewComponent from '~/components/information-components/OverviewCompo
 import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue';
 import Default from '~/layouts/default.vue';
 import VerticalBars from '~/components/img-component/vertical-bars.vue';
+import Timeline from '~/components/timeline.vue';
 
 export default {
-    components: { Map, TheHeaderWithImages, OverviewComponent, Card, OverviewComponent, MultipleShortOverviewContainer, Default, VerticalBars },
+    components: { Map, TheHeaderWithImages, OverviewComponent, Card, OverviewComponent, MultipleShortOverviewContainer, Default, VerticalBars, Timeline },
     name: "festival-intro",
     data() {
       const content = {
@@ -112,11 +57,21 @@ export default {
         {tabTitle: "Location", tabContent: "text"},
         {tabTitle: "Tickets", tabContent: "these are tickets", link:{button: "Buy Tickets", destination:"www.google.com", nuxtLink:false}}
       ]
+
+
+      const timelineItems = [
+        {date: "July 1998", text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora doloremque sint pariatur sapiente recusandae vero?"},
+        {date: "Aug 1998", text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora doloremque sint pariatur sapiente recusandae vero?"},
+        {date: "Sept 1998", text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora doloremque sint pariatur sapiente recusandae vero?"},
+        {date: "Oct 1998", text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora doloremque sint pariatur sapiente recusandae vero?"},
+        {date: "Nov 1998", text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora doloremque sint pariatur sapiente recusandae vero?"},
+      ]
       return {
         content: content,
         items: tabItems,
+        timelineItems: timelineItems,
       }
-    }
+    },
 }
 </script>
 
@@ -142,69 +97,6 @@ export default {
   font-size: 45px;
   padding: 4% 0% 6% 0%;
 }
-
-/* Timeline Container */
-.timeline-component {
-  padding: 20px;
-  display: flex;
- 
-  justify-content: center;
-  
-
-}
-
-/* Outer Layer with the timeline border */
-.timeline-box {
-  border-left: 5px solid var(--palette-green);
-}
-
-/* Card container */
-.timeline-item-box {
-  position: relative;
-  margin: 0 0 20px 20px;
-  padding: 10px;
-  background: var(--palette-soft-blue);
-  color: var(--palette-green-dark);
-  width: 100%;
-  max-width: 400px;
-}
-
-/* Information about the timeline */
-.timeline-item {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-/* Title of the card */
-.timeline-item-title {
-  color: var(--palette-green-dark);
-  position: relative;
-  font-family: "Oswald";
-  font-weight: 600;
-  font-size: 25px;
-  letter-spacing: 1.1px;
-}
-
-/* Timeline dot  */
-.timeline-item-title::before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: var(--palette-green);
-  border-radius: 999px;
-  left: -40px;
-  border: 3px solid var(--palette-green);
-}
-
-.timeline-item-text {
-  font-family: "Poppins";
-  font-weight: 300;
-  letter-spacing: 1.1px;
-  line-height: 1.2rem;
-}
-
 
 
 .all-sections {
