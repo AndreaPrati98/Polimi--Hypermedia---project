@@ -126,9 +126,6 @@ export default {
         padding-bottom: 10px;
     }
 
-    /* Button style */
-
-
     
     .text-container {
         display: flex;
@@ -136,13 +133,6 @@ export default {
 
         padding: 6px 20px;
     }
-
-    .button:hover {
-        box-shadow: 4px 4px 10px var(--palette-green-dark,#454545);
-        transform: translate3d(-1.7px, -1.7px, 2px);
-    }
-
-    
 
     .ticket-button {
         width: 150px;
