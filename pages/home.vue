@@ -41,7 +41,7 @@
 
 <script>
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
-import Quote from '~/components/quote.vue';
+import Quote from '~/components/Quote.vue';
 import Default from '~/layouts/default.vue';
 
 export default {

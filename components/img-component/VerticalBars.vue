@@ -17,7 +17,7 @@
 
 <script>
 export default {
-    name: "verical-bars",
+    name: "VerticalBars",
 
 }
 </script>

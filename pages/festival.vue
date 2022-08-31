@@ -36,13 +36,12 @@
 
 <script>
 import TheHeaderWithImages from '~/components/headers/TheHeaderWithImages.vue';
-import Map from '~/components/map.vue';
 import Card from '~/components/img-component/card.vue';
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
 import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue';
 import Default from '~/layouts/default.vue';
-import VerticalBars from '~/components/img-component/vertical-bars.vue';
-import Timeline from '~/components/timeline.vue';
+import VerticalBars from '~/components/img-component/VerticalBars.vue';
+import Timeline from '~/components/Timeline.vue';
 
 export default {
     components: { Map, TheHeaderWithImages, OverviewComponent, Card, OverviewComponent, MultipleShortOverviewContainer, Default, VerticalBars, Timeline },
