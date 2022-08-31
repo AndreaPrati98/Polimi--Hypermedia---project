@@ -29,10 +29,7 @@ export default {
         partialPath: {
             type: String,
             required: true,
-            validator: function (value) {
-                // The value must match one of these strings
-                return ['events', 'artists', 'places'].includes(value)
-            }
+            
         }
     },
     

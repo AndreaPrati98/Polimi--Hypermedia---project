@@ -1,64 +1,62 @@
 <template>
-  <section class="all-sections">
-    <!-- SECTION 1 -->
-    <div class="section1">
-        <bio-header :title="name"/>
-    </div>
-    <!-- SECTION 2 -->
-    <div class="section2">
-        <div class="overview-comp">
-            <overview-component 
-                title="ABOUT" 
-                :description="description"/>
-        </div>
-        <div class="img-comp">
-            <img alt="funny cat" class="image"
-                :src="img" >
-        </div>
-    </div>
-    <!-- SECTION 3 -->
-    <div class="section3">
-        <transitional-link-cards 
-            linkText="Events including this artist" 
-            :list="list"/>
-    </div>
+  <section class="section">
+    <the-header-with-title
+        :title="artist.name"
+        :subtitle="artist.date_of_birth"
+        :imgUrl="artist.img" />
 
+    <overview-component 
+        :title="overviewTitle" 
+        :description="artist.description"/>
 
+    
+    <span class="separator"></span>
+
+    <cards-additional-contentens-group 
+        :title="'Other events related to this artis'"
+        :objList="artist.list"
+        :partialPath="'/events'"/>
   </section>
 </template>
 
 <script>
-import CardAdditionalContent from '~/components/img-component/CardHoverAdditionalContent.vue';
-import Default from '~/layouts/default.vue';
-import BioHeader from '~/components/artist-bio-header.vue';
-import TransitionalLinkCards from '~/components/CardsAdditionalContentensGroup.vue';
-import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
+import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue'
+import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue'
+import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue'
+import OverviewComponent from '~/components/information-components/OverviewComponent.vue'
 export default {
     name: "ArtistPage",
-    components: {Default, BioHeader, CardAdditionalContent, TransitionalLinkCards, OverviewComponent},
+    components: {
+        TheHeaderWithTitle, 
+        OverviewComponent, 
+        MultipleShortOverviewContainer,
+        CardsAdditionalContentensGroup,
+    },
+    data() {
+        // everything we see here has to be retrieved from the DB
+        return {
+            overviewTitle: "Short description",
+            eventsRelatedTitle: "This artist is involved...",
 
+        }
+    },
     async asyncData({ route, $axios }) {
         const { id }  = route.params
         const { data } = await $axios.get('/api/artists/' + id)
         const list = []
-        for (const element of data[0].events) {
+        for (const element of data.events) {
             list.push({
                 title: element.title,
                 content: element.date,
                 imgUrl: element.img,
                 btnText: "See More",
-                destination:"/events/" + element.id,
+                destination: element.id,
             })
         }
+        data.list = list;
+        
         return {
-            id: data[0].id,
-            name: data[0].name,
-            img: data[0].img,
-            date_of_birth: data[0].date_of_birth,
-            description: data[0].description,
-            list: list
-
-
+            artist: data,
         }
     },
 
@@ -67,51 +65,15 @@ export default {
 
 <style scoped>
 
-section {
-    display: flex;
-    flex-direction: column;
-}
-
-.all-sections {
-    display: flex;
-    flex-direction: column;
-}
-
-.section1 {
-    width: 100%;
-}
-
-.section2 {
-    background-color: var(--palette-green-dark);
-    color: var(--text-color-light);
-    display: flex;  
-    width: 100%;
-    padding: 5% 0;
-}
-
-.section3 {
-    background-color: var(--palette-blue);
-    color: var(--text-color-light);
-    width: 100%;
-    padding: 5% 0;
-}
-
-.overview-comp {
-    padding: 15% 5%;
-    color: var(--palette-blue);
-    width: 100%;
-
-}
-.img-comp {
-    margin: 5% 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.image {
-    width: 100%;
-}
-
+    .separator {
+        display: block;
+        width: 70%;
+        border-top: 2px solid black;
+        margin: 0 auto;
+    }
 </style>
 
+
+
+
+>>>>>>> dev-a

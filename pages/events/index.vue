@@ -3,49 +3,82 @@
         <the-header-with-title class="header"
             :title="pageData.title" 
             :subtitle="pageData.shortDescription" 
-            :image="pageData.imgUrl" />
+            :imgUrl="pageData.imgUrl" />
+
         <div class="section1">
             <subheader-component class="subheader"
                 :content="pageData.description" />
         </div>
+        
+        <dropdown-component 
+            :formName="'type of art selector'"
+            :objList="allTypeOfArts" 
+            @change="filterObjList"/>
+        
         <div class="section2">
             <grid-component 
                 :partialPath="'events'"
-                :objList="allEvents"/>
+                :objList="eventsToDisplay"/>
+        
         </div>
+
     </section>
 </template>
 
 <script>
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue'
 import SubheaderComponent from '~/components/information-components/SubheaderComponent.vue'
-import GridComponent from '~/components/medium-components/grid-component.vue'
+import GridComponent from '~/components/medium-components/GridComponent.vue'
+import DropdownComponent from '~/components/utilities-components/DropdownComponent.vue'
 export default {
     name: 'event-page',
     components: { 
         TheHeaderWithTitle,
         SubheaderComponent,
         GridComponent,
+        DropdownComponent
     },
     data() {
         const pageData = {
             title: "All the Events",
             shortDescription: "Here we are with all the upcoming events of the festival",
             description: "The programme includes shows, but also readings, exhibitions, films, and debates, which are so many gateways into the worlds of the artists and intellectuals invited to the Festival. Every evening, there is at least one show première, making Avignon a place of true creation and adventure for artists and spectators alike.",
-            imgUrl: "palais-des-papes-g04269230e_1920.jpg",
+            imgUrl: "https://cdn.pixabay.com/photo/2015/05/29/19/18/crowd-789652_1280.jpg",
         }
 
         return {
-            pageData
+            pageData,
+            typeOfArtFilter: "All",
         }
     },
     async asyncData({ $axios }) {
-        
-        const { data } = await $axios.get('/api/events')
+        // here we retrieve also type of art so that we can create the proper filter
+        const  [events, typeOfArts]  = await Promise.all([
+                $axios.get('/api/events'),
+                $axios.get('/api/typeofart'),
+                ])
+        /* 
+            the eventsToDisplay is there because it will be the
+            element displayed, otherwise if we would filter over
+            the original list we would have to re-do the api call
+            to get again all the events
+        */ 
         return {
-            allEvents: data,
+            allEvents: events.data,
+            eventsToDisplay: events.data,
+            allTypeOfArts: typeOfArts.data,
         }
     },
+    methods: {
+        filterObjList(id) {
+            // let's filter over the type of art Id
+            if(id !== "All") {
+                this.eventsToDisplay = this.allEvents.filter(el => (el.typeOfArtId === (id)))
+            } else {
+                this.eventsToDisplay = this.allEvents
+            }
+        }
+    }
 
 }
 </script>
@@ -56,8 +89,6 @@ export default {
         padding: 10% 7%;
     }
 
-
-
     .section1, .section2{
         width: 100%;
         height: 100%;
@@ -66,6 +97,5 @@ export default {
     .section2 {
         background-color: var(--palette-light-cyan);
     }
-
     
 </style>

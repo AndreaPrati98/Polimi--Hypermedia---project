@@ -30,7 +30,7 @@ if(process.env.NODE_ENV !== "production"){
 async function initializeDatabaseConnection() {
     await database.authenticate()
     const Event = database.define("event", {
-        title: DataTypes.STRING,
+        name: DataTypes.STRING,
         description: DataTypes.STRING,
         img: DataTypes.STRING,
         date: DataTypes.STRING,
@@ -55,7 +55,7 @@ async function initializeDatabaseConnection() {
         name: DataTypes.STRING,
         img: DataTypes.STRING,
         caption:  DataTypes.STRING,
-        description:  DataTypes.STRING,
+        description:  DataTypes.STRING(1000),
         address: DataTypes.STRING,
     }, {timestamps: false})
 
@@ -72,8 +72,8 @@ async function initializeDatabaseConnection() {
     Event.belongsTo(Type_of_art)
 
     /* This relation is not required in the project specs but we have added it for convenience. */
-    Type_of_art.hasMany(Artist)
-    Artist.belongsTo(Type_of_art)
+    // Type_of_art.hasMany(Artist)
+    // Artist.belongsTo(Type_of_art)
 
     await database.sync({ force: true })
     return {
@@ -158,7 +158,7 @@ async function runMainApi() {
             where: { typeOfArtId: typeOfArt },
             include: [
                 { model: models.Type_of_art },
-                { model: models.Artist }
+                // { model: models.Artist }
             ]      
         })
 
@@ -168,24 +168,14 @@ async function runMainApi() {
     // HTTP GET api that returns all the artists
     app.get("/artists", async (req, res) => {
         const result = await models.Artist.findAll()
-        const filtered = []
-        for (const element of result) {
-            filtered.push({
-                id: element.id,
-                name: element.name,
-                img: element.img,
-                date_of_birth: element.date_of_birth,
-                description: element.description
-            })
-        }
-        return res.json(filtered)
+        return res.json(result)
     })
 
     // HTTP GET api that returns the info for the requested artist (where artistId == :id) along 
     // with the events in which that artist performs in
     app.get("/artists/:id", async (req, res) => {
         const id = +req.params.id
-        const result = await models.Artist.findAll({where: {id}, include: [ {model: models.Event}]})
+        const result = await models.Artist.findOne({where: {id}, include: [ {model: models.Event}]})
         return res.json(result)
     })
 
@@ -211,9 +201,14 @@ async function runMainApi() {
     // with the events that are hosted in that place
     app.get("/places/:id", async (req, res) => {
         const id = +req.params.id
-        const result = await models.Place.findAll({where: {id}, include: [ {model: models.Event}]})
+        const result = await models.Place.findOne({where: {id}, include: [ {model: models.Event}]})
         return res.json(result)
     })
+
+    app.get("/typeofart", async (req, res) => {
+        const result = await models.Type_of_art.findAll()
+        return res.json(result)
+    }) 
 }
 
 runMainApi()

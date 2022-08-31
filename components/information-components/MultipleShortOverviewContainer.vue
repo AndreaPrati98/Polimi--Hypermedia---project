@@ -6,9 +6,11 @@
         <div class="content">
             <div class="indicies-container">
                 <ul>
-                    <li v-for="(tab, index) of items" :key="`tab-${index}`">
-                        <button @click="visibleText = tab" class="button">
-                            {{tab.tabTitle}}
+                    <li v-for="(element, index) of objList"
+                        :key="`element-${index}`"
+                        >
+                        <button @click="visibleText = element" class="button">
+                            {{element.name}}
                         </button>
                     </li>
                 </ul>
@@ -33,58 +35,31 @@
 import ButtonAnimated from '../utilities-components/ButtonAnimated.vue';
 
 export default {
-    name: "info-component",
+    name: "TabBox",
     components: { ButtonAnimated },
     props: {
         title: {
             type: String,
             required: true,
         },
-        items : {
+        /** expected structure:
+         * 
+         * {
+         *  tabTitle: ____, [String]
+         *  tabContent: ___, [String]
+         *  link: ___, [Array]
+         * }
+         * 
+         */
+        objList: {
             type: Array,
             required: true,
-            /** expected structure:
-             * 
-             * {
-             *  tabTitle: ____, [String]
-             *  tabContent: ___, [String]
-             * }
-             * 
-             */
         }
     },
     data() {
+        // set the default visible text as the first element in the objList
         return {
-            btnInfos: [
-                {
-                    buttonId: 1,
-                    buttonTxt: "Date",
-                    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda cum quibusdam cumque, ipsam, officia quia dolorem voluptates labore repellat beatae, laudantium culpa molestias quisquam. Optio sunt sint cupiditate mollitia amet ullam, nemo, maiores in itaque incidunt perspiciatis unde, velit repudiandae consequatur omnis nihil delectus hic iure quas. Facere velit, magni rem reiciendis eius ad dolorum beatae repellendus id tenetur vero porro! Fugit, ratione? Vitae saepe sed quaerat, excepturi consequatur maiores? Deleniti dolorem, earum odit, consequatur cum, officia necessitatibus provident nobis distinctio dolore quibusdam soluta quo obcaecati nihil? Doloremque dolor accusamus iusto neque atque quos, soluta facilis. Nulla nisi reprehenderit nostrum atque. Ullam, odio. Doloremque dolorum quas eius ut laudantium accusamus explicabo sapiente quaerat amet suscipit obcaecati ullam, vel dolor ab illo sit? Voluptas accusantium ab vero quod suscipit, magni, esse unde natus eum, corporis beatae a. Ipsa aspernatur in eos, voluptates doloribus laboriosam sit expedita quo nulla sequi porro cum? Assumenda, modi consequatur impedit amet pariatur asperiores ullam voluptatum illum nulla animi est commodi libero fugiat veritatis unde maiores a sunt tempore architecto, dolorum reprehenderit. Accusamus libero similique velit eius corrupti deleniti ratione distinctio nostrum possimus perferendis? Ipsa placeat asperiores debitis consequatur illum nihil cum dolorum ullam deleniti, odio aperiam?",
-                },
-                {
-                    buttonId: 2,
-                    buttonTxt: "Tickets",
-                    content: "This is content from botton 2",
-                },
-                {
-                    buttonId: 3,
-                    buttonTxt: "Location",
-                    content: "This is content from botton 3",
-                },
-                {
-                    buttonId: 4,
-                    buttonTxt: "Accessibility",
-                    content: "This is content from botton 4",
-                },
-
-            ],
-            visibleText: {
-                buttonTxt: "",
-                content: "",
-            },
-            activeState: {
-                activeState: false,
-            }
+            visibleText: this.objList[0],
         }
     },
 }
@@ -94,7 +69,6 @@ export default {
 </script>
 
 <style scoped>
-
 
 .inner-container {
     /*border: 1px solid black;*/
@@ -184,7 +158,6 @@ export default {
 .button:hover {
     background-color: var(--palette-green);
 }
-
 
 
 </style>

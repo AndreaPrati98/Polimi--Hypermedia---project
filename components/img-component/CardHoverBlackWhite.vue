@@ -52,8 +52,6 @@ export default {
 </script>
 
 <style scoped>
-
-    
     .img {
         width: 100%;
         background-position: center;
@@ -61,7 +59,11 @@ export default {
         
         background-image: var(--img-url);
         background-size: cover;
-        
+        transition: transform .3s ease-in;
+    }
+
+    .img:hover {
+        transform: scale(1.06);
     }
 
     .txt-wrapper {
@@ -81,6 +83,7 @@ export default {
     .txt-wrapper:hover {
         backdrop-filter: grayscale(100%) contrast(1.3);
         background-color: rgba(255, 255, 255, 0.4);
+        
     }
 
     .txt {

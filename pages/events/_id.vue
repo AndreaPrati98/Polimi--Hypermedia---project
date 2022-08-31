@@ -1,31 +1,30 @@
 <template>
     <section class="section">
         <the-header-with-title class="header"
-            :title="eventTitle" />
+            :title="data.name"
+            :imgUrl="data.img"/>
         <div class="all-sections">
-            <!-- SECTION 1-->
+            <!-- SECTION 1 -->
             <div class="section1">
                 <div class="overview-comp">
                     <overview-component 
                         title="OVERVIEW" 
-                        :description="eventDescription"/>
-                </div>
-                <div class="img-comp">
-                    <img alt="funny cat" class="image"
-                        :src="eventImg" >
+                        :description="data.description"/>
                 </div>
             </div>
             <!-- SECTION 2-->
             <div class="section2">
                 <MultipleShortOverviewContainer class="info-comp"
                     :title="'Event Information'" 
-                    :items="items" />
+                    :objList="items" />
             </div>
             <!-- SECTION 3-->
             <div class="section3">
                 <cards-additional-contentens-group class="events-comp" 
-                    :linkText="text" 
-                    :list="list"/>
+                    :title="text" 
+                    
+                    :objList="data.list"
+                    :partialPath="'/places/'"/>
             </div>
             <!-- SECTION 4-->
             <div class="section4">
@@ -91,10 +90,10 @@ import ButtonStandard from '~/components/utilities-components/ButtonStandard.vue
 export default {
     name: "artist-page",
     components: {
-    InfoComponent,
-    TheHeaderWithTitle,
-    OverviewComponent,
-    MultipleShortOverviewContainer,
+        InfoComponent,
+        TheHeaderWithTitle,
+        OverviewComponent,
+        MultipleShortOverviewContainer,
         CardsAdditionalContentensGroup,
         ButtonStandard
     },
@@ -106,12 +105,14 @@ export default {
         const list = []
         for(const element of data.artists) {
             list.push({
+                id: element.id,
                 title: element.name,
                 content: "",
                 imgUrl: element.img,
-                destination:"/artists/" + element.id,
             })
         }
+        
+        data.list = list
 
         const items  = [
             {
@@ -129,23 +130,11 @@ export default {
             }
         ]
 
-
-
         return {
-            eventTitle: data.title,
-            eventDescription: data.description,
-            eventImg: data.img,
-            eventDate: data.date,
-            eventTime: data.time,
-            eventDetails: data.details,
-            eventPlaceId: data.placeId,
-            eventType: data.typeOfArtId,
-            eventArtistList: data.artists,
-            list: list,
-            items: items,
-            }
+            data,
+            items,
+        }
     },
-
     data() {
         return{
             text: "Artists Performing at this Event",

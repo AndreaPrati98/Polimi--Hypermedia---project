@@ -1,17 +1,17 @@
 <template>
     <div class="where">
-        <h3>{{linkText}}</h3>
+        <h3 class="title">{{title}}</h3>
         <div class="scroll-window">
-            <div class="items">
+            <div class="cards-container">
 
-                <card-additional-content class="item" v-for="(item, index) of list"
-                :key="`item-index=${index}`"
-                :title="item.title"
-                :content="item.content"
-                :imgUrl="item.imgUrl"
-                :btnTxt="`See More`"
-                :btnDst="item.destination"
-                />
+                <card-additional-content class="event" v-for="(element, index) of objList"
+                    :key="`card-${index}`"
+                    :title="element.name"
+                    :content="element.date"
+                    :imgUrl="element.img"
+                    :btnTxt="`See More`"
+                    :btnDst="`${partialPath}/` + element.id" />
+
             </div>
         </div>
     </div>
@@ -23,17 +23,24 @@
 import CardAdditionalContent from '~/components/img-component/CardHoverAdditionalContent.vue';
 export default {
     name: "transitional-links",
-    components: {CardAdditionalContent},
+    components: { 
+        CardAdditionalContent
+    },
     props: {
-        linkText: {
+        title: {
             type: String,
             required: true,
         },
-        list: {
+
+        objList: {
             type: Array,
             required: true,
         },
-    },
+        partialPath: {
+            type: String,
+            required: true,
+        }
+    }
 };
 </script>
 
@@ -46,8 +53,7 @@ export default {
     margin-top: 30px;
     flex-direction: column;
 }
-
-.items {
+.cards-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -70,7 +76,7 @@ export default {
 
 }
 
-h3 {
+.title {
     width: 100%;
     font-size: 25px;
     font-family: "Poppins";

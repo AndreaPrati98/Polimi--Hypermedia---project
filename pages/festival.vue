@@ -1,4 +1,5 @@
 <template>
+
 <section class="all-sections">
   <!-- SECTION 1 -->
   <div class="section1" id="section-1">
@@ -19,7 +20,8 @@
   <div class="section3" id="section-3">
     <MultipleShortOverviewContainer class="info-component"
       :title="content.tabTitle"
-      :items="items" />
+      :objList="items" 
+       />
   </div>
 
   <!-- SECTION 4 -->
@@ -27,7 +29,7 @@
     <h2 class="history-title"> History </h2>
     <timeline
       :items="timelineItems" />
-    
+
   </div>
 </section>
 </template>

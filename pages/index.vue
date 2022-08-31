@@ -1,6 +1,7 @@
 <template>
     <p>
         IT'S A WORK IN PROGREEEEESSSS :)
+        <button @click="goToPrev">Bah</button>
     </p>
 </template>
 
