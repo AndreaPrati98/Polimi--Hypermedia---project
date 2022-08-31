@@ -41,53 +41,61 @@
   <div class="section4" id="section-4">
     <h2 class="history-title"> History </h2>
     <div class="timeline-component"> 
+
       <div class="timeline-box">
-        <div class="item-box">
-          <div class="item">
-            <h3 class="title">Date</h3>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+
+        <div class="timeline-item-box">
+          <div class="timeline-item">
+            <h3 class="timeline-item-title">Date</h3>
+            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
           </div>
         </div>
-        <div class="item-box">
-          <div class="item">
-            <h3 class="title">Date</h3>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+        <div class="timeline-item-box">
+          <div class="timeline-item">
+            <h3 class="timeline-item-title">Date</h3>
+            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
           </div>
         </div>
-        <div class="item-box">
-          <div class="item">
-            <h3 class="title">Date</h3>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+        <div class="timeline-item-box">
+          <div class="timeline-item">
+            <h3 class="timeline-item-title">Date</h3>
+            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
           </div>
         </div>
-        <div class="item-box">
-          <div class="item">
-            <h3 class="title">Date</h3>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+        <div class="timeline-item-box">
+          <div class="timeline-item">
+            <h3 class="timeline-item-title">Date</h3>
+            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
           </div>
         </div>
-        <div class="item-box">
-          <div class="item">
-            <h3 class="title">Date</h3>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+        <div class="timeline-item-box">
+          <div class="timeline-item">
+            <h3 class="timeline-item-title">Date</h3>
+            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
           </div>
         </div>
-        <div class="item-box">
-          <div class="item">
-            <h3 class="title">Date</h3>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+        <div class="timeline-item-box">
+          <div class="timeline-item">
+            <h3 class="timeline-item-title">Date</h3>
+            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
           </div>
         </div>
-        <div class="item-box">
-          <div class="item">
-            <h3 class="title">Date</h3>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+        <div class="timeline-item-box">
+          <div class="timeline-item">
+            <h3 class="timeline-item-title">Date</h3>
+            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
           </div>
         </div>
-        <div class="item-box">
-          <div class="item">
-            <h3 class="title">Date</h3>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+        <div class="timeline-item-box">
+          <div class="timeline-item">
+            <h3 class="timeline-item-title">Date</h3>
+            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
+          </div>
+        </div>
+        <div class="timeline-item-box">
+          <div class="timeline-item">
+            <h3 class="timeline-item-title">Date</h3>
+            <p class="timeline-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, maxime corrupti! Provident sapiente commodi maxime.</p>
           </div>
         </div>
       </div>
@@ -237,7 +245,7 @@ export default {
 }
 
 /* Card container */
-.item-box {
+.timeline-item-box {
   position: relative;
   margin: 0 0 20px 20px;
   padding: 10px;
@@ -248,14 +256,14 @@ export default {
 }
 
 /* Information about the timeline */
-.item {
+.timeline-item {
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
 
 /* Title of the card */
-.title {
+.timeline-item-title {
   color: var(--palette-green-dark);
   position: relative;
   font-family: "Oswald";
@@ -265,7 +273,7 @@ export default {
 }
 
 /* Timeline dot  */
-.title::before {
+.timeline-item-title::before {
   content: "";
   position: absolute;
   width: 10px;
@@ -276,7 +284,7 @@ export default {
   border: 3px solid var(--palette-green);
 }
 
-.text {
+.timeline-item-text {
   font-family: "Poppins";
   font-weight: 300;
   letter-spacing: 1.1px;
