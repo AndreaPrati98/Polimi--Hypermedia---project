@@ -89,6 +89,7 @@ import MultipleShortOverviewContainer from '~/components/information-components/
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue';
 import ButtonStandard from '~/components/utilities-components/ButtonStandard.vue';
 import Breadcrumbs from '~/components/utilities-components/Breadcrumbs.vue';
+import ButtonAnimated from '~/components/utilities-components/ButtonAnimated.vue';
 export default {
     name: "artist-page",
     components: {
@@ -98,6 +99,7 @@ export default {
         MultipleShortOverviewContainer,
         CardsAdditionalContentensGroup,
         ButtonStandard,
+        ButtonAnimated,
         Breadcrumbs
     },
     async asyncData({ route, $axios }) {
