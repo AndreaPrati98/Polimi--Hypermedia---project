@@ -4,7 +4,7 @@
             :title="pageData.title" 
             :subtitle="pageData.shortDescription" 
             :imgUrl="pageData.imgUrl" />
-
+        <breadcrumbs/>
         <div class="section1">
             <subheader-component class="subheader"
                 :content="pageData.description" />
@@ -30,14 +30,16 @@ import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue'
 import SubheaderComponent from '~/components/information-components/SubheaderComponent.vue'
 import GridComponent from '~/components/medium-components/GridComponent.vue'
 import DropdownComponent from '~/components/utilities-components/DropdownComponent.vue'
+import Breadcrumbs from '~/components/utilities-components/Breadcrumbs.vue'
 export default {
     name: 'event-page',
-    components: { 
-        TheHeaderWithTitle,
-        SubheaderComponent,
-        GridComponent,
-        DropdownComponent
-    },
+    components: {
+    TheHeaderWithTitle,
+    SubheaderComponent,
+    GridComponent,
+    DropdownComponent,
+    Breadcrumbs
+},
     data() {
         const pageData = {
             title: "All the Events",

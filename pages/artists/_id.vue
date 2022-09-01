@@ -4,11 +4,11 @@
         :title="artist.name"
         :subtitle="artist.date_of_birth"
         :imgUrl="artist.img" />
-
+    <breadcrumbs/>
     <overview-component 
         :title="overviewTitle" 
         :description="artist.description"/>
-
+    
     
     <span class="separator"></span>
 
@@ -24,14 +24,16 @@ import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContente
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue'
 import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue'
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue'
+import Breadcrumbs from '~/components/utilities-components/Breadcrumbs.vue'
 export default {
     name: "ArtistPage",
     components: {
-        TheHeaderWithTitle, 
-        OverviewComponent, 
-        MultipleShortOverviewContainer,
-        CardsAdditionalContentensGroup,
-    },
+    TheHeaderWithTitle,
+    OverviewComponent,
+    MultipleShortOverviewContainer,
+    CardsAdditionalContentensGroup,
+    Breadcrumbs
+},
     data() {
         // everything we see here has to be retrieved from the DB
         return {

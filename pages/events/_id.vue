@@ -3,6 +3,7 @@
         <the-header-with-title class="header"
             :title="event.name"
             :imgUrl="event.img"/>
+        <breadcrumbs/>
         <div class="all-sections">
             <!-- SECTION 1 -->
             <div class="section1">
@@ -74,6 +75,7 @@ import OverviewComponent from '~/components/information-components/OverviewCompo
 import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue';
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue';
 import ButtonStandard from '~/components/utilities-components/ButtonStandard.vue';
+import Breadcrumbs from '~/components/utilities-components/Breadcrumbs.vue';
 export default {
     name: "artist-page",
     components: {
@@ -82,7 +84,8 @@ export default {
         OverviewComponent,
         MultipleShortOverviewContainer,
         CardsAdditionalContentensGroup,
-        ButtonStandard
+        ButtonStandard,
+        Breadcrumbs
     },
     async asyncData({ route, $axios }) {
         const  { id }  = route.params

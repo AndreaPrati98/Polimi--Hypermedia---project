@@ -8,7 +8,7 @@
           Festival Information
         </div>
   </div>
-
+  <breadcrumbs/>
   <!-- SECTION 2 -->
   <div class="section2" id="section-2">
     <overview-component class="overview-component"
@@ -43,9 +43,10 @@ import MultipleShortOverviewContainer from '~/components/information-components/
 import Default from '~/layouts/default.vue';
 import VerticalBars from '~/components/img-component/vertical-bars.vue';
 import Timeline from '~/components/timeline.vue';
+import Breadcrumbs from '~/components/utilities-components/Breadcrumbs.vue';
 
 export default {
-    components: { Map, TheHeaderWithImages, OverviewComponent, Card, OverviewComponent, MultipleShortOverviewContainer, Default, VerticalBars, Timeline },
+    components: { Map, TheHeaderWithImages, OverviewComponent, Card, OverviewComponent, MultipleShortOverviewContainer, Default, VerticalBars, Timeline, Breadcrumbs },
     name: "festival-intro",
     data() {
       const content = {
