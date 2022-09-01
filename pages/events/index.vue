@@ -30,15 +30,16 @@ import SubheaderComponent from '~/components/information-components/SubheaderCom
 import GridComponent from '~/components/medium-components/GridComponent.vue'
 import DropdownComponent from '~/components/utilities-components/DropdownComponent.vue'
 import Breadcrumbs from '~/components/utilities-components/Breadcrumbs.vue'
+
 export default {
     name: 'event-page',
     components: {
-    TheHeaderWithTitle,
-    SubheaderComponent,
-    GridComponent,
-    DropdownComponent,
-    Breadcrumbs
-},
+        TheHeaderWithTitle,
+        SubheaderComponent,
+        GridComponent,
+        DropdownComponent,
+        Breadcrumbs
+    },
     data() {
         
     },
@@ -81,8 +82,12 @@ export default {
     methods: {
         filterObjList(art_id) {
             // let's filter over the type of art Id
+            var filter
             if(art_id !== "All") {
                 this.eventsToDisplay = this.allEvents.filter(el => (el.typeOfArtId === (art_id)))
+                filter = this.allTypeOfArts.filter(el => (el.id === art_id))
+                this.pageData.title = "Events about " + filter[0].name
+                this.pageData.shortDescription = "Here we are with all the upcoming events about " + filter[0].name
             } else {
                 this.eventsToDisplay = this.allEvents
             }
