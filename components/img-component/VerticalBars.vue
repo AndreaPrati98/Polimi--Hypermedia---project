@@ -2,15 +2,15 @@
     <div class="vertical-bars-container">
         <div class="item">
             <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
-            <a href="#section-2"><div class="bar-title"><p>Overview</p></div></a>
+            <div class="bar-title"> <a href="#section-2">Overview</a> </div>
         </div>
         <div class="item">
             <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
-            <a href="#section-3"><div class="bar-title"><p>Information</p></div></a>
+            <div class="bar-title"><a href="#section-3">Information</a></div>
         </div>
         <div class="item">
             <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
-            <a href="#section-4"><div class="bar-title"><p>History</p></div></a>
+            <div class="bar-title"><a href="#section-4">History</a></div>
         </div>
     </div>
 </template>
