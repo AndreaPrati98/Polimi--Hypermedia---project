@@ -1,8 +1,9 @@
 <template>
     <div class="container">
+        <nuxt-link :to="btnDst">
         <div class="card">
             <img :src="imgUrl"/>
-            <h3>{{ title }}</h3>
+             <h3>{{ title }}</h3>
             <div class="focus-content">
             <p>{{ content }}</p>
             <button-standard
@@ -11,6 +12,7 @@
                 :btnDst="btnDst"/>
             </div>
         </div>
+        </nuxt-link>
     </div>
 </template>
 
