@@ -34,9 +34,6 @@ export default {
             required: true,
         }
     },
-    model: {
-
-    },
     data() {
         return {
             filterId: null,

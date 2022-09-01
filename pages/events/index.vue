@@ -48,10 +48,9 @@ export default {
 
         return {
             pageData,
-            typeOfArtFilter: "All",
         }
     },
-    async asyncData({ $axios }) {
+    async asyncData({ route, $axios }) {
         // here we retrieve also type of art so that we can create the proper filter
         const  [events, typeOfArts]  = await Promise.all([
                 $axios.get('/api/events'),
@@ -63,17 +62,33 @@ export default {
             the original list we would have to re-do the api call
             to get again all the events
         */ 
-        return {
+
+        const result = {
             allEvents: events.data,
             eventsToDisplay: events.data,
+        }
+
+        // check if route.query is empty or not
+        const isEmptyQuery = Object.keys(route.query).length === 0
+        let typeOfArtFilter
+        if (!isEmptyQuery) {
+            typeOfArtFilter = route.query.filter
+            console.log('eventi prima del filter '+ result.eventsToDisplay.length);
+            result.eventsToDisplay = result.allEvents.filter(el => (el.typeOfArtId === (+typeOfArtFilter)))
+            console.log('eventi dopo il filter '+ result.eventsToDisplay.length);
+        } 
+
+        return {
+            allEvents: result.allEvents,
+            eventsToDisplay: result.eventsToDisplay,
             allTypeOfArts: typeOfArts.data,
         }
     },
     methods: {
-        filterObjList(id) {
+        filterObjList(art_id) {
             // let's filter over the type of art Id
-            if(id !== "All") {
-                this.eventsToDisplay = this.allEvents.filter(el => (el.typeOfArtId === (id)))
+            if(art_id !== "All") {
+                this.eventsToDisplay = this.allEvents.filter(el => (el.typeOfArtId === (art_id)))
             } else {
                 this.eventsToDisplay = this.allEvents
             }

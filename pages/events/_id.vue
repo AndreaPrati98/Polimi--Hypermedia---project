@@ -53,21 +53,21 @@
                             <div class="theater-btn">
                                 <button-standard class="group-btn" 
                                     btnText="Theater" 
-                                    btnDst="/events" 
+                                    btnDst="/events?filter=1" 
                                     btnTextSize="20px" 
                                     :btnBkgdColor="`var(--palette-red-dark)`" />
                             </div>
                             <div class="music-btn">
                                 <button-standard class="group-btn" 
                                     btnText="Music" 
-                                    btnDst="/events" 
+                                    btnDst="/events?filter=2" 
                                     btnTextSize="20px" 
                                     :btnBkgdColor="`var(--palette-red-dark)`" />
                             </div>
                             <div class="dance-btn">
                                 <button-standard class="group-btn" 
                                     btnText="Dance" 
-                                    btnDst="/events" 
+                                    btnDst="/events?filter=3" 
                                     btnTextSize="20px" 
                                     :btnBkgdColor="`var(--palette-red-dark)`" />
                             </div>
