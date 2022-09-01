@@ -17,11 +17,7 @@
 <script>
 export default {
   name: "breadcrumbs",
-  props: {
-    title: {
-      type: String,
-    },
-  },
+  
   computed: {
     crumbs() {
         const fullPath = this.$route.fullPath;
