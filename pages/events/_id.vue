@@ -1,15 +1,15 @@
 <template>
     <section class="section">
         <the-header-with-title class="header"
-            :title="data.name"
-            :imgUrl="data.img"/>
+            :title="event.name"
+            :imgUrl="event.img"/>
         <div class="all-sections">
             <!-- SECTION 1 -->
             <div class="section1">
                 <div class="overview-comp">
                     <overview-component 
                         title="OVERVIEW" 
-                        :description="data.description"/>
+                        :description="event.description"/>
                 </div>
             </div>
             <!-- SECTION 2-->
@@ -22,7 +22,7 @@
             <div class="section3">
                 <cards-additional-contentens-group class="events-comp" 
                     :title="text" 
-                    :objList="data.list"
+                    :objList="event.list"
                     :partialPath="'/artists'"/>
             </div>
             <!-- SECTION 4-->
@@ -50,26 +50,14 @@
                     </div>
                     <div class="allButtons">
                         <div class="button-box">
-                            <div class="theater-btn">
-                                <button-standard class="group-btn" 
-                                    btnText="Theater" 
-                                    btnDst="/events?filter=1" 
+                            <div v-for="(element, index) of listOfArts"
+                                :key="`art-button-${index}`">
+                                <button-standard class="group-btn"
+                                    :btnText="element.name" 
+                                    :btnDst="`/events?filter=${element.id}`" 
                                     btnTextSize="20px" 
-                                    :btnBkgdColor="`var(--palette-red-dark)`" />
-                            </div>
-                            <div class="music-btn">
-                                <button-standard class="group-btn" 
-                                    btnText="Music" 
-                                    btnDst="/events?filter=2" 
-                                    btnTextSize="20px" 
-                                    :btnBkgdColor="`var(--palette-red-dark)`" />
-                            </div>
-                            <div class="dance-btn">
-                                <button-standard class="group-btn" 
-                                    btnText="Dance" 
-                                    btnDst="/events?filter=3" 
-                                    btnTextSize="20px" 
-                                    :btnBkgdColor="`var(--palette-red-dark)`" />
+                                    :btnBkgdColor="`var(--palette-red-dark)`"/>
+
                             </div>
                         </div>
                     </div>
@@ -96,13 +84,18 @@ export default {
         CardsAdditionalContentensGroup,
         ButtonStandard
     },
-
     async asyncData({ route, $axios }) {
         const  { id }  = route.params
-        const { data } = await $axios.get('/api/events/' + id)
+        
+        var [event, listOfArts]  = await Promise.all([
+                $axios.get('/api/events/' + id),
+                $axios.get('/api/typeofart'),
+                ])
+
+        event = event.data
 
         const list = []
-        for(const element of data.artists) {
+        for(const element of event.artists) {
             list.push({
                 id: element.id,
                 name: element.name,
@@ -110,27 +103,28 @@ export default {
                 img: element.img,
             })
         }
-        data.list = list
+        event.list = list
 
         const items  = [
             {
                 tabTitle: "Date",
-                tabContent: "This event will take place on " + data.date,
+                tabContent: "This event will take place on " + event.date,
             },
             {
                 tabTitle: "Time",
-                tabContent: "This event will be held at " + data.time,
+                tabContent: "This event will be held at " + event.time,
             },
             {
                 tabTitle: "Venue",
-                tabContent: "This event will take place at " + data.place.name,
-                link: {button: "See More", destination:"/places/" + data.place.id, nuxtLink:true}, 
+                tabContent: "This event will take place at " + event.place.name,
+                link: {button: "See More", destination:"/places/" + event.place.id, nuxtLink:true}, 
             }
         ]
 
         return {
-            data,
+            event,
             items,
+            listOfArts: listOfArts.data,
         }
     },
     data() {
