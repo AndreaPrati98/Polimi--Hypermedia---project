@@ -31,12 +31,13 @@ export default {
         crumbs.push({ param: "Home", path: "/" })
 
         params.forEach((param, index) => {
-            path = `${path}/${param}`;
+            param = param.split("?")
+            path = `${path}/${param[0]}`;
             const match = this.$router.match(path);
 
             if (match.name !== null) {
-                param = "/ " + param
-                crumbs.push({ param, path });
+                param[0] = "/ " + param[0]
+                crumbs.push({ param: param[0], path });
                 
             }
         });
