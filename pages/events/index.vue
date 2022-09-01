@@ -41,16 +41,7 @@ export default {
     Breadcrumbs
 },
     data() {
-        const pageData = {
-            title: "All the Events",
-            shortDescription: "Here we are with all the upcoming events of the festival",
-            description: "The programme includes shows, but also readings, exhibitions, films, and debates, which are so many gateways into the worlds of the artists and intellectuals invited to the Festival. Every evening, there is at least one show première, making Avignon a place of true creation and adventure for artists and spectators alike.",
-            imgUrl: "https://cdn.pixabay.com/photo/2015/05/29/19/18/crowd-789652_1280.jpg",
-        }
-
-        return {
-            pageData,
-        }
+        
     },
     async asyncData({ route, $axios }) {
         // here we retrieve also type of art so that we can create the proper filter
@@ -58,12 +49,13 @@ export default {
                 $axios.get('/api/events'),
                 $axios.get('/api/typeofart'),
                 ])
-        /* 
-            the eventsToDisplay is there because it will be the
-            element displayed, otherwise if we would filter over
-            the original list we would have to re-do the api call
-            to get again all the events
-        */ 
+        
+        const pageData = {
+            title: "All the Events",
+            shortDescription: "Here we are with all the upcoming events of the festival",
+            description: "The programme includes shows, but also readings, exhibitions, films, and debates, which are so many gateways into the worlds of the artists and intellectuals invited to the Festival. Every evening, there is at least one show première, making Avignon a place of true creation and adventure for artists and spectators alike.",
+            imgUrl: "https://cdn.pixabay.com/photo/2015/05/29/19/18/crowd-789652_1280.jpg",
+        }
 
         const result = {
             allEvents: events.data,
@@ -75,15 +67,16 @@ export default {
         let typeOfArtFilter
         if (!isEmptyQuery) {
             typeOfArtFilter = route.query.filter
-            console.log('eventi prima del filter '+ result.eventsToDisplay.length);
             result.eventsToDisplay = result.allEvents.filter(el => (el.typeOfArtId === (+typeOfArtFilter)))
-            console.log('eventi dopo il filter '+ result.eventsToDisplay.length);
+            pageData.title = "Events about " + route.query.filterName
+            pageData.shortDescription += " about " + route.query.filterName
         } 
 
         return {
             allEvents: result.allEvents,
             eventsToDisplay: result.eventsToDisplay,
             allTypeOfArts: typeOfArts.data,
+            pageData,
         }
     },
     methods: {

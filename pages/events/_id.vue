@@ -55,7 +55,7 @@
                                 :key="`art-button-${index}`">
                                 <button-standard class="group-btn"
                                     :btnText="element.name" 
-                                    :btnDst="`/events?filter=${element.id}`" 
+                                    :btnDst="`/events?filter=${element.id}&filterName=${element.name}`" 
                                     btnTextSize="20px" 
                                     :btnBkgdColor="`var(--palette-red-dark)`"/>
 
