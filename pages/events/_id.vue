@@ -14,9 +14,22 @@
             </div>
             <!-- SECTION 2-->
             <div class="section2">
-                <MultipleShortOverviewContainer class="info-comp"
-                    :title="'Event Information'" 
-                    :objList="items" />
+                <div class="col" v-for="(element, index) of tabItems"
+                :key="`col-${index}`">
+                <div class="title">
+                    {{element.tabTitle}}
+                </div>
+                <div class="content">
+                    {{element.tabContent}}
+                </div>
+
+                <div v-if="element.link" class="text-button-container">
+                    <button-animated class="ticket-button"
+                    :btnText="element.link.button" 
+                    :btnDst="element.link.destination" 
+                    :isNuxtLink="element.link.nuxtLink" />
+                </div>
+                </div>
             </div>
             <!-- SECTION 3-->
             <div class="section3">
@@ -112,7 +125,8 @@ export default {
         }
         data.list = list
 
-        const items  = [
+
+        const tabItems  = [
             {
                 tabTitle: "Date",
                 tabContent: "This event will take place on " + data.date,
@@ -124,13 +138,16 @@ export default {
             {
                 tabTitle: "Venue",
                 tabContent: "This event will take place at " + data.place.name,
-                link: {button: "See More", destination:"/places/" + data.place.id, nuxtLink:true}, 
-            }
-        ]
+                link: {
+                        button: "See More", 
+                        destination:"/places/" + data.place.id, 
+                        nuxtLink:true
+                    }, 
+            }]
 
         return {
             data,
-            items,
+            tabItems,
         }
     },
     data() {
@@ -142,6 +159,38 @@ export default {
 </script>
 
 <style scoped>
+
+
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  
+}
+
+.title {
+  font-family: "Oswald";
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20%;
+  color: var(--palette-red-dark);
+
+}
+
+.content {
+  font-family: "Poppins";
+  font-weight: 200;
+  line-height: 1.7rem;
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  color: var(--palette-blue);
+  margin-bottom: 10%;
+
+}
+
+
+
 
 .see-text {
     font-family: "Poppins";
@@ -172,14 +221,24 @@ export default {
 .section1 {
     background-color: var(--palette-soft-blue);
     color: var(--text-color-light);
-    display: flex;   
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap 
+    
 }
 .section2 {
     background-color: var(--palette-green-dark);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10%;
+    padding: 7% 0;
+    justify-content: space-around;
+
 }
 .section3 {
     background-color: var(--palette-blue);
-    color: var(--text-color-light)
+    color: var(--text-color-light);
 }
 .section4 {
     background-color: var(--palette-green);
@@ -205,46 +264,11 @@ export default {
 .overview-comp {
     padding: 15% 5%;
 }
-.img-comp {
-    margin: 5% 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.info-comp {
-    width: 100%;
-    padding: 5% 15%;  
-}
+
 .events-comp {
     padding: 5%;
 }
 .image {
     width: 100%;
-}
-.wrapper{ 
-    height: 100%;
-    display: grid;
-    place-items: center;
-}
-.typing{
-    width: 22ch;
-    animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid black;
-    font-family: monospace;
-    font-size: 2em;
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-}
-
-@keyframes typing {
-    from {
-        width: 0
-    }
 }
 </style>
