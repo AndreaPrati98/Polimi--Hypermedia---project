@@ -21,7 +21,6 @@
                 :objList="eventsToDisplay"/>
         
         </div>
-
     </section>
 </template>
 

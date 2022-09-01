@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
     .description-container {
     display: flex;
     justify-content: center;

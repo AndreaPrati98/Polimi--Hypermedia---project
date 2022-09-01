@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="all-sections">
         <!-- SECTION 1 -->
         <div class="section1">
             <div class="scroll-header">
@@ -26,26 +26,45 @@
         </div>
 
     <!-- SECTION 3 -->
-    <div class="section3">
-        <div class="both-boxes">
-            <div class="background-box"></div>
-            <div class="explore-box"><a class="explore-button" href="../events">
-                <overview-component class="explore"
-                    :title="content.overviewTitle" 
-                    :description="content.overviewDescription" /></a>
-            </div>
+  <div class="section3">
+    <div class="all-descriptions">
+      <div class="description">
+        <div class="title">
+          <h2>Events</h2>
         </div>
+        <div class="text">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat commodi officiis molestiae, atque velit libero.</p>
+        </div>        
+      </div>
+
+      <div class="description">
+        <div class="title">
+          <h2>Artists</h2>
+        </div>
+        <div class="text">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat commodi officiis molestiae, atque velit libero.</p>
+        </div>        
+      </div>
+
+      <div class="description">
+        <div class="title">
+          <h2>Places</h2>
+        </div>
+        <div class="text">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat commodi officiis molestiae, atque velit libero.</p>
+        </div>        
+      </div>
     </div>
   </div>
+    </div>
 </template>
 
 <script>
-import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
-import Quote from '~/components/quote.vue';
+import Quote from '~/components/Quote.vue';
 import Default from '~/layouts/default.vue';
 
 export default {
-    components: { OverviewComponent, Default, Quote },
+    components: {Default, Quote },
     name: "home",
     data() {
         const content = {
@@ -59,59 +78,10 @@ export default {
             content:content,
         }
     },
-    
-    /* Does not work 
-    async asyncData({ route, $axios }) {
-        const  {events}     = await $axios.get("/api/events");
-        const listEvents = []
-        /*for (element in events) {
-            listEvents.push({
-                title: "element.title",
-                content:"element.date",
-                imgUrl:"element.img",
-                destination: "/events/" + "element.id",
-            })
-        }
-        
-        return {
-            events: events,
-        }
-    },*/
 }
 </script>
 
 <style scoped>
-
-/* Explore Box (with link))with translation effect */
-.explore-button {
-    all:unset;
-}
-
-.both-boxes {
-    width: 30%;
-    height: 40%;
-    padding: 5%;
-}
-.background-box{
-    background: var(--palette-red);
-    position: absolute;
-    transition: transform 0.8s;
-    width: inherit;
-    height: inherit;
-}
-.explore-box {
-    background: var(--palette-green-dark);
-    transition: transform 0.8s;
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    cursor: pointer;
-}
-
-.explore-box:hover {
-    transform: translate(5%,5%);
-}
-
 
 /* Header title with cycling words */
 .scroll-header {
@@ -185,23 +155,65 @@ flex-direction: column;
 
 .section3 {
   width: 100%;
-  height: 800px;
   background-color: var(--palette-green);
+  display: flex;
+  flex-direction: column;
 }
 
-.overview-component {
-  padding: 5% 15%;
-}
 
-.info-component {
-  padding: 5% 15%;
-  border: 1px solid red;
-}
-  
 .picture {
   overflow: hidden;
   object-fit: cover;
 }
+
+@media (max-width:600px) {
+  img {
+    display: none;
+  }
+}
+.all-descriptions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+    
+  align-items: center;
+  justify-content: center;
+
+    height: 70%;
+    width: 90%;
+    
+    padding: 5% 5%;
+
+
+    font-family: "Poppins";
+    font-weight: 200;
+    font-size: 20px;
+    color: var(--palette-blue);
+    letter-spacing: 1.4px;
+
+}
+
+.title {
+  max-width: 120px;
+  margin: 0 2%;
+  color: var(--palette-red-dark);
+}
+
+.text {
+  max-width: 800px;
+  margin: 0 2%;
+  color: var(--palette-blue);
+}
+
+
 
 
 </style>

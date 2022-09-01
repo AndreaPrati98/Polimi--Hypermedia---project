@@ -2,7 +2,7 @@
   <header class="header">
         <nav class="navbar">
             <div>
-                <nuxt-link to="/" class="nav-logo" >
+                <nuxt-link to="/home" class="nav-logo" >
                     Festival d'Avignon
                 </nuxt-link>
             </div>
@@ -55,7 +55,7 @@ export default {
             },
             {
             name: 'Contact Us',
-            path: '/',
+            path: '/contacts',
             },
         ],
         }
@@ -113,6 +113,7 @@ export default {
 
         font-size: 1rem;
         font-weight: 400;
+        letter-spacing: 1.2px;
         padding: 0.8rem .5rem;
 
         transition: color .2s ease-in;
