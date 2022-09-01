@@ -141,7 +141,7 @@ export default {
 
         return {
             event,
-            items,
+            tabItems,
             listOfArts: listOfArts.data,
         }
     },
