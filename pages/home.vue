@@ -146,6 +146,7 @@ flex-direction: column;
   height: 100vh;
   background-color: var(--palette-green-dark);
   display: flex;
+  justify-content: space-between;
 }
 
 .section2 {
