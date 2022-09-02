@@ -54,7 +54,8 @@ export default {
       display: flex;
       justify-content: space-between;
       background-color: var(--palette-green);
-      margin: 0 30px;
+      padding: 0 30px;
+      width: 100%;
     }
     .crumbs ul {
         /* display: block; */
