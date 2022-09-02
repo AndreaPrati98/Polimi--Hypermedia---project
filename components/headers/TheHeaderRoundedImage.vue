@@ -69,14 +69,25 @@ export default {
         justify-content: center;
     }
 
-    .text-wrapper {
-        background-color: seashell;
-    }
+   
     .text-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        font-family: "Oswald";
+        font-weight: 600;
+        color: var(--text-color-light);
     }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h4 {
+        color: var(--palette-blue);
+    }
+
+
 
     .image-container, .text-container {
         margin: 0 30px;
