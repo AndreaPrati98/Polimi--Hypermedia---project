@@ -42,10 +42,11 @@ export default {
     .section {
         width: 100%;
         height: 100%;
-
+        min-height: 175px;
         display: flex;
         justify-content: space-between;
         background-color: var(--palette-soft-blue);
+        overflow: hidden;
     }
 
     .image {
@@ -57,8 +58,10 @@ export default {
     }
 
     .image-wrapper {
-        height: 400px;
-        width: 400px;
+        max-height: 400px;
+        max-width: 400px;
+        height: 100%;
+        width: 100%;
 
         display: flex;
         justify-content: center;
