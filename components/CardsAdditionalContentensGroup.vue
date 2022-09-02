@@ -2,17 +2,18 @@
     <div class="where">
         <h3 class="title">{{title}}</h3>
         <div class="scroll-window">
+            <button class="slider left">&lt;</button>
             <div class="cards-container">
-
-                <card-additional-content class="item" v-for="(element, index) of objList"
+                <card-additional-content class="item" v-for="(element, index) of objList" :id="`item${index}`"
                     :key="`card-${index}`"
                     :title="element.name"
                     :content="element.content"
                     :imgUrl="element.img"
                     :btnTxt="`See More`"
                     :btnDst="`${partialPath}/` + element.id" />
-
             </div>
+            <button class="slider right">&gt;</button>
+
         </div>
     </div>
 </template>
@@ -72,8 +73,6 @@ export default {
     width:70%;
     margin-left: 15%;
     display: flex;
-
-
 }
 
 .title {
@@ -86,4 +85,17 @@ export default {
     letter-spacing: 1.2px;
 }
 
+
+.slider {
+    all:unset;
+    cursor: pointer;
+    border: 1px solid red;
+    padding: 0px 20px;
+
+}
+
+.slider:hover {
+    background-color: rgb(200, 200, 200);
+    transition: .4s ease;
+}
 </style>
