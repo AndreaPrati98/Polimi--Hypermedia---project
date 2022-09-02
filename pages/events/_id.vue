@@ -7,11 +7,9 @@
         <div class="all-sections">
             <!-- SECTION 1 -->
             <div class="section1">
-                <div class="overview-comp">
-                    <overview-component 
-                        title="OVERVIEW" 
-                        :description="event.description"/>
-                </div>
+                <overview-component class="overview-component"
+                    title="OVERVIEW" 
+                    :description="event.description"/>
             </div>
             <!-- SECTION 2-->
             <div class="section2">
@@ -258,8 +256,8 @@ export default {
     justify-self: center;
     text-align: center;
 }
-.overview-comp {
-    padding: 15% 5%;
+.overview-component {
+    padding: 10% 15%;
 }
 
 .events-comp {

@@ -1,22 +1,24 @@
 <template>
-  <section class="section">
-    <the-header-with-title
-        :title="artist.name"
-        :subtitle="artist.date_of_birth"
-        :imgUrl="artist.img" />
-    <breadcrumbs/>
-    <overview-component 
-        :title="overviewTitle" 
-        :description="artist.description"/>
-    
-    
-    <span class="separator"></span>
-
-    <cards-additional-contentens-group 
-        :title="'Other events related to this artist'"
-        :objList="artist.list"
-        :partialPath="'/events'"/>
-  </section>
+  <div class="all-sections">
+        <div class="section1">
+            <the-header-with-title
+                :title="artist.name"
+                :subtitle="artist.date_of_birth"
+                :imgUrl="artist.img" />
+            <breadcrumbs/>
+        </div>
+        <div class="section2">
+            <overview-component class="overview-component"
+                :title="overviewTitle" 
+                :description="artist.description"/>
+        </div>
+        <div class="section3">
+            <cards-additional-contentens-group class="events-component"
+                :title="'Other events related to this artist'"
+                :objList="artist.list"
+                :partialPath="'/events'"/>
+        </div>
+  </div>
 </template>
 
 <script>
@@ -66,12 +68,26 @@ export default {
 </script>
 
 <style scoped>
+    .all-sections {
+        display: flex;
+        flex-direction: column;
+    }
 
-    .separator {
-        display: block;
-        width: 70%;
-        border-top: 2px solid black;
-        margin: 0 auto;
+    .section2{
+        background-color: var(--palette-soft-blue);
+        width: 100%;
+    }
+
+    .section3{
+        background-color: var(--palette-green-dark);
+        width: 100%
+    }
+
+    .overview-component {
+        padding: 10% 15%;
+    }
+    .events-component {
+        padding: 5%;
     }
 </style>
 
