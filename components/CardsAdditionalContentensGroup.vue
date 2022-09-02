@@ -1,21 +1,22 @@
 <template>
-    <div class="where">
+    <section>
         <h3 class="title">{{title}}</h3>
-        <div class="scroll-window">
-            <button class="slider left">&lt;</button>
-            <div class="cards-container">
-                <card-additional-content class="item" v-for="(element, index) of objList" :id="`item${index}`"
-                    :key="`card-${index}`"
-                    :title="element.name"
-                    :content="element.content"
-                    :imgUrl="element.img"
-                    :btnTxt="`See More`"
-                    :btnDst="`${partialPath}/` + element.id" />
+        <div class="wrapper">
+            <button @click="slideLeft">&lt;</button>
+            <div class="wrapper-box">
+                <div class="box">
+                    <card-additional-content class="item" v-for="(element, index) of objList" :id="`item${index}`"
+                        :key="`card-${index}`"
+                        :title="element.name"
+                        :content="element.content"
+                        :imgUrl="element.img"
+                        :btnTxt="`See More`"
+                        :btnDst="`${partialPath}/` + element.id" />
+                </div>
             </div>
-            <button class="slider right">&gt;</button>
-
+            <button @click="slideRight">&gt;</button>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -41,39 +42,23 @@ export default {
             type: String,
             required: true,
         }
+    },
+    methods: {
+        slideLeft() {
+            let content = document.querySelector(".wrapper-box");
+            content.scrollLeft -= 200;
+        },
+        slideRight() {
+            let content = document.querySelector(".wrapper-box");
+            content.scrollLeft += 200;
+        }
     }
 };
 </script>
 
 <style scoped>
 
-.where {
-    width:100%;
-    display: flex;
-    text-align: center;
-    margin-top: 30px;
-    flex-direction: column;
-}
-.cards-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-shrink: 1;
-    overflow: scroll;
-    scroll-behavior: smooth;
-    width: 100%;
-    overflow: auto;
-    white-space: nowrap;
-}
-.item {
-    margin:25px;
-}
-
-.scroll-window{
-    width:70%;
-    margin-left: 15%;
-    display: flex;
-}
+/**jgvefhbnwgrejkihgfvhbjkhgftrgvbhjhgfvbhjuh */
 
 .title {
     width: 100%;
@@ -85,17 +70,64 @@ export default {
     letter-spacing: 1.2px;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+.wrapper-box {
+  height: 100%;
+  width: 70%;
+  max-width: 700px;
+  overflow: auto;
+  scroll-behavior: smooth;
+  margin: 0 10px;
+}
+.box {
+  width: 1000px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  
+}
+.box .item {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin:25px;
+}
 
-.slider {
-    all:unset;
-    cursor: pointer;
-    border: 1px solid red;
-    padding: 0px 20px;
+button {
+  all: unset;
+  height: 320px;
+  padding: 5px 20px;
+  background-color: inherit;
+  cursor:pointer;
+}
+
+button:hover {
+    border: 0.5px solid grey;
+    transition: .7s ease;
 
 }
 
-.slider:hover {
-    background-color: rgb(200, 200, 200);
-    transition: .4s ease;
-}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
