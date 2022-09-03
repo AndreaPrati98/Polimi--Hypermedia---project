@@ -1,13 +1,8 @@
 <template>
   <section class="section">
         <!-- here we set up the image with the Title -->
-            
-        <div class="img" :style="`background-image: url(${this.imgUrl}) `">
-            
-        </div>
+        <div class="img" :style="`background-image: url(${this.imgUrl}) `"></div>
         
-        <!-- <img :src="imgUrl" alt="" class="img"> -->
-
         <div class="title-div">
             <h1 class="title">{{title}}</h1>
             <h3 class="subheading">{{subtitle}}</h3>

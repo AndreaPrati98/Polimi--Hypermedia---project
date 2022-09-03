@@ -7,11 +7,9 @@
         <div class="all-sections">
             <!-- SECTION 1 -->
             <div class="section1">
-                <div class="overview-comp">
-                    <overview-component 
-                        title="OVERVIEW" 
-                        :description="event.description"/>
-                </div>
+                <overview-component class="overview-component"
+                    title="OVERVIEW" 
+                    :description="event.description"/>
             </div>
             <!-- SECTION 2-->
             <div class="section2">
@@ -89,6 +87,7 @@ import MultipleShortOverviewContainer from '~/components/information-components/
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue';
 import ButtonStandard from '~/components/utilities-components/ButtonStandard.vue';
 import Breadcrumbs from '~/components/utilities-components/Breadcrumbs.vue';
+import ButtonAnimated from '~/components/utilities-components/ButtonAnimated.vue';
 export default {
     name: "artist-page",
     components: {
@@ -98,6 +97,7 @@ export default {
         MultipleShortOverviewContainer,
         CardsAdditionalContentensGroup,
         ButtonStandard,
+        ButtonAnimated,
         Breadcrumbs
     },
     async asyncData({ route, $axios }) {
@@ -256,8 +256,8 @@ export default {
     justify-self: center;
     text-align: center;
 }
-.overview-comp {
-    padding: 15% 5%;
+.overview-component {
+    padding: 10% 15%;
 }
 
 .events-comp {

@@ -54,7 +54,8 @@ export default {
       display: flex;
       justify-content: space-between;
       background-color: var(--palette-green);
-      margin: 0 30px;
+      padding: 10px 30px;
+      width: 100%;
     }
     .crumbs ul {
         /* display: block; */
@@ -66,6 +67,8 @@ export default {
     .crumbs li {
         display: inline-block;
         padding: 10px 0 10px 10px;
+        font-family: "Open Sans";
+        font-size: 20px;
         
     }
 

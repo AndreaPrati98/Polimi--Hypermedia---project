@@ -9,11 +9,13 @@
             <subheader-component class="subheader"
                 :content="pageData.description" />
         </div>
-        
-        <dropdown-component 
-            :formName="'type of art selector'"
-            :objList="allTypeOfArts" 
-            @change="filterObjList"/>
+        <div class="section-dropdown">
+            <p>Filter: </p>
+            <dropdown-component 
+                :formName="'type of art selector'"
+                :objList="allTypeOfArts" 
+                @change="filterObjList"/>
+        </div>
         
         <div class="section2">
             <grid-component 
@@ -99,7 +101,6 @@ export default {
 
 <style scoped>
     .subheader {
-        margin-bottom: 2px;
         padding: 10% 7%;
     }
 
@@ -112,4 +113,19 @@ export default {
         background-color: var(--palette-light-cyan);
     }
     
+    .section-dropdown {
+        display: flex;
+        flex-direction: row;
+        background-color: var(--palette-red-dark);
+        width: 100%;
+        padding: 5px;
+        align-items: center;
+        font-family: "Poppins";
+        font-weight: 200;
+    }
+  
+    .all-sections{
+        display: flex;
+        flex-direction: column;
+    }
 </style>
