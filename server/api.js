@@ -42,7 +42,7 @@ async function initializeDatabaseConnection() {
         name: DataTypes.STRING,
         img: DataTypes.STRING,
         date_of_birth: DataTypes.STRING,
-        description: DataTypes.STRING(1024),
+        description: DataTypes.STRING(2048),
         /* we should insert also the 'type of art' but we will use a foreign key for that */
     }, {timestamps: false})
 
