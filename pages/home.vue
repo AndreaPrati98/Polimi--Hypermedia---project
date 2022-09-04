@@ -33,7 +33,9 @@
           <h2>Events</h2>
         </div>
         <div class="text">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat commodi officiis molestiae, atque velit libero.</p>
+          <p>{{content.textEvents}}</p>
+          <br />
+          <nuxt-link to="events/">&lt;&lt;See More&gt;&gt; </nuxt-link>
         </div>        
       </div>
 
@@ -42,7 +44,9 @@
           <h2>Artists</h2>
         </div>
         <div class="text">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat commodi officiis molestiae, atque velit libero.</p>
+          <p>{{content.textArtists}}</p>
+          <br />
+          <nuxt-link to="artists/">&lt;&lt;See More&gt;&gt; </nuxt-link>
         </div>        
       </div>
 
@@ -51,7 +55,9 @@
           <h2>Places</h2>
         </div>
         <div class="text">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat commodi officiis molestiae, atque velit libero.</p>
+          <p>{{content.textPlaces}}</p>
+          <br />
+          <nuxt-link to="places/">&lt;&lt;See More&gt;&gt; </nuxt-link>
         </div>        
       </div>
     </div>
@@ -68,11 +74,11 @@ export default {
     name: "home",
     data() {
         const content = {
-            overviewTitle: "Explore Events",
-            overviewDescription: "Check out all of the events this year. You can explore by different types of performances and learn more about the artists performing at the events, the venues hosting the events, and much more!",
-            cardsTitle: "Explore Events",
             quoteText: "Culture is the arts elevated to a set of beliefs.",
             quoteAuthor: "Thomas Wolfe",
+            textEvents: "The Festival d'Avignon started with the idea to immerse audiences into the arts. Each year events are curated to excite the public about the arts for generations. About 80% of the performances during the Festival are having thier French priemiere at the Festival.",
+            textArtists: "The Festival is a mecca for artists. Firstly, artists work with the Festival directors in organizing the Festival each year. The Festival also organizes Theorem, an association of theatres and festivals seeking to produce and promote young artists from countries in Central and Eastern Europe. The Festival also supports the International Centre for Creative Research (CIRCA). It is a residence for artists where are held exhibitions and concerts and, it also welcomes an event called 'Rencontres Internationales' (International Encounters) each summer during the Festival. Today, the Festival features international renowned as well as budding creatives including solo choreographers, spoken word performers, music groups, string quartets, dancers, playwright directors, opera singers, and improv actors.",
+            textPlaces: "The Festival has been accumulating venues since it's inception. Today more than 5 venues help bring the festival to life each year. Each venue hosts a varying number of occupants: one of our largest venues, has drawn historical crowds upwards of 30,000 spectators, whereas some more intimate shows can bring together crowds as small as 5 for a more personal experience. ",
         }
         return {
             content:content,
