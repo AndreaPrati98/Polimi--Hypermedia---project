@@ -1,28 +1,17 @@
 <template>
-    <div class="page">
-        <div class="section1">
-            <the-header-rounded-image class="header"
-                :header="data.name"
-                :subheader="data.address"
-                :imgUrl="data.img"/>
-            
-            <div class="breadcrumbs-container">
-                <breadcrumbs class="breadcrumbs"/>
-            </div>
-        </div>
-        <div class="section2">
-            <overview-component class="overview-component component"
-                :title="overviewTitle"
-                :description="data.description" />
-        </div>
-        <div class="section3">
-            <span class="separator"></span>
-            <cards-additional-contentens-group class="cards-component component"
-                :title="cardGroupTitle"
-                :objList="data.list"
-                :partialPath="cardGroupPartialPath"/>
-        </div>
-        
+    <div class="all-sections">
+        <the-header-rounded-image class="header"
+            :header="data.name"
+            :subheader="data.address"
+            :imgUrl="data.img"/>
+        <breadcrumbs class="breadcrumbs"/>
+        <overview-component class="subheader"
+            :title="overviewTitle"
+            :description="data.description" />
+        <cards-additional-contentens-group class="transition-links"
+            :title="cardGroupTitle"
+            :objList="data.list"
+            :partialPath="cardGroupPartialPath"/>
     </div>
 </template>
 
@@ -67,7 +56,6 @@ export default {
             data,
         }
     },
-
 }
 </script>
 
@@ -75,25 +63,13 @@ export default {
     .header {
         height: 50vh;
     }
-
-    .separator {
-        display: block;
-        width: 70%;
-        margin: 0 auto;
-        border-top: 2px solid black;
-    }
-    .section2 {
+    .subheader {
         background-color: var(--palette-green-dark);
     }
-    .section3 {
-        background-color: var(--palette-blue);
-    }
-    
-    .overview-component {
-        padding: 10% 15%;
-    }
-    .cards-component {
+    .transition-links {
         padding: 5% 0;
         color: var(--text-color-light);
+        background-color: var(--palette-blue);
+
     }
 </style>

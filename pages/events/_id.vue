@@ -127,6 +127,7 @@ export default {
 .col {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 25%;
   
 }
