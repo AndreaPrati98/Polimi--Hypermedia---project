@@ -36,7 +36,7 @@ export default async (models) => {
         },
         { // Theater
             name: "The Damask Drum",
-            description: "Theater 5 um dolor sit amet, conseifend mi id dapibus. Ut vestibulum pellentesque molestie.",
+            description: "Inspired by a traditional Noh play, Kaori Ito and Yoshi Oida dance and reveal the unique and poetic narrative of a universal fable about seduction and transmission. Like mirror images of the two protagonists, choreographer Kaori Ito and actor Yoshi Oida, all admiring complicity, interweave moments of dialogue and dance, accompanied by Makoto Yabuki's percussions. Freely adapted from a classic of Noh theatre, known in France thanks to Yukio Mishima's modern version as translated by Marguerite Yourcenar, Yoshi Oida asked his old friend Jean-Claude Carrière to rewrite this spellbinding story about unrequited desire, guilt, and liberation. With its unmistakably Japanese atmosphere, this is a universal story of transmission between a young woman who feels she is getting older and an old man who still feels young.",
             img: "https://festival-avignon.com/storage/image/23/35023_5f92fb1e0e33f.jpeg",
             date: "08/06/2023",
             time: "17:45",

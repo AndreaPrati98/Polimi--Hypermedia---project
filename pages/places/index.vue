@@ -31,7 +31,7 @@ export default {
         const pageData = {
             title: "All the Places",
             shortDescription: "Getting fascinated by Avignon is easy. The places are all amazing.",
-            description: "The theaters are beautiful. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsam sed tempora rem itaque atque error aut temporibus blanditiis! Atque ea libero inventore, officiis vero minus et sapiente tempore nihil.",
+            description: "During the Festival, the city of Avignon comes alive. Historical landmarks that are usually dormant and recognized for what they once were, get to breathe in the life of art once again. In true spirit of the circle of life, the expansion of the Festival has also enabled to fund the construction of new venues and places to host events. Spectators not only get to experience the show they are attending, but they also get add to the significance of each place that helps bring the Festival to life.",
             imgUrl: "https://cdn.pixabay.com/photo/2016/03/10/17/01/stage-1248769__480.jpg",
         }
 
