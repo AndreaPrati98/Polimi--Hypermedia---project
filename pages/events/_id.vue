@@ -2,6 +2,7 @@
     <section class="all-sections">
         <the-header-with-title class="header"
             :title="event.name"
+            :subtitle="`Event of type: ${event.typeOfArtName}`"
             :imgUrl="event.img"/>
         <breadcrumbs/>
         <overview-component class="subheader"
@@ -90,8 +91,8 @@ export default {
                 link: {button: "See More", destination:"/places/" + event.place.id, nuxtLink:true}, 
             }
         ]
-
-
+        const indexForData = event.typeOfArtId - 1
+        event.typeOfArtName = listOfArts.data[indexForData].name
 
 
         return {
@@ -108,10 +109,6 @@ export default {
     data() {
         return{
             text: "Artists Performing at this Event",
-            
-
-
-            
         }
     },
 }
