@@ -50,7 +50,6 @@
 
 <script>
 import TheHeaderWithImages from '~/components/headers/TheHeaderWithImages.vue';
-import Card from '~/components/img-component/card.vue';
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
 import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue';
 import Default from '~/layouts/default.vue';
@@ -63,7 +62,6 @@ export default {
       Map, 
       TheHeaderWithImages, 
       OverviewComponent, 
-      Card, 
       OverviewComponent, 
       MultipleShortOverviewContainer, 
       Default, 

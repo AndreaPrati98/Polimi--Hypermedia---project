@@ -86,7 +86,7 @@ import OverviewComponent from '~/components/information-components/OverviewCompo
 import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue';
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue';
 import ButtonStandard from '~/components/utilities-components/ButtonStandard.vue';
-import Breadcrumbs from '~/components/utilities-components/Breadcrumbs.vue';
+import Breadcrumbs from '~/components/utilities-components/BreadcrumbsComponent.vue';
 import ButtonAnimated from '~/components/utilities-components/ButtonAnimated.vue';
 export default {
     name: "artist-page",

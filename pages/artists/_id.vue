@@ -5,7 +5,7 @@
                 :title="artist.name"
                 :subtitle="artist.date_of_birth"
                 :imgUrl="artist.img" />
-            <breadcrumbs/>
+            <breadcrumbs-component/>
         </div>
         <div class="section2">
             <overview-component class="overview-component"
@@ -26,7 +26,7 @@ import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContente
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue'
 import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue'
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue'
-import Breadcrumbs from '~/components/utilities-components/Breadcrumbs.vue'
+import BreadcrumbsComponent from '~/components/utilities-components/BreadcrumbsComponent.vue'
 export default {
     name: "ArtistPage",
     components: {
@@ -34,7 +34,7 @@ export default {
     OverviewComponent,
     MultipleShortOverviewContainer,
     CardsAdditionalContentensGroup,
-    Breadcrumbs
+    BreadcrumbsComponent
 },
     data() {
         // everything we see here has to be retrieved from the DB

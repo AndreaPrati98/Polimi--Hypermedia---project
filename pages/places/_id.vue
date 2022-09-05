@@ -7,7 +7,7 @@
                 :imgUrl="data.img"/>
             
             <div class="breadcrumbs-container">
-                <breadcrumbs class="breadcrumbs"/>
+                <breadcrumbs-component class="breadcrumbs"/>
             </div>
         </div>
         <div class="section2">
@@ -30,16 +30,16 @@
 import TheHeaderRoundedImage from '~/components/headers/TheHeaderRoundedImage.vue'
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue'
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue'
-import Breadcrumbs from '~/components/utilities-components/breadcrumbs'
+import BreadcrumbsComponent from '~/components/utilities-components/BreadcrumbsComponent.vue'
 
 export default {
     name: "PlacePage",
     components: {
-        TheHeaderRoundedImage,
-        OverviewComponent,
-        CardsAdditionalContentensGroup,
-        Breadcrumbs,
-    },
+    TheHeaderRoundedImage,
+    OverviewComponent,
+    CardsAdditionalContentensGroup,
+    BreadcrumbsComponent
+},
     data() {
         return {
             overviewTitle: "Short description",

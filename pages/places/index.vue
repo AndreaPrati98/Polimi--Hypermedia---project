@@ -4,7 +4,7 @@
             :title="pageData.title" 
             :subtitle="pageData.shortDescription" 
             :imgUrl="pageData.imgUrl" />
-        <breadcrumbs/>
+        <breadcrumbs-component/>
         <subheader-component class="subheader"
             :content="pageData.description" />
         <grid-component 
@@ -17,7 +17,7 @@
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue'
 import SubheaderComponent from '~/components/information-components/SubheaderComponent.vue'
 import GridComponent from '~/components/medium-components/GridComponent.vue'
-import Breadcrumbs from '~/components/utilities-components/Breadcrumbs.vue'
+import BreadcrumbsComponent from '~/components/utilities-components/BreadcrumbsComponent.vue'
 
 export default {
     name: 'places-page',
@@ -25,7 +25,7 @@ export default {
     TheHeaderWithTitle,
     SubheaderComponent,
     GridComponent,
-    Breadcrumbs
+    BreadcrumbsComponent
 },
     data() {
         const pageData = {
