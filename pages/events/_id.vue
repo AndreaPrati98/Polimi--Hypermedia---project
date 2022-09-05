@@ -84,12 +84,13 @@ export default {
                 tabContent: "This event will be held at " + event.time,
             },
             {
-                tabTitle: "Venue",
+                tabTitle: "Place",
 
                 tabContent: "This event will take place at " + event.place.name,
                 link: {button: "See More", destination:"/places/" + event.place.id, nuxtLink:true}, 
             }
         ]
+
 
 
 

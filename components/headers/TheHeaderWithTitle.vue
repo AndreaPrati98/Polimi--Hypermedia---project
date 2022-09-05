@@ -20,6 +20,7 @@ export default {
         },
         subtitle: {
             type: String,
+            required: false,
         },
         imgUrl: {
             type: String,

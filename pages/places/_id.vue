@@ -12,6 +12,10 @@
             :title="cardGroupTitle"
             :objList="data.list"
             :partialPath="cardGroupPartialPath"/>
+
+        <group-link-buttons-component class="group-links"
+            :text="`See all events`"
+            :listOfButtons="groupLinks" />
     </section>
 </template>
 
@@ -20,20 +24,23 @@ import TheHeaderRoundedImage from '~/components/headers/TheHeaderRoundedImage.vu
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue'
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue'
 import BreadcrumbsComponent from '~/components/utilities-components/BreadcrumbsComponent.vue'
+import GroupLinkButtonsComponent from '~/components/GroupLinkButtonsComponent.vue'
 
 export default {
     name: "PlacePage",
     components: {
-    TheHeaderRoundedImage,
-    OverviewComponent,
-    CardsAdditionalContentensGroup,
-    BreadcrumbsComponent
-},
+        TheHeaderRoundedImage,
+        OverviewComponent,
+        CardsAdditionalContentensGroup,
+        BreadcrumbsComponent,
+        GroupLinkButtonsComponent
+    },
     data() {
         return {
             overviewTitle: "Short description",
             cardGroupTitle: "Events hosted here",
             cardGroupPartialPath: "/events",
+            groupLinks: [{btnText:"ALL EVENTS", btnDst: "/events"}]
             
         }
     },
@@ -72,5 +79,14 @@ export default {
         color: var(--text-color-light);
         background-color: var(--palette-blue);
 
+    }
+
+    .group-links {
+        background-color: var(--palette-green);
+        display: flex;
+        flex-direction: column;
+        padding: 10%;
+        width: 100%;
+        height:100%;
     }
 </style>

@@ -12,6 +12,10 @@
             :title="'Other events related to this artist'"
             :objList="artist.list"
             :partialPath="'/events'"/>
+        <group-link-buttons-component class="group-links"
+            :text="`See all Artists`"
+            :listOfButtons="groupLinks"
+            />
     </section>
 
 </template>
@@ -21,6 +25,7 @@ import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue'
 import BreadcrumbsComponent from '~/components/utilities-components/BreadcrumbsComponent.vue'
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue'
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue'
+import GroupLinkButtonsComponent from '~/components/GroupLinkButtonsComponent.vue'
 export default {
     name: "ArtistPage",
     components: {
@@ -28,12 +33,14 @@ export default {
     BreadcrumbsComponent,
     OverviewComponent,
     CardsAdditionalContentensGroup,
+    GroupLinkButtonsComponent,
 },
     data() {
         // everything we see here has to be retrieved from the DB
         return {
             overviewTitle: "Short description",
             eventsRelatedTitle: "This artist is involved...",
+            groupLinks: [{btnText:"All Artists", btnDst:"/artists"}],
 
         }
     },
@@ -70,6 +77,15 @@ export default {
         padding: 5% 0;
         background-color: var(--palette-green-dark);
         width: 100%
+    }
+
+    .group-links {
+        background-color: var(--palette-green);
+        display: flex;
+        flex-direction: column;
+        padding: 10%;
+        width: 100%;
+        height:100%;
     }
 </style>
 
