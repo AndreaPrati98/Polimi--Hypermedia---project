@@ -38,7 +38,8 @@
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue';
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue';
-import Breadcrumbs from '~/components/utilities-components/Breadcrumbs.vue';
+import ButtonStandard from '~/components/utilities-components/ButtonStandard.vue';
+import Breadcrumbs from '~/components/utilities-components/BreadcrumbsComponent.vue';
 import ButtonAnimated from '~/components/utilities-components/ButtonAnimated.vue';
 import GroupLinkButtonsComponent from '~/components/GroupLinkButtonsComponent.vue';
 export default {

@@ -20,9 +20,12 @@
 
         <!-- SECTION 2 -->
         <div class="section2">
-            <quote 
+            <quote-component
+              :quoteText="content.quoteText" 
+              :quoteAuthor="content.quoteAuthor"/>
+            <!-- <quote 
               :quoteText="content.quoteText"
-              :quoteAuthor="content.quoteAuthor" />
+              :quoteAuthor="content.quoteAuthor" /> -->
         </div>
 
     <!-- SECTION 3 -->
@@ -66,12 +69,15 @@
 </template>
 
 <script>
-import Quote from '~/components/Quote.vue';
 import Default from '~/layouts/default.vue';
+import QuoteComponent from '../components/QuoteComponent.vue';
 
 export default {
-    components: {Default, Quote },
-    name: "home",
+    components: {
+      Default,
+      QuoteComponent
+    },
+    name: "Home",
     data() {
         const content = {
             quoteText: "Culture is the arts elevated to a set of beliefs.",

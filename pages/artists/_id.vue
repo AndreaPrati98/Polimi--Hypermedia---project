@@ -4,7 +4,7 @@
             :title="artist.name"
             :subtitle="artist.date_of_birth"
             :imgUrl="artist.img" />
-        <breadcrumbs/>
+        <breadcrumbs-component/>
         <overview-component class="subheader"
             :title="overviewTitle" 
             :description="artist.description"/>
@@ -13,18 +13,19 @@
             :objList="artist.list"
             :partialPath="'/events'"/>
     </section>
+
 </template>
 
 <script>
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue'
-import Breadcrumbs from '~/components/utilities-components/Breadcrumbs.vue'
+import BreadcrumbsComponent from '~/components/utilities-components/BreadcrumbsComponent.vue'
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue'
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue'
 export default {
     name: "ArtistPage",
     components: {
     TheHeaderWithTitle,
-    Breadcrumbs,
+    BreadcrumbsComponent,
     OverviewComponent,
     CardsAdditionalContentensGroup,
 },

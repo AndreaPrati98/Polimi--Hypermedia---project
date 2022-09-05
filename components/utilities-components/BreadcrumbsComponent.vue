@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "breadcrumbs",
+  name: "Breadcrumbs",
   
   computed: {
     crumbs() {

@@ -4,7 +4,7 @@
             :header="data.name"
             :subheader="data.address"
             :imgUrl="data.img"/>
-        <breadcrumbs/>
+        <breadcrumbs-component/>
         <overview-component class="subheader"
             :title="overviewTitle"
             :description="data.description" />
@@ -19,16 +19,16 @@
 import TheHeaderRoundedImage from '~/components/headers/TheHeaderRoundedImage.vue'
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue'
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue'
-import Breadcrumbs from '~/components/utilities-components/breadcrumbs'
+import BreadcrumbsComponent from '~/components/utilities-components/BreadcrumbsComponent.vue'
 
 export default {
     name: "PlacePage",
     components: {
-        TheHeaderRoundedImage,
-        OverviewComponent,
-        CardsAdditionalContentensGroup,
-        Breadcrumbs,
-    },
+    TheHeaderRoundedImage,
+    OverviewComponent,
+    CardsAdditionalContentensGroup,
+    BreadcrumbsComponent
+},
     data() {
         return {
             overviewTitle: "Short description",
