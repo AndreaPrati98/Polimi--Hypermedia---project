@@ -4,13 +4,9 @@
             :title="event.name"
             :imgUrl="event.img"/>
         <breadcrumbs/>
-
-        <!-- SECTION 1 -->
         <overview-component class="subheader"
             title="OVERVIEW" 
             :description="event.description"/>
-        
-        <!-- SECTION 2-->
         <div class="info-section">
             <div class="col" v-for="(element, index) of tabItems"
                 :key="`col-${index}`">
@@ -26,13 +22,11 @@
             </div>
         </div>
 
-        <!-- SECTION 3-->
         <cards-additional-contentens-group class="transition-links" 
             :title="text" 
             :objList="event.list"
             :partialPath="'/artists'"/>
         
-        <!-- SECTION 4-->
         <div class="group-links">
             <group-link-buttons-component :text="`See all events`" :listOfButtons="listOfGroupLinkButtons.slice(3,4)" />
             <group-link-buttons-component :text="`See all events by`" :listOfButtons="listOfGroupLinkButtons.slice(0,3)" />
@@ -122,8 +116,7 @@ export default {
 </script>
 
 <style scoped>
-
-
+/** Maybe make this into another component... */
 .col {
   display: flex;
   flex-direction: column;
@@ -150,7 +143,12 @@ export default {
   margin-bottom: 10%;
 
 }
+/** END OF MAYBE MAKE THIS ANOTHER COMPONENT */
 
+.subheader {
+    background-color: var(--palette-soft-blue);
+    color: var(--text-color-light);
+}
 
 .info-section {
     background-color: var(--palette-green-dark);
@@ -161,7 +159,13 @@ export default {
     gap: 10%;
     padding: 7% 0;
     justify-content: space-around;
+}
 
+.transition-links {
+    padding: 5% 0;
+    background-color: var(--palette-blue);
+    color: var(--text-color-light);
+    width: 100%;
 }
 
 .group-links {
@@ -171,18 +175,6 @@ export default {
     padding: 10%;
     width: 100%;
     height:100%;
-}
-
-.subheader {
-    background-color: var(--palette-soft-blue);
-    color: var(--text-color-light);
-}
-
-.transition-links {
-    padding: 5% 0;
-    background-color: var(--palette-blue);
-    color: var(--text-color-light);
-    width: 100%;
 }
 
 </style>

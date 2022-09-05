@@ -1,18 +1,18 @@
 <template>
-    <div class="all-sections">
+    <section class="all-sections">
         <the-header-with-title class="header"
             :title="artist.name"
             :subtitle="artist.date_of_birth"
             :imgUrl="artist.img" />
         <breadcrumbs/>
-        <overview-component class="overview-component subheader"
+        <overview-component class="subheader"
             :title="overviewTitle" 
             :description="artist.description"/>
-        <cards-additional-contentens-group class="events-component transition-links"
+        <cards-additional-contentens-group class="transition-links"
             :title="'Other events related to this artist'"
             :objList="artist.list"
             :partialPath="'/events'"/>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -62,6 +62,8 @@ export default {
 <style scoped>
     .subheader{
         background-color: var(--palette-soft-blue);
+        color: var(--text-color-light);
+
     }
 
     .transition-links {

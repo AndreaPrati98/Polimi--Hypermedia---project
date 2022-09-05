@@ -1,10 +1,10 @@
 <template>
-    <div class="all-sections">
+    <section class="all-sections">
         <the-header-rounded-image class="header"
             :header="data.name"
             :subheader="data.address"
             :imgUrl="data.img"/>
-        <breadcrumbs class="breadcrumbs"/>
+        <breadcrumbs/>
         <overview-component class="subheader"
             :title="overviewTitle"
             :description="data.description" />
@@ -12,7 +12,7 @@
             :title="cardGroupTitle"
             :objList="data.list"
             :partialPath="cardGroupPartialPath"/>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -65,6 +65,7 @@ export default {
     }
     .subheader {
         background-color: var(--palette-green-dark);
+        color: var(--palette-blue);
     }
     .transition-links {
         padding: 5% 0;
