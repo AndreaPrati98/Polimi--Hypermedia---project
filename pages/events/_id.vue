@@ -1,26 +1,21 @@
 <template>
-    <section class="section">
+    <section class="all-sections">
         <the-header-with-title class="header"
             :title="event.name"
             :imgUrl="event.img"/>
         <breadcrumbs/>
-        <div class="all-sections">
-            <!-- SECTION 1 -->
-            <div class="section1">
-                <overview-component class="overview-component"
-                    title="OVERVIEW" 
-                    :description="event.description"/>
-            </div>
-            <!-- SECTION 2-->
-            <div class="section2">
-                <div class="col" v-for="(element, index) of tabItems"
+
+        <!-- SECTION 1 -->
+        <overview-component class="subheader"
+            title="OVERVIEW" 
+            :description="event.description"/>
+        
+        <!-- SECTION 2-->
+        <div class="info-section">
+            <div class="col" v-for="(element, index) of tabItems"
                 :key="`col-${index}`">
-                <div class="title">
-                    {{element.tabTitle}}
-                </div>
-                <div class="content">
-                    {{element.tabContent}}
-                </div>
+                <div class="title">{{element.tabTitle}}</div>
+                <div class="content">{{element.tabContent}}</div>
 
                 <div v-if="element.link" class="text-button-container">
                     <button-animated class="ticket-button"
@@ -28,77 +23,39 @@
                     :btnDst="element.link.destination" 
                     :isNuxtLink="element.link.nuxtLink" />
                 </div>
-                </div>
             </div>
-            <!-- SECTION 3-->
-            <div class="section3">
-                <cards-additional-contentens-group class="events-comp" 
-                    :title="text" 
-                    :objList="event.list"
-                    :partialPath="'/artists'"/>
-            </div>
-            <!-- SECTION 4-->
-            <div class="section4">
-                <div class="seeall">
-                    <div class="see-text">
-                        <p>See all other events</p>
-                    </div>
-                    <div class="allButtons">
-                        <div class="button-box">
-                            <div class="all-other-btn">
-                                <button-standard class="group-btn" 
-                                    btnText="All Events" 
-                                    btnDst="/events" 
-                                    btnTextSize="20px" 
-                                    :btnBkgdColor="`var(--palette-red-dark)`" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </div>
 
-                <div class="seeallby">
-                    <div class="see-text">
-                        <p>See all events by...</p>
-                    </div>
-                    <div class="allButtons">
-                        <div class="button-box">
-                            <div v-for="(element, index) of listOfArts"
-                                :key="`art-button-${index}`">
-                                <button-standard class="group-btn"
-                                    :btnText="element.name" 
-                                    :btnDst="`/events?filter=${element.id}&filterName=${element.name}`" 
-                                    btnTextSize="20px" 
-                                    :btnBkgdColor="`var(--palette-red-dark)`"/>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div>
+        <!-- SECTION 3-->
+        <cards-additional-contentens-group class="transition-links" 
+            :title="text" 
+            :objList="event.list"
+            :partialPath="'/artists'"/>
+        
+        <!-- SECTION 4-->
+        <div class="group-links">
+            <group-link-buttons-component :text="`See all events`" :listOfButtons="listOfGroupLinkButtons.slice(3,4)" />
+            <group-link-buttons-component :text="`See all events by`" :listOfButtons="listOfGroupLinkButtons.slice(0,3)" />
+        </div>
     </section>
 </template>
 
 <script>
-import InfoComponent from '~/components/information-components/MultipleShortOverviewContainer.vue';
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue';
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
-import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue';
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue';
-import ButtonStandard from '~/components/utilities-components/ButtonStandard.vue';
 import Breadcrumbs from '~/components/utilities-components/Breadcrumbs.vue';
 import ButtonAnimated from '~/components/utilities-components/ButtonAnimated.vue';
+import GroupLinkButtonsComponent from '~/components/GroupLinkButtonsComponent.vue';
 export default {
     name: "artist-page",
     components: {
-        InfoComponent,
         TheHeaderWithTitle,
         OverviewComponent,
-        MultipleShortOverviewContainer,
         CardsAdditionalContentensGroup,
-        ButtonStandard,
         ButtonAnimated,
-        Breadcrumbs
+        Breadcrumbs,
+        GroupLinkButtonsComponent
     },
     async asyncData({ route, $axios }) {
         const  { id }  = route.params
@@ -139,15 +96,26 @@ export default {
             }
         ]
 
+
+
         return {
             event,
             tabItems,
-            listOfArts: listOfArts.data,
+            listOfGroupLinkButtons: [
+                {btnText: listOfArts.data[0].name, btnDst:"/events?filter=" + listOfArts.data[0].id + "&filterName=" + listOfArts.data[0].name},
+                {btnText: listOfArts.data[1].name, btnDst:"/events?filter=" + listOfArts.data[1].id + "&filterName=" + listOfArts.data[1].name},
+                {btnText: listOfArts.data[2].name, btnDst:"/events?filter=" + listOfArts.data[2].id + "&filterName=" + listOfArts.data[2].name},
+                {btnText: "All Events", btnDst:"/events"},
+            ],
         }
     },
     data() {
         return{
             text: "Artists Performing at this Event",
+            
+
+
+            
         }
     },
 }
@@ -162,7 +130,6 @@ export default {
   width: 25%;
   
 }
-
 .title {
   font-family: "Oswald";
   font-size: 3rem;
@@ -172,7 +139,6 @@ export default {
   color: var(--palette-red-dark);
 
 }
-
 .content {
   font-family: "Poppins";
   font-weight: 200;
@@ -185,57 +151,19 @@ export default {
 }
 
 
-
-
-.see-text {
-    font-family: "Poppins";
-    font-size: 36px;
-    font-weight: 200;
-    padding-bottom: 5%;
-    color: var(--palette-blue)
-}
-.allButtons {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-}
-.button-box {
-    width:80%;
-    max-width: 180px;
-}
-.group-btn {
-    width:100%;
-    margin:5% 0;
-}
-.all-sections {
-    display: flex;
-    flex-direction: column;
-}
-.section1 {
-    background-color: var(--palette-soft-blue);
-    color: var(--text-color-light);
-    display: flex; 
-    flex-direction: row;
-    flex-wrap: wrap 
-    
-}
-.section2 {
+.info-section {
     background-color: var(--palette-green-dark);
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     gap: 10%;
     padding: 7% 0;
     justify-content: space-around;
 
 }
-.section3 {
-    background-color: var(--palette-blue);
-    color: var(--text-color-light);
-}
-.section4 {
+
+.group-links {
     background-color: var(--palette-green);
     display: flex;
     flex-direction: row;
@@ -243,27 +171,17 @@ export default {
     width: 100%;
     height:100%;
 }
-.seeall {
-    width: 50%;
-    text-align: center;
-}
-.seeallby{
-    border-left: 4px solid var(--palette-red-dark);
-    display: flex;
-    flex-direction: column;
-    padding-left:20px;
-    width: 50%;
-    justify-self: center;
-    text-align: center;
-}
-.overview-component {
-    padding: 10% 15%;
+
+.subheader {
+    background-color: var(--palette-soft-blue);
+    color: var(--text-color-light);
 }
 
-.events-comp {
-    padding: 5%;
-}
-.image {
+.transition-links {
+    padding: 5% 0;
+    background-color: var(--palette-blue);
+    color: var(--text-color-light);
     width: 100%;
 }
+
 </style>
