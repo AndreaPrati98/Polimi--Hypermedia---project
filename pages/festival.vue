@@ -2,7 +2,7 @@
 
 <section class="all-sections">
   <!-- SECTION 1 -->
-  <div class="section1" id="section-1">
+  <div class="section1 heading" id="section-1">
         <vertical-bars />
         <div class="heading">
           Festival Information
@@ -10,14 +10,12 @@
   </div>
   <breadcrumbs/>
   <!-- SECTION 2 -->
-  <div class="section2" id="section-2">
-    <overview-component class="overview-component"
+    <overview-component class="overview-component section2 subheading" id="section-2"
       :title="content.overviewTitle"
       :description="content.overviewDescription"/>
-  </div>
 
   <!-- SECTION 3 -->
-  <div class="section3" id="section-3">
+  <div class="info-section section3" id="section-3">
 
     <div class="col" v-for="(element, index) of tabItems"
       :key="`col-${index}`">
@@ -35,15 +33,13 @@
           :isNuxtLink="element.link.nuxtLink" />
       </div>
     </div>
-    
   </div>
 
   <!-- SECTION 4 -->
-  <div class="section4" id="section-4">
+  <div class="history-section" id="section-4">
     <h2 class="history-title"> History </h2>
     <timeline
       :items="timelineItems" />
-
   </div>
 </section>
 </template>
@@ -164,7 +160,7 @@ scroll-behavior: smooth;
   background-color: var(--palette-soft-blue);
 }
 
-.section3 {
+.info-section {
   width: 100%;
   background-color: var(--palette-green-dark);
   display: flex;
@@ -175,23 +171,19 @@ scroll-behavior: smooth;
   
 }
 
-.section4 {
+.history-section {
   width: 100%;
   background-color: var(--palette-blue);
 }
 
-.overview-component {
+/*.overview-component {
   padding: 5% 15%;
-}
+}*/
 
 .info-component {
   padding: 5% 15%;
 }
   
-.picture {
-  overflow: hidden;
-  object-fit: cover;
-}
 
 
 .col {
