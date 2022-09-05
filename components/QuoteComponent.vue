@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    name: "Quote",
+    name: "QuoteComponent",
     props: {
         quoteText: {
             type: String,
