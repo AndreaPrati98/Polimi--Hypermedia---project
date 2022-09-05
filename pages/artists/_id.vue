@@ -63,7 +63,6 @@ export default {
     .subheader{
         background-color: var(--palette-soft-blue);
         color: var(--text-color-light);
-
     }
 
     .transition-links {
