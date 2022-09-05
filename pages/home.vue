@@ -66,7 +66,7 @@
 </template>
 
 <script>
-import Quote from '~/components/Quote.vue';
+import Quote from '~/components/Quote'
 import Default from '~/layouts/default.vue';
 
 export default {
