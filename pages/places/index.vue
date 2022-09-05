@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="all-sections">
         <the-header-with-title class="header"
             :title="pageData.title" 
             :subtitle="pageData.shortDescription" 
@@ -7,7 +7,7 @@
         <breadcrumbs/>
         <subheader-component class="subheader"
             :content="pageData.description" />
-        <grid-component 
+        <grid-component class="grid-container" 
             :partialPath="'places'"
             :objList="allPlaces"/>
     </section>

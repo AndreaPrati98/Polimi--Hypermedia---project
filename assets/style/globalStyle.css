@@ -7,6 +7,40 @@
     margin: 0;
 }
 
+/* Proposed global styles: */
+ .header {
+
+ }
+
+
+
+ .all-sections{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+ /* *
+  * This is spacing we want in the _[events, places, artists]__/index green text with the red 
+  * box. should we put this spacing in the component itself or here in global style?
+  *
+  */
+ .subheader {
+    padding: 10% 7%;
+ }
+
+
+
+
+
+
+
+
+/*********************************/
+
+
+
 html {
     scroll-behavior: smooth;
     font-family: 'Open Sans', 'Oswald', 'Poppins', 'Tiro Devanagari Hindi', sans-serif; /* 400 800 */

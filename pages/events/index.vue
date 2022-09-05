@@ -1,28 +1,22 @@
 <template>
-    <section class=all-sections>
+    <section class="all-sections">
         <the-header-with-title class="header"
             :title="pageData.title" 
             :subtitle="pageData.shortDescription" 
             :imgUrl="pageData.imgUrl" />
         <breadcrumbs/>
-        <div class="section1">
-            <subheader-component class="subheader"
-                :content="pageData.description" />
-        </div>
-        <div class="section-dropdown">
+        <subheader-component class="subheader"
+            :content="pageData.description" />
+        <div class="dropdown-bar">
             <p>Filter: </p>
             <dropdown-component 
                 :formName="'type of art selector'"
                 :objList="allTypeOfArts" 
                 @change="filterObjList"/>
         </div>
-        
-        <div class="section2">
-            <grid-component 
-                :partialPath="'events'"
-                :objList="eventsToDisplay"/>
-        
-        </div>
+        <grid-component 
+            :partialPath="'events'"
+            :objList="eventsToDisplay"/>  
     </section>
 </template>
 
@@ -100,20 +94,8 @@ export default {
 </script>
 
 <style scoped>
-    .subheader {
-        padding: 10% 7%;
-    }
-
-    .section1, .section2{
-        width: 100%;
-        height: 100%;
-    }
-
-    .section2 {
-        background-color: var(--palette-light-cyan);
-    }
     
-    .section-dropdown {
+    .dropdown-bar {
         display: flex;
         flex-direction: row;
         background-color: var(--palette-red-dark);
@@ -122,10 +104,8 @@ export default {
         align-items: center;
         font-family: "Poppins";
         font-weight: 200;
+        color: var(--text-color-light)
     }
   
-    .all-sections{
-        display: flex;
-        flex-direction: column;
-    }
+
 </style>

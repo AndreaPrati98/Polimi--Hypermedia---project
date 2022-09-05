@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="all-sections">
         <the-header-with-title class="header"
             :title="pageData.title" 
             :subtitle="pageData.shortDescription" 
@@ -49,13 +49,11 @@ export default {
 </script>
 
 <style scoped>
-
+/*
   .card-container {
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-
     justify-items: center;
-
     grid-auto-flow: dense;
   }
 
@@ -65,13 +63,14 @@ export default {
   }
 
   .box:nth-child(4n + 1) {
-    /* border: 2px solid blue; */
+    /* border: 2px solid blue; 
     grid-column: 1 / span 2;
   }
 
   .box:nth-child(4n + 3) {
-    /* border: 2px solid green; */
+    /* border: 2px solid green; 
     grid-column: 2 / span 2;
   }
+  */
 
 </style>
