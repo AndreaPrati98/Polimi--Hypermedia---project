@@ -44,12 +44,13 @@ export default {
     margin-bottom: 8%;
     margin-top: 4%;
     line-height: 19.2px;
+    font-size: 40px;
 }
 
 .text {
     font-family: "Poppins";
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 300;
+    font-size: 16px;
     letter-spacing: 0.28px;
     line-height: 25px;
     padding-right: 5%;

@@ -130,6 +130,7 @@ export default {
 
     .subheader {
         background-color: var(--palette-soft-blue);
+        color: var(--text-color-light);
     }
 
     /** Styling of the text describing events, artists, and places */
