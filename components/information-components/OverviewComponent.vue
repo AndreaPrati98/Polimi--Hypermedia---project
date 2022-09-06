@@ -40,9 +40,9 @@ export default {
     font-family: "Poppins";
     font-weight: 600;
     text-align: center;
-    letter-spacing: 1.6px;
-    margin-bottom: 3rem;
-    margin-top: 2rem;
+    letter-spacing: 1.8px;
+    margin-bottom: 8%;
+    margin-top: 4%;
     line-height: 19.2px;
 }
 
@@ -64,7 +64,6 @@ export default {
 
 h3 {
     width: 100%;
-    font-size: 25px;
     font-family: "Poppins";
     font-weight: 600;
     margin-bottom: 50px;
