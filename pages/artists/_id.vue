@@ -32,7 +32,7 @@ export default {
     data() {
         // everything we see here has to be retrieved from the DB
         return {
-            overviewTitle: "Short description",
+            overviewTitle: "Description",
             eventsRelatedTitle: "This artist is involved...",
 
         }
