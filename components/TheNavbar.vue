@@ -136,7 +136,7 @@ export default {
         margin: 5px auto;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
-        background-color: var(--text-color-dark);
+        background-color: seashell;
     }
 
     /* for inner elements */
