@@ -31,7 +31,10 @@ export default {
         crumbs.push({ param: "Home", path: "/" })
 
         params.forEach((param, index) => {
+            // here i remove the '?' and the '#' symbols 
             param = param.split("?")
+            param = param[0].split("#")
+            
             path = `${path}/${param[0]}`;
             const match = this.$router.match(path);
 
