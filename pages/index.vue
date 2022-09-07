@@ -122,16 +122,8 @@ export default {
         object-fit: cover;
     }
 
-    @media (max-width:1400px) {
-        img {
-            display: none;
-        }
-    }
-    @media (max-width: 400px) {
-        .themes-intro {
-            font-size: 50px;
-        }
-    }
+    
+    
 
     .subheader {
         background-color: var(--palette-soft-blue);
@@ -143,6 +135,7 @@ export default {
         width: 100%;
         background-color: var(--palette-green);
         display: flex;
+        align-items: center;
         flex-direction: column;
         padding: 5% 5%;
     }
@@ -180,5 +173,29 @@ export default {
         text-align: left;
         justify-content: left;
         line-height: 26px;
+    }
+
+    @media (max-width:1400px) {
+        img {
+            display: none;
+        }
+    }
+    @media (max-width: 400px) {
+        .themes-intro {
+            font-size: 50px;
+        }
+        .scroller > span {
+            font-size: 50px;
+        }
+    }
+    @media (max-width: 300px) {
+        .themes-intro {
+            font-size: 30px;
+        }
+
+        .scroller > span {
+            font-size: 30px;
+        }
+
     }
 </style>

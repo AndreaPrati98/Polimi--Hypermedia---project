@@ -4,7 +4,7 @@
             <h3>{{quoteText}}</h3>
             <!--h3>Culture is the arts elevated to a set of beliefs.</h3-->
         </div>
-        <p class="quote-by">{{quoteAuthor}}</p>
+        <p class="quote-by">~{{quoteAuthor}}</p>
         <!--p class="quote-by">Thomas Wolfe</p-->
     </div>
 </template>
@@ -35,7 +35,7 @@ export default {
     position: relative; 
     max-width: 400px; 
     margin: 0 auto; 
-    padding-left: 0.4em; 
+    /* padding-left: 0.4em;  */
 }
 
 .quote h3 {
@@ -83,7 +83,12 @@ export default {
 }
 
 @media (max-width: 600px) {
-    
+    .quote h3{
+        font-size: 30px;
+    }
+    .quote h3::before, .quote h3::after {
+        display: none;
+    }
 }
 
 </style>

@@ -76,7 +76,10 @@ export default {
         flex-direction: column;
         width: 40%;
         border-right: 0.5px solid var(--palette-red-dark);
-        text-align: center
+        text-align: center;
+    }
+    .all-links a {
+        margin: 2px;
     }
 
     .name, .all-links p{
