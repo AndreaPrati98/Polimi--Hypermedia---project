@@ -1,5 +1,8 @@
 <template>
     <div class="all-columns">
+        <h2>{{title}}</h2>
+        <p>{{subtitle}}</p>
+        
         <!-- PHONE -->
         <div class="col">
             <div class="icon-container">
@@ -52,7 +55,13 @@
 
 <script>
 export default {
-
+    name: "contactPage",
+    data() {
+        return {
+            title: "Here our contacts",
+            subtitle: "Feel free to catch us"
+        }
+    }
 }
 </script>
 
@@ -113,6 +122,13 @@ export default {
     font-family: "Open Sans";
     letter-spacing: 1.2px;
     line-height: 2em;
+}
+
+@media (max-width: 850px) {
+    .all-columns {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 </style>
 
