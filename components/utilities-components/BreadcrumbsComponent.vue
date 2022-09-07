@@ -76,14 +76,17 @@ export default {
     }
 
 
-    @media (max-width: 350px) {
+    @media (max-width: 425px) {
+      .crumbs {
+        flex-direction: column;
+      }
       .crumbs li {
         font-size: 15px;
       }    
       
       button {
         font-size: 15px;
-        content: '';
+        text-align: center;
       }
     }
 
