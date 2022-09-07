@@ -1,10 +1,10 @@
 <template>
     <section>
         <h3 class="title">{{title}}</h3>
-        <div class="wrapper">
+        <div class="wrapper" v-if="objList.length">
             <button @click="slideLeft">&lt;</button>
             <div class="wrapper-box">
-                <div class="box">
+                <div class="box" >
                     <card-additional-content class="item" v-for="(element, index) of objList" :id="`item${index}`"
                         :key="`card-${index}`"
                         :title="element.name"
@@ -15,6 +15,9 @@
                 </div>
             </div>
             <button @click="slideRight">&gt;</button>
+        </div>
+        <div v-else class="empty-case">
+            <h4> No one... </h4>
         </div>
     </section>
 </template>
@@ -112,6 +115,10 @@ button:hover {
     border: 0.5px solid grey;
     transition: .7s ease;
 
+}
+
+.empty-case {
+    text-align: center;
 }
 
 </style>
