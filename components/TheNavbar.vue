@@ -177,7 +177,7 @@ export default {
 
     /* Responsiveness */
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 900px) {
 
         /* hides our nav-menu by setting position: fixed; left: -100%; */
         .nav-menu {
@@ -195,11 +195,16 @@ export default {
             margin: .8rem 0 ;
         }
 
+        .nav-logo {
+            font-size: 20px;
+        }
+
         /* .nav-menu.active which sets left: 0; on the nav-menu */
         .nav-menu.active {
             left: 0;
             padding: 0;
             margin: 0;
+            z-index: 10;
         }
 
         .nav-item {

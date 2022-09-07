@@ -122,9 +122,14 @@ export default {
         object-fit: cover;
     }
 
-    @media (max-width:600px) {
+    @media (max-width:1400px) {
         img {
             display: none;
+        }
+    }
+    @media (max-width: 400px) {
+        .themes-intro {
+            font-size: 50px;
         }
     }
 

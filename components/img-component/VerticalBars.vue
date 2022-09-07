@@ -69,11 +69,6 @@ export default {
 }
 
 
-.item:hover::before {
-      opacity: 1;
-}
-    
-
 
 .bar-title {
   position: absolute;
@@ -81,9 +76,14 @@ export default {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: 1;
-    font-family: "Oswald";
-    font-size: 1.728rem;
-    line-height: 0;
+  font-family: "Oswald";
+  font-size: 1.728rem;
+  line-height: 0;
+}
+
+.bar-title a {
+  background-color: black;
+  padding: 10px;
 }
 
 .image {
@@ -94,8 +94,11 @@ export default {
   background-size: cover;
   background-position: center center;
   transition: filter 0.5s ease;
-  filter: grayscale(100%);
+  filter: grayscale(100%);  
+}
 
+.item:hover::before {
+      opacity: 1;
 }
 
 

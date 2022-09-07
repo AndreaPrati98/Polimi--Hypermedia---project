@@ -30,11 +30,10 @@ export default {
 
 
 .quote {
-border:none;
-font-family:Georgia, "Times New Roman", Times, serif;
-margin-bottom:-30px;
-position: relative; 
-max-width: 400px; 
+    border:none;
+    font-family:Georgia, "Times New Roman", Times, serif;
+    position: relative; 
+    max-width: 400px; 
     margin: 0 auto; 
     padding-left: 0.4em; 
 }
@@ -83,5 +82,8 @@ max-width: 400px;
     padding: 5%;
 }
 
+@media (max-width: 600px) {
+    
+}
 
 </style>
