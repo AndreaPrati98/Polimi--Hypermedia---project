@@ -2,7 +2,7 @@
   <header class="header">
         <nav class="navbar">
             <div>
-                <nuxt-link to="/home" class="nav-logo" >
+                <nuxt-link to="/" class="nav-logo" >
                     Festival d'Avignon
                 </nuxt-link>
             </div>
@@ -35,7 +35,7 @@ export default {
         headerList: [
             {
             name: 'Home',
-            path: '/home',
+            path: '/',
             },
             {
             name: 'Festival',
