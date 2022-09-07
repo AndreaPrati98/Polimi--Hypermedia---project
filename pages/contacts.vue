@@ -1,5 +1,7 @@
 <template>
     <div class="all-columns">
+        <h2>data.title</h2>
+        <p>data.subtitle</p>
         <!-- PHONE -->
         <div class="col">
             <div class="icon-container">
@@ -52,6 +54,8 @@
 
 <script>
 export default {
+    name: "contacts-page",
+    
 
 }
 </script>

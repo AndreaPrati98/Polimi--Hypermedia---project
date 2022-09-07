@@ -1,15 +1,15 @@
 <template>
     <div class="vertical-bars-container">
         <div class="item">
-            <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
-            <div class="bar-title"> <a href="#section-2">Overview</a> </div>
+                <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"><div class="gradient"></div></div>
+                <div class="bar-title"> <a href="#section-2">Overview</a> </div>
         </div>
         <div class="item">
-            <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
+            <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"><div class="gradient"></div></div>
             <div class="bar-title"><a href="#section-3">Information</a></div>
         </div>
         <div class="item">
-            <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
+            <div class="image" style="background-image: url(https://placeimg.com/801/801/nature)"><div class="gradient"></div></div>
             <div class="bar-title"><a href="#section-4">History</a></div>
         </div>
     </div>
@@ -36,14 +36,21 @@ export default {
 }
 
 
-.item {
-  position: relative;
-  width: 33%;
-  height: inherit;
-  min-height: 600px;
-  color: #fff;
-  overflow: hidden;
-  transition: width 0.5s ease;}
+    .item {
+        position: relative;
+        width: 33%;
+        height: inherit;
+        min-height: 600px;
+        color: #fff;
+        overflow: hidden;
+        transition: width 0.5s ease;
+    }
+    .gradient {
+        background-image: radial-gradient(60% 20%, black 10%, transparent 95%);
+        width:  100%;
+        height: 100%;
+
+    }
   
 .item:before, .item:after {
     content: '';
@@ -73,18 +80,24 @@ export default {
       opacity: 1;
 }
     
+    a {
+        /*background-color: black;*/
+        padding: 7%;
+        border-radius: 5px;
+
+    }
 
 
-.bar-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  z-index: 1;
-    font-family: "Oswald";
-    font-size: 1.728rem;
-    line-height: 0;
-}
+    .bar-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 1;
+        font-family: "Oswald";
+        font-size: 1.728rem;
+        line-height: 0;
+    }
 
 .image {
   position: absolute;
