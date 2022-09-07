@@ -193,6 +193,7 @@ export default {
             box-shadow:
                 0 10px 27px rgba(0, 0, 0, 0.05);
             margin: .8rem 0 ;
+            z-index: 10;
         }
 
         .nav-logo {
