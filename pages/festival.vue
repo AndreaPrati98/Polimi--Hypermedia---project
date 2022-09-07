@@ -14,20 +14,7 @@
             :description="content.overviewDescription"/>
 
         <!-- SECTION 3 -->
-        <div class="info-section" id="section-3">
-            <div class="col" v-for="(element, index) of tabItems"
-                :key="`col-${index}`">
-                <div class="title">{{element.tabTitle}}</div>
-                <div class="content">{{element.tabContent}}</div>
-
-                <div v-if="element.link" class="text-button-container">
-                    <button-animated class="ticket-button"
-                        :btnText="element.link.button" 
-                        :btnDst="element.link.destination" 
-                        :isNuxtLink="element.link.nuxtLink" />
-                </div>
-            </div>
-        </div>
+       <simple-info-component id="section-3" :tabItems="tabItems"/>
 
         <!-- SECTION 4 -->
         <div class="history-section" id="section-4">
@@ -47,6 +34,7 @@ import VerticalBars from '~/components/img-component/VerticalBars.vue';
 import ButtonAnimated from '~/components/utilities-components/ButtonAnimated.vue'
 import Timeline from '~/components/timeline.vue'
 import BreadcrumbsComponent from '~/components/utilities-components/BreadcrumbsComponent.vue';
+import SimpleInfoComponent from '~/components/information-components/SimpleInfoComponent.vue';
 
 export default {
     components: {
@@ -60,7 +48,8 @@ export default {
     Timeline,
     ButtonAnimated,
     Timeline,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    SimpleInfoComponent
 },
     name: "festival-intro",
     data() {
@@ -142,17 +131,6 @@ export default {
         color: var(--text-color-light);
     }
 
-    .info-section {
-        display: flex;
-        flex-direction: row;
-
-        width: 100%;
-        background-color: var(--palette-green-dark);
-        gap: 10%;
-        padding: 7% 2%;
-        justify-content: space-around;
-    }
-
     .history-section {
         width: 100%;
         background-color: var(--palette-blue);
@@ -167,32 +145,6 @@ export default {
         padding: 4% 0% 6% 0%;
     }
 
-    .col {
-        display: flex;
-        flex-direction: column;
-        width: 25%;
-    }
-
-    .title {
-        font-family: "Oswald";
-        font-size: 3rem;
-        font-weight: 600;
-        text-align: center;
-        margin-bottom: 20%;
-        color: var(--palette-red-dark);
-    }
-
-    .content {
-        font-family: "Poppins";
-        font-weight: 200;
-        line-height: 1.7rem;
-        font-size: 24px;
-        letter-spacing: 1.2px;
-        color: var(--palette-blue);
-        margin-bottom: 10%;
-        text-align: center;
-    }
-
     @media (max-width: 1250px) {
         .header {
             flex-direction: column-reverse;
@@ -201,19 +153,5 @@ export default {
         }
     }
 
-    @media (max-width: 1100px) {
-        .info-section {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .col {
-            margin: 10px 0;
-            width: 50%;
-        }
-
-        .title {
-            margin-bottom: 5%;
-        }
-    }
+    
 </style>

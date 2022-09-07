@@ -8,7 +8,8 @@
         <overview-component class="subheader"
             title="OVERVIEW" 
             :description="event.description"/>
-        <div class="info-section">
+        <simple-info-component :tabItems="tabItems"/>
+            <!-- <div class="info-section">
             <div class="col" v-for="(element, index) of tabItems"
                 :key="`col-${index}`">
                 <div class="title">{{element.tabTitle}}</div>
@@ -21,7 +22,7 @@
                     :isNuxtLink="element.link.nuxtLink" />
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <cards-additional-contentens-group class="transition-links" 
             :title="text" 
@@ -42,6 +43,7 @@ import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContente
 import Breadcrumbs from '~/components/utilities-components/BreadcrumbsComponent.vue';
 import ButtonAnimated from '~/components/utilities-components/ButtonAnimated.vue';
 import GroupLinkButtonsComponent from '~/components/GroupLinkButtonsComponent.vue';
+import SimpleInfoComponent from '~/components/information-components/SimpleInfoComponent.vue';
 export default {
     name: "artist-page",
     components: {
@@ -50,7 +52,8 @@ export default {
         CardsAdditionalContentensGroup,
         ButtonAnimated,
         Breadcrumbs,
-        GroupLinkButtonsComponent
+        GroupLinkButtonsComponent,
+        SimpleInfoComponent
     },
     async asyncData({ route, $axios }) {
         const  { id }  = route.params
@@ -86,7 +89,6 @@ export default {
             },
             {
                 tabTitle: "Place",
-
                 tabContent: "This event will take place at " + event.place.name,
                 link: {button: "See More", destination:"/places/" + event.place.id, nuxtLink:true}, 
             }
