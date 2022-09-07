@@ -196,6 +196,10 @@ export default {
             z-index: 10;
         }
 
+        .nav-link:hover {
+            color: var(--palette-blue);
+        }
+
         .nav-logo {
             font-size: 20px;
         }
