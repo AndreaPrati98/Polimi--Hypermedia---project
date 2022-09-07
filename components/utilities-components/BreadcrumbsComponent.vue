@@ -76,4 +76,15 @@ export default {
     }
 
 
+    @media (max-width: 350px) {
+      .crumbs li {
+        font-size: 15px;
+      }    
+      
+      button {
+        font-size: 15px;
+        content: '';
+      }
+    }
+
 </style>
