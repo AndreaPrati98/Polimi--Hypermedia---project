@@ -39,7 +39,6 @@
 import TheHeaderWithTitle from '~/components/headers/TheHeaderWithTitle.vue';
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
 import CardsAdditionalContentensGroup from '~/components/CardsAdditionalContentensGroup.vue';
-import ButtonStandard from '~/components/utilities-components/ButtonStandard.vue';
 import Breadcrumbs from '~/components/utilities-components/BreadcrumbsComponent.vue';
 import ButtonAnimated from '~/components/utilities-components/ButtonAnimated.vue';
 import GroupLinkButtonsComponent from '~/components/GroupLinkButtonsComponent.vue';
@@ -55,7 +54,7 @@ export default {
     },
     async asyncData({ route, $axios }) {
         const  { id }  = route.params
-        
+        // let's retrieve the events and the type of arts 
         var [event, listOfArts]  = await Promise.all([
                 $axios.get('/api/events/' + id),
                 $axios.get('/api/typeofart'),
@@ -63,6 +62,7 @@ export default {
 
         event = event.data
 
+        // here we want to make the format of the artist list usable on the components
         const list = []
         for(const element of event.artists) {
             list.push({
@@ -74,7 +74,7 @@ export default {
         }
         event.list = list
 
-
+        // here we build the copy of the page with the event info
         const tabItems  = [
             {
                 tabTitle: "Date",
@@ -91,9 +91,9 @@ export default {
                 link: {button: "See More", destination:"/places/" + event.place.id, nuxtLink:true}, 
             }
         ]
+        // here we retrieve thetype of art (name) by using the ID
         const indexForData = event.typeOfArtId - 1
         event.typeOfArtName = listOfArts.data[indexForData].name
-
 
         return {
             event,
