@@ -14,7 +14,7 @@
             :partialPath="cardGroupPartialPath"/>
 
         <group-link-buttons-component class="group-links"
-            :text="`See all events`"
+            :text="`See all places`"
             :listOfButtons="groupLinks" />
     </section>
 </template>
@@ -40,7 +40,7 @@ export default {
             overviewTitle: "Short description",
             cardGroupTitle: "Events hosted here",
             cardGroupPartialPath: "/events",
-            groupLinks: [{btnText:"ALL EVENTS", btnDst: "/events"}]
+            groupLinks: [{btnText:"ALL PLACES", btnDst: "/places"}]
             
         }
     },
