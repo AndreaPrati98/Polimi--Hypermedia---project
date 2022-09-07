@@ -44,6 +44,7 @@ export default {
 
         grid-template: repeat(3, 1fr) / repeat(3, 1fr);
         grid-auto-flow: dense;
+        padding-bottom: 20px;
     }
 
     .box {
@@ -63,6 +64,12 @@ export default {
     .box:nth-child(4n + 3) {
         /* border: 2px solid green; */
         grid-column: 2 / span 2;
+    }
+
+    @media (max-width: 425px) {
+        .box {
+            text-align: center;
+        }
     }
 
 </style>
