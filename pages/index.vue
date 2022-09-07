@@ -175,7 +175,7 @@ export default {
         line-height: 26px;
     }
 
-    @media (max-width:1400px) {
+    @media (max-width:600px) {
         img {
             display: none;
         }
