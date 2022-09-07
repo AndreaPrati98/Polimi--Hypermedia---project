@@ -197,7 +197,7 @@ export default {
         }
 
         .nav-link:hover {
-            color: var(--palette-blue);
+            color: var(--palette-blue, black);
         }
 
         .nav-logo {
