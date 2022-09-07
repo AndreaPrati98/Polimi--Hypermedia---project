@@ -3,7 +3,9 @@
         <!-- SECTION 1 -->
         <div class="header" id="section-1">
             <vertical-bars />
-            <div class="header-text">Festival Information</div>
+            <div class="header-text">
+                <h1>Festival Information</h1>
+            </div>
         </div>
         <breadcrumbs/>
         <!-- SECTION 2 -->
@@ -87,20 +89,20 @@ export default {
 
 
       const timelineItems = [
-        {date: "July 1947", text: "The Festival d'Avignon was founded by Jean Vilar."},
-        {date: "1947-1963", text: "For 17 years, the Festival reflected the work of one man, one team, one location and thus was the embodiment of one spirit. Jean Vilar's aim was to attract a young captivated and fresh audience, through a type of theatre that was different from what could be seen in Paris at that time."},
-        {date: "March 1967", text: "Cloître des Carmes was added to the festival as an official venue."},
-        {date: "February 1968", text: "Cloître des Célestins was added to the festival as another official venue."},
-        {date: "Janaury 1966", text: "Vilar opened the festival to other artistic disciplines and added Maurice Béjart and his 'Twentieth Century Ballet' to the itinerary of events."},
-        {date: "May 1967", text: "Cinema made its first appearance at the Festival d'Avignon with an avant-première of Jean-Luc Godard La Chinoise in the Cour d'honneur."},
-        {date: "June 1968", text: "Vilar opened the festival to other artistic disciplines and added Maurice Béjart and his 'Twentieth Century Ballet' to the itinerary of events."},
-        {date: "July 1969", text: "Vilar introduced musical theatre with Orden, directed by Jorge Lavelli."},
-        {date: "November 1971", text: "Vilar passed away in 1971, after a heart attack. Paul Puaux, with his years of experience at the Festival, was well-placed to continue Vilar's work."},
-        {date: "April 1985", text: "In 1985, Alain Crombecque, former artistic director of the Festival d'Automne (Autumn Festival of Paris), took charge of the festival d'Avignon and remained for eight years."},
-        {date: "Janaury 1966", text: "Vilar opened the festival to other artistic disciplines and added Maurice Béjart and his 'Twentieth Century Ballet' to the itinerary of events."},
-        {date: "June 2003", text: "In 2003, the Festival was cancelled due to strikes which affected live performances all over France."},
-        {date: "September 2013", text: "Olivier Py became the first artist to be appointed director of the Festival d’Avignon since Jean Vilar."},
-]
+            {date: "July 1947", text: "The Festival d'Avignon was founded by Jean Vilar."},
+            {date: "1947-1963", text: "For 17 years, the Festival reflected the work of one man, one team, one location and thus was the embodiment of one spirit. Jean Vilar's aim was to attract a young captivated and fresh audience, through a type of theatre that was different from what could be seen in Paris at that time."},
+            {date: "March 1967", text: "Cloître des Carmes was added to the festival as an official venue."},
+            {date: "February 1968", text: "Cloître des Célestins was added to the festival as another official venue."},
+            {date: "Janaury 1966", text: "Vilar opened the festival to other artistic disciplines and added Maurice Béjart and his 'Twentieth Century Ballet' to the itinerary of events."},
+            {date: "May 1967", text: "Cinema made its first appearance at the Festival d'Avignon with an avant-première of Jean-Luc Godard La Chinoise in the Cour d'honneur."},
+            {date: "June 1968", text: "Vilar opened the festival to other artistic disciplines and added Maurice Béjart and his 'Twentieth Century Ballet' to the itinerary of events."},
+            {date: "July 1969", text: "Vilar introduced musical theatre with Orden, directed by Jorge Lavelli."},
+            {date: "November 1971", text: "Vilar passed away in 1971, after a heart attack. Paul Puaux, with his years of experience at the Festival, was well-placed to continue Vilar's work."},
+            {date: "April 1985", text: "In 1985, Alain Crombecque, former artistic director of the Festival d'Automne (Autumn Festival of Paris), took charge of the festival d'Avignon and remained for eight years."},
+            {date: "Janaury 1966", text: "Vilar opened the festival to other artistic disciplines and added Maurice Béjart and his 'Twentieth Century Ballet' to the itinerary of events."},
+            {date: "June 2003", text: "In 2003, the Festival was cancelled due to strikes which affected live performances all over France."},
+            {date: "September 2013", text: "Olivier Py became the first artist to be appointed director of the Festival d’Avignon since Jean Vilar."},
+        ]
       return {
         content: content,
         tabItems: tabItems,
@@ -118,11 +120,15 @@ export default {
         color: var(--palette-blue);
 
         margin-right: 10px;
-
+        
         font-family: "Poppins";
         font-weight: 800;
         font-size: 60px;
         text-align: right;
+    }
+
+    .header-text {
+        padding: 15px;
     }
 
     .all-sections {
@@ -135,12 +141,13 @@ export default {
     }
 
     .info-section {
-        width: 100%;
-        background-color: var(--palette-green-dark);
         display: flex;
         flex-direction: row;
+
+        width: 100%;
+        background-color: var(--palette-green-dark);
         gap: 10%;
-        padding: 7% 0;
+        padding: 7% 2%;
         justify-content: space-around;
     }
 
@@ -181,5 +188,30 @@ export default {
         letter-spacing: 1.2px;
         color: var(--palette-blue);
         margin-bottom: 10%;
+        text-align: center;
+    }
+
+    @media (max-width: 1250px) {
+        .header {
+            flex-direction: column-reverse;
+            font-size: 4vw;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 1100px) {
+        .info-section {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .col {
+            margin: 10px 0;
+            width: 50%;
+        }
+
+        .title {
+            margin-bottom: 5%;
+        }
     }
 </style>

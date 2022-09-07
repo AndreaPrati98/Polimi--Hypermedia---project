@@ -30,7 +30,6 @@ export default {
 /* VERTICAL BARS EXAMPLE */
 .vertical-bars-container{
     display: flex;
-    flex-direction: row;
     width: 70%;
     height: 100%;
 }
@@ -61,14 +60,12 @@ export default {
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%);
     z-index: 1;
     opacity: 0;
-    /*transition: opacity 0.5s ease, transform 0.5s ease;*/
+    transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
 .item:hover {
     width: 40% !important;
 }
-
-
 
 .bar-title {
   position: absolute;
@@ -101,5 +98,31 @@ export default {
       opacity: 1;
 }
 
+@media (max-width: 1250px) {
+  .vertical-bars-container {
+    justify-content: center;
+    width: 100%;
+  }
+  .bar-title {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .vertical-bars-container {
+    flex-direction: column;
+  }
+  .item {
+    width: 100%;
+  }
+
+  .bar-title {
+    font-size: 15vw;
+  }
+
+  .item:hover {
+    width: 100% !important;
+  }
+}
 
 </style>
