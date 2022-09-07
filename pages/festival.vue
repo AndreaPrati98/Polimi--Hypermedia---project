@@ -1,51 +1,39 @@
 <template>
-
-<section class="all-sections">
-  <!-- SECTION 1 -->
-  <div class="section1" id="section-1">
-        <vertical-bars />
-        <div class="heading">
-          Festival Information
+    <section class="all-sections">
+        <!-- SECTION 1 -->
+        <div class="header" id="section-1">
+            <vertical-bars />
+            <div class="header-text">Festival Information</div>
         </div>
-  </div>
-  <breadcrumbs/>
-  <!-- SECTION 2 -->
-  <div class="section2" id="section-2">
-    <overview-component class="overview-component"
-      :title="content.overviewTitle"
-      :description="content.overviewDescription"/>
-  </div>
+        <breadcrumbs/>
+        <!-- SECTION 2 -->
+        <overview-component class="subheader" id="section-2"
+            :title="content.overviewTitle"
+            :description="content.overviewDescription"/>
 
-  <!-- SECTION 3 -->
-  <div class="section3" id="section-3">
+        <!-- SECTION 3 -->
+        <div class="info-section" id="section-3">
+            <div class="col" v-for="(element, index) of tabItems"
+                :key="`col-${index}`">
+                <div class="title">{{element.tabTitle}}</div>
+                <div class="content">{{element.tabContent}}</div>
 
-    <div class="col" v-for="(element, index) of tabItems"
-      :key="`col-${index}`">
-      <div class="title">
-        {{element.tabTitle}}
-      </div>
-      <div class="content">
-        {{element.tabContent}}
-      </div>
+                <div v-if="element.link" class="text-button-container">
+                    <button-animated class="ticket-button"
+                        :btnText="element.link.button" 
+                        :btnDst="element.link.destination" 
+                        :isNuxtLink="element.link.nuxtLink" />
+                </div>
+            </div>
+        </div>
 
-      <div v-if="element.link" class="text-button-container">
-        <button-animated class="ticket-button"
-          :btnText="element.link.button" 
-          :btnDst="element.link.destination" 
-          :isNuxtLink="element.link.nuxtLink" />
-      </div>
-    </div>
-    
-  </div>
-
-  <!-- SECTION 4 -->
-  <div class="section4" id="section-4">
-    <h2 class="history-title"> History </h2>
-    <timeline
-      :items="timelineItems" />
-
-  </div>
-</section>
+        <!-- SECTION 4 -->
+        <div class="history-section" id="section-4">
+            <h2 class="history-title"> History </h2>
+            <timeline
+                :items="timelineItems" />
+        </div>
+    </section>
 </template>
 
 <script>
@@ -124,102 +112,74 @@ export default {
 
 <style scoped>
 
-.heading {
-  display: flex;
-  font-family: "Poppins";
-  font-weight: 800;
-  font-size: 3rem;
-  text-align: right;
-  margin-right: 10px;
-  color: var(--palette-blue);
-}
+    .header {
+        flex-direction: row;
+        background-color: var(--palette-green-dark);
+        color: var(--palette-blue);
 
+        margin-right: 10px;
 
+        font-family: "Poppins";
+        font-weight: 800;
+        font-size: 60px;
+        text-align: right;
+    }
 
-.history-title {
-  text-align: center;
-  font-family: "Poppins";
-  font-weight: 700;
-  color: var(--text-color-light);
-  font-size: 45px;
-  padding: 4% 0% 6% 0%;
-}
+    .all-sections {
+        scroll-behavior: smooth;
+    }
 
+    .subheader {
+        background-color: var(--palette-soft-blue);
+        color: var(--text-color-light);
+    }
 
-.all-sections {
-display: flex;
-flex-direction: column;
-scroll-behavior: smooth;
-}
+    .info-section {
+        width: 100%;
+        background-color: var(--palette-green-dark);
+        display: flex;
+        flex-direction: row;
+        gap: 10%;
+        padding: 7% 0;
+        justify-content: space-around;
+    }
 
-.section1 {
-  width: 100%;
-  height: 90vh;
-  background-color: var(--palette-green-dark);
-  display: flex;
-}
+    .history-section {
+        width: 100%;
+        background-color: var(--palette-blue);
+    }
 
-.section2 {
-  width: 100%;
-  background-color: var(--palette-soft-blue);
-}
+    .history-title {
+        text-align: center;
+        font-family: "Poppins";
+        font-weight: 700;
+        color: var(--text-color-light);
+        font-size: 45px;
+        padding: 4% 0% 6% 0%;
+    }
 
-.section3 {
-  width: 100%;
-  background-color: var(--palette-green-dark);
-  display: flex;
-  flex-direction: row;
-  gap: 10%;
-  padding: 7% 0;
-  justify-content: space-around;
-  
-}
+    .col {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+    }
 
-.section4 {
-  width: 100%;
-  background-color: var(--palette-blue);
-}
+    .title {
+        font-family: "Oswald";
+        font-size: 3rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 20%;
+        color: var(--palette-red-dark);
+    }
 
-.overview-component {
-  padding: 5% 15%;
-}
-
-.info-component {
-  padding: 5% 15%;
-}
-  
-.picture {
-  overflow: hidden;
-  object-fit: cover;
-}
-
-
-.col {
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-  
-}
-
-.title {
-  font-family: "Oswald";
-  font-size: 3rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 20%;
-  color: var(--palette-red-dark);
-
-}
-
-.content {
-  font-family: "Poppins";
-  font-weight: 200;
-  line-height: 1.7rem;
-  font-size: 24px;
-  letter-spacing: 1.2px;
-  color: var(--palette-blue);
-  margin-bottom: 10%;
-
-}
-
+    .content {
+        font-family: "Poppins";
+        font-weight: 200;
+        line-height: 1.7rem;
+        font-size: 24px;
+        letter-spacing: 1.2px;
+        color: var(--palette-blue);
+        margin-bottom: 10%;
+    }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div class="all-sections">
         <!-- SECTION 1 -->
-        <div class="section1">
+        <div class="header">
             <div class="scroll-header">
                 <h1 class="themes-intro">Welcome to
                     <div class="scroller">
@@ -17,54 +17,30 @@
             </div>
             <img class="picture" src="https://www.culturelink.fr/sites/default/files/2020-03/cour%20d'honneur.jpg"/>
         </div>
-
         <!-- SECTION 2 -->
-        <div class="section2">
-            <quote-component
-              :quoteText="content.quoteText" 
-              :quoteAuthor="content.quoteAuthor"/>
-            <!-- <quote 
-              :quoteText="content.quoteText"
-              :quoteAuthor="content.quoteAuthor" /> -->
+        <quote-component class="subheader"
+            :quoteText="content.quoteText" 
+            :quoteAuthor="content.quoteAuthor"/>
+        <!-- SECTION 3 -->
+        <div class="all-descriptions">
+            <div class="description">
+                <h2 class="title">Events</h2>
+                <p class="text">{{content.textEvents}}
+                <br />
+                <nuxt-link class="text" to="events/">&lt;&lt;See More&gt;&gt; </nuxt-link></p>
+            </div>
+            <div class="description">
+                <h2 class="title">Artists</h2>
+                <p class="text">{{content.textArtists}}
+                <br />
+                <nuxt-link class="text" to="artists/">&lt;&lt;See More&gt;&gt; </nuxt-link></p>
+            </div><div class="description">
+                <h2 class="title">Places</h2>
+                <p class="text">{{content.textPlaces}}
+                <br />
+                <nuxt-link class="text" to="places/">&lt;&lt;See More&gt;&gt; </nuxt-link></p>
+            </div>
         </div>
-
-    <!-- SECTION 3 -->
-  <div class="section3">
-    <div class="all-descriptions">
-      <div class="description">
-        <div class="title">
-          <h2>Events</h2>
-        </div>
-        <div class="text">
-          <p>{{content.textEvents}}</p>
-          <br />
-          <nuxt-link to="events/">&lt;&lt;See More&gt;&gt; </nuxt-link>
-        </div>        
-      </div>
-
-      <div class="description">
-        <div class="title">
-          <h2>Artists</h2>
-        </div>
-        <div class="text">
-          <p>{{content.textArtists}}</p>
-          <br />
-          <nuxt-link to="artists/">&lt;&lt;See More&gt;&gt; </nuxt-link>
-        </div>        
-      </div>
-
-      <div class="description">
-        <div class="title">
-          <h2>Places</h2>
-        </div>
-        <div class="text">
-          <p>{{content.textPlaces}}</p>
-          <br />
-          <nuxt-link to="places/">&lt;&lt;See More&gt;&gt; </nuxt-link>
-        </div>        
-      </div>
-    </div>
-  </div>
     </div>
 </template>
 
@@ -95,138 +71,109 @@ export default {
 
 <style scoped>
 
-/* Header title with cycling words */
-.scroll-header {
-  width: 55ch;
-  margin-left: 0%;
-  border-left: 50px solid var(--palette-red-dark);
-}
+    /* Styling for header title with cycling words */
+    .scroll-header {
+        width: 55ch;
+        margin-left: 0%;
+        border-left: 50px solid var(--palette-red-dark);
+    }
 
-.themes-intro {
-  font-family: "Poppins";
-  font-weight: 700;
-  font-size: 70px;
-  color: var(--palette-blue)
-  
-}
-/* Scroller styling */
-.scroller {
-  height: 1.2em;
-  line-height: 1.2em;
-  position: relative;
-  overflow: hidden;
-  max-width: 400px;
-  margin-top: 0.5em;
-  color: var(--palette-red-dark);
-}
-.scroller > span {
-  position: absolute;
-  top: 0;
-  animation: slide 7s infinite;
-  font-family: "Oswald";
-  font-size: 70px;
-  font-weight: 500;
-  
-}
-@keyframes slide {
-  0% {
-    top: 0;
-  }
-  20% {
-    top: -1.2em;
-  }
-  40% {
-    top: -2.4em;
-  }
-  60% {
-    top: -3.6em;
-  }
-  80%{
-    top: -4.8em;
-  }
-}
-
-
-.all-sections {
-display: flex;
-width: 100%;
-flex-direction: column;
-}
-
-.section1 {
-  width: 100%;
-  height: 100vh;
-  background-color: var(--palette-green-dark);
-  display: flex;
-  justify-content: space-between;
-}
-
-.section2 {
-  width: 100%;
-  background-color: var(--palette-soft-blue);
-}
-
-.section3 {
-  width: 100%;
-  background-color: var(--palette-green);
-  display: flex;
-  flex-direction: column;
-}
-
-
-.picture {
-  overflow: hidden;
-  object-fit: cover;
-}
-
-@media (max-width:600px) {
-  img {
-    display: none;
-  }
-}
-.all-descriptions {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.description {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
+    .themes-intro {
+        font-family: "Poppins";
+        font-weight: 700;
+        font-size: 70px;
+        color: var(--palette-blue)
+    }
     
-  align-items: center;
-  justify-content: center;
+    /* Scroller styling */
+    .scroller {
+        height: 1.2em;
+        line-height: 1.2em;
+        position: relative;
+        overflow: hidden;
+        max-width: 400px;
+        margin-top: 0.5em;
+        color: var(--palette-red-dark);
+    }
+    .scroller > span {
+        position: absolute;
+        top: 0;
+        animation: slide 7s infinite;
+        font-family: "Oswald";
+        font-size: 70px;
+        font-weight: 500;
+    }
+    @keyframes slide {
+        0%    {top: 0;}
+        20%   {top: -1.2em;}
+        40%   {top: -2.4em;}
+        60%   {top: -3.6em;}
+        80%   {top: -4.8em;}
+    }
+    /** End of scroller styling */
 
-    height: 70%;
-    width: 90%;
-    
-    padding: 5% 5%;
+    .header {
+        background-color: var(--palette-green-dark);
+        justify-content: space-between;
+    }
 
+    .picture {
+        overflow: hidden;
+        object-fit: cover;
+    }
 
-    font-family: "Poppins";
-    font-weight: 200;
-    font-size: 20px;
-    color: var(--palette-blue);
-    letter-spacing: 1.4px;
+    @media (max-width:600px) {
+        img {
+            display: none;
+        }
+    }
 
-}
+    .subheader {
+        background-color: var(--palette-soft-blue);
+        color: var(--text-color-light);
+    }
 
-.title {
-  max-width: 120px;
-  margin: 0 2%;
-  color: var(--palette-red-dark);
-}
+    /** Styling of the text describing events, artists, and places */
+    .all-descriptions {
+        width: 100%;
+        background-color: var(--palette-green);
+        display: flex;
+        flex-direction: column;
+        padding: 5% 5%;
+    }
 
-.text {
-  max-width: 800px;
-  margin: 0 2%;
-  color: var(--palette-blue);
-}
+    .description {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+        /*align-items: center;*/
+        justify-content: center;
 
+        height: 70%;
+        width: 90%;
+        padding: 2%;
 
+        font-family: "Poppins";
+        font-weight: 200;
+        font-size: 20px;
+        color: var(--palette-blue);
+        letter-spacing: 1.4px;
+    }
 
+    .title {
+        max-width: 120px;
+        margin: 0 2% 7% 2%;
+        color: var(--palette-red-dark);
+    }
 
+    .text {
+        max-width: 800px;
+        margin: 0 2%;
+        color: var(--palette-blue);
+        text-align: left;
+        justify-content: left;
+        line-height: 26px;
+    }
 </style>
