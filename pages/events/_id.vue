@@ -9,20 +9,6 @@
             title="OVERVIEW" 
             :description="event.description"/>
         <simple-info-component :tabItems="tabItems"/>
-            <!-- <div class="info-section">
-            <div class="col" v-for="(element, index) of tabItems"
-                :key="`col-${index}`">
-                <div class="title">{{element.tabTitle}}</div>
-                <div class="content">{{element.tabContent}}</div>
-
-                <div v-if="element.link" class="text-button-container">
-                    <button-animated class="ticket-button"
-                    :btnText="element.link.button" 
-                    :btnDst="element.link.destination" 
-                    :isNuxtLink="element.link.nuxtLink" />
-                </div>
-            </div>
-        </div> -->
 
         <cards-additional-contentens-group class="transition-links" 
             :title="text" 
@@ -118,48 +104,10 @@ export default {
 
 <style scoped>
 /** Maybe make this into another component... */
-.col {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 25%;
-  
-}
-.title {
-  font-family: "Oswald";
-  font-size: 3rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 20%;
-  color: var(--palette-red-dark);
-
-}
-.content {
-  font-family: "Poppins";
-  font-weight: 200;
-  line-height: 1.7rem;
-  font-size: 24px;
-  letter-spacing: 1.2px;
-  color: var(--palette-blue);
-  margin-bottom: 10%;
-
-}
-/** END OF MAYBE MAKE THIS ANOTHER COMPONENT */
 
 .subheader {
     background-color: var(--palette-soft-blue);
     color: var(--text-color-light);
-}
-
-.info-section {
-    background-color: var(--palette-green-dark);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 10%;
-    padding: 7% 0;
-    justify-content: space-around;
 }
 
 .transition-links {
@@ -172,10 +120,19 @@ export default {
 .group-links {
     background-color: var(--palette-green);
     display: flex;
-    flex-direction: row;
     padding: 10%;
     width: 100%;
     height:100%;
+}
+
+@media (max-width: 750px) {
+    .group-links {
+        flex-direction: column;
+    }
+
+    .seeall {
+        margin: 20px 0;
+    }
 }
 
 </style>
