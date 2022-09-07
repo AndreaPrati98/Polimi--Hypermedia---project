@@ -7,7 +7,7 @@
                 <h1>Festival Information</h1>
             </div>
         </div>
-        <breadcrumbs/>
+        <breadcrumbs-component/>
         <!-- SECTION 2 -->
         <overview-component class="subheader" id="section-2"
             :title="content.overviewTitle"
@@ -46,20 +46,22 @@ import Default from '~/layouts/default.vue';
 import VerticalBars from '~/components/img-component/VerticalBars.vue';
 import ButtonAnimated from '~/components/utilities-components/ButtonAnimated.vue'
 import Timeline from '~/components/timeline.vue'
+import BreadcrumbsComponent from '~/components/utilities-components/BreadcrumbsComponent.vue';
 
 export default {
-    components: { 
-      Map, 
-      TheHeaderWithImages, 
-      OverviewComponent, 
-      OverviewComponent, 
-      MultipleShortOverviewContainer, 
-      Default, 
-      VerticalBars, 
-      Timeline, 
-      ButtonAnimated, 
-      Timeline,
-    },
+    components: {
+    Map,
+    TheHeaderWithImages,
+    OverviewComponent,
+    OverviewComponent,
+    MultipleShortOverviewContainer,
+    Default,
+    VerticalBars,
+    Timeline,
+    ButtonAnimated,
+    Timeline,
+    BreadcrumbsComponent
+},
     name: "festival-intro",
     data() {
       const content = {
