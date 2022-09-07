@@ -37,7 +37,6 @@ export default {
         display: grid;
         grid-template: repeat(4, 1fr) / repeat(4, 1fr);
         height: 70vh;
-        /* border: 2px solid red; */
         overflow: hidden;
     }
 
@@ -45,9 +44,7 @@ export default {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        /* object-fit: cover;
-        object-position: 50% 50% ; */
-
+        
         width: 100%;
         
         grid-area: 1 / 1 / 5 / 5;
@@ -61,6 +58,7 @@ export default {
         align-items: center;
         color: var(--palette-blue);
         background-color: var(--palette-green);
+        padding: 10px;
     }
 
 
@@ -78,12 +76,17 @@ export default {
 
     }
 
-
-    @media only screen and (width: 1400px) {
+    @media (max-width: 600px) {
         .img {
-            background-position: right top ;
+            grid-area: 2 / 1 / 5 / 5;
+        }
+        .title-div {
+            grid-area: 1 / 1 / 2 / 5;
+            
+            text-align: center;
         }
     }
+
     
 
 </style>
