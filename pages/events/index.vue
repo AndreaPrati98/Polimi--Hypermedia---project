@@ -30,14 +30,11 @@ import BreadcrumbsComponent from '~/components/utilities-components/BreadcrumbsC
 export default {
     name: 'event-page',
     components: {
-    TheHeaderWithTitle,
-    SubheaderComponent,
-    GridComponent,
-    DropdownComponent,
-    BreadcrumbsComponent
-},
-    data() {
-        
+        TheHeaderWithTitle,
+        SubheaderComponent,
+        GridComponent,
+        DropdownComponent,
+        BreadcrumbsComponent
     },
     async asyncData({ route, $axios }) {
         // here we retrieve also type of art so that we can create the proper filter
@@ -86,6 +83,8 @@ export default {
                 this.pageData.shortDescription = "Here we are with all the upcoming events about " + filter[0].name
             } else {
                 this.eventsToDisplay = this.allEvents
+                this.pageData.title = "All Events"
+                this.pageData.shortDescription = "Here we are with all the upcoming events of the festival"
             }
         }
     }
