@@ -63,12 +63,7 @@ export default {
     border-top: var(--border-thickness, 2px) solid var(--text-color-light);
 }
 
-h3 {
-    width: 100%;
-    font-family: "Poppins";
-    font-weight: 600;
-    margin-bottom: 50px;
-    text-align: center;
-    letter-spacing: 1.2px;
+.box h3 {
+    line-height: 40px;
 }
 </style>

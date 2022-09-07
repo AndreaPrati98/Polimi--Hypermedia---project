@@ -82,18 +82,38 @@ export default {
         color: var(--text-color-light);
     }
 
-    h1 {
-        font-size: 3em;
-    }
-
-    h4 {
+    .text-wrapper h4 {
         color: var(--palette-blue);
     }
-
-
 
     .image-container, .text-container {
         margin: 0 30px;
         width: 40%;
+        font-size: 40px;
+    }
+
+    @media (max-width: 1050px) {
+        .section {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image {
+            border-radius: 0;
+            
+        }
+        .image-wrapper {
+            max-width: 100%;
+        }
+
+        .text-container {
+            margin: 10px 0;
+        }
+        .image-container, .text-container {
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+        }
+    
     }
 </style>

@@ -68,7 +68,7 @@ export default {
 
 <style scoped>
     .header {
-        height: 50vh;
+        height: 70vh;
     }
     .subheader {
         background-color: var(--palette-green-dark);
