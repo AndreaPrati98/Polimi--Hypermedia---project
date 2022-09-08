@@ -35,14 +35,21 @@ export default {
 }
 
 
-.item {
-  position: relative;
-  width: 33%;
-  height: inherit;
-  min-height: 600px;
-  color: #fff;
-  overflow: hidden;
-  transition: width 0.5s ease;}
+    .item {
+        position: relative;
+        width: 33%;
+        height: inherit;
+        min-height: 600px;
+        color: #fff;
+        overflow: hidden;
+        transition: width 0.5s ease;
+    }
+    .gradient {
+        background-image: radial-gradient(60% 20%, black 10%, transparent 95%);
+        width:  100%;
+        height: 100%;
+
+    }
   
 .item:before, .item:after {
     content: '';
