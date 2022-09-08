@@ -19,8 +19,10 @@
 
         <div class="title">Phone</div>
         <div class="text">
-          +39 847 27 284 <br />
-          Mon - Fri 8.00 - 17.00 CET
+          <p>
+            +39 847 27 284 <br />
+            Mon - Fri 8.00 - 17.00 CET
+          </p>
         </div>
       </div>
 
@@ -36,10 +38,12 @@
         </div>
         <div class="title">Email</div>
         <div class="text">
-          festival@culture.avignon.com <br />
-          Art Director: director@culture.avignon.com <br />
-          Marketing: marketing@culture.avignon.com <br />
-          City Liason: city@culture.avignon.com
+          <p>
+            festival@culture.avignon.com <br />
+            Art Director: director@culture.avignon.com <br />
+            Marketing: marketing@culture.avignon.com <br />
+            City Liason: city@culture.avignon.com
+          </p>
         </div>
       </div>
 
@@ -55,8 +59,10 @@
         </div>
         <div class="title">Mail</div>
         <div class="text">
-          Send formal requests to<br />
-          [PO BOX ADDRESS?]
+          <p>
+            Send formal requests to<br />
+            [PO BOX ADDRESS?]
+          </p>
         </div>
       </div>
     </div>
@@ -84,12 +90,24 @@ export default {
   padding: 4%;
 }
 .header {
-    
+  text-align: center;
+  background-color: var(--palette-soft-blue, rgb(75, 75, 173));
+  color: seashell;
+  padding: 20px;
+}
+.header h2 {
+  font-size: 40px;
 }
 
+.header p {
+  font-size: 30px;
+}
+
+
 .col {
-  width: 25%;
+  min-width: 25%;
   justify-content: center;
+  margin: 0 25px;
 }
 
 .icon-container {
@@ -131,10 +149,19 @@ export default {
   line-height: 2em;
 }
 
+.text p {
+  margin: 0 auto;
+  max-width: 300px;
+
+}
+
 @media (max-width: 850px) {
   .all-columns {
     flex-direction: column;
     align-items: center;
+  }
+  .col {
+    margin: 20px auto;
   }
 }
 </style>
