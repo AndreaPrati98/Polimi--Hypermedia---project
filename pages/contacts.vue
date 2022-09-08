@@ -12,7 +12,7 @@
           <div class="icon-border">
             <img
               class="icon"
-              src="http://www.clipartbest.com/cliparts/xTg/89y/xTg89yXTA.png"
+              src="//www.clipartbest.com/cliparts/xTg/89y/xTg89yXTA.png"
             />
           </div>
 
@@ -33,7 +33,7 @@
           <div class="icon-border">
             <img
               class="icon"
-              src="http://www.clipartbest.com/cliparts/9cp/LpB/9cpLpBqgi.png"
+              src="//www.clipartbest.com/cliparts/9cp/LpB/9cpLpBqgi.png"
             />
           </div>
         </div>
@@ -54,7 +54,7 @@
           <div class="icon-border">
             <img
               class="icon"
-              src="https://cdn.onlinewebfonts.com/svg/img_559756.png"
+              src="//cdn.onlinewebfonts.com/svg/img_559756.png"
             />
           </div>
         </div>
