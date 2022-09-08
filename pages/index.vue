@@ -85,7 +85,6 @@ export default {
     }
 
     .themes-intro {
-        font-family: "Poppins";
         font-weight: 700;
         font-size: 70px;
         color: var(--palette-blue)
@@ -105,7 +104,7 @@ export default {
         position: absolute;
         top: 0;
         animation: slide 7s infinite;
-        font-family: "Oswald";
+        font-family: 'Oswald';
         font-size: 70px;
         font-weight: 500;
     }
@@ -159,7 +158,6 @@ export default {
         width: 90%;
         padding: 2%;
 
-        font-family: "Poppins";
         font-weight: 200;
         font-size: 20px;
         color: var(--palette-blue);
