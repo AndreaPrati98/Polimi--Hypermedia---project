@@ -23,87 +23,82 @@ export default {
 </script>
 
 <style scoped>
-.bar-button {
-  all:unset;
-  cursor: pointer;
-}
-/* VERTICAL BARS EXAMPLE */
-.vertical-bars-container{
-    display: flex;
-    width: 70%;
-    height: 100%;
-}
+  .bar-button {
+    all:unset;
+    cursor: pointer;
+  }
+  /* VERTICAL BARS EXAMPLE */
+  .vertical-bars-container{
+      display: flex;
+      width: 70%;
+      height: 100%;
+  }
 
-
-    .item {
-        position: relative;
-        width: 33%;
-        height: inherit;
-        min-height: 600px;
-        color: #fff;
-        overflow: hidden;
-        transition: width 0.5s ease;
-    }
-    .gradient {
-        background-image: radial-gradient(60% 20%, black 10%, transparent 95%);
-        width:  100%;
-        height: 100%;
-
-    }
+  .item {
+      position: relative;
+      width: 33%;
+      height: inherit;
+      min-height: 600px;
+      color: #fff;
+      overflow: hidden;
+      transition: width 0.5s ease;
+  }
   
-.item:before, .item:after {
+  .item:before, .item:after {
     content: '';
     position: absolute;
     left: 0; top: 0;
     width: 100%; height: 100%;
   }
 
-.item:after {
+  .item:after {
     opacity: 1;
     transition: opacity 0.5s ease;
   }
 
-.item:before {
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%);
+  .item:before {
+    /* background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%); */
+    background: linear-gradient(to top, black, transparent 75%);
     z-index: 1;
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.5s ease;
+  
   }
 
-.item:hover {
+  .item:hover {
     width: 40% !important;
-}
+  }
 
-.bar-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  z-index: 1;
-  font-family: "Oswald";
-  font-size: 1.728rem;
-  line-height: 0;
-}
+  .bar-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+    font-family: "Oswald";
+    font-size: 1.728rem;
+    line-height: 0;
+  }
 
-.bar-title a {
-  background-color: black;
-  padding: 10px;
-}
+  .bar-title a {
+    background-color: black;
+    padding: 10px;
+  }
 
-.image {
-  position: absolute;
-  width: 100%; 
-  height: 100%;
-  top: 0; left: 0;
-  background-size: cover;
-  background-position: center center;
-  transition: filter 0.5s ease;
-  filter: grayscale(100%);  
-}
+  .image {
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    top: 0; left: 0;
+    background-size: cover;
+    background-position: center center;
+    transition: filter 0.5s ease;
+    filter: grayscale(100%);  
+  }
 
-.item:hover::before {
-      opacity: 1;
-}
+  .item:hover::before {
+    opacity: 1;
+  }
 
 @media (max-width: 1250px) {
   .vertical-bars-container {
