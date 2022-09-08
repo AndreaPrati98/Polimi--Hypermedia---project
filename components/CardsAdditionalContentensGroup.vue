@@ -103,19 +103,19 @@ export default {
   margin:25px;
 }
 
-button {
-  all: unset;
-  height: 320px;
-  padding: 5px 20px;
-  background-color: inherit;
-  cursor:pointer;
-}
+    button {
+    all: unset;
+    height: 320px;
+    padding: 5px 20px;
+    background-color: inherit;
+    cursor:pointer;
+    }
 
-button:hover {
-    border: 0.5px solid grey;
-    transition: .7s ease;
+    button:hover {
+        border: 0.5px solid grey;
+        transition: .7s ease;
 
-}
+    }
 
 .empty-case {
     text-align: center;
