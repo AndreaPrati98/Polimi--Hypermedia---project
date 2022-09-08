@@ -106,7 +106,11 @@ export default {
 <style scoped>
 
     .header {
-        flex-direction: row;
+
+        width: 100%;
+        height: 100%;
+        display: flex;
+
         background-color: var(--palette-green-dark);
         color: var(--palette-blue);
 

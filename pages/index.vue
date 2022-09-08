@@ -71,6 +71,12 @@ export default {
 
 <style scoped>
 
+    .header {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
     /* Styling for header title with cycling words */
     .scroll-header {
         width: 55ch;
