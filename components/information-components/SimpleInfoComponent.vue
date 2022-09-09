@@ -17,7 +17,9 @@
 </template>
 
 <script>
+import ButtonAnimated from '../utilities-components/ButtonAnimated.vue'
     export default {
+        components: { ButtonAnimated },
         name: "SimpleInformation",
         props: {
             tabItems: {

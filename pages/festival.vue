@@ -28,10 +28,7 @@
 <script>
 import TheHeaderWithImages from '~/components/headers/TheHeaderWithImages.vue';
 import OverviewComponent from '~/components/information-components/OverviewComponent.vue';
-import MultipleShortOverviewContainer from '~/components/information-components/MultipleShortOverviewContainer.vue';
-import Default from '~/layouts/default.vue';
 import VerticalBars from '~/components/img-component/VerticalBars.vue';
-import ButtonAnimated from '~/components/utilities-components/ButtonAnimated.vue'
 import Timeline from '~/components/timeline.vue'
 import BreadcrumbsComponent from '~/components/utilities-components/BreadcrumbsComponent.vue';
 import SimpleInfoComponent from '~/components/information-components/SimpleInfoComponent.vue';
@@ -39,15 +36,9 @@ import SimpleInfoComponent from '~/components/information-components/SimpleInfoC
 export default {
     name: "FestivalPage",
     components: {
-        Map,
         TheHeaderWithImages,
         OverviewComponent,
-        OverviewComponent,
-        MultipleShortOverviewContainer,
-        Default,
         VerticalBars,
-        Timeline,
-        ButtonAnimated,
         Timeline,
         BreadcrumbsComponent,
         SimpleInfoComponent
