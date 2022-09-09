@@ -95,16 +95,27 @@ export default {
   padding: 8px 12px;
 }
 
-.card:hover img,
 .card:focus-within img {
   margin-top: -80px;
 }
 
-.card:hover h3,
 .card:focus-within h3 {
   padding: 8px 12px 0;
 }
 .button-std {
   margin-top: 20px;
 }
+
+@media (hover: hover) {
+
+  .card:hover h3{
+    padding: 8px 12px 0;
+  }
+  .card:hover img{
+    margin-top: -80px;
+
+  }
+  
+}
+
 </style>
