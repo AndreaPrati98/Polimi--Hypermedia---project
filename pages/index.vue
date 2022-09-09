@@ -3,14 +3,13 @@
         <!-- SECTION 1 -->
         <div class="header">
             <div class="scroll-header">
-                <h1 class="themes-intro">Welcome to
+                <h1 class="themes-intro">{{content.pageTitle}}
                     <div class="scroller">
                         <span>
-                        Culture<br />
-                        Art<br />
-                        Ambition<br />
-                        Bravery<br />
-                        Color<br />
+                            <span v-for="(element, index) of content.catchyWords"
+                                :key="`word-${index}`">
+                                {{element}}<br/>
+                            </span>
                         </span>
                     </div>
                 </h1>
@@ -19,26 +18,18 @@
         </div>
         <!-- SECTION 2 -->
         <quote-component class="subheader"
-            :quoteText="content.quoteText" 
-            :quoteAuthor="content.quoteAuthor"/>
+            :quoteText="content.quote.text" 
+            :quoteAuthor="content.quote.author"/>
         <!-- SECTION 3 -->
         <div class="all-descriptions">
-            <div class="description">
-                <h2 class="title">Events</h2>
-                <p class="text">{{content.textEvents}}
-                <br />
-                <nuxt-link class="text" to="events/">&lt;&lt;See More&gt;&gt; </nuxt-link></p>
-            </div>
-            <div class="description">
-                <h2 class="title">Artists</h2>
-                <p class="text">{{content.textArtists}}
-                <br />
-                <nuxt-link class="text" to="artists/">&lt;&lt;See More&gt;&gt; </nuxt-link></p>
-            </div><div class="description">
-                <h2 class="title">Places</h2>
-                <p class="text">{{content.textPlaces}}
-                <br />
-                <nuxt-link class="text" to="places/">&lt;&lt;See More&gt;&gt; </nuxt-link></p>
+            <div v-for="(element, index) of content.descriptions"
+                :key="`desription-${index}`"
+                class="description">
+                <h2 class="title">{{element.title}}</h2>
+                <p class="text">
+                    {{element.text}}<br>
+                    <nuxt-link class="text" :to="element.page">&lt;&lt;See More&gt;&gt;</nuxt-link>
+                </p>
             </div>
         </div>
     </div>
@@ -53,17 +44,41 @@ export default {
       Default,
       QuoteComponent
     },
-    name: "Home",
+    name: "HomePage",
     data() {
         const content = {
-            quoteText: "Culture is the arts elevated to a set of beliefs.",
-            quoteAuthor: "Thomas Wolfe",
-            textEvents: "The Festival d'Avignon started with the idea to immerse audiences into the arts. Each year events are curated to excite the public about the arts for generations. About 80% of the performances during the Festival are having thier French priemiere at the Festival.",
-            textArtists: "The Festival is a mecca for artists. Firstly, artists work with the Festival directors in organizing the Festival each year. The Festival also organizes Theorem, an association of theatres and festivals seeking to produce and promote young artists from countries in Central and Eastern Europe. The Festival also supports the International Centre for Creative Research (CIRCA). It is a residence for artists where are held exhibitions and concerts and, it also welcomes an event called 'Rencontres Internationales' (International Encounters) each summer during the Festival. Today, the Festival features international renowned as well as budding creatives including solo choreographers, spoken word performers, music groups, string quartets, dancers, playwright directors, opera singers, and improv actors.",
-            textPlaces: "The Festival has been accumulating venues since it's inception. Today more than 5 venues help bring the festival to life each year. Each venue hosts a varying number of occupants: one of our largest venues, has drawn historical crowds upwards of 30,000 spectators, whereas some more intimate shows can bring together crowds as small as 5 for a more personal experience. ",
+            quote: {
+                text: "Culture is the arts elevated to a set of beliefs.",
+                author: "Thomas Wolfe",
+            },
+            descriptions: [
+                {
+                    title: "Events",
+                    text: "The Festival d'Avignon started with the idea to immerse audiences into the arts. Each year events are curated to excite the public about the arts for generations. About 80% of the performances during the Festival are having thier French priemiere at the Festival.",
+                    page: "events/",
+                },
+                {
+                    title: "Artists",
+                    text: "The Festival is a mecca for artists. Firstly, artists work with the Festival directors in organizing the Festival each year. The Festival also organizes Theorem, an association of theatres and festivals seeking to produce and promote young artists from countries in Central and Eastern Europe. The Festival also supports the International Centre for Creative Research (CIRCA). It is a residence for artists where are held exhibitions and concerts and, it also welcomes an event called 'Rencontres Internationales' (International Encounters) each summer during the Festival. Today, the Festival features international renowned as well as budding creatives including solo choreographers, spoken word performers, music groups, string quartets, dancers, playwright directors, opera singers, and improv actors.", 
+                    page: "artists/",
+                },
+                {
+                    title: "Places",
+                    text: "The Festival has been accumulating venues since it's inception. Today more than 5 venues help bring the festival to life each year. Each venue hosts a varying number of occupants: one of our largest venues, has drawn historical crowds upwards of 30,000 spectators, whereas some more intimate shows can bring together crowds as small as 5 for a more personal experience. ",
+                    page: "places/",
+                }
+            ],
+            pageTitle: "Welcome to",
+            catchyWords: [
+                "Culture",
+                "Art",
+                "Ambition",
+                "Bravery",
+                "Color",
+            ],
         }
         return {
-            content:content,
+            content,
         }
     },
 }
