@@ -18,11 +18,10 @@
 
         </div>
 
-        <div class="title">Phone</div>
+        <div class="title">{{phoneInfo.title}}</div>
         <div class="text">
           <p>
-            +39 847 27 284 <br />
-            Mon - Fri 8.00 - 17.00 CET
+            {{phoneInfo.text}}
           </p>
         </div>
       </div>
@@ -40,10 +39,7 @@
         <div class="title">Email</div>
         <div class="text">
           <p>
-            festival@culture.avignon.com <br />
-            Art Director: director@culture.avignon.com <br />
-            Marketing: marketing@culture.avignon.com <br />
-            City Liason: city@culture.avignon.com
+            {{emailInfo.text}}
           </p>
         </div>
       </div>
@@ -58,11 +54,10 @@
             />
           </div>
         </div>
-        <div class="title">Mail</div>
+        <div class="title">{{mailInfo.title}}</div>
         <div class="text">
           <p>
-            Send formal requests to<br />
-            [PO BOX ADDRESS?]
+            {{mailInfo.text}}
           </p>
         </div>
       </div>
@@ -77,6 +72,18 @@ export default {
     return {
       title: "Here our contacts",
       subtitle: "Feel free to catch us",
+      phoneInfo: {
+        title: "Phone",
+        text: "+39 847 27 284 \n Mon - Fri 8.00 - 17.00 CET",
+      },
+      emailInfo: {
+        title: "Email",
+        text: "festival@culture.avignon.com \n Art Director: director@culture.avignon.com \n Marketing: marketing@culture.avignon.com \n City Liason: city@culture.avignon.com",
+      },
+      mailInfo: {
+        title: "Mail",
+        text: "Send formal requests to \n [PO BOX ADDRESS?]",
+      }
     };
   },
 };
@@ -148,6 +155,7 @@ export default {
   font-family: "Open Sans";
   letter-spacing: 1.2px;
   line-height: 2em;
+  white-space: pre-line;
 }
 
 .text p {
