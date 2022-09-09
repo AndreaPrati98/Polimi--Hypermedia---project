@@ -81,7 +81,7 @@ export default {
     },
     created() {
         
-        // this piece of code 
+        // this piece of code is used to access the static data of the page and manipulate them in case of a query in the URL
         if(!this.isEmptyQuery && this.filterQuery.id !== undefined) {
             this.eventsToDisplay = this.allEvents.filter(el => (el.typeOfArtId === (+this.filterQuery.id)))
             console.log(this.filterQuery.id);
