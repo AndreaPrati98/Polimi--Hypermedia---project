@@ -62,10 +62,6 @@ export default {
         transition: transform .3s ease-in;
     }
 
-    .img:hover {
-        transform: scale(1.06);
-    }
-
     .txt-wrapper {
         display: flex;
         justify-content: center;
@@ -79,11 +75,16 @@ export default {
                     background-color .3s ease-out,
                         
     }
-
     .txt-wrapper:hover {
         backdrop-filter: grayscale(100%) contrast(1.3);
-        background-color: rgba(255, 255, 255, 0.4);
-        
+        background-color: rgba(255, 255, 255, 0.4);            
+    }
+
+    @media (hover: hover) {
+        .img:hover {
+            transform: scale(1.06);
+        }
+
     }
 
     .txt {
