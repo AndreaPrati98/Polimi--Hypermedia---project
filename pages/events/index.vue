@@ -7,6 +7,7 @@
         <breadcrumbs-component/>
         <subheader-component class="subheader"
             :content="pageData.description" />
+
         <div class="dropdown-bar">
             <p>Filter: </p>
             <dropdown-component 
@@ -36,6 +37,15 @@ export default {
         DropdownComponent,
         BreadcrumbsComponent
     },
+    data() {
+        const pageData = {
+            title: "All the Events",
+            shortDescription: "Here we are with all the upcoming events of the festival",
+            description: "The programme includes shows, but also readings, exhibitions, films, and debates, which are so many gateways into the worlds of the artists and intellectuals invited to the Festival. Every evening, there is at least one show première, making Avignon a place of true creation and adventure for artists and spectators alike.",
+            imgUrl: "https://cdn.pixabay.com/photo/2015/05/29/19/18/crowd-789652_1280.jpg",
+        }
+        return { pageData }
+    },
     async asyncData({ route, $axios }) {
         // here we retrieve also type of art so that we can create the proper filter
         const  [events, typeOfArts]  = await Promise.all([
@@ -43,13 +53,6 @@ export default {
                 $axios.get('/api/typeofart'),
                 ])
         
-        const pageData = {
-            title: "All the Events",
-            shortDescription: "Here we are with all the upcoming events of the festival",
-            description: "The programme includes shows, but also readings, exhibitions, films, and debates, which are so many gateways into the worlds of the artists and intellectuals invited to the Festival. Every evening, there is at least one show première, making Avignon a place of true creation and adventure for artists and spectators alike.",
-            imgUrl: "https://cdn.pixabay.com/photo/2015/05/29/19/18/crowd-789652_1280.jpg",
-        }
-
         const result = {
             allEvents: events.data,
             eventsToDisplay: events.data,
@@ -57,35 +60,54 @@ export default {
 
         // check if route.query is empty or not
         const isEmptyQuery = Object.keys(route.query).length === 0
-        let typeOfArtFilter
+        // if the route has some query, filter the events
+        let filterQuery = {
+            id: undefined,
+            name: undefined,
+        }
+        
         if (!isEmptyQuery) {
-            typeOfArtFilter = route.query.filter
-            result.eventsToDisplay = result.allEvents.filter(el => (el.typeOfArtId === (+typeOfArtFilter)))
-            pageData.title = "Events about " + route.query.filterName
-            pageData.shortDescription += " about " + route.query.filterName
+            filterQuery.id = route.query.filter
+            filterQuery.name = route.query.filterName
         } 
 
         return {
             allEvents: result.allEvents,
             eventsToDisplay: result.eventsToDisplay,
             allTypeOfArts: typeOfArts.data,
-            pageData,
+            filterQuery,
+            isEmptyQuery,
+        }
+    },
+    created() {
+        
+        // this piece of code 
+        if(!this.isEmptyQuery && this.filterQuery.id !== undefined) {
+            this.eventsToDisplay = this.allEvents.filter(el => (el.typeOfArtId === (+this.filterQuery.id)))
+            console.log(this.filterQuery.id);
+            this.pageData.title = "Events about " + this.filterQuery.name
+            this.pageData.shortDescription = "Here we are with all the upcoming events about " + this.filterQuery.name
         }
     },
     methods: {
         filterObjList(art_id) {
             // let's filter over the type of art Id
-            var filter
             if(art_id !== "All") {
                 this.eventsToDisplay = this.allEvents.filter(el => (el.typeOfArtId === (art_id)))
-                filter = this.allTypeOfArts.filter(el => (el.id === art_id))
-                this.pageData.title = "Events about " + filter[0].name
-                this.pageData.shortDescription = "Here we are with all the upcoming events about " + filter[0].name
+                const localFilter = this.allTypeOfArts.filter(el => (el.id === art_id))
+                const newTitle = "Events about " + localFilter[0].name
+                const newSubtitle = "Here we are with all the upcoming events about " + localFilter[0].name
+                this.changePageCopy(newTitle, newSubtitle)
             } else {
                 this.eventsToDisplay = this.allEvents
-                this.pageData.title = "All Events"
-                this.pageData.shortDescription = "Here we are with all the upcoming events of the festival"
+                const newTitle = "All Events"
+                const newSubtitle = "Here we are with all the upcoming events of the festival"
+                this.changePageCopy(newTitle, newSubtitle)   
             }
+        },
+        changePageCopy(title, subtitle) {
+            this.pageData.title = title
+            this.pageData.shortDescription = subtitle
         }
     }
 

@@ -2,12 +2,12 @@
   <section class="all-sections">
     <the-header-with-title
       class="header"
-      :title="pageData.title"
-      :subtitle="pageData.shortDescription"
-      :imgUrl="pageData.imgUrl"
+      :title="content.title"
+      :subtitle="content.shortDescription"
+      :imgUrl="content.imgUrl"
     />
     <breadcrumbs-component />
-    <subheader-component class="subheader" :content="pageData.description" />
+    <subheader-component class="subheader" :content="content.description" />
     <grid-component
       class="grid-container"
       :partialPath="'places'"
@@ -31,7 +31,7 @@ export default {
     BreadcrumbsComponent,
   },
   data() {
-    const pageData = {
+    const content = {
       title: "All the Places",
       shortDescription:
         "Getting fascinated by Avignon is easy. The places are all amazing.",
@@ -42,7 +42,7 @@ export default {
     };
 
     return {
-      pageData,
+      content,
     };
   },
   async asyncData({ $axios }) {
