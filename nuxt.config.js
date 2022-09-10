@@ -16,7 +16,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Here is the unofficial page of the Festival D\'Avignon. Dive into this page to get an easy idea about what is going on during the famous festival.' },
+      { name: 'keywords', content: 'Festival, Avignon, France, Events, Music, Theatre, Dance' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
