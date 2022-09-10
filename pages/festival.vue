@@ -117,7 +117,6 @@ export default {
 
         margin-right: 10px;
         
-        font-family: "Poppins";
         font-weight: 800;
         font-size: 60px;
         text-align: right;
@@ -143,7 +142,6 @@ export default {
 
     .history-title {
         text-align: center;
-        font-family: "Poppins";
         font-weight: 700;
         color: var(--text-color-light);
         font-size: 45px;

@@ -143,7 +143,6 @@ export default {
   width: 100%;
   padding: 5px;
   align-items: center;
-  font-family: "Poppins";
   font-weight: 200;
   color: var(--text-color-light);
 }

@@ -153,7 +153,7 @@ export default {
 
 .title {
   text-align: center;
-  font-family: "Oswald";
+  font-family: 'Oswald';
   font-weight: 400;
   font-size: 40px;
   margin: 5%;
@@ -161,7 +161,7 @@ export default {
 
 .text {
   text-align: left;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   letter-spacing: 1.2px;
   line-height: 2em;
   white-space: pre-line;
