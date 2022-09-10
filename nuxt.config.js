@@ -22,13 +22,10 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      // { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" }, 
     ],
     script: [
-      // { src: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" }
     ]
   },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/style/resetStyle.css',

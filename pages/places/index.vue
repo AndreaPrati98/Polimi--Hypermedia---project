@@ -23,7 +23,18 @@ import GridComponent from "~/components/medium-components/GridComponent.vue";
 import BreadcrumbsComponent from "~/components/utilities-components/BreadcrumbsComponent.vue";
 
 export default {
-  name: "places-page",
+  name: "PlacesPage",
+  head: {
+    title: "Places in Avignon",
+    meta: [
+      {
+        hid: "description",
+        name: "All places",
+        content:
+          "The list of all the places used for the Avignon's Festival. It's also possible to click on one Place to know whitch events are hosted in it",
+      },
+    ],
+  },
   components: {
     TheHeaderWithTitle,
     SubheaderComponent,

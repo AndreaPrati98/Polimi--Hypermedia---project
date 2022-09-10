@@ -68,6 +68,12 @@
 <script>
 export default {
   name: "contactPage",
+  head: {
+    title: 'Contact\'s',
+    meta: [
+        { hid: 'description', name: 'description', content: "The important contacts are here. Phone number, email address and mail address are available at this page." }
+    ],
+  },
   data() {
     return {
       title: "Here our contacts",

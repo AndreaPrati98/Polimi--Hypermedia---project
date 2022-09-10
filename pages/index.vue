@@ -40,11 +40,11 @@ import Default from '~/layouts/default.vue';
 import QuoteComponent from '../components/QuoteComponent.vue';
 
 export default {
+    name: "HomePage",
     components: {
       Default,
       QuoteComponent
     },
-    name: "HomePage",
     data() {
         const content = {
             quote: {

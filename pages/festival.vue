@@ -35,6 +35,12 @@ import SimpleInfoComponent from '~/components/information-components/SimpleInfoC
 
 export default {
     name: "FestivalPage",
+    head: {
+        title: 'Festival info',
+        meta: [
+            { hid: 'description', name: 'description', content: 'Discover the history of the festival and the more practical informations you need. Her eyou can find the date of the festival, the ticket\'s link and the location of the festival itself.' }
+        ],
+    },
     components: {
         TheHeaderWithImages,
         OverviewComponent,
