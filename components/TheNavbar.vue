@@ -152,7 +152,7 @@ export default {
     .nav-item {
         margin-left: 2rem;
         list-style: none;
-        font-family: "Open Sans";
+        font-family: 'Open Sans';
         font-size: 18px;
         font-weight: 400;
         letter-spacing: 1.2px;
@@ -170,7 +170,7 @@ export default {
         font-size: 30px;
         font-weight: 600;
         letter-spacing: 1.2px;
-        font-family: "Poppins";
+        font-family: 'Poppins';
         --text-color-nav: var(--text-color-dark);
         color: var(--text-color-light);
     }

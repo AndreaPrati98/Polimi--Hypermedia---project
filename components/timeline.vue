@@ -75,7 +75,7 @@ export default {
 .timeline-item-title {
   color: var(--palette-green-dark);
   position: relative;
-  font-family: "Oswald";
+  font-family: 'Oswald';
   font-weight: 600;
   font-size: 25px;
   letter-spacing: 1.1px;
@@ -94,7 +94,7 @@ export default {
 }
 
 .timeline-item-text {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-weight: 300;
   letter-spacing: 1.1px;
   line-height: 1.2rem;

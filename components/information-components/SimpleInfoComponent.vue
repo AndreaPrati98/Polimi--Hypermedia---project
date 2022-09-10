@@ -49,7 +49,7 @@ import ButtonAnimated from '../utilities-components/ButtonAnimated.vue'
     }
 
     .title {
-        font-family: "Oswald";
+        font-family: 'Oswald';
         font-size: 3rem;
         font-weight: 600;
         text-align: center;
@@ -58,7 +58,6 @@ import ButtonAnimated from '../utilities-components/ButtonAnimated.vue'
     }
 
     .content {
-        font-family: "Poppins";
         font-weight: 200;
         line-height: 1.7rem;
         font-size: 24px;

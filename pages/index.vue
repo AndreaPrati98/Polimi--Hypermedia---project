@@ -23,7 +23,7 @@
         <!-- SECTION 3 -->
         <div class="all-descriptions">
             <div v-for="(element, index) of content.descriptions"
-                :key="`desription-${index}`"
+                :key="`description-${index}`"
                 class="description">
                 <h2 class="title">{{element.title}}</h2>
                 <p class="text">

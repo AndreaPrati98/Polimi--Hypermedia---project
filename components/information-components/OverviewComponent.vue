@@ -37,7 +37,6 @@ export default {
 }
 
 .title {
-    font-family: "Poppins";
     font-weight: 600;
     text-align: center;
     letter-spacing: 1.8px;
@@ -48,7 +47,6 @@ export default {
 }
 
 .text {
-    font-family: "Poppins";
     font-weight: 300;
     font-size: 16px;
     letter-spacing: 0.28px;

@@ -59,7 +59,6 @@ export default {
     z-index: unset;
     border: unset;
     border-radius: 4px;
-    font-family: "Poppins";   
 }
 
 

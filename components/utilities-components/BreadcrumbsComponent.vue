@@ -70,7 +70,7 @@ export default {
     .crumbs li {
         display: inline-block;
         padding: 10px 0 10px 10px;
-        font-family: "Open Sans";
+        font-family: 'Open Sans';
         font-size: 20px;
         
     }

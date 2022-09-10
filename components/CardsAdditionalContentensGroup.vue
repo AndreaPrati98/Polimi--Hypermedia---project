@@ -66,7 +66,6 @@ export default {
 .title {
     width: 100%;
     font-size: 25px;
-    font-family: "Poppins";
     font-weight: 600;
     margin-bottom: 50px;
     text-align: center;

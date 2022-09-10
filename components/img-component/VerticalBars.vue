@@ -75,7 +75,7 @@ export default {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     z-index: 1;
-    font-family: "Oswald";
+    font-family: 'Oswald';
     font-size: 1.728rem;
     line-height: 0;
   }

@@ -21,7 +21,7 @@ import Breadcrumbs from "~/components/utilities-components/BreadcrumbsComponent.
 export default {
   name: "artists-page",
   head: {
-    title: "Places in Avignon",
+    title: "Artists in Avignon",
     meta: [
       {
         hid: "description",

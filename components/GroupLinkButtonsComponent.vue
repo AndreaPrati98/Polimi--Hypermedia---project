@@ -67,7 +67,6 @@ export default {
 
 
 .see-text {
-    font-family: "Poppins";
     font-size: 36px;
     font-weight: 200;
     padding-bottom: 5%;

@@ -77,7 +77,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-family: "Oswald";
+        font-family: 'Oswald';
         font-weight: 600;
         color: var(--text-color-light);
     }

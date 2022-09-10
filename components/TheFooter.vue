@@ -64,7 +64,6 @@ export default {
         color: seashell;
         min-height: 30vh;
         padding-top: 25px;
-        font-family: "Poppins";
         font-weight: 200;
         letter-spacing: 1.3px;
         line-height: 1.2em;

@@ -51,8 +51,6 @@ export default {
     margin: 2% 0;
     padding: 7% 7%;
 
-
-    font-family: "Poppins";
     font-weight: 200;
     font-size: 20px;
     color: var(--palette-blue);

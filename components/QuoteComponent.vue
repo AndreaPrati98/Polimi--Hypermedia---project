@@ -31,7 +31,7 @@ export default {
 
 .quote {
     border:none;
-    font-family:Georgia, "Times New Roman", Times, serif;
+    font-family: 'Georgia', 'Times New Roman', 'Times', serif;
     position: relative; 
     max-width: 400px; 
     margin: 0 auto; 
@@ -40,7 +40,6 @@ export default {
 
 .quote h3 {
     font-size:35px;
-    font-family: "Poppins";
     font-weight: 200;
     text-align: center;
     letter-spacing: 1.3px;
@@ -73,7 +72,7 @@ export default {
 .quote-by {
     margin-top: 2em;
     text-align: center;
-    font-family: "Oswald";
+    font-family: 'Oswald';
     font-weight: 200;
     font-size: 1.5rem;
     letter-spacing: 1.2px;

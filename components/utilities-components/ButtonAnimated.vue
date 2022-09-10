@@ -66,7 +66,6 @@ export default {
         text-decoration: none;
         color: var(--local-text, var(--text-color-light));
         text-transform: uppercase;
-        font-family: 'Poppins', sans-serif;
         font-weight: bold;
         display: block;
         height: 70px;

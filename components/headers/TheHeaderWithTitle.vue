@@ -63,13 +63,12 @@ export default {
 
 
     .title {
-        font-family: "Poppins";
         font-weight: 700;
         font-size: 40px;
     }
 
     .subheading {
-        font-family: "Oswald";
+        font-family: 'Oswald';
         font-weight: 300;
         letter-spacing: 1.2px;
         margin-bottom: 30px;
