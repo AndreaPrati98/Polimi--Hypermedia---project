@@ -12,7 +12,7 @@
           <div class="icon-border">
             <img
               class="icon"
-              :src= "phoneInfo.imgUrl"
+              :src= "require(`~/assets/images/icons/${phoneInfo.img}`)"
             />
           </div>
 
@@ -32,7 +32,7 @@
           <div class="icon-border">
             <img
               class="icon"
-              :src= "emailInfo.imgUrl"
+              :src= "require(`~/assets/images/icons/${emailInfo.img}`)"
             />
           </div>
         </div>
@@ -50,7 +50,7 @@
           <div class="icon-border">
             <img
               class="icon"
-              :src= "mailInfo.imgUrl"
+              :src= "require(`~/assets/images/icons/${mailInfo.img}`)"
             />
           </div>
         </div>
@@ -66,6 +66,8 @@
 </template>
 
 <script>
+
+
 export default {
   name: "contactPage",
   head: {
@@ -81,17 +83,17 @@ export default {
       phoneInfo: {
         title: "Phone",
         text: "+39 847 27 284 \n Mon - Fri 8.00 - 17.00 CET",
-        imgUrl: "//www.clipartbest.com/cliparts/xTg/89y/xTg89yXTA.png"
+        img: "phoneIcon.png"
       },
       emailInfo: {
         title: "Email",
         text: "festival@culture.avignon.com \n Art Director: director@culture.avignon.com \n Marketing: marketing@culture.avignon.com \n City Liason: city@culture.avignon.com",
-        imgUrl: "//www.clipartbest.com/cliparts/9cp/LpB/9cpLpBqgi.png",
+        img: "emailIcon.png"
       },
       mailInfo: {
         title: "Mail",
         text: "Send formal requests to \n [PO BOX ADDRESS?]",
-        imgUrl: "//cdn.onlinewebfonts.com/svg/img_559756.png",
+        img: "mailIcon.png",
       }
     };
   },

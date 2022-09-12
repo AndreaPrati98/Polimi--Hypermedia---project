@@ -1,15 +1,17 @@
 <template>
     <div class="vertical-bars-container">
         <div class="item">
-            <div class="image" style="background-image: url(https://cdn.pixabay.com/photo/2016/08/15/14/48/church-1595653_1280.jpg)"></div>
+            <img src="~/assets/images/background-imgs/church-avignon.jpg" alt="" class="image">
+            <!-- <div class="image" style="background-image: url(https://cdn.pixabay.com/photo/2016/08/15/14/48/church-1595653_1280.jpg)"></div> -->
             <div class="bar-title"> <a href="#section-2">Overview</a> </div>
         </div>
         <div class="item">
-            <div class="image" style="background-image: url(https://cdn.pixabay.com/photo/2016/06/04/15/25/street-1435744_1280.jpg)"></div>
+            <img src="~/assets/images/background-imgs/arrow-on-the-street.jpg" alt="" class="image">
             <div class="bar-title"><a href="#section-3">Information</a></div>
         </div>
         <div class="item">
-            <div class="image" style="background-image: url(https://cdn.pixabay.com/photo/2017/08/07/19/07/books-2606859_1280.jpg)"></div>
+            <img src="~/assets/images/background-imgs//books-on-the-shelf.jpg" alt="" class="image">
+            <!-- <div class="image" style="background-image: url(https://cdn.pixabay.com/photo/2017/08/07/19/07/books-2606859_1280.jpg)"></div> -->
             <div class="bar-title"><a href="#section-4">History</a></div>
         </div>
     </div>
@@ -90,8 +92,8 @@ export default {
     width: 100%; 
     height: 100%;
     top: 0; left: 0;
-    background-size: cover;
-    background-position: center center;
+    object-fit: cover;
+    object-position: center center;
     transition: filter 0.5s ease;
     filter: grayscale(100%);  
   }
@@ -116,6 +118,7 @@ export default {
   }
   .item {
     width: 100%;
+    border-top: 4px solid seashell;
   }
 
   .bar-title {
