@@ -106,9 +106,17 @@ export default {
 
     }
 
+    .underline {
+        display: block;
+        margin: 0 auto;
+        background-color: #fff;
+    }
+
+    .active .nav-link{
+        color: var(--palette-blue);
+    }
     .nav-link {
-        --text-color-nav: var(--text-color-dark);
-        color: var(--palette-soft-blue);
+        color: seashell;
         text-decoration: none;
 
         font-size: 1rem;
@@ -118,8 +126,23 @@ export default {
 
         transition: color .2s ease-in;
     }
-    .nav-link:hover{
+
+    .nav-item {
+        margin-left: 2rem;
+        list-style: none;
+        font-family: "Open Sans";
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 1.2px;
         color: var(--text-color-light);
+    }
+    
+    @media (hover:hover) {
+        .nav-item:hover {
+            color: seashell;
+            text-decoration: underline;
+        }
+        
     }
 
 
@@ -146,18 +169,6 @@ export default {
         justify-content: space-between;
         align-items: center;
         margin: .8rem 0 ;
-    }
-
-
-    .nav-item {
-        margin-left: 2rem;
-        list-style: none;
-        font-family: "Open Sans";
-        font-size: 18px;
-        font-weight: 400;
-        letter-spacing: 1.2px;
-        color: var(--text-color-light);
-
     }
 
     .header{
@@ -206,6 +217,7 @@ export default {
 
         /* .nav-menu.active which sets left: 0; on the nav-menu */
         .nav-menu.active {
+            color: var(--palette-blue);
             left: 0;
             padding: 0;
             margin: 0;
