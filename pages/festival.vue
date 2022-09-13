@@ -52,7 +52,6 @@ export default {
     ],
   },
   components: {
-    TheHeaderWithImages,
     OverviewComponent,
     VerticalBars,
     BreadcrumbsComponent,
