@@ -13,6 +13,7 @@
             <img
               class="icon"
               :src= "require(`~/assets/images/icons/${phoneInfo.img}`)"
+              :alt="phoneInfo.title"
             />
           </div>
 
@@ -33,6 +34,7 @@
             <img
               class="icon"
               :src= "require(`~/assets/images/icons/${emailInfo.img}`)"
+              :alt="emailInfo.title"
             />
           </div>
         </div>
@@ -51,6 +53,7 @@
             <img
               class="icon"
               :src= "require(`~/assets/images/icons/${mailInfo.img}`)"
+              :alt="mailInfo.title"
             />
           </div>
         </div>
