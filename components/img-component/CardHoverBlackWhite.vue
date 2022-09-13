@@ -5,7 +5,7 @@
                 <h2>{{this.titleTxt}}</h2>
                 <!-- <p>Piccola descrizione</p> -->
                 <p>{{this.descTxt}}</p>
-                <button-standard class="btn" :btnDst="this.btnDst" :btnText="this.btnTxt"/>
+                <button-standard class="btn" :btnDst="this.btnDst" :btnText="this.btnTxt" :title="`Go to ${btnDst} - ${titleTxt}`"/>
             </div>
         </div>
     </div>

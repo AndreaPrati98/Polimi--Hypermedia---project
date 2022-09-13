@@ -2,7 +2,7 @@
     <section>
         <h3 class="title">{{title}}</h3>
         <div class="wrapper" v-if="objList.length">
-            <button @click="slideLeft">&lt;</button>
+            <button @click="slideLeft" title="Slide left">&lt;</button>
             <div class="wrapper-box">
                 <div class="box" >
                     <card-additional-content class="item" v-for="(element, index) of objList" :id="`item${index}`"
@@ -14,7 +14,7 @@
                         :btnDst="`${partialPath}/` + element.id" />
                 </div>
             </div>
-            <button @click="slideRight">&gt;</button>
+            <button @click="slideRight" title="Slide right">&gt;</button>
         </div>
         <div v-else class="empty-case">
             <h4> No one... </h4>

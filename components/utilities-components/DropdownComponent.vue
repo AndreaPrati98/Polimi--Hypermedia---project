@@ -3,7 +3,8 @@
         <label class="dropdown-label">
             <select v-model="filterId" class="dropdown-selected"
                 :name="formName" 
-                :id="formName" @change="$emit('change', filterId)">
+                :id="formName" @change="$emit('change', filterId)"
+                title="Filter the events here">
                 
                 <option class="dropdown-option" value="All" selected>All</option>
 

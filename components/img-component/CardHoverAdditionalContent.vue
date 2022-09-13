@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <nuxt-link :to="btnDst" class="nuxt-link">
+    <nuxt-link :to="btnDst" class="nuxt-link" :title="`Go to${title} - ${btnDst}`">
       <div class="card">
         <img :src="imgUrl" />
         <h3>{{ title }}</h3>

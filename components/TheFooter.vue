@@ -60,7 +60,7 @@ export default {
         justify-content: space-around;
 
         width: 100%;
-        background-color: #666666;
+        background-color: #3e3e3e;
         color: seashell;
         min-height: 30vh;
         padding-top: 25px;
@@ -75,7 +75,7 @@ export default {
         display: flex;
         flex-direction: column;
         width: 40%;
-        border-right: 0.5px solid var(--palette-red-dark);
+        border-right: 2px solid seashell;
         text-align: center;
     }
     .all-links a {
