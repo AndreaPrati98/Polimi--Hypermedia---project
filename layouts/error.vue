@@ -1,7 +1,6 @@
 <template>
     <section class="section">
         <h1>Something wrong happend!</h1>
-        <h3>Error code: {{error.statusCode}}</h3>
         <h2>{{error.message}}</h2>
         <img src="~/assets/images/icons/facepalm-oh-no.gif" alt="funny oh-no image" class="gif"/>
         <button-standard btnDst="/" btnText="Return to Home" class="button"/>           
@@ -24,11 +23,13 @@ export default {
 
 <style scoped>
     .section {
-        height: 100vh;
+        /* height: 100vh; */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
+        margin: 30px 0;
     }
 
     .section h1 {
@@ -43,5 +44,17 @@ export default {
 
     .button {
         width: fit-content;
+    }
+
+    @media (max-width: 700px) {
+        .section h1{
+            font-size: 30px;
+        }
+        .section h2 {
+            font-size: 20px;
+        }
+        .section h3 {
+            font-size: 15px;
+        }
     }
 </style>
