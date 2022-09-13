@@ -3,7 +3,7 @@
     <the-header-with-title
       class="header"
       :title="artist.name"
-      :subtitle="artist.date_of_birth"
+      :subtitle="`Born in: ${artist.date_of_birth}`"
       :imgUrl="artist.img"
     />
     <breadcrumbs-component />
