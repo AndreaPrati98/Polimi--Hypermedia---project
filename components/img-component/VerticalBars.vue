@@ -1,16 +1,16 @@
 <template>
     <div class="vertical-bars-container">
         <div class="item">
-            <img src="~/assets/images/background-imgs/church-avignon.jpg" alt="" class="image">
+            <img src="~/assets/images/background-imgs/church-avignon.jpg" alt="church avignon" class="image">
             <!-- <div class="image" style="background-image: url(https://cdn.pixabay.com/photo/2016/08/15/14/48/church-1595653_1280.jpg)"></div> -->
             <div class="bar-title"> <a href="#section-2">Overview</a> </div>
         </div>
         <div class="item">
-            <img src="~/assets/images/background-imgs/arrow-on-the-street.jpg" alt="" class="image">
+            <img src="~/assets/images/background-imgs/arrow-on-the-street.jpg" alt="Arrow drawn on the street" class="image">
             <div class="bar-title"><a href="#section-3">Information</a></div>
         </div>
         <div class="item">
-            <img src="~/assets/images/background-imgs//books-on-the-shelf.jpg" alt="" class="image">
+            <img src="~/assets/images/background-imgs//books-on-the-shelf.jpg" alt="Books on the shelf" class="image">
             <!-- <div class="image" style="background-image: url(https://cdn.pixabay.com/photo/2017/08/07/19/07/books-2606859_1280.jpg)"></div> -->
             <div class="bar-title"><a href="#section-4">History</a></div>
         </div>

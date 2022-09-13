@@ -14,7 +14,7 @@
                     </div>
                 </h1>
             </div>
-            <img class="picture" src="~/assets/images/cour d'honneur.jpg"/>
+            <img class="picture" src="~/assets/images/cour d'honneur.jpg" alt="Cour d'honneur"/>
         </div>
         <!-- SECTION 2 -->
         <quote-component class="subheader"

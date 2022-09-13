@@ -86,7 +86,7 @@ export default async (models) => {
       name: "Silent Legacy",
       description:
         "Maud Le Pladec explores how dance is handed down with Adeline Kerry Cruz, an 8-year-old krumper, and Audrey Merilus, contemporary dancer. A true poetic manifesto. What legacies do they carry within themselves, and how can one invent one’s own dance? Far from being a neutral arbiter, Maud Le Pladec invites us to a vision of dance as sensory expression, when the meeting of cultures and know-hows shows the exploding vitality of teachings and legacies.",
-      img: "https://www.ccn-orleans.com/content/1-centre-choregraphique-national-dorleans/1-maud-le-pladec/1-silent-legacy/sl_14857-alexandre-haefeli.png",
+      img: "https://cdn.pixabay.com/photo/2017/09/07/13/50/secret-2725302_1280.jpg",
       date: "11/06/2023",
       time: "17:15",
       details: "blah ",

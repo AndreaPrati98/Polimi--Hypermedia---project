@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import TheHeaderWithImages from "~/components/headers/TheHeaderWithImages.vue";
 import OverviewComponent from "~/components/information-components/OverviewComponent.vue";
 import VerticalBars from "~/components/img-component/VerticalBars.vue";
 import BreadcrumbsComponent from "~/components/utilities-components/BreadcrumbsComponent.vue";

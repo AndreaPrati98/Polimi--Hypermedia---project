@@ -1,7 +1,7 @@
 <template>
   <section class="section">
         <!-- here we set up the image with the Title -->
-        <img :src="imgUrl" :alt="`${title} -image`" class="img">
+        <img :src="imgUrl" :alt="`${title}`" class="img" >
         
         <div class="title-div">
             <h1 class="title">{{title}}</h1>
