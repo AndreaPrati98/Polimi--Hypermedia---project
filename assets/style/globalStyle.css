@@ -24,16 +24,7 @@
     padding: 10% 7%;
  }
 
-
-
-
-
-
-
-
 /*********************************/
-
-
 
 html {
     scroll-behavior: smooth;
@@ -48,9 +39,9 @@ button {
     text-decoration: none;
     text-transform: uppercase;
     padding: 11px 25px;
-    color: var(--palette-blue);
-    border-bottom: 3px solid var(--palette-green-dark);
-
+    
+    color: seashell;
+    background-color: var(--palette-blue);
     transition: box-shadow .3s ease-out,
                 transform .3s ease-out,
                 opacity .5s ease;  
@@ -62,6 +53,6 @@ button:active {
 }
 
 button:hover {
-    box-shadow: 4px 4px 10px var(--palette-green-dark,#454545);
+    box-shadow: 4px 4px 10px var(--palette-blue,#454545);
     transform: translate3d(-1.7px, -1.7px, 2px);
 }
