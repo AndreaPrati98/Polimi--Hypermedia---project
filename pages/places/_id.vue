@@ -34,6 +34,7 @@ import CardsAdditionalContentensGroup from "~/components/CardsAdditionalContente
 import BreadcrumbsComponent from "~/components/utilities-components/BreadcrumbsComponent.vue";
 import GroupLinkButtonsComponent from "~/components/GroupLinkButtonsComponent.vue";
 
+
 export default {
   name: "PlacePage",
   head() {
@@ -63,9 +64,16 @@ export default {
       groupLinks: [{ btnText: "ALL PLACES", btnDst: "/places" }],
     };
   },
-  async asyncData({ route, $axios }) {
+  async asyncData({ route, $axios, redirect }) {
     const { id } = route.params;
-    const { data } = await $axios.get("/api/places/" + id);
+    
+    const result = await $axios.get("/api/places/" + id);
+    if(!result.data) {
+      redirect("/ERROR")
+    }
+      
+    const data = result.data
+
     const list = [];
     for (const element of data.events) {
       list.push({

@@ -3,7 +3,7 @@
     <the-header-with-title
       class="header"
       :title="artist.name"
-      :subtitle="artist.date_of_birth"
+      :subtitle="`Born in: ${artist.date_of_birth}`"
       :imgUrl="artist.img"
     />
     <breadcrumbs-component />
@@ -61,9 +61,13 @@ export default {
       groupLinks: [{ btnText: "All Artists", btnDst: "/artists" }],
     };
   },
-  async asyncData({ route, $axios }) {
+  async asyncData({ route, $axios, redirect }) {
     const { id } = route.params;
-    const { data } = await $axios.get("/api/artists/" + id);
+    const result = await $axios.get("/api/artists/" + id);
+    if(!result.data) {
+      redirect("/ERROR")
+    }
+    const data = result.data
     const list = [];
     for (const element of data.events) {
       list.push({

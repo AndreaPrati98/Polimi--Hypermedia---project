@@ -1,7 +1,7 @@
 <template>
   <section class="section">
         <!-- here we set up the image with the Title -->
-        <div class="img" :style="`background-image: url(${this.imgUrl}) `"></div>
+        <img :src="imgUrl" :alt="`${title}`" class="img" >
         
         <div class="title-div">
             <h1 class="title">{{title}}</h1>
@@ -41,12 +41,12 @@ export default {
     }
 
     .img {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        
+        object-fit: cover;
+        object-position:  center;
+
         width: 100%;
-        
+        height: 100%;
+
         grid-area: 1 / 1 / 5 / 5;
     }
 

@@ -10,7 +10,7 @@
             <div class="image-wrapper">
                 <img class="image" 
                     :src="imgUrl" 
-                    alt="pictrure of the place">
+                    :alt="`pictrure of ${header}`">
             </div>
         </div>
     </section>
@@ -48,20 +48,15 @@ export default {
         background-color: var(--palette-soft-blue);
         overflow: hidden;
     }
-
-    .image {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        
-        border-radius: 50%;
-    }
-
-    .image-wrapper {
-        max-height: 400px;
-        max-width: 400px;
+    
+    .image-wrapper .image{
         height: 100%;
         width: 100%;
+        
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center;
 
         display: flex;
         justify-content: center;
@@ -98,12 +93,12 @@ export default {
             align-items: center;
         }
 
-        .image {
-            border-radius: 0;
-            
-        }
-        .image-wrapper {
-            max-width: 100%;
+        .image-wrapper .image {
+            height: 100%;
+            width: 100%;
+            object-position: center center;
+            /* max-width: 100%; */
+            border-radius: 0;   
         }
 
         .text-container {
