@@ -42,6 +42,7 @@ import Breadcrumbs from "~/components/utilities-components/BreadcrumbsComponent.
 import ButtonAnimated from "~/components/utilities-components/ButtonAnimated.vue";
 import GroupLinkButtonsComponent from "~/components/GroupLinkButtonsComponent.vue";
 import SimpleInfoComponent from "~/components/information-components/SimpleInfoComponent.vue";
+
 export default {
   name: "artist-page",
   head() {
@@ -65,13 +66,18 @@ export default {
     GroupLinkButtonsComponent,
     SimpleInfoComponent,
   },
-  async asyncData({ route, $axios }) {
+  async asyncData({ route, $axios, error }) {
     const { id } = route.params;
     // let's retrieve the events and the type of arts
+
     var [event, listOfArts] = await Promise.all([
       $axios.get("/api/events/" + id),
       $axios.get("/api/typeofart"),
     ]);
+
+    if(!event.data) {
+      redirect("/ERROR")
+    }
 
     event = event.data;
 
