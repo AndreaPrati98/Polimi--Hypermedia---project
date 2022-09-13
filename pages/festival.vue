@@ -25,7 +25,7 @@
     <!-- SECTION 4 -->
     <div class="history-section" id="section-4">
       <h2 class="history-title">{{ content.historyComponent.title }}</h2>
-      <timeline
+      <timeline-component
       :items="content.historyComponent.timelineItems" />
     </div>
   </section>
@@ -36,8 +36,7 @@ import OverviewComponent from "~/components/information-components/OverviewCompo
 import VerticalBars from "~/components/img-component/VerticalBars.vue";
 import BreadcrumbsComponent from "~/components/utilities-components/BreadcrumbsComponent.vue";
 import SimpleInfoComponent from "~/components/information-components/SimpleInfoComponent.vue";
-import Timeline from '~/components/Timeline.vue';
-
+import TimelineComponent from "~/components/TimelineComponent.vue";
 
 export default {
   name: "FestivalPage",
@@ -57,8 +56,8 @@ export default {
     VerticalBars,
     BreadcrumbsComponent,
     SimpleInfoComponent,
-    Timeline,
-  },
+    TimelineComponent
+},
   data() {
     const content = {
       overview: {
