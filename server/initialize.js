@@ -223,7 +223,8 @@ export default async (models) => {
       name: "Eric Gales",
       img: "https://upload.wikimedia.org/wikipedia/commons/4/48/Eric_Gales_in_2011.jpg",
       date_of_birth: "27/06/96",
-      description: "Eric Gales is one of the finest guitarists in the world right now in the blues based rock, jazz or any other style. His natural musicality is beyond the genius level and anything with his name on it is absolutely worth some listening time. He’s a multi-stylistic player who spans the musical world from classical to roots music. Gales is a former child prodigy who picked up the guitar at just four years old and has gone on to release 18 albums as a leader. He’s also won two Blues Music Awards for Blues/Rock Artist of the Year.",
+      description:
+        "Eric Gales is one of the finest guitarists in the world right now in the blues based rock, jazz or any other style. His natural musicality is beyond the genius level and anything with his name on it is absolutely worth some listening time. He’s a multi-stylistic player who spans the musical world from classical to roots music. Gales is a former child prodigy who picked up the guitar at just four years old and has gone on to release 18 albums as a leader. He’s also won two Blues Music Awards for Blues/Rock Artist of the Year.",
     },
   ];
 
@@ -304,27 +305,47 @@ export default async (models) => {
   await models.Place.bulkCreate(placesList);
   await models.Type_of_art.bulkCreate(typeOfArtList);
 
-  // Here I set the foreign key for event
-
-  console.log("\n\n");
+  /**
+   *  Here I set the foreign key for Everythin
+   */
+  console.log("Retrieving all places\n\n");
   const allPlaces = await models.Place.findAll();
 
-  console.log("\n\n");
+  console.log("Retrieving all events\n\n");
   const allEvents = await models.Event.findAll();
 
-  console.log("\n\n");
+  console.log("Retrieving all artists\n\n");
   const allArtists = await models.Artist.findAll();
 
-  console.log("\n\n");
+  console.log("Retrieving type of arts\n\n");
   const allTypeOfArts = await models.Type_of_art.findAll();
 
-  for (let index = 0; index < allEvents.length; index++) {
-    // Returns a random integer from 0 to 9: Math.floor(Math.random() * 10);
-    let randomPlaceIndex = Math.floor(Math.random() * allPlaces.length);
-    allEvents[index].set({ placeId: allPlaces[randomPlaceIndex].id });
-    allEvents[index].save();
+  
+  // let's bind together events with places and events
 
-    allEvents[index].set({ typeOfArtId: allTypeOfArts[index % 3].id });
+  // function to shuffle an array
+  function shuffle(arr) {
+    for (
+      var j, x, i = arr.length;
+      i;
+      j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x
+    );
+    return arr;
+  }
+
+  const arr = shuffle(allPlaces)
+  // console.log(arr[0].id);
+
+  // by using a sequential index we are sure the cardianlity is maintained
+  var sequentialIndex = 0
+  for (let index = 0; index < allEvents.length; index++) {
+    const randomIndex = Math.floor(Math.random() * allTypeOfArts.length)
+    
+    allEvents[index].set({ placeId: arr[sequentialIndex % arr.length].id });
+    allEvents[index].save();
+    sequentialIndex++
+
+    allEvents[index].set({ typeOfArtId: allTypeOfArts[randomIndex].id });
     allEvents[index].save();
 
     // do we need to also set the key in the places table defining all the events that are hosted in a place- NO
