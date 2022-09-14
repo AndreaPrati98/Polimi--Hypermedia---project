@@ -88,45 +88,9 @@ async function initializeDatabaseConnection() {
 // With this line, our server will know how to parse any incoming request
 // that contains some JSON in the body
 
-const pageContentObject = {
-    index: {
-        title: "Homepage",
-        image: "https://fs.i3lab.group/hypermedia/images/index.jpeg",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
-        Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros.`
-    },
-    festival: {
-        title: "title bla bla",
-        description: "description bla bla",
-        img: "url_img bla bla",
-        date: "date bla bla",
-        ticket: "ticket bla bla",
-        price: 20,
-        location: "location bla bla",
-        history: "history bla bla",
-    },
-    about: {
-        title: "About",
-        image: "https://fs.i3lab.group/hypermedia/images/about.jpeg",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
-        Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros.`
-    },
-}
-
-
 async function runMainApi() {
     const models = await initializeDatabaseConnection()
     await initialize(models)
-
-    /** 
-     *  this api is used to retrieve information about the page  
-     */
-    app.get('/page-info/:topic', (req, res) => {
-        const { topic } = req.params
-        const result = pageContentObject[topic]
-        return res.json(result)
-    })
-
     
     app.get("/events", async (req, res) => {
         const result =  await models.Event.findAll()
