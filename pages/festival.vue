@@ -178,8 +178,9 @@ export default {
 }
 
 .subheader {
-  background-color: var(--palette-blue);
-  color: var(--text-color-light);
+  /* background-color: var(--palette-blue); */
+  background-color: #283951;
+  color: seashell;
   
 }
 

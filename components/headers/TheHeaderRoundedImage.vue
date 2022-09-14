@@ -33,7 +33,6 @@ export default {
             default: "https://cdn.pixabay.com/photo/2014/08/31/10/03/theater-432045_1280.jpg",
         }
 
-
     }
 }
 </script>
@@ -78,7 +77,12 @@ export default {
     }
 
     .text-wrapper h4 {
-        color: var(--palette-blue);
+        color: var(--text-color-light);
+        border: 5px solid var(--palette-blue);
+
+        padding: 10px 15px;
+        text-align: center;
+        font-style:italic;
     }
 
     .image-container, .text-container {

@@ -142,9 +142,6 @@ export default {
         object-fit: cover;
     }
 
-    
-    
-
     .subheader {
         background-color: var(--palette-soft-blue);
         color: var(--text-color-light);
@@ -173,7 +170,7 @@ export default {
         width: 90%;
         padding: 2%;
 
-        font-weight: 200;
+        font-weight: 400;
         font-size: 20px;
         color: var(--palette-blue);
         letter-spacing: 1.4px;

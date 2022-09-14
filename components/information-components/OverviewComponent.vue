@@ -47,8 +47,8 @@ export default {
 }
 
 .text {
-    font-weight: 300;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 18px;
     letter-spacing: 0.28px;
     line-height: 25px;
     padding-right: 5%;

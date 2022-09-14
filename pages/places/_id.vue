@@ -84,6 +84,7 @@ export default {
       });
     }
 
+    data.address = "Address: "+ data.address
     data.list = list;
 
     return {
@@ -100,6 +101,7 @@ export default {
 .subheader {
   background-color: var(--palette-green-dark);
   color: var(--palette-blue);
+  
 }
 .transition-links {
   padding: 5% 0;
