@@ -1,6 +1,6 @@
 <template>
     <section class="section">
-        <h1>Something wrong happend!</h1>
+        <h1>Something wrong happened!</h1>
         <h2>{{error.message}}</h2>
         <img src="~/assets/images/icons/facepalm-oh-no.gif" alt="funny oh-no image" class="gif"/>
         <button-standard btnDst="/" btnText="Return to Home" class="button"/>           

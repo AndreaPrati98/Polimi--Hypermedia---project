@@ -178,8 +178,9 @@ export default {
 }
 
 .subheader {
-  background-color: var(--palette-soft-blue);
+  background-color: var(--palette-blue);
   color: var(--text-color-light);
+  
 }
 
 .history-section {

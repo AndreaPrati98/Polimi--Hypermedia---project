@@ -51,7 +51,7 @@ export default {
     margin: 2% 0;
     padding: 7% 7%;
 
-    font-weight: 200;
+    font-weight: 400;
     font-size: 20px;
     color: var(--palette-blue);
     letter-spacing: 1.4px;
