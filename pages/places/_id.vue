@@ -84,7 +84,7 @@ export default {
       });
     }
 
-    data.address = "Address: "+ data.address
+    data.address = "Address: "+ '\n' + data.address
     data.list = list;
 
     return {

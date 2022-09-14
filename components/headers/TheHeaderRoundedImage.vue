@@ -83,6 +83,7 @@ export default {
         padding: 10px 15px;
         text-align: center;
         font-style:italic;
+        white-space: pre-line;
     }
 
     .image-container, .text-container {

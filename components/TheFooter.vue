@@ -108,6 +108,11 @@ export default {
             justify-content: center;
         }
 
+        .otherside {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
         .all-links {
             padding-bottom: 30px;
             border: none;

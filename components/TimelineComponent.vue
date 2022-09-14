@@ -34,10 +34,6 @@ export default {
 
 <style scoped>
 
-
-
-
-
 /* Timeline Container */
 .timeline-component {
   padding: 20px;
@@ -50,7 +46,7 @@ export default {
 
 /* Outer Layer with the timeline border */
 .timeline-box {
-  border-left: 5px solid var(--palette-green);
+  border-left: 5px solid seashell;
 }
 
 /* Card container */
@@ -58,8 +54,9 @@ export default {
   position: relative;
   margin: 0 0 20px 20px;
   padding: 10px;
-  background: var(--palette-soft-blue);
-  color: var(--palette-green-dark);
+  background: seashell;
+  color: var(--palette-blue);
+  font-weight: 400;
   width: 100%;
   max-width: 400px;
 }
@@ -73,7 +70,7 @@ export default {
 
 /* Title of the card */
 .timeline-item-title {
-  color: var(--palette-green-dark);
+  color: var(--palette-blue);
   position: relative;
   font-family: 'Oswald';
   font-weight: 600;
@@ -87,10 +84,10 @@ export default {
   position: absolute;
   width: 10px;
   height: 10px;
-  background: var(--palette-green);
+  background: seashell;
   border-radius: 999px;
   left: -40px;
-  border: 3px solid var(--palette-green);
+  border: 3px solid seashell;
 }
 
 .timeline-item-text {

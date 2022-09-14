@@ -95,7 +95,7 @@ export default {
       },
       mailInfo: {
         title: "Mail",
-        text: "Send formal requests to \n [PO BOX ADDRESS?]",
+        text: "Send formal requests to \n 4 Cr Président Kennedy, 84000 Avignon, France",
         img: "mailIcon.png",
       }
     };
