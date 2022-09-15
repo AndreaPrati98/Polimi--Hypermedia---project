@@ -30,21 +30,21 @@ In the end we have the spare compoents that are there because are used not so of
 
 Destiny Mora:
 
-Document design: <br/>
-Backend design: <br/>
-Data base design and filling the information: <br/>
-Front design: <br/>
-SEO optimization: <br/>
-Accessibility and usability test: <br/>
+Document design: 15<br/>
+Backend design: 10<br/>
+Data base design and filling the information: 15<br/>
+Front design: 50<br/>
+SEO optimization: 10<br/>
+Accessibility and usability test: 25<br/>
 
 
 Andrea Prati:
 
-Document design: <br/>
-Backend design: <br/>
-Data base design and filling the information: <br/>
-Front design: <br/>
-SEO optimization: <br/>
-Accessibility and usability test: <br/>
+Document design: 30h<br/>
+Backend design: 10h<br/>
+Data base design and filling the information: 5h<br/>
+Front design: 40h<br/>
+SEO optimization: 10h<br/>
+Accessibility and usability test: 30h<br/>
 
 ---
