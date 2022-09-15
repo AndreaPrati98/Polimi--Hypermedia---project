@@ -231,7 +231,8 @@ export default async (models) => {
   const typeOfArtList = [
     {
       name: "music",
-      description: "Let the music take you away.",
+      description:
+        "Music, art concerned with combining vocal or instrumental sounds for beauty of form or emotional expression, usually according to cultural standards of rhythm, melody, and, in most Western music, harmony. Both the simple folk song and the complex electronic composition belong to the same activity, music. Both are humanly engineered; both are conceptual and auditory, and these factors have been present in music of all styles and in all periods of history, throughout the world.",
     },
     {
       name: "theatre",
@@ -320,7 +321,6 @@ export default async (models) => {
   console.log("Retrieving type of arts\n\n");
   const allTypeOfArts = await models.Type_of_art.findAll();
 
-  
   // let's bind together events with places and events
 
   // function to shuffle an array
@@ -333,17 +333,17 @@ export default async (models) => {
     return arr;
   }
 
-  const arr = shuffle(allPlaces)
+  const arr = shuffle(allPlaces);
   // console.log(arr[0].id);
 
   // by using a sequential index we are sure the cardianlity is maintained
-  var sequentialIndex = 0
+  var sequentialIndex = 0;
   for (let index = 0; index < allEvents.length; index++) {
-    const randomIndex = Math.floor(Math.random() * allTypeOfArts.length)
-    
+    const randomIndex = Math.floor(Math.random() * allTypeOfArts.length);
+
     allEvents[index].set({ placeId: arr[sequentialIndex % arr.length].id });
     allEvents[index].save();
-    sequentialIndex++
+    sequentialIndex++;
 
     allEvents[index].set({ typeOfArtId: allTypeOfArts[randomIndex].id });
     allEvents[index].save();

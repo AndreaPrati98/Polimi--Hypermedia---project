@@ -30,10 +30,6 @@ export default {
       type: String,
       default: "Click me",
     },
-    btnTextColor: {
-      type: String,
-      default: "var(--text-color-light)",
-    },
     btnBkgdColor: {
       type: String,
       default: "var(--btn-background-color)",
@@ -56,7 +52,6 @@ export default {
       return {
         "--local-bkgd": this.btnBkgdColor,
         "--local-hover-bkgd": this.btnBkgdHoverColor,
-        "--local-text": this.btnTextColor,
       };
     },
   },
@@ -71,7 +66,7 @@ export default {
 
 .collision {
   text-decoration: none;
-  color: var(--local-text, var(--text-color-light));
+  color: white;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   font-weight: bold;

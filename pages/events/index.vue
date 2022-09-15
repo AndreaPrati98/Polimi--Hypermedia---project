@@ -8,14 +8,27 @@
     />
     <breadcrumbs-component />
     <subheader-component class="subheader" :content="pageData.description" />
-
+    <!--     
+    <div class="typeOfArtsBtn-box">
+      <button-standard :btnText="pageData.btnTypesOfArtsTxt" :btnDst="pageData.btnTypesOfArtsDst" class="typeOfArtsBtn"/>
+    </div>
+     -->
     <div class="dropdown-bar">
-      <p>Filter:</p>
-      <dropdown-component
-        :formName="'type of art selector'"
-        :objList="allTypeOfArts"
-        @change="filterObjList"
-      />
+      <div class="filter-div">
+        <p>Filter:</p>
+        <dropdown-component
+          :formName="'type of art selector'"
+          :objList="allTypeOfArts"
+          @change="filterObjList"
+        />
+      </div>
+      <div class="typeOfArtsBtn-box">
+        <button-standard
+          :btnText="pageData.btnTypesOfArtsTxt"
+          :btnDst="pageData.btnTypesOfArtsDst"
+          class="typeOfArtsBtn"
+        />
+      </div>
     </div>
     <grid-component :partialPath="'events'" :objList="eventsToDisplay" />
   </section>
@@ -27,6 +40,7 @@ import SubheaderComponent from "~/components/information-components/SubheaderCom
 import GridComponent from "~/components/medium-components/GridComponent.vue";
 import DropdownComponent from "~/components/utilities-components/DropdownComponent.vue";
 import BreadcrumbsComponent from "~/components/utilities-components/BreadcrumbsComponent.vue";
+import ButtonStandard from "~/components/utilities-components/ButtonStandard.vue";
 
 export default {
   name: "EventsPage",
@@ -47,6 +61,7 @@ export default {
     GridComponent,
     DropdownComponent,
     BreadcrumbsComponent,
+    ButtonStandard,
   },
   data() {
     const pageData = {
@@ -57,6 +72,8 @@ export default {
         "The programme includes shows, but also readings, exhibitions, films, and debates, which are so many gateways into the worlds of the artists and intellectuals invited to the Festival. Every evening, there is at least one show première, making Avignon a place of true creation and adventure for artists and spectators alike.",
       imgUrl:
         "https://cdn.pixabay.com/photo/2015/05/29/19/18/crowd-789652_1280.jpg",
+      btnTypesOfArtsTxt: "More about types of arts",
+      btnTypesOfArtsDst: "/typeOfArts",
     };
     return { pageData };
   },
@@ -123,7 +140,7 @@ export default {
         this.eventsToDisplay = this.allEvents;
         const newTitle = "All Events";
         const newSubtitle =
-          "Here we are with all the upcoming events of the festival";
+          "Here we are with all the upcoming events of the festival ";
         this.changePageCopy(newTitle, newSubtitle);
       }
     },
@@ -139,11 +156,35 @@ export default {
 .dropdown-bar {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+
   background-color: var(--palette-red-dark);
   width: 100%;
   padding: 5px;
-  align-items: center;
+  /* align-items: center; */
   font-weight: 200;
   color: var(--text-color-light);
+}
+
+.filter-div{
+  display: flex;
+  align-items: center;
+}
+
+.typeOfArtsBtn {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.typeOfArtsBtn-box {
+  background-color: var(--palette-red-dark);
+  text-align: center;
+}
+
+@media (max-width: 432px) {
+  .dropdown-bar {
+    flex-direction: column;
+  }
+
 }
 </style>

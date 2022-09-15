@@ -1,21 +1,8 @@
 <template>
-  <nuxt-link
-    v-if="isNuxtLink"
-    :to="btnDst"
-    class="btn"
-    :style="cssProps"
-    :title="btnText"
-  >
+  <nuxt-link v-if="isNuxtLink" :to="btnDst" class="btn" :title="btnText">
     {{ btnText }}
   </nuxt-link>
-  <a
-    v-else
-    :href="'//' + btnDst"
-    target="_blank"
-    class="btn"
-    :style="cssProps"
-    :title="btnText"
-  >
+  <a v-else :href="'//' + btnDst" target="_blank" class="btn" :title="btnText">
     {{ btnText }}
   </a>
 </template>
@@ -28,35 +15,15 @@ export default {
       type: String,
       default: "Click me",
     },
-    btnTextSize: {
-      type: String,
-      default: "13px",
-    },
+
     btnDst: {
       type: String,
       required: true,
       default: "/",
     },
-    btnTxtColor: {
-      type: String,
-      default: "var(--text-color-light)",
-    },
-    btnBkgdColor: {
-      type: String,
-      default: "var(--btn-background-color)",
-    },
     isNuxtLink: {
       type: Boolean,
       default: true,
-    },
-  },
-  computed: {
-    cssProps() {
-      return {
-        "--btn-bkgd-color": this.btnBkgdColor,
-        "--text-color": this.btnTxtColor,
-        "--font-size": this.btnTextSize,
-      };
     },
   },
 };
@@ -65,12 +32,12 @@ export default {
 <style scoped>
 .btn {
   display: inline-block;
-  font-size: var(--font-size);
+  font-size: 13px;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--text-color);
+  color: white;
   padding: 14px 30px;
-  background-color: var(--btn-bkgd-color);
+  background-color: var(--palette-soft-blue);
   transition: box-shadow 0.3s ease-out, transform 0.3s ease-out,
     opacity 0.5s ease;
 }

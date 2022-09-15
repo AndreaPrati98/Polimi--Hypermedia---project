@@ -136,6 +136,7 @@ async function runMainApi() {
     app.get("/places", async (req, res) => {
         const result = await models.Place.findAll()
         return res.json(result)
+        
     })
     
     // HTTP GET api that returns the info for the requested place (where placeId == :id) along 
