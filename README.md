@@ -1,71 +1,50 @@
 # New Wave
 
-## Build Setup
+## Presentation
+Welcome to the repository of the Hypermedia application course at Politecnico di Milano.
 
-```bash
-# install dependencies
-$ npm install
+We are the group _New Wave_. 
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+The assignemnt:
+For the Client implementation we ask you to develop the website for a **one-week summer festival** of live performing arts (e.g., dance, theatre, music, opera...) using NuxtJS.
 
-# build for production and launch server
-$ npm run build
+## Project's brief
+Our project has been built by using plain CSS, not because of the need to show our strenght but to have the opportunity to learn the most from this course, keeping in mind that what guided us during all the implementation has been the concept of **simplicity**.  
 
-# *ONLY IN CASE OF SSG* generate static project
-$ npm run generate
+We both decided to not use [VUEX](https://vuex.vuejs.org/guide/) because we never felt the necessity, the rare case we had to make two nested components to communicat we used the $emit to rise an event that has been handled by simple JS.  
 
+We tried to respect all the best practice of both Vue and Nuxt.
 
-$ npm run start
+### Components
+The **header** folder groups the two header types that are more frequently used. They both accept as props *title, subtitle and a link to an image*.
 
-```
+Inside the **img-component** folder are grouped the atomic components that use images so the props are used for the main text, the img's url and for the text on the optional buttons.
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+Inside **medium-components** we find a GridComponent, which is just a big grid of smaller component (cards).
 
-## Special Directories
+While in **utilities component** we find buttons and the drop-down compoents.
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+In the end we have the spare compoents that are there because are used not so often.
 
-### `assets`
+## Contribution
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+Destiny Mora:
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+Document design: 
+Backend design: 
+Data base design and filling the information: 
+Front design: 
+SEO optimization:
+Accessibility and usability test: 
 
-### `components`
+---
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+Andrea Prati:
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+Document design: 
+Backend design: 
+Data base design and filling the information: 
+Front design: 
+SEO optimization:
+Accessibility and usability test: 
 
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).

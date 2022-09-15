@@ -97,7 +97,12 @@ export default {
       name: undefined,
     };
 
+    // in case of empty query this piece of code is not executed
     if (!isEmptyQuery) {
+      /* 
+      it is necessary so that it's possible to create wherever a link 
+      that leads directly into the filtered page
+      */
       filterQuery.id = route.query.filter;
       filterQuery.name = route.query.filterName;
     }
@@ -124,6 +129,7 @@ export default {
     }
   },
   methods: {
+    // the followuing method is used to filter the events by name
     filterObjList(art_id) {
       // let's filter over the type of art Id
       if (art_id !== "All") {
@@ -131,6 +137,7 @@ export default {
           (el) => el.typeOfArtId === art_id
         );
         const localFilter = this.allTypeOfArts.filter((el) => el.id === art_id);
+        // in order to be consistent we change the title and subtitle of the page
         const newTitle = "Events about " + localFilter[0].name;
         const newSubtitle =
           "Here we are with all the upcoming events about " +
