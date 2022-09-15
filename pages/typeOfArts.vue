@@ -45,7 +45,7 @@ export default {
   },
   data() {
     const pageData = {
-      title: "Type of events",
+      title: "All type of art",
       subtitle: "Let's get inspired...",
     };
     return { pageData };

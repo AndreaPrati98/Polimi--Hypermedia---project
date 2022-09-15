@@ -70,10 +70,20 @@ export default {
     const { id } = route.params;
     // let's retrieve the events and the type of arts
 
-    var [event, listOfArts] = await Promise.all([
-      $axios.get("/api/events/" + id),
-      $axios.get("/api/typeofart"),
-    ]);
+    // var [event, listOfArts] = await Promise.all([
+    //   $axios.get("/api/events/" + id),
+    //   $axios.get("/api/typeofart"),
+    // ]);
+
+    
+     const event = await $axios.get("/api/events/" + id)
+     const listOfArts = await $axios.get("/api/typeofart")
+    
+
+    // const event = result[0].data
+    // const listOfArts = result[1].data
+
+    console.log(event);
 
     if(!event.data) {
       redirect("/ERROR")

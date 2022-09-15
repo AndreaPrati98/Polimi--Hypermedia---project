@@ -236,11 +236,11 @@ export default async (models) => {
     },
     {
       name: "theatre",
-      description: "Get the best involvement in us.",
+      description: "Theatre is a collaborative art form which combines words, voice, movement and visual elements to express meaning. The field of theatre encompasses not only live improvised and scripted work, but also dramatic forms such as film, television and other electronic media.",
     },
     {
       name: "dance",
-      description: "Dance till the stars come down from the rafters.",
+      description: "Dance is a performing art form consisting of sequences of movement, either improvised or purposefully selected. This movement has aesthetic and often symbolic value. Dance can be categorized and described by its choreography, by its repertoire of movements, or by its historical period or place of origin.",
     },
   ];
   /* 5 */
