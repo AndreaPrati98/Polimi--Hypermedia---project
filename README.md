@@ -30,21 +30,21 @@ In the end we have the spare compoents that are there because are used not so of
 
 Destiny Mora:
 
-Document design: 
-Backend design: 
-Data base design and filling the information: 
-Front design: 
-SEO optimization:
-Accessibility and usability test: 
+Document design: <br/>
+Backend design: <br/>
+Data base design and filling the information: <br/>
+Front design: <br/>
+SEO optimization: <br/>
+Accessibility and usability test: <br/>
 
----
 
 Andrea Prati:
 
-Document design: 
-Backend design: 
-Data base design and filling the information: 
-Front design: 
-SEO optimization:
-Accessibility and usability test: 
+Document design: <br/>
+Backend design: <br/>
+Data base design and filling the information: <br/>
+Front design: <br/>
+SEO optimization: <br/>
+Accessibility and usability test: <br/>
 
+---
