@@ -12,7 +12,7 @@ For the Client implementation we ask you to develop the website for a **one-week
 The design document has been included inside the repository, inside the folder "document design".
 
 ## Project's brief
-Our project has been built by using plain CSS, not because of the need to show our strenght but to have the opportunity to learn the most from this course, keeping in mind that what guided us during all the implementation has been the concept of **simplicity**.  
+Our project has been built by using plain CSS, in order to have the opportunity to learn the most from this course, keeping in mind that what guided us during all the implementation has been the concept of **simplicity**.  
 
 We both decided to not use [VUEX](https://vuex.vuejs.org/guide/) because we never felt the necessity, the rare case we had to make two nested components to communicat we used the $emit to rise an event that has been handled by simple JS.  
 
