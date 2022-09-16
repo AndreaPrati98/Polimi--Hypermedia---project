@@ -70,21 +70,18 @@ export default {
     const { id } = route.params;
     // let's retrieve the events and the type of arts
 
-    // var [event, listOfArts] = await Promise.all([
-    //   $axios.get("/api/events/" + id),
-    //   $axios.get("/api/typeofart"),
-    // ]);
+    var [event, listOfArts] = await Promise.all([
+      $axios.get("/api/events/" + id),
+      $axios.get("/api/typeofart"),
+    ]);
 
-    
-     const event = await $axios.get("/api/events/" + id)
-     const listOfArts = await $axios.get("/api/typeofart")
-    
-
-    // const event = result[0].data
-    // const listOfArts = result[1].data
-
-    console.log(event);
-
+    /* 
+      unluckly this piece of code should work as well as for palces/_id and artists/_id 
+      but on backend side we had problems to handle the failing of the query...
+      Because sequelize tryies to execute a join and fails, while in the other 
+      cases sequelize just return an empy obj / arr, that makes easy the handling
+      by using this simple if-then logic.
+    */
     if(!event.data) {
       redirect("/ERROR")
     }
