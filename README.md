@@ -1,4 +1,4 @@
-# New Wave
+# Group - New Wave
 
 ## Presentation
 Welcome to the repository of the Hypermedia application course at Politecnico di Milano.
@@ -7,6 +7,9 @@ We are the group _New Wave_.
 
 The assignemnt:
 For the Client implementation we ask you to develop the website for a **one-week summer festival** of live performing arts (e.g., dance, theatre, music, opera...) using NuxtJS.
+
+## Design Document
+The design document has been included inside the repository, inside the folder "document design".
 
 ## Project's brief
 Our project has been built by using plain CSS, not because of the need to show our strenght but to have the opportunity to learn the most from this course, keeping in mind that what guided us during all the implementation has been the concept of **simplicity**.  
