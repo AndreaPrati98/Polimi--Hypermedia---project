@@ -1,5 +1,7 @@
 # Group - New Wave
 
+Score: 28/30
+
 ## Presentation
 Welcome to the repository of the Hypermedia application course at Politecnico di Milano.
 
